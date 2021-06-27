@@ -14,7 +14,7 @@ body{
   left: 200px;
 }
 article table, th, tr{
-  border: 1px solid black;
+  border: 3px solid black;
 }
 .inventory{
   position: absolute;
@@ -24,5 +24,23 @@ article table, th, tr{
 article table tr th{
   width: 300px;
   height: 80px;
-  margin-left: 20px;
+  text-align:center;
+}
+.tabletitle{
+  background-color: rgb(94, 94, 94);
+}
+article table tr:nth-of-type(2){
+  background-color: rgb(133, 133, 133);
+}
+article table tr:nth-of-type(3){
+  background-color: rgb(199, 199, 199);
+}
+article table tr:nth-of-type(4){
+  background-color: rgb(133, 133, 133);
+}
+article table tr:nth-of-type(5){
+  background-color: rgb(199, 199, 199);
+}
+article table tr:nth-of-type(6){
+  background-color: rgb(133, 133, 133);
 }
