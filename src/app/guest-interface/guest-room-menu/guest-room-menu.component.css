@@ -18,6 +18,11 @@ article table, th, tr{
 }
 .inventory{
   position: absolute;
-  left:600px;
-  top:400px;
+  left:300px;
+  top:150px;
+}
+article table tr th{
+  width: 300px;
+  height: 80px;
+  margin-left: 20px;
 }
