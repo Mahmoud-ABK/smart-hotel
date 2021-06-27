@@ -1,6 +1,9 @@
 body{
 	overflow-x:hidden;
 }
+.img-fluid{
+  border: 2px solid black;
+}
 .col:nth-of-type(1){
   position: relative;
   bottom: 15px;
