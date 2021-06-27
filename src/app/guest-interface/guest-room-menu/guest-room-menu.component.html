@@ -2,17 +2,84 @@
 <html lang="en">
 <head>
   <title>Guest Interface</title>
+  <link href="guest-room-menu.component.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="profile">
-      <img src="C:\ArcheMage\MentorNation\Project Winners\Website\Main-Project\Git\smart-hotel\src\assets\default-profile-picture-png-1-Transparent-Images.png">
-      <p>Fares Dadi</p>
-      <p>Faress22.dadi@gmail.com</p>
+  <header class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="../../assets/pfpdefault.png" class="img-fluid" alt="Responsive image" style="width: 25%;">
+        </div>
+        <div class="col">
+          <h3>Profile</h3>
+          <p>Name</p>
+        </div>
+      </div>
+
+      <div class="col ">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="col">
+        <div class="collapse navbar-collapse" id="navbar1">
+          <ul class="navbar-nav" style="font-size: x-large;">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Interface</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="abuttons">
-      <p>Report</p>/<p>Logout</p>
-    </div>
+    <hr>
   </header>
+  <article>
+    <div class="inventory">
+      <table>
+
+        <tr>
+          <th>Rooms</th>
+          <th>Cost</th>
+          <th>Check-out</th>
+        </tr>
+
+        <tr>
+          <th>Room #1</th>
+          <th>50$</th>
+          <th>6-30-2021</th>
+        </tr>
+
+        <tr>
+          <th>Room #1</th>
+          <th>50$</th>
+          <th>6-30-2021</th>
+        </tr>
+
+        <tr>
+          <th>Room #1</th>
+          <th>50$</th>
+          <th>6-30-2021</th>
+        </tr>
+
+        <tr>
+          <th>Room #1</th>
+          <th>50$</th>
+          <th>6-30-2021</th>
+        </tr>
+
+        <tr>
+          <th>Room #1</th>
+          <th>50$</th>
+          <th>6-30-2021</th>
+        </tr>
+
+      </table>
+    </div>
+  </article>
+
 </body>
 </html>

@@ -1,0 +1,22 @@
+body{
+	overflow-x:hidden;
+}
+.col:nth-of-type(1){
+  position: relative;
+  bottom: 15px;
+}
+.col:nth-of-type(2){
+  position: relative;
+  right: 200px;
+}
+.col:nth-of-type(3){
+  position: relative;
+  left: 200px;
+}
+article table, th, tr{
+  border: 1px solid black;
+}
+.inventory{
+  position: absolute;
+  left:600px;
+}
