@@ -19,4 +19,5 @@ article table, th, tr{
 .inventory{
   position: absolute;
   left:600px;
+  top:400px;
 }
