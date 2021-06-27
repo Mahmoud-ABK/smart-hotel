@@ -27,20 +27,20 @@ article table tr th{
   text-align:center;
 }
 .tabletitle{
-  background-color: rgb(94, 94, 94);
+  background-color: rgb(153, 153, 153);
 }
 article table tr:nth-of-type(2){
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(204, 204, 204);
 }
 article table tr:nth-of-type(3){
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(248, 248, 248);
 }
 article table tr:nth-of-type(4){
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(204, 204, 204);
 }
 article table tr:nth-of-type(5){
-  background-color: rgb(199, 199, 199);
+  background-color: rgb(248, 248, 248);
 }
 article table tr:nth-of-type(6){
-  background-color: rgb(133, 133, 133);
+  background-color: rgb(204, 204, 204);
 }
