@@ -1,47 +1,54 @@
 <div style="background-color: #7F8B52;">
-<nav class="navbar navbar-expand-sm sticky-top navbar-light ">
-  <div class="container">
-    <div class="row">
-      <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
-          style="width: 80%;"></div>
-      <div class="col-6">
-        <h3 class="profile-name">profile</h3>
-        <p class="profile-info">info</p>
+  <nav class="navbar navbar-expand-sm sticky-top navbar-light ">
+    <div class="container">
+      <div class="row">
+        <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
+            style="width: 80%;"></div>
+        <div class="col-6">
+          <h3 class="profile-name">profile</h3>
+          <p class="profile-info">info</p>
+        </div>
+      </div>
+      <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
+        <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large;">
+          <li class="nav-item  border-1 bg-light p-1 m-1">
+            <a class="nav-link " href="#" style="color: #558776;">Interface</a>
+          </li>
+          <li class="nav-item border-1 bg-light p-1 m-1 ">
+            <a class="nav-link" href="#" style="color: #558776;">Log out</a>
+          </li>
+
+        </ul>
       </div>
     </div>
-    <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
-      <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large;">
-        <li class="nav-item  border-1 bg-light p-1 m-1">
-          <a class="nav-link " href="#" style="color: #558776;">Interface</a>
-        </li>
-        <li class="nav-item border-1 bg-light p-1 m-1 ">
-          <a class="nav-link" href="#" style="color: #558776;">Log out</a>
-        </li>
+  </nav>
 
-      </ul>
+  <div class="container a pb-4" style="padding-top: 2%;">
+    <div class="row">
+      <div class="col-md-12 col-lg-4 col-xl-4">
+        <h3 style="text-align:center ;color:whitesmoke;">Room#number</h3>
+      </div>
+      <div class="col">
+        <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center; ">
+          <a class="flex-sm-fill text-sm-center nav-link active" href="#" style="color: whitesmoke;">Room control</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room security</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room services</a>
+          <a class="flex-sm-fill text-sm-center nav-link " href="#" style="color: whitesmoke;">Report</a>
+        </nav>
+      </div>
     </div>
   </div>
-</nav>
 
-<div class="container a" style="padding-top: 2%;">
-  <div class="row">
-    <div class="col-md-12 col-lg-4 col-xl-4">
-      <h3 style="text-align:center ;color:whitesmoke;">Room#number</h3>
+  <div class="room-ctrl">
+    <!-- <app-room-control></app-room-control> -->
+    <!-- <app-room-security></app-room-security> -->
+    <!-- <app-room-services></app-room-services> -->
+
+    <div class="container d-flex flex-row justify-content-between pb-5 pt-4">
+
+      <div class="m0"><button class="btn btn-success">&laquo; Back</button></div>
+      <div><button class="btn btn-success">having a problem?</button></div>
     </div>
-    <div class="col">
-      <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center; ">
-        <a class="flex-sm-fill text-sm-center nav-link active" href="#" style="color: whitesmoke;">Room control</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room security</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room services</a>
-        <a class="flex-sm-fill text-sm-center nav-link " href="#" style="color: whitesmoke;">Report</a>
-      </nav>
-    </div>
+
   </div>
-</div>
-
-<div class="room-ctrl">
-<!-- <app-room-control></app-room-control> -->
-<!-- <app-room-security></app-room-security> -->
-<app-room-services></app-room-services>
-</div>
 </div>
