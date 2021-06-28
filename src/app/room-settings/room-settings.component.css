@@ -3,7 +3,9 @@
 }
 .room-ctrl
 {
-  background-color: #EAE2B6;
+  height: 100%;
+  padding-bottom: 20em;
+  background-color: #EAE2B6 !important;
 }
 .profile-name ,.profile-info{
  color: aliceblue;
