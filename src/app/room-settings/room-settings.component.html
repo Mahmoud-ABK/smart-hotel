@@ -1,47 +1,45 @@
-<nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+<div style="background-color: #7F8B52;">
+<nav class="navbar navbar-expand-sm sticky-top navbar-light ">
   <div class="container">
     <div class="row">
-      <div class="col"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
+      <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
           style="width: 80%;"></div>
-      <div class="col">
-        <h3>profile</h3>
-        <p>name</p>
+      <div class="col-6">
+        <h3 class="profile-name">profile</h3>
+        <p class="profile-info">info</p>
       </div>
     </div>
-    <div class="col"><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbar1">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    <div class="col">
-      <div class="collapse navbar-collapse" id="navbar1">
-        <ul class="navbar-nav" style="font-size: x-large;">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">interface</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">log out</a>
-          </li>
-        </ul>
-      </div>
+    <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
+      <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large;">
+        <li class="nav-item  border-1 bg-light p-1 m-1">
+          <a class="nav-link " href="#" style="color: #558776;">Interface</a>
+        </li>
+        <li class="nav-item border-1 bg-light p-1 m-1 ">
+          <a class="nav-link" href="#" style="color: #558776;">Log out</a>
+        </li>
+
+      </ul>
     </div>
   </div>
 </nav>
-<div class="container">
 
+<div class="container a" style="padding-top: 2%;">
   <div class="row">
     <div class="col-md-12 col-lg-4 col-xl-4">
-      <h3 style="text-align:center">Room#number</h3>
+      <h3 style="text-align:center ;color:whitesmoke;">Room#number</h3>
     </div>
     <div class="col">
-      <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center">
-        <a class="flex-sm-fill text-sm-center nav-link active" href="#">Room control</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#">Room security</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#">Room services</a>
-        <a class="flex-sm-fill text-sm-center nav-link " href="#">Report</a>
+      <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center; ">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="#" style="color: whitesmoke;">Room control</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room security</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: whitesmoke;">Room services</a>
+        <a class="flex-sm-fill text-sm-center nav-link " href="#" style="color: whitesmoke;">Report</a>
       </nav>
     </div>
-
   </div>
 </div>
 
+<div class="room-ctrl">
+<app-room-control></app-room-control>
+</div>
+</div>

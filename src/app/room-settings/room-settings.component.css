@@ -1,1 +1,16 @@
-
+.navbar {
+  background-color: #558776;
+}
+.room-ctrl
+{
+  background-color: #EAE2B6;
+}
+.profile-name ,.profile-info{
+ color: aliceblue;
+}
+.a{
+  margin: 0% !important;
+}
+.active{
+  background-color: #477264 !important;
+}
