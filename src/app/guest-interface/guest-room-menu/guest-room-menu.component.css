@@ -1,19 +1,7 @@
 body{
 	overflow-x:hidden;
-}
-.img-fluid{
-  border: 2px solid black;
-}
-.col:nth-of-type(1){
-  position: relative;
-}
-.col:nth-of-type(2){
-  position: relative;
-  right: 200px;
-}
-.col:nth-of-type(3){
-  position: relative;
-  left: 200px;
+  background-image: url(../../../assets/wp3598849.jpg);
+  background-size: cover;
 }
 article table, th, tr{
   border: 3px solid black;
