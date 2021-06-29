@@ -26,6 +26,9 @@ import { RoomReportMenuComponent } from './manager-interface/room-report-menu/ro
 import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginPagesComponent } from './login-pages/login-pages.component';
+import { LoginGuestComponent } from './login-pages/login-guest/login-guest.component';
+import { LoginManagerComponent } from './login-pages/login-manager/login-manager.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RoomReportComponent,
     RoomManagementComponent,
     RoomReportMenuComponent,
-    KitchenPageComponent
+    KitchenPageComponent,
+    LoginPagesComponent,
+    LoginGuestComponent,
+    LoginManagerComponent
   ],
   imports: [
     BrowserModule,
