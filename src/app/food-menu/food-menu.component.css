@@ -16,17 +16,18 @@ body{
   left:80px;
 }
 article{
-  border: 2px solid rgb(196, 196, 196);
-  background-color:rgb(196, 196, 196);
+  border: 2px solid rgb(235, 235, 235);
+  background-color:rgb(235, 235, 235);
   position: absolute;
   top: 200px;
   left: 30%;
   border-radius: 5px 5px 5px 5px;
 	box-sizing: content-box;
-	width: 600px;
+	width: 1000px;
 	height:1000px;
 }
 article header h5{
   text-align: center;
   color: blue;
+  font-size: 33px;
 }
