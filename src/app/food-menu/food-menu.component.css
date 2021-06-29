@@ -1,0 +1,18 @@
+body{
+	overflow-x:hidden;
+}
+article{
+  border: 2px solid rgb(196, 196, 196);
+  background-color:rgb(196, 196, 196);
+  position: absolute;
+  top: 200px;
+  left: 30%;
+  border-radius: 5px 5px 5px 5px;
+	box-sizing: content-box;
+	width: 600px;
+	height:1000px;
+}
+article header h5{
+  text-align: center;
+  color: blue;
+}
