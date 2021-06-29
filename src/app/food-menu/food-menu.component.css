@@ -27,7 +27,9 @@ article{
 	height:1000px;
 }
 article header h5{
+  position: relative;
+  top: 50px;
   text-align: center;
-  color: blue;
-  font-size: 33px;
+  color: black;
+  font-size: 45px;
 }
