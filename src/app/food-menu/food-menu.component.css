@@ -33,6 +33,20 @@ article header h5{
   color: black;
   font-size: 45px;
 }
+article header h3{
+  position: relative;
+  top: 100px;
+  left: 50px;
+  color: black;
+  font-size: 40px;
+}
+article header p{
+  position: relative;
+  top: 150px;
+  left: 50px;
+  color: black;
+  font-size: 20px;
+}
 .MultiCarousel {
   float: left;
   overflow: hidden;
@@ -73,5 +87,5 @@ article header h5{
 }
 .container{
   position: relative;
-  top: 150px;
+  top: 250px;
 }
