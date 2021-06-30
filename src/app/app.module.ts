@@ -29,6 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPagesComponent } from './login-pages/login-pages.component';
 import { LoginGuestComponent } from './login-pages/login-guest/login-guest.component';
 import { LoginManagerComponent } from './login-pages/login-manager/login-manager.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
+import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-roundabout.component';
 
 @NgModule({
   declarations: [
@@ -54,13 +59,18 @@ import { LoginManagerComponent } from './login-pages/login-manager/login-manager
     KitchenPageComponent,
     LoginPagesComponent,
     LoginGuestComponent,
-    LoginManagerComponent
+    LoginManagerComponent,
+    KitchenPageLoginComponent,
+    LoginRoundaboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
 
   ],
   providers: [],
