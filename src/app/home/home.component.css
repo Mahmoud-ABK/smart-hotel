@@ -1,0 +1,230 @@
+/* BODY */
+
+.section{
+    margin: 0;
+    height: 100vh;
+}
+
+.container-fluid {
+    overflow: hidden;
+}
+
+/* FIRST SECTION */
+
+.first-sec{
+    background-image: url("https://dxfuztz1ia4nb.cloudfront.net/mahekalbeachresort.com-3258118679/cms/cache/v2/5ecd9872a153c.jpg/1920x1080/fit/80/ec59e48a15f5b9b7323bf1cdab21acd9.jpg");
+    /* top: 0; */
+}
+
+/* NAVBAR */
+
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.navabrar{
+    background-color: #4d3e3e9a;
+}
+
+.nav-item{
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0 7px;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: rgba(255, 255, 255, 0.671)
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.dropdown-item{
+    color: #4a3232;
+    background-color: transparent;
+}
+
+/* SECOND SECTION */
+
+.second-sec{
+    padding: 50px 0px;
+    background-image: url(https://o.remove.bg/downloads/8cc19fd0-6034-4e1e-99b1-e304d41088dc/rectangles-removebg-preview.png);
+    background-size: 500px;
+}
+
+.services-card {
+    padding: 25px;
+    background-color: #532E1C !important;
+    color: rgb(243, 240, 230);
+    border: 2px solid #532E1C;
+}
+
+/* CARDS */
+#card-img {
+    height: auto;
+    width: 100%;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
+  div [class^="col-"]{
+    padding-left:5px;
+    padding-right:5px;
+  }
+
+  .card{
+    transition:0.5s;
+    cursor:pointer;
+    margin: 15px;
+    height: 550px;
+    width: auto;
+    background-color: #fff9f0;
+  }
+
+  .card-contain{
+    width: 400px;
+  }
+
+  .card-title{  
+    font-size:15px;
+    transition:1s;
+    cursor:pointer;
+    padding: 25px 25px 0px;
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  }
+
+  .card-text{
+    padding: 25px 25px 50px; 
+  }
+  
+  .card::before, .card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+  }
+
+  .card::before {
+    transform-origin: left top;
+  }
+
+  .card::after {
+    transform-origin: right bottom;
+  }
+
+  .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+    transform: scale3d(1, 1, 1);
+  }
+
+  /* THIRD SECTION */
+.third-sec{
+    padding: 50px 0px;
+}
+
+.offers-intro{
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+    padding: 15px 30px;
+    color: #8e8484;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+  /* PRICING CARDS */
+.card1{
+    background-color: #d1c5b58c;
+}
+
+.card2{
+    background-color: #c5a8808c;
+}
+
+.card3{
+    background-color: #c5a880c2;
+    height: 100%!important;
+    margin: 0;
+}
+
+/* FOURTH SECTION */
+
+.fourth-sec{
+    background-color: #E6E6E6;
+    padding: 50px;
+    height: fit-content;
+}
+
+.map-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.map-intro{
+    flex-grow: 1;
+    width: 30%;
+}
+
+.map{
+    flex-grow: 2;
+}
+
+.mapouter {
+    position: relative;
+    height: auto;
+    width: 475px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: fit-content;
+    width: 475px;
+  }
+
+/* MEDIA QUERRIES */
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+} 
+
+@media (max-width: 490px){
+    .offers-intro, .services-card {
+        width: 320px;
+    }
+}
+
+@media (max-width: 400px){
+    .offers-intro, .services-card {
+        width: 270px;
+    }
+}

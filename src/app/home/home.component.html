@@ -1,1 +1,231 @@
-<p>home works!</p>
+<div class="container-fluid p-0">
+
+  <!-- FIRST SECTION -->
+  <div class="first-sec section">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light navabrar">
+
+      <div class="logo">
+        <a class="nav-link navbar-brand" href="#">
+          <img src="./assets/smarthotellogo.svg" style="width: 80px; height: auto;">
+        </a>
+      </div>
+      <!-- TOGGLE ICON -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- NAV ITEMS -->
+      <div class="collapse navbar-collapse navboura" id="navbarSupportedContent" [class.collapse]="collapsed" id="navbarContent">
+        <ul class="navbar-nav ml-auto" style="margin: 0 auto;" justify-content-end>
+
+          <li ngbDropdown class="nav-item dropdown">
+            <a id="dropdownMenuButton navbarDropdown1" ngbDropdownToggle class="nav-link" href="#services" tabindex="0" ngbDropdownToggle  role="button">Services</a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+            </div>
+          </li>
+
+          <li ngbDropdown class="nav-item dropdown">
+            <a id="dropdownMenuButton navbarDropdown2" ngbDropdownToggle class="nav-link" href="#offers" tabindex="0" ngbDropdownToggle role="button">Offers</a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
+            </div>
+          </li>
+
+          <li class="nav-item" ngbDropdown placement="bottom-right">
+            <a href="#reviews" class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button">
+              Reviews
+            </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- SECONG SECTION -->
+  <div class="second-sec" id="services">
+
+    <!-- CARDS -->
+    <div class="container mt-2">
+
+      <div class="row card-container">
+
+        <div class="card card-contain col-md-3 col-sm-6 services-card">
+          <div class="card-block services-card">
+            <h1>Our services</h1>
+            <p>Nunc dui velit, mollis et nulla vel, venenatis fringilla ipsum. Integer malesuada nec lectus eu</p>
+          </div>
+        </div>
+
+        <div class="card-contain col-md-3 col-sm-6">
+          <div class="card card-block">
+            <img id="card-img" src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg"
+              alt="Photo of sunset">
+            <h5 class="card-title mt-3 mb-3">Sierra Web Development • Owner</h5>
+            <p class="card-text">Nunc dui velit, mollis et nulla vel, venenatis fringilla ipsum. Integer malesuada nec
+              lectus eu rhoncus. Nullam suscipit ligula vitae finibus dignissim. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae.</p>
+          </div>
+        </div>
+
+        <div class="card-contain col-md-3 col-sm-6">
+          <div class="card card-block">
+            <img id="card-img" src="https://static.pexels.com/photos/7357/startup-photos.jpg" alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">Nunc dui velit, mollis et nulla vel, venenatis fringilla ipsum. Integer malesuada nec
+              lectus eu rhoncus. Nullam suscipit ligula vitae finibus dignissim. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae.</p>
+          </div>
+        </div>
+
+        <div class="card-contain col-md-3 col-sm-6">
+          <div class="card card-block">
+            <img id="card-img" src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">ThisNunc dui velit, mollis et nulla vel, venenatis fringilla ipsum. Integer malesuada
+              nec lectus eu rhoncus. Nullam suscipit ligula vitae finibus dignissim. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae.</p>
+          </div>
+        </div>
+
+        <div class="card-contain col-md-3 col-sm-6">
+          <div class="card card-block">
+            <img id="card-img" src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg"
+              alt="Photo of sunset">
+            <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
+            <p class="card-text">Nunc dui velit, mollis et nulla vel, venenatis fringilla ipsum. Integer malesuada nec
+              lectus eu rhoncus. Nullam suscipit ligula vitae finibus dignissim. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- THIRD SECTION -->
+
+  <div class="third-sec" id="offers">
+    <!-- OFFERS INTRO -->
+    <div class=" offers-intro col-lg-4 col-md-12 mb-4">
+      <div class="card0 h-100">
+        <h1>Offers</h1>
+        <p>some text to describe the offers and bla bla until this ends do them bootcamp hate bootstrap I'm starving
+          goodbye</p>
+      </div>
+    </div>
+    <!-- PRICING CARDS -->
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card1 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Basic</h5>
+              <small class='text-muted'>Individual</small>
+              <br><br>
+              <span class="h2">$8</span>/month
+              <br><br>
+              <div class="d-grid my-3">
+                <button class="btn btn-outline-dark btn-block">Select</button>
+              </div>
+              <ul>
+                <li>Cras justo odio</li>
+                <li>Dapibus ac facilisis in</li>
+                <li>Vestibulum at eros</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card2 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Standard</h5>
+              <small class='text-muted'>Small Business</small>
+              <br><br>
+              <span class="h2">$20</span>/month
+              <br><br>
+              <div class="d-grid my-3">
+                <button class="btn btn-outline-dark btn-block">Select</button>
+              </div>
+              <ul>
+                <li>Cras justo odio</li>
+                <li>Dapibus ac facilisis in</li>
+                <li>Vestibulum at eros</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class=" card card3 h-100">
+            <div class="card-body">
+
+              <h5 class="card-title">Premium</h5>
+              <small class='text-muted'>Large Company</small>
+              <br><br>
+              <span class="h2">$40</span>/month
+              <br><br>
+              <div class="d-grid my-3">
+                <button class="btn btn-outline-dark btn-block">Select</button>
+              </div>
+              <ul>
+                <li>Cras justo odio</li>
+                <li>Dapibus ac facilisis in</li>
+                <li>Vestibulum at eros</li>
+
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOURTH SECTION -->
+  <div class="fourth-sec">
+    <div class="map-container">
+
+      <div class="map-intro">
+        <h1>Location?</h1>
+        <p>I don't somehow compliment stay fine away. So he come suitable not responsive, in fact who even has a clue so
+          don't even care lol.</p>
+      </div>
+      <div class="map d-flex justify-content-center">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe width="650" height="475" id="gmap_canvas"
+              src="https://maps.google.com/maps?q=mentornations&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

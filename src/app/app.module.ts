@@ -22,6 +22,7 @@ import { RoomReportComponent } from './room-settings/room-report/room-report.com
 import { RoomManagementComponent } from './manager-interface/room-management/room-management.component';
 import { RoomReportMenuComponent } from './manager-interface/room-report-menu/room-report-menu.component';
 import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
