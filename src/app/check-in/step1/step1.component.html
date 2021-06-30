@@ -1,1 +1,80 @@
-<p>step1 works!</p>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class=" col-md-4" style="text-align-last: center;"> <button class="btn btn-primary"
+                    id="button">home</button></div>
+            <div class="col-md-8 " >
+                <h1 class="checkintitle" >check in</h1>
+            </div>
+        </div>
+        <p style="text-align-last: center;">Fill up the forms with information needed to unlock your room/s.</p>
+        <ul id="progressbar">
+            <li class="active" id="account"><strong>Main info</strong></li>
+            <li  id="personal"><strong>Add room</strong></li>
+            <li id="payment"><strong>Payment</strong></li>
+        </ul>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <form class="checkin container">
+            <div class="form-row">
+                <div class="form-group col-lg-12">
+                    <label for="firstname" class="label">First Name</label>
+                    <input onkeyup="this.setAttribute('value', this.value);" value="" type="text" class="form-control"
+                        id="firstname">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="lastname" class="label">Last Name</label>
+                    <input type="text" class="form-control" id="lastname">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="birthdate" class="date-label">Birthdate</label>
+                    <input type="date" class="form-control" id="birthdate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="tel_num" class="label">Phone Number</label>
+                    <input type="number" class="form-control" id="telnumber">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="ID_num" class="label">ID Card/Passport number</label>
+                    <input type="number" class="form-control" id="IDnumber">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="email" class="label">Email Address</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="checkindate" class="date-label">Check-in Date</label>
+                    <input type="date" class="form-control" id="checkindate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="checkintime" class="date-label">Check-in Time</label>
+                    <input type="time" class="form-control" id="checkintime">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="checkoutdate" class="date-label">Check-out Date</label>
+                    <input type="date" class="form-control" id="checkoutdate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="checkouttime" class="date-label">Check-out Time</label>
+                    <input type="time" class="form-control" id="checkouttime">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="people_num" class="label">No. of People</label>
+                    <input type="number" class="form-control" id="Email">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="people_num" class="label">No. of Rooms</label>
+                    <input type="number" class="form-control" id="people_num">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="nights_num" class="label">No. of Nights</label>
+                    <input type="number" class="form-control" id="nights_num">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </div>
+            </div>
+        </form>
+    </div>
