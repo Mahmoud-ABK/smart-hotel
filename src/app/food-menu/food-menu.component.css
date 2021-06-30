@@ -4,10 +4,10 @@ body{
 .img-fluid{
   border: 2px solid black;
 }
-.col:nth-of-type(1){
+.colnav:nth-of-type(1){
   position: relative;
 }
-.col:nth-of-type(2){
+.colnav:nth-of-type(2){
   position: relative;
   right: 200px;
 }
