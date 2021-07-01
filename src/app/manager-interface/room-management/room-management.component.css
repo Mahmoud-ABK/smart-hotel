@@ -1,0 +1,26 @@
+.navboura{
+    background-color:#fff8e0;
+}
+.nav-item{
+    padding: 10px;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.row {
+    margin: 50px;
+}
+
+.container-data{
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+
+#zina {
+    text-decoration: underline;
+    font-weight: bold;
+
+}
