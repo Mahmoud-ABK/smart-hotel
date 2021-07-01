@@ -13,14 +13,37 @@
     margin: 50px;
 }
 
+.card {
+    max-width: 400px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+div.card-body{
+    padding: 0;
+}
+
+
+.titles {
+    background-color: #ff926b;
+    padding: 15px;
+    color: #fff;
+}
+
 .container-data{
    flex-wrap: wrap;
    align-items: center;
    justify-content: center;
+   padding: 15px;
+}
+
+.data-item {
+    padding: 5px;
 }
 
 #zina {
-    text-decoration: underline;
     font-weight: bold;
+}
 
+.btn-secondary{
+    background-color: #4D3E3E;
 }
