@@ -209,6 +209,89 @@ nav{
     width: 475px;
   }
 
+/* FIFTH SECTION */
+
+.fifth-sec{
+    background-color: rgb(255, 249, 233);;
+}
+
+.section-header{
+    text-align:center;
+    padding: 20px;
+}
+
+.testimonial-view{
+    max-width: 900px;
+    margin: 0 auto 20px;
+    border-radius: 3px;
+}
+
+.block {
+    background: #fff;
+    color: #333;
+    padding: 60px 15px;
+    margin: 50px;
+}
+
+.block .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.user{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.image{
+    position: relative;
+    margin: 0 15px 30px 15px;
+}
+
+.image img{
+    height: 170px;
+    width: auto;
+    border: 7px solid #ffdfb8;
+    border-radius: 170px;
+}
+
+.user-name{
+    font-weight: bold;
+    margin-bottom:10px ;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.user-name::after{
+    content: "";
+    height: 4px;
+    width: 50px;
+    bottom: 0;
+    left: calc(50% - 25px);
+    background: #FCA737;
+}
+
+.content {
+    text-align: center;
+    font-size: 18px;
+}
+
+.carousel-control-prev{
+    left: -50px;
+}
+
+.carousel-control-next{
+    right: -50px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    width: 40px;
+    height: 40px;
+}
+
 /* MEDIA QUERRIES */
 
 @media all and (min-width: 992px) {
