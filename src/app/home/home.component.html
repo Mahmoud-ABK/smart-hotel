@@ -11,15 +11,18 @@
         </a>
       </div>
       <!-- TOGGLE ICON -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarContent"
+        [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- NAV ITEMS -->
-      <div class="collapse navbar-collapse navboura" id="navbarSupportedContent" [class.collapse]="collapsed" id="navbarContent">
+      <div class="collapse navbar-collapse navboura" id="navbarSupportedContent" [class.collapse]="collapsed"
+        id="navbarContent">
         <ul class="navbar-nav ml-auto" style="margin: 0 auto;" justify-content-end>
 
           <li ngbDropdown class="nav-item dropdown">
-            <a id="dropdownMenuButton navbarDropdown1" ngbDropdownToggle class="nav-link" href="#services" tabindex="0" ngbDropdownToggle  role="button">Services</a>
+            <a id="dropdownMenuButton navbarDropdown1" ngbDropdownToggle class="nav-link" href="#services" tabindex="0"
+              ngbDropdownToggle role="button">Services</a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
               <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
               <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
@@ -27,26 +30,34 @@
             </div>
           </li>
 
-          <li ngbDropdown class="nav-item dropdown">
-            <a id="dropdownMenuButton navbarDropdown2" ngbDropdownToggle class="nav-link" href="#offers" tabindex="0" ngbDropdownToggle role="button">Offers</a>
-            <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
-              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
-              <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
-            </div>
+          <li class="nav-item" ngbDropdown>
+            <a id="navbarDropdown2" class="nav-link" href="#offers" role="button">
+              Offers
+            </a>
           </li>
 
-          <li class="nav-item" ngbDropdown placement="bottom-right">
-            <a href="#reviews" class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button">
+          <li class="nav-item" ngbDropdown>
+            <a href="#testimonials" class="nav-link" role="button">
               Reviews
             </a>
-            <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Action</a>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Another action</a>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Something else here</a>
-            </div>
           </li>
-          
+
+          <li class="nav-item" ngbDropdown style="padding:20px;">
+            <div class="seperator"></div>
+          </li>
+
+          <li class="nav-item" ngbDropdown style="background-color: #F8F8F8; margin: 2px;">
+            <a href="#" class="nav-link" role="button" style="color: #1E2B31">
+              LogIn
+            </a>
+          </li>
+
+          <li class="nav-item" ngbDropdown style="background-color: #F8F8F8; margin: 2px;">
+            <a href="#" class="nav-link" role="button" style="color: #1E2B31">
+              checkIn
+            </a>
+          </li>
+
         </ul>
       </div>
 
@@ -217,10 +228,9 @@
       <div class="map d-flex justify-content-center">
         <div class="mapouter">
           <div class="gmap_canvas">
-            <iframe width="650" height="475" id="gmap_canvas"
-              src="https://maps.google.com/maps?q=mentornations&t=&z=13&ie=UTF8&iwloc=&output=embed"
-              frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-            </iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d51081.3252002071!2d10.204864!3d36.852466!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3033efc96ad1e416!2sMentorNations!5e0!3m2!1sen!2sus!4v1625321977149!5m2!1sen!2sus"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
       </div>
@@ -229,115 +239,117 @@
   </div>
 
   <!-- FIFTH SECTION -->
-
-  <div class="fifth-sec">
-    <div class="container">
-      <h1 class="section-header">Testimonial</h1>
-      <div class="testimonial-view">
-        <div class="carousel slide" id="testimonialCarousel" data-ride="carousel">
-          <div class="carousel-inner">
-            <!-- TESTIMONIAL CLIENT -->
-            <div class="carousel-item">
-              <div class="block">
-
-                <div class="row">
-
-                  <div class="col-md-5">
-                    <div class="user">
-                      <div class="image">
-                        <img src="./assets/testimonial.jpg">
-                      </div>
-                      <div class="info">
-                        <h2 class="user-name">Mark Jones</h2>
-                        <h4>Client</h4>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="col-md-6">
-                  <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo nunc, blandit a blandit blandit, vulputate quis felis. Sed sit amet porta magna, non bibendum justo. Proin mi magna, egestas in tristique non, rutrum non dui. Nunc in arcu consequat, varius tellus ut, porttitor erat. Aliquam luctus odio vel lobortis vehicula. In sagittis laoreet efficitur.</p>
-                  </div>
-                </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- TESTIMONIAL CLIENT -->
-            <div class="carousel-item active">
-              <div class="block">
-
-                <div class="row">
-
-                  <div class="col-md-5">
-                    <div class="user">
-                      <div class="image">
-                        <img src="./assets/testimonial.jpg">
-                      </div>
-                      <div class="info">
-                        <h2 class="user-name">client</h2>
-                        <h4>Client</h4>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="col-md-6">
-                  <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo nunc, blandit a blandit blandit, vulputate quis felis. Sed sit amet porta magna, non bibendum justo. Proin mi magna, egestas in tristique non, rutrum non dui. Nunc in arcu consequat, varius tellus ut, porttitor erat. Aliquam luctus odio vel lobortis vehicula. In sagittis laoreet efficitur.</p>
-                  </div>
-                </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- TESTIMONIAL CLIENT -->
-            <div class="carousel-item active">
-              <div class="block">
-
-                <div class="row">
-
-                  <div class="col-md-5">
-                    <div class="user">
-                      <div class="image">
-                        <img src="./assets/testimonial.jpg">
-                      </div>
-                      <div class="info">
-                        <h2 class="user-name">foulen</h2>
-                        <h4>Client</h4>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="col-md-6">
-                  <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo nunc, blandit a blandit blandit, vulputate quis felis. Sed sit amet porta magna, non bibendum justo. Proin mi magna, egestas in tristique non, rutrum non dui. Nunc in arcu consequat, varius tellus ut, porttitor erat. Aliquam luctus odio vel lobortis vehicula. In sagittis laoreet efficitur.</p>
-                  </div>
-                </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-        
-
-        <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only"></span>
-        </a>
-      </div>
-      </div>
+  <section>
+    <div class="testimonial-heading d-flex justify-content-center flex-column">
+      <h2>Testimonials</h2>
+      <h1>Get To Know Us</h1>
     </div>
-  </div>
+
+    <div class="fifth-sec d-flex justify-content-center align-items-center" id="testimonials">
+
+      <swiper [pagination]="{
+      dynamicBullets: true
+    }" class="mySwiper">
+        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
+          <div class="w-50">
+            <div class="card-body">
+              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial.jpg">
+              <h5 class="card-title testimonial-name">Mike Jones</h5>
+              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+                Cras
+                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+                tristique
+                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
+          <div class="w-50">
+            <div class="card-body">
+              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial2.jpg">
+              <h5 class="card-title testimonial-name">Addison Blue</h5>
+              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+                Cras
+                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+                tristique
+                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
+          <div class="w-50">
+            <div class="card-body">
+              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial3.png">
+              <h5 class="card-title testimonial-name">Candice Frey</h5>
+              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+                Cras
+                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+                tristique
+                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
+          <div class="w-50">
+            <div class="card-body">
+              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial4.png">
+              <h5 class="card-title testimonial-name">Card title</h5>
+              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+                Cras
+                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+                tristique
+                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+            </div>
+          </div>
+        </ng-template>
+
+      </swiper>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <div class="foot container-fluid pb-0 mb-0 justify-content-center text-light ">
+    <footer>
+        <div class="row my-5 justify-content-center py-5">
+            <div class="col-11">
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Pepper.</h3>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                        <ul class="list-unstyled">
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
+                        <p class="mb-1" style="text-transform: uppercase;">22 Rue de l'artisanat</p>
+                        <p>ARIANA 2025, TUNISIA</p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Pepper All Rights Reserved.</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> anirudh@gmail.com</small>
+                    </div>
+                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
 
 </div>
