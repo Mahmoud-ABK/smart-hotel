@@ -8,7 +8,7 @@
         </div>
         <p style="text-align-last: center;">Fill up the forms with information needed to unlock your room/s.</p>
         <ul id="progressbar">
-            <li class="active" id="account"><strong>Main info</strong></li>
+            <li class="active" id="account" ><strong>Main info</strong></li>
             <li  id="personal"><strong>Add room</strong></li>
             <li id="payment"><strong>Payment</strong></li>
         </ul>
@@ -18,59 +18,73 @@
         </div>
         <form class="checkin container">
             <div class="form-row">
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+
+                    <input  type="text" class="form-control"id="firstname" placeholder="First Name">
                     <label for="firstname" class="label">First Name</label>
-                    <input onkeyup="this.setAttribute('value', this.value);" value="" type="text" class="form-control"
-                        id="firstname">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20 ">
+                   
+                    <input type="text" class="form-control" id="lastname" placeholder="Last Name" >
                     <label for="lastname" class="label">Last Name</label>
-                    <input type="text" class="form-control" id="lastname">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="birthdate" class="date-label">Birthdate</label>
-                    <input type="date" class="form-control" id="birthdate">
+                   <label for="birthdate" class="date-label">Birthdate</label>
+                    <input type="date" class="form-control" id="birthdate" >
+                    
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                    <input type="number" class="form-control" id="telnumber" placeholder="Phone Number">
                     <label for="tel_num" class="label">Phone Number</label>
-                    <input type="number" class="form-control" id="telnumber">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                    <input type="number" class="form-control" id="ID_num" placeholder="1">
                     <label for="ID_num" class="label">ID Card/Passport number</label>
-                    <input type="number" class="form-control" id="IDnumber">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                   
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
                     <label for="email" class="label">Email Address</label>
-                    <input type="email" class="form-control" id="email">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 ">
                     <label for="checkindate" class="date-label">Check-in Date</label>
-                    <input type="date" class="form-control" id="checkindate">
+                    <input type="date" class="form-control" id="checkindate" placeholder="">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 ">
                     <label for="checkintime" class="date-label">Check-in Time</label>
-                    <input type="time" class="form-control" id="checkintime">
+                    <input type="time" class="form-control" id="checkintime" placeholder="">
                 </div>
                 <div class="form-group col-lg-12">
                     <label for="checkoutdate" class="date-label">Check-out Date</label>
-                    <input type="date" class="form-control" id="checkoutdate">
+                    <input type="date" class="form-control" id="checkoutdate" placeholder="">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 ">
                     <label for="checkouttime" class="date-label">Check-out Time</label>
-                    <input type="time" class="form-control" id="checkouttime">
+                    <input type="time" class="form-control" id="checkouttime" placeholder="">
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                   
+                    <input type="number" class="form-control" id="people_num" placeholder="1">
                     <label for="people_num" class="label">No. of People</label>
-                    <input type="number" class="form-control" id="Email">
                 </div>
-                <div class="form-group col-lg-12">
-                    <label for="people_num" class="label">No. of Rooms</label>
-                    <input type="number" class="form-control" id="people_num">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                   
+                    <input type="number" class="form-control" id="room_num" placeholder="1">
+                    <label for="room_num" class="label">No. of Rooms</label>
                 </div>
-                <div class="form-group col-lg-12">
+                <div class="form-group col-lg-12 form-floating mb-20">
+                 
+                    <input type="number" class="form-control" id="nights_num" placeholder="1">
                     <label for="nights_num" class="label">No. of Nights</label>
-                    <input type="number" class="form-control" id="nights_num">
                 </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div class="form-floating mb-20">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" mb-20>
+                    <label for="floatingPassword">Password</label>
+                  </div>
                 <div>
                     <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-center"><button type="submit" class="btn btn-primary">Next</button></div>
                 </div>
