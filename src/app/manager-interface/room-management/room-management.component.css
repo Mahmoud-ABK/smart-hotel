@@ -1,9 +1,28 @@
+.big-container{
+    background-color: #FCF6EE
+}
+
 .navboura{
-    background-color:#fff8e0;
+    background-color:#1E2B31;
 }
 
 .nav-item{
     padding: 10px;
+}
+
+.btn{
+    margin: 2px;
+    border-radius: 0%;
+    color: #1E2B31;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #F8F8F8;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .navbar{
@@ -25,9 +44,9 @@ div.card-body{
 
 
 .titles {
-    background-color: #ff926b;
-    padding: 15px;
-    color: #fff;
+    background-color: #E3B04B;
+    padding: 20px;
+    color: #f8f8f8;
 }
 
 .container-data{
@@ -35,6 +54,7 @@ div.card-body{
    align-items: center;
    justify-content: center;
    padding: 15px;
+   color: #1E2B31;
 }
 
 .data-item {
@@ -43,8 +63,4 @@ div.card-body{
 
 #zina {
     font-weight: bold;
-}
-
-.btn-secondary{
-    background-color: #4D3E3E;
 }
