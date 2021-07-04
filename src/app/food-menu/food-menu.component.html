@@ -1,5 +1,4 @@
-
-<nav class="navbar navbar-expand-sm sticky-top navbar-light  " style="background-color: #1E2B31;">
+<nav class="navbar navbar-expand-sm sticky-top navbar-light w-100 " style="background-color: #1E2B31;">
   <div class="container">
     <div class="row">
       <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
@@ -16,6 +15,10 @@
         </li>
         <li class="nav-item">
           <a class="btn-light nav-link" href="#" style="color: #1E2B31 !important;">Log out</a>
+        </li>
+        <li class="nav-item ps-4">
+          <a class="btn-light nav-link" href="#your-list" style="font-family:Open sans;color: #E3B04B !important;">Your
+            list</a>
         </li>
 
       </ul>
@@ -42,7 +45,9 @@
           <img class="card-img-top" src="./../../assets/food/breakfast/{{break.pic}}.jpg" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center ">
             <h1 class="card-title">{{break.name}}</h1>
-            <a href="#" class="btn btn-primary w-100">add to list</a>
+            <input type="checkbox" class="btn-check" id="{{break.name}}" autocomplete="off" (click)="onChecked(break)">
+            <label class="btn btn-primary w-100" for="{{break.name}}" >{{break.label}}</label>
+
           </div>
         </div>
       </div>
@@ -67,7 +72,9 @@
           <img class="card-img-top" src="./../../assets/food/drinks/{{drink.pic}}.jpg" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center ">
             <h1 class="card-title">{{drink.name}}</h1>
-            <a href="#" class="btn btn-primary w-100">add to list</a>
+            <input type="checkbox" class="btn-check" id="{{drink.name}}" autocomplete="off" (click)="onChecked(drink)">
+            <label class="btn btn-primary w-100" for="{{drink.name}}" >{{drink.label}}</label>
+
           </div>
         </div>
       </div>
@@ -89,7 +96,9 @@
           <img class="card-img-top" src="./../../assets/food/lunch/{{lun.pic}}.jpg" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center ">
             <h1 class="card-title">{{lun.name}}</h1>
-            <a href="#" class="btn btn-primary w-100">add to list</a>
+            <input type="checkbox" class="btn-check" id="{{lun.name}}" autocomplete="off" (click)="onChecked(lun)">
+            <label class="btn btn-primary w-100" for="{{lun.name}}" >{{lun.label}}</label>
+
           </div>
         </div>
       </div>
@@ -109,7 +118,9 @@
           <img class="card-img-top" src="./../../assets/food/dinner/{{di.pic}}.jpg" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center ">
             <h1 class="card-title">{{di.name}}</h1>
-            <a href="#" class="btn btn-primary w-100">add to list</a>
+            <input type="checkbox" class="btn-check" id="{{di.name}}" autocomplete="off" (click)="onChecked(di)">
+            <label class="btn btn-primary w-100" for="{{di.name}}" >{{di.label}}</label>
+
           </div>
         </div>
       </div>
@@ -129,7 +140,9 @@
           <img class="card-img-top" src="./../../assets/food/snacks/{{snack.pic}}.jpg" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center ">
             <h1 class="card-title">{{snack.name}}</h1>
-            <a href="#" class="btn btn-primary w-100">add to list</a>
+            <input type="checkbox" class="btn-check" id="{{snack.name}}" autocomplete="off" (click)="onChecked(snack)">
+            <label class="btn btn-primary w-100" for="{{snack.name}}" >{{snack.label}}</label>
+
           </div>
         </div>
       </div>
@@ -138,14 +151,17 @@
   </swiper>
   <hr>
 </div>
-<form action="">
+
 <div class="container-fluid pt-5 d-flex flex-column align-items-center" style="background-color: #E3B04B;">
 
-    <img class="w-75 pb-1 " src="../../assets/underlinespecialreversedgrey.svg">
-    <div class="row pb-5 pt-3">
-      <div class="col Welcome"> Your List</div>
+  <form class="pt-5 d-flex flex-column align-items-center" action="">
+    <div class="row  pt-3">
+      <div id="your-list" class="col Welcome"> Your List</div>
     </div>
-    <div class="row w-100">
+    <img class="w-75 pb-5 " src="../../assets/underlinespecialgrey.svg">
+
+    <div class="row w-100 pb-5" *ngIf="list.length==0; else notempty"><div class="col list">No items selected</div></div>
+    <ng-template #notempty ><div class="row w-100">
       <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8">
         <table class="table table-borderless">
           <thead>
@@ -157,18 +173,20 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td  scope="col">cupcake</td>
-              <td class="d-flex justify-content-center"><input type="number" class="form-control w-50" min="1" value=""></td>
-              <td><button type="button" mat-button class="list p-0">Remove</button></td>
+            <tr *ngFor="let listItem of list ; let i =index">
+              <th>{{i+1}}</th>
+              <td scope="col">{{listItem}}</td>
+              <td class="d-flex justify-content-center"><input type="number" class="form-control w-50" min="1" [defaultValue]="1" id="listItem">
+              </td>
+              <td><button type="button" mat-button class="w-100 list px-1 m-0 btn-light" (click)="removerFromList(listItem)">Remove</button></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="col-12 col-sm-12 col-md-10 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center"><button type="submit" mat-button class="list">Send List</button></div>
+      <div class="col-12 col-sm-12 col-md-10 col-lg-4 col-xl-4 d-flex justify-content-center align-items-center pt-3">
+        <button type="submit" mat-button class="list mb-5" style="background-color: #1E2B31; color: #f8f8f8!important;">Send
+          List</button></div>
     </div>
-
+  </ng-template>
+  </form>
 </div>
-</form>
-

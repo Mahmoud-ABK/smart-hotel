@@ -1,6 +1,7 @@
 :host{
   font-family: open sans;
 background-color: #f8f8f8 !important;
+height: auto !important;
 
 }
 
@@ -20,8 +21,5 @@ color: #e9e9e9;
 th, td , .list{
   text-align: center;
   font-family: montserrat;
-  font-size: x-large;
-}
-tr{
-
+  font-size: large;
 }
