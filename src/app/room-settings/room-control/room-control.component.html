@@ -1,7 +1,7 @@
 <form action="">
   <div class="container" style="margin-top:3% ; font-size: large;">
     <div class="row m-2">
-      <h4>room temperature <span ngbTooltip="optimal room temperatue is around 20°C and 25°C">&#9432;</span></h4>
+      <h4>Room temperature <span ngbTooltip="optimal room temperatue is around 20°C and 25°C">&#9432;</span></h4>
 
       <hr class="w-50">
 
@@ -10,21 +10,21 @@
       <div class="col-lg-5">you want to set the room temperature to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="tempswitch" checked />
+          <input class="form-check-input" type="checkbox" id="tempswitch" checked (change)="disable.a=!disable.a"/>
         </div>
       </div>
     </div>
     <div class="row m-3">
       <div class="col-lg-5">what temperature do you want? (in °C)</div>
-      <div class="col">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
         <div class="form-outline">
-          <input type="text" id="tempvalue" class="form-control form-control-sm w-25" />
+          <input type="number" id="tempvalue" class="form-control form-control-sm " [disabled]="disable.a"/>
         </div>
       </div>
     </div>
 
     <div class="row m-2">
-      <h4>room humidity <span
+      <h4>Room humidity <span
           ngbTooltip="According to the Environmental Protection Agency, the best indoor relative humidity falls between 30% and 50%">&#9432;</span>
       </h4>
       <hr class="w-50">
@@ -33,15 +33,15 @@
       <div class="col-lg-5">you want to set the room humidity to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input " type="checkbox" id="hswitch" checked />
+          <input class="form-check-input " type="checkbox" id="hswitch" checked (change)="disable.b=!disable.b" />
         </div>
       </div>
     </div>
     <div class="row m-3">
       <div class="col-lg-5">what humidity do you want? (in %)</div>
-      <div class="col">
-        <div class="form-outline">
-          <input type="text" id="hvalue" class="form-control form-control-sm w-25" />
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+        <div class="form-outline w-100 ">
+          <input type="number" id="hvalue" class="form-control form-control-sm " [disabled]="disable.b" />
         </div>
       </div>
     </div>
@@ -93,26 +93,21 @@
       <div class="col-lg-5">you want to set the water temperature to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="hswitch" checked />
+          <input class="form-check-input" type="checkbox" id="hswitch" checked (change)="disable.c=!disable.c"/>
         </div>
       </div>
     </div>
     <div class="row m-3">
       <div class="col-lg-5">what water temperature do you want? (in %)</div>
-      <div class="col">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
         <div class="form-outline">
-          <input type="text" id="watertempvalue" class="form-control form-control-sm w-25" />
+          <input type="number" id="watertempvalue" class="form-control form-control-sm " [disabled]="disable.c"/>
         </div>
       </div>
     </div>
     <div class="row d-flex flex-row justify-content-center">
-      <div class="col-4 d-flex flex-row justify-content-end"><button class="button btn btn-success" type="submit">Confirm modifications</button></div>
+      <div class="col-12 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end"><button mat-button class="button w-100 " type="submit" style="color: #f8f8f8; ;background-color: #bd9035;">Confirm modifications</button></div>
     </div>
   </div>
 
 </form>
-<!-- <div class="container d-flex flex-row justify-content-between pb-5 pt-5">
-
-  <div class="m0"><button class="btn btn-success">&laquo; Back</button></div>
-  <div><button class="btn btn-success">having a problem?</button></div>
-</div> -->

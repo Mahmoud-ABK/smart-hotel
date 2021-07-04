@@ -34,6 +34,7 @@ import {MatButton, MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
 import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-roundabout.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-r
     LoginRoundaboutComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -71,6 +73,7 @@ import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-r
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
+    FormsModule
 
   ],
   providers: [],

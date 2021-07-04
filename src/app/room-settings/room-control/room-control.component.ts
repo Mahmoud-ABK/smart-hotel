@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-control.component.css']
 })
 export class RoomControlComponent implements OnInit {
+ disable={
+   a:true,
+   b:true,
+   c:true,
+
+ }
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
