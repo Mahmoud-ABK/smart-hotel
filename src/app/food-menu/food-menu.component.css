@@ -1,5 +1,27 @@
+:host{
+  font-family: open sans;
+background-color: #f8f8f8 !important;
 
-carousel{
-  z-index: 0 !important;
- 
+}
+
+.Welcome{
+  text-align: center;
+ font-family: lc;
+font-style: italic;
+font-weight: bold;
+font-size: xx-large;
+color: #e9e9e9;
+}
+.titles{
+  font-family: alegreya ;
+  font-size: 2.5em;
+}
+
+th, td , .list{
+  text-align: center;
+  font-family: montserrat;
+  font-size: x-large;
+}
+tr{
+
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="212mm"
+   height="207mm"
+   viewBox="0 0 212 207"
+   version="1.1"
+   id="svg102385"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="SHminiplus.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview102387"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="173mm"
+     inkscape:zoom="0.72337262"
+     inkscape:cx="353.89783"
+     inkscape:cy="456.88763"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs102382">
+    <rect
+       x="160.35995"
+       y="385.69333"
+       width="33.177921"
+       height="60.826187"
+       id="rect4746" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(16.073547,0,0,17.239332,-2555.8067,-6674.7674)"
+       id="text4744"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6925px;line-height:1.25;font-family:'Lucida Bright';-inkscape-font-specification:'Lucida Bright, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect4746);fill:#ffaf00;fill-opacity:1;stroke:none"><tspan
+         x="160.35938"
+         y="395.47587"
+         id="tspan102778">S</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:118.001px;line-height:1.25;font-family:'Lucida Calligraphy';-inkscape-font-specification:'Lucida Calligraphy, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c8beb7;fill-opacity:1;stroke:none;stroke-width:2.95002"
+       x="59.184372"
+       y="157.62309"
+       id="text24258"
+       transform="scale(0.87282686,1.1457026)"><tspan
+         sodipodi:role="line"
+         id="tspan24256"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:118.001px;font-family:'Lucida Calligraphy';-inkscape-font-specification:'Lucida Calligraphy, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c8beb7;fill-opacity:1;stroke-width:2.95002"
+         x="59.184372"
+         y="157.62309">H</tspan></text>
+    <path
+       id="text4744-8-3-0"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6925px;line-height:1.25;font-family:'Lucida Bright';-inkscape-font-specification:'Lucida Bright, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect4746-0-5);fill:#e3dedb;fill-opacity:1;stroke:none;stroke-width:16.6462"
+       d="m 104.24495,83.044776 c -7.518401,0.83259 -13.793175,2.9785 -18.822629,6.43994 1.042501,1.12799 2.001457,2.2575 2.877861,3.38944 3.231226,-3.12171 6.94456,-4.68241 11.139372,-4.68241 0.670536,0 1.860976,0.17608 3.570846,0.52813 l -5.733505,37.891234 h -6.135026 l -3.419946,5.28082 h 8.75037 l -0.977201,6.41458 c 1.549895,-0.98295 3.031976,-2.05827 4.444689,-3.22823 3.270519,-2.73069 5.933889,-5.76633 7.994349,-9.10487 l 4.19561,-27.784866 c -1.34844,-5.096348 -3.9746,-10.144228 -7.88479,-15.143768 z" />
+    <path
+       style="fill:#e3dedb;fill-opacity:1"
+       id="path102593"
+       sodipodi:type="arc"
+       sodipodi:cx="106.23811"
+       sodipodi:cy="185.44212"
+       sodipodi:rx="105.17323"
+       sodipodi:ry="20.116995"
+       sodipodi:start="0"
+       sodipodi:end="3.1349429"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="M 211.41135,185.44212 A 105.17323,20.116995 0 0 1 106.5878,205.55901 105.17323,20.116995 0 0 1 1.0672057,185.57589" />
+  </g>
+</svg>

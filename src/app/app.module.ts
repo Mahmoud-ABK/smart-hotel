@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+
 
 
 
@@ -29,7 +29,9 @@ import { RoomManagementComponent } from './manager-interface/room-management/roo
 import { RoomReportMenuComponent } from './manager-interface/room-report-menu/room-report-menu.component';
 import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SwiperModule } from 'swiper/angular';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    IvyCarouselModule
+    NgbModule,
+    SwiperModule,
+    MatButtonModule,
 
 
   ],
