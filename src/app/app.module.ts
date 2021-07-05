@@ -35,6 +35,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
 import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-roundabout.component';
 import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSlideToggleModule
 
   ],
   providers: [],

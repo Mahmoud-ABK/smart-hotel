@@ -1,41 +1,36 @@
 <form class="w-100">
-  <div class="container py-4 w-100">
+  <div class="container py-2 w-100" style=" font-size: large;background-color: #FCF6EE; border-radius: 1em; border: 0.1em solid #E3B04B;">
     <div class="row pb-2 w-100">
       <div class="col-12 w-100">
-        <h5> How can we help you?</h5>
+        <h5> </h5>
       </div>
     </div>
     <div class="row pb-2 w-100">
-      <div class="col-12 w-100">
-        <div class="form-outline">
-          <input type="text" id="reporttitle" class="form-control form-control-sm w-100" />
-        </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="problemTitle" placeholder="probtitle">
+        <label for="floatingInput">How can we help you?</label>
       </div>
     </div>
 
     <div class="row pb-2">
       <div class="col-12">
-        <h5> Can you provide us with further details about the problem you're facing? </h5>
+        <h5> </h5>
       </div>
     </div>
     <div class="row pb-2  w-100 ">
       <div class="col-12  w-100">
-        <div class="form-outline w-100 form-group">
-          <textarea type="text" id="reportdetails" class="form-control form-control-sm w-100 " style="height: 7em;" ></textarea>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="probDesciption" id="problemDesciption"></textarea>
+          <label for="floatingTextarea">Can you provide us with further details about the problem you're facing? </label>
         </div>
       </div>
     </div>
 
-    <div class="row pb-2 ">
+    <div class="row py-3  ">
       <div class="col-12">
-        <h5> do you have an image or a screenshot? </h5>
-      </div>
-    </div>
-    <div class="row pb-2 ">
-      <div class="col-12">
-        <div class="form-outline">
-          <!-- <input type="file" id="reportpic" class="form-control form-control-sm  "  /> -->
-          <input type="file" class="form-control-file w-100 " id="reportpic">
+        <div>
+          <label for="formFileLg" class="form-label">Do you have an picture or a screenshot?</label>
+          <input class="form-control form-control-lg w-75" id="formFileLg" type="file">
         </div>
       </div>
     </div>
@@ -46,7 +41,7 @@
 
 
     <div class="row d-flex flex-row justify-content-center pt-3">
-      <div class="col-12 d-flex flex-row justify-content-end"><button class="button btn btn-success " type="submit">send
+      <div class="col-12 d-flex flex-row justify-content-end"><button class="button  " style="background-color: #E3B04B; color: #f8f8f8;" mat-button type="submit">send
           report</button></div>
     </div>
   </div>

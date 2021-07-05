@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-services.component.css']
 })
 export class RoomServicesComponent implements OnInit {
-
+disable:boolean=false
   constructor() { }
 
   ngOnInit(): void {
