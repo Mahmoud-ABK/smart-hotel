@@ -209,5 +209,5 @@ input[type=radio]:checked +.form-check-label{
 }
 .img-fluid{
 height: 50px;
-width: 50px;
+width: auto;
 }
