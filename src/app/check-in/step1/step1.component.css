@@ -1,6 +1,30 @@
 .main{
     background: #E3B04B;
     width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navboura{
+    background-color:#1E2B31;
+}
+
+.btn{
+    margin: 2px;
+    border-radius: 0%;
+    color: #1E2B31;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #F8F8F8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.nav-item{
+    padding: 10px 20px;
 }
 .checkin{
     position: relative;
@@ -9,6 +33,8 @@
     max-width: 80%;
     background-color: #ffffff;
     border: 1px solid #1E2B31;
+    margin-top: 80px;
+    border-radius: 10px;
 }
 .checkintitle{
     text-transform: uppercase;
@@ -17,7 +43,7 @@
     font-size: 3em;
     line-height: 48px;
     color: #1E2B31;
-    background: linear-gradient(to right, #1E2B31 0%, #E3B04B 100%);
+    background: linear-gradient(to right, #101619 0%, #30424B 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,63 +91,33 @@
 .form-control not-empty{
     transform: translateY(-24px);
 }*/
-.label{
-    position:absolute;
-    left:20px;
-    bottom:11px;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #1E2B31;
-    cursor: text;
-    transition: transform 0.2s ease-in-out;
-}
+
 .date-label {
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
-    color: #1E2B31;
+    color: #E3B04B;
     transition: transform 0.2s ease-in-out;
-    padding-left: 20px;
+    padding-left: 30px;
     
 }
 .btn-primary{
 display: inline-block;
-background-image: linear-gradient(125deg, #F1D6AB,#E3B04B);
+background-image:  linear-gradient(125deg , #30424B,#101619);
 color:#fff;
 text-transform: uppercase;
 letter-spacing: 2px;
 font-size: 16px;
 padding: 8px 16px;
-border: none;
 width: 200px;
 height: 60px;
 cursor: pointer;
 margin-left: 40px;
-margin-top: 10px;
+margin-top: 30px;
 border: 1px solid #1E2B31;
 }
-.btn-primary:hover{
-    height: 60px;
-    width: 250px;
-    transform: translateX(-24px);
-}
-#button{
-display: inline-block;
-background-image: linear-gradient(125deg, #a72879,#064497);
-color:#fff;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 16px;
-padding: 8px 16px;
-border: none;
-width: 200px;
-height: 60px;
-cursor: pointer;
-margin-left: 25px;
-margin-top: 30px;
-border: 2px solid #1E2B31;
-}
+
+
 #progressbar {
     margin-bottom: 10px;
     overflow: hidden;

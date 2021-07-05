@@ -1,11 +1,21 @@
-<div class="container">
+<div class="main container-fluid">
+    <div class="navboura container-fluid">
+        <nav class="navbar navbar-light ">
+            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+            <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
+            <div class="nav-item">
+                <button type="button" class="btn">Home</button>
+            </div>
+        </nav>
+    </div>
     <div class="row justify-content-md-center">
-        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-center"><button type="button" class="btn btn-primary">Home</button></div>
         <div class="col-md-8 ">
-            <h1 class="checkintitle">check in</h1>
+            <h1 class="checkintitle">add room</h1>
+        </div>
+        <div class="col-md-8 ">
+            <p style="text-align-last: center;">what are the charactrestics of the room/s?</p>
         </div>
     </div>
-    <p style="text-align-last: center;">what are the charactrestics of the rooms?</p>
     <ul id="progressbar">
         <li class="active" id="account"><strong>Main info</strong></li>
         <li class="active" id="personal"><strong>Add room</strong></li>
@@ -16,14 +26,14 @@
             aria-valuemax="100">
         </div>
     </div>
-    <div>
+    <div class="rooms-menu">
         <nav aria-label="Page navigation example">
             <ul class=" pagination justify-content-center pagination-sm pagination-lg">
                 <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#" style="color: blueviolet;">Room 1</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: blueviolet;">Room 2</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: blueviolet;">Room 3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li class="page-item active"><a class="page-link" href="#" >Room 1</a></li>
+                <li class="page-item"><a class="page-link" href="#">Room 2</a></li>
+                <li class="page-item"><a class="page-link" href="#" >Room 3</a></li>
+                <li class="page-item"><a class="page-link" href="#" style="font-weight: 700;">Next</a></li>
             </ul>
         </nav>
     </div>
@@ -35,7 +45,7 @@
             <div class=" ques container">
                 <div class="row">
                 <div class="form-check col">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                         <div class="display-box">
                             <div class="size">double</div>
@@ -44,7 +54,7 @@
                     </label>
                 </div>
                 <div class="form-check col ">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2">
                     <label class="form-check-label" for="flexRadioDefault2">
                         <div class="display-box">
                             <div class="size">single</div>
@@ -61,7 +71,7 @@
             <div class=" ques container" >
                 <div class="row">
                 <div class="form-check col">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="3">
                     <label class="form-check-label" for="3">
                         <div class="display-box">
                             <div class="size">1meal</div>
@@ -70,7 +80,7 @@
                     </label>
                 </div>
                 <div class="form-check col ">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="4">
                     <label class="form-check-label" for="4">
                         <div class="display-box">
                             <div class="size">2meals</div>
@@ -79,7 +89,7 @@
                     </label>
                 </div>
                 <div class="form-check col">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="5">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="5">
                     <label class="form-check-label" for="5">
                         <div class="display-box">
                             <div class="size">3meals</div>
@@ -91,6 +101,9 @@
             </div>
            
         </div>
-        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-center"><button type="submit" class="btn btn-primary">Next</button></div>
+       
+        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-2">Next</button>
+        </div>
     </form>
 </div>

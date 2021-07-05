@@ -1,9 +1,40 @@
+.main{
+    background: #E3B04B;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navboura{
+    background-color:#1E2B31;
+}
+
+.btn{
+    margin: 2px;
+    border-radius: 0%;
+    color: #1E2B31;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #F8F8F8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.nav-item{
+    padding: 10px 20px;
+}
 .checkin{
     position: relative;
-    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.6);
     padding: 20px;
-    max-width: 100%;
-    margin-bottom: 100px;
+    max-width: 80%;
+    background-color: #ffffff;
+    border: 1px solid #1E2B31;
+    
+    border-radius: 10px;
 }
 .checkintitle{
     text-transform: uppercase;
@@ -11,8 +42,8 @@
     letter-spacing: 3px;
     font-size: 3em;
     line-height: 48px;
-    color: #5543ca;
-    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    color: #1E2B31;
+    background: linear-gradient(to right, #101619 0%, #30424B 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -37,40 +68,25 @@
 
 
 .btn-primary{
-display: inline-block;
-background-image: linear-gradient(125deg, #a72879,#064497);
-color:#fff;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 16px;
-padding: 8px 16px;
-border: none;
-width: 200px;
-height: 60px;
-cursor: pointer;
-margin-left: 40px;
-margin-top: 10px;
-}
-.btn-primary:hover{
+    display: inline-block;
+    background-image:  linear-gradient(125deg , #30424B,#101619);
+    color:#fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    width: 200px;
     height: 60px;
-    width: 250px;
-    transform: translateX(-24px);
-}
-#button{
-display: inline-block;
-background-image: linear-gradient(125deg, #a72879,#064497);
-color:#fff;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 16px;
-padding: 8px 16px;
-border: none;
-width: 200px;
-height: 60px;
-cursor: pointer;
-margin-left: 25px;
-margin-top: 30px;
-}
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 30px;
+    border: 1px solid #1E2B31;
+    }
+    
+   
+    
+
+
 #progressbar {
     margin-bottom: 10px;
     overflow: hidden;
@@ -79,7 +95,7 @@ margin-top: 30px;
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #1E2B31 !important
 }
 
 #progressbar li {
@@ -139,17 +155,28 @@ margin-top: 30px;
     background-color: #e9ecef;
     border-radius: .25rem;
     margin: 0 auto 10px auto;
+    max-width: 75%;
 }
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #1E2B31 !important
 }
 
 
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #1E2B31
 }
+.page-link{
+    color: #101619;
+}
+.rooms-menu{
+    margin-top: 80px;
+}
+
+
+
+
 
 .fit-image {
     width: 100%;
@@ -160,11 +187,11 @@ margin-top: 30px;
     color:#fff;
 }*/
 .page-item.active .page-link{
-    background: linear-gradient(125deg, #a72879,#064497);
+    background: linear-gradient(125deg , #30424B,#101619);
     color: #fff !important
 }
 .paper-title{
-    color: #5543ca;
+    color: #E3B04B;
     margin-bottom: 20px;
     font-size: 18px;
     padding-bottom: 12px;
@@ -193,5 +220,5 @@ margin-top: 30px;
    color: rgba(0,0,0,0.5);
 }
 input[type=radio]:checked +.form-check-label{
-    border: 2px solid green;
+    border: 4px solid #46300C;
 }
