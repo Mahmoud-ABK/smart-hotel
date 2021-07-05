@@ -2,10 +2,13 @@
 
 .big-container{
     background-color: #FCF6EE;
+    padding: 0px !important;
+    height: 100%;
 }
 
 .navboura{
     background-color:#1E2B31;
+    margin: 0px !important;
 }
 
 .btn{
@@ -28,7 +31,7 @@
 }
 
 .row {
-    margin: 50px;
+    padding: 50px;
 }
 
 .card-container{
@@ -50,6 +53,7 @@ div.card-body{
     padding: 20px;
     color: #f8f8f8;
 }
+
 
 #reporter-data{
     font-weight:bold ;
