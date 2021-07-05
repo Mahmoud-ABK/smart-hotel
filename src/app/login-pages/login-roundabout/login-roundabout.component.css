@@ -1,5 +1,12 @@
+.card{
+  transition: transform .2s;
+}
 .card:hover{
-  cursor: pointer;;
+  cursor: pointer;
+  transform: scale(1.05);
   box-shadow: 4px 4px 4px gray;
 
+}
+.bg{
+  background-color: #FCF6EE;
 }
