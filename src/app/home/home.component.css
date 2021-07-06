@@ -140,7 +140,7 @@ li.nav-link{
     justify-content: center;
     align-items: center;
 }
-  
+
   div [class^="col-"]{
     padding-left:5px;
     padding-right:5px;
@@ -158,7 +158,7 @@ li.nav-link{
     width: 400px;
   }
 
-  .card-title{  
+  .card-title{
     font-size:15px;
     transition:1s;
     cursor:pointer;
@@ -171,9 +171,9 @@ li.nav-link{
   }
 
   .card-text{
-    padding: 25px 25px 50px; 
+    padding: 25px 25px 50px;
   }
-  
+
   .card::before, .card::after {
     position: absolute;
     top: 0;
@@ -284,7 +284,7 @@ li.nav-link{
   overflow: hidden;
   background: #262626;
   color: #627482 !important;
-  margin-top: 40px;
+  
   margin-bottom: 0;
   padding-bottom: 0
 }
@@ -321,7 +321,7 @@ h3 {
 	.navbar .nav-item .dropdown-menu{ display: none; }
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
-} 
+}
 
 @media (max-width: 490px){
     .offers-intro, .services-card {
