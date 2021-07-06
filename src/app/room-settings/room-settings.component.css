@@ -1,0 +1,30 @@
+:host{
+  height: 100%;
+font-family: montserrat;
+font-size: large;
+  padding-bottom: 20em;
+  background-color: #EAE2B6 !important;
+}
+.navbar {
+  background-color: #182125;
+}
+.room-ctrl
+{
+  height: 100%;
+  padding-bottom: 10em;
+  background-color: #F1D6AB !important;
+}
+.profile-name ,.profile-info{
+ color: #F8F8F8;
+}
+.a{
+  margin: 0% !important;
+}
+.active{
+  background-color: #1E2B31 !important;
+}
+.prev-next{
+  border-color: #1E2B31;
+  background-color: #1E2B31 !important;
+  color: #f8F8F8;
+}

@@ -1,1 +1,113 @@
-<p>room-control works!</p>
+<form action="" >
+  <div class="container py-4" style="margin-top:3% ; font-size: large;background-color: #FCF6EE; border-radius: 1em; border: 0.1em solid #E3B04B;">
+    <div class="row m-2">
+      <h4>Room temperature <span ngbTooltip="optimal room temperatue is around 20°C and 25°C">&#9432;</span></h4>
+
+      <hr class="w-50">
+
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">you want to set the room temperature to automatic?</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="tempswitch" checked (change)="disable.a=!disable.a"/>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">what temperature do you want? (in °C)</div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="form-outline">
+          <input type="number" id="tempvalue" class="form-control form-control-sm " [disabled]="disable.a"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-2">
+      <h4>Room humidity <span
+          ngbTooltip="According to the Environmental Protection Agency, the best indoor relative humidity falls between 30% and 50%">&#9432;</span>
+      </h4>
+      <hr class="w-50">
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">you want to set the room humidity to automatic?</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input " type="checkbox" id="hswitch" checked (change)="disable.b=!disable.b" />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">what humidity do you want? (in %)</div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+        <div class="form-outline w-100 ">
+          <input type="number" id="hvalue" class="form-control form-control-sm " [disabled]="disable.b" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-2">
+      <h4>Room lighting <span ngbTooltip="each room has the same lights">&#9432;</span></h4>
+      <hr class="w-50">
+    </div>
+    <div class="row m-3">
+      <div class="col-5 col-lg-5">Bedroom</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lightswitch1" />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-5 col-lg-5">Dining room</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lightswitch2" />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-5 col-lg-5">living room</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lightswitch3" />
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-5 col-lg-5">bathroom</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lightswitch4" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-2">
+      <h4>Water temperature<span
+          ngbTooltip="most dermatologists recommend keeping the temperature at an average of 37°C to 38.3°C or no more than 41°C.">&#9432;</span>
+      </h4>
+      <hr class="w-50">
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">you want to set the water temperature to automatic?</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="hswitch" checked (change)="disable.c=!disable.c"/>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3">
+      <div class="col-lg-5">what water temperature do you want? (in %)</div>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+        <div class="form-outline">
+          <input type="number" id="watertempvalue" class="form-control form-control-sm " [disabled]="disable.c"/>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex flex-row justify-content-end">
+      <div class="col-12 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end"><button mat-button class="button w-100 " type="submit" style="color: #f8f8f8; ;background-color: #bd9035;">Confirm modifications</button></div>
+    </div>
+  </div>
+
+</form>

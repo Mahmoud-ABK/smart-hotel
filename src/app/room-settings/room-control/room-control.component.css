@@ -1,0 +1,23 @@
+:host{
+  font-family: Open Sans;
+
+}
+.form-check-input{
+background-color: whitesmoke;
+}
+.form-check-input:checked{
+  background-color: #bd9035 !important;
+  border: #bd9035;
+}
+
+input:focus {
+  outline: none !important;
+  border:1px solid #bd9035;
+  box-shadow: 0em 0em 1em #bd9035;
+}
+h4{
+  font-family: monserrat;
+  font-size: larger;
+  font-weight: bold !important;
+  color: #1E2B31 !important;
+}

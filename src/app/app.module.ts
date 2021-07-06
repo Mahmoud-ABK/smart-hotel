@@ -33,13 +33,26 @@ import { RoomReportComponent } from './room-settings/room-report/room-report.com
 import { RoomManagementComponent } from './manager-interface/room-management/room-management.component';
 import { RoomReportMenuComponent } from './manager-interface/room-report-menu/room-report-menu.component';
 import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.component';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { LoginPagesComponent } from './login-pages/login-pages.component';
+import { LoginGuestComponent } from './login-pages/login-guest/login-guest.component';
+import { LoginManagerComponent } from './login-pages/login-manager/login-manager.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
+import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-roundabout.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+
 import { SwiperModule } from 'swiper/angular';
 
 
 
-import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -62,9 +75,15 @@ import { MatButtonModule } from '@angular/material/button';
     RoomReportComponent,
     RoomManagementComponent,
     RoomReportMenuComponent,
-    KitchenPageComponent
+    KitchenPageComponent,
+    LoginPagesComponent,
+    LoginGuestComponent,
+    LoginManagerComponent,
+    KitchenPageLoginComponent,
+    LoginRoundaboutComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,

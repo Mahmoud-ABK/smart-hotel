@@ -1,1 +1,51 @@
-<p>room-security works!</p>
+<div class="container h-100">
+  <div class="row">
+    <div class="col d-flex justify-content-center py-5" style="font-size: 2em;;">Door status
+    </div>
+    <hr>
+  </div>
+  <div class="row py-4 d-flex justify-content-center">
+    <div class="col-8 col-sm-6 col-md-3 col-lg-2  d-flex justify-content-center "
+      (click)="doorswitch(door); adderToHistory(doorstatus)">
+      <img *ngIf="door" src="./../../../assets/padlock.svg" alt="" class="w-100 h-100">
+      <img *ngIf="!door" src="./../../../assets/unlocked.svg" alt="" class="w-100 h-100">
+    </div>
+
+  </div>
+  <div class="row w-100 h-100 ">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-4 d-flex justify-content-center w-100 h-100">
+      <label style="margin-left: 1em; font-size: larger; font-family: montserrat;" for="doorswitch">
+        {{doorstatus}}</label>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col d-flex justify-content-center py-2" style="font-size: 1.5em;margin-top:1em;;">Status history</div>
+    <hr>
+  </div>
+  <div *ngIf="historyList.length===0; else NotEmpty" class="d-flex justify-content-center py-3"
+    style="font-family: montserrat;">No Items to show </div>
+  <ng-template #NotEmpty>
+    <div class="d-flex flex-column align-items-center " style="background-color: #FCF6EE; border-radius: 1em; border: 0.1em solid #E3B04B;">
+      <table class="table " >
+        <thead>
+          <tr>
+
+            <th scope="col">Action</th>
+            <th scope="col">Time</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hist of historyList">
+            <td>door {{hist.action}}</td>
+            <td>{{hist.time}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button mat-button (click)="historyList=[]">Clear Status history</button>
+    </div>
+  </ng-template>
+
+</div>
