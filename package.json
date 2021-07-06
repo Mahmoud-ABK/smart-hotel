@@ -22,12 +22,8 @@
     "@angular/platform-browser": "~11.2.5",
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
-
     "@fortawesome/fontawesome-free": "^5.15.3",
-
-
     "@ng-bootstrap/ng-bootstrap": "^9.0.0",
-
     "angular-responsive-carousel": "^2.1.1",
     "bootstrap": "^5.0.2",
     "flickity": "^2.2.2",

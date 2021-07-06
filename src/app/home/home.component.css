@@ -55,6 +55,39 @@
   }
 }
 
+.booking-tab{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: baseline;
+   align-content: center;
+
+  position: absolute;
+  bottom: 0;
+  background-color: #fcf6ee61;
+  color: #1E2B31;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.inputs-container{
+  display: flex;
+  justify-content: center;
+}
+
+.booking-tab-item, .input-item{
+  padding: 1em;
+}
+
+.booking-tab-title, .booking-tab-button{
+  color: #1E2B31;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: alegreya;
+}
+
 /* NAVBAR */
 
 nav{
@@ -333,4 +366,10 @@ h3 {
     .offers-intro, .services-card {
         width: 270px;
     }
+}
+
+@media (max-width: 1000px){
+  .booking-tab{
+    display: none;
+  }
 }
