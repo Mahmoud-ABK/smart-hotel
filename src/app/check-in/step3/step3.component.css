@@ -1,8 +1,9 @@
 .main{
     background: #E3B04B;
-    width: 100%;
+    padding-bottom: 50px;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 50px;
 }
 .navboura{
     background-color:#1E2B31;
@@ -48,6 +49,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-top: 30px;
+}
+.row{
+    margin-right: 0px;
 }
 .form-row .form-group{
     position: relative;

@@ -3,6 +3,7 @@
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 50px;
 }
 .navboura{
     background-color:#1E2B31;
@@ -50,6 +51,9 @@
    
     padding-top: 30px;
 }
+.row{
+    margin-right: 0px;
+}
 .form-row .form-group{
     position: relative;
     margin: 32px 0;
@@ -75,7 +79,7 @@
     letter-spacing: 2px;
     font-size: 16px;
     padding: 8px 16px;
-    width: 200px;
+    width: 150px;
     height: 60px;
     cursor: pointer;
     margin-left: 40px;
