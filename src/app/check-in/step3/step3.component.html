@@ -1,1 +1,111 @@
-<p>step3 works!</p>
+<div class=" main container-fluid">
+    <div class="navboura container-fluid">
+        <nav class="navbar navbar-light ">
+            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+            <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
+            <div class="nav-item">
+                <button type="button" class="btn">Home</button>
+            </div>
+        </nav>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8 ">
+            <h1 class="checkintitle">Payment</h1>
+        </div>
+        <div class="col-md-8 ">
+            <p style="text-align-last: center;">It's time to pay!</p>
+        </div>
+    </div>
+
+    
+    <ul id="progressbar">
+        <li class="active" id="account"><strong>Main info</strong></li>
+        <li class="active" id="personal"><strong>Add room</strong></li>
+        <li class="active" id="payment"><strong>Payment</strong></li>
+    </ul>
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0"
+            aria-valuemax="100">
+        </div>
+    </div>
+    
+    
+
+    <form class="checkin container">
+        <div class="form-row">
+
+            <div class="paper-title">Your bill:</div>
+                <table class="table table-hover col">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Type Price</th>
+                        <th scope="col">Meals Price</th>
+                        <th scope="col">---</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Room 1</th>
+                        <td>10</td>
+                        <td>7.5</td>
+                        <td>$$</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Room 2</th>
+                        <td>20</td>
+                        <td>7.5</td>
+                        <td>$$</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Room 3</th>
+                        <td>20</td>
+                        <td>4</td>
+                        <td>$$</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">your total is</th>
+                        <td colspan="2" colspan="3" style="text-align: center;">$$</td>
+                    </tbody>
+                  </table>
+            
+            <!--1st ques-->
+            <div class="paper-title">How do you want to pay?</div>
+
+            <div class=" ques container ">
+             <div class="row d-flex justify-content-center">
+                <div class="form-check col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        <div class="display-box">
+                            <div class="size"></div>
+                            <div ><img src="../../../assets/Mastercard.svg.png" class="img-fluid" alt="..."></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-check col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <div class="display-box">
+                            <div class="size"></div>
+                            <div ><img src="../../../assets/Visa.svg.png" class="img-fluid" alt="..."></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-check col-12 col-sm-12 col-md-10 col-lg-3 col-xl-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        <div class="display-box">
+                            <div class="size"></div>
+                            <div ><img src="../../../assets/PayPal.svg.png" class="img-fluid" alt="..."></div>
+                        </div>
+                    </label>
+                </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100"><button type="submit" class="btn btn-primary">Finished!</button></div>
+    </form>
+</div>
+

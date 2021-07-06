@@ -1,1 +1,98 @@
-<p>step1 works!</p>
+<div class=" main container-fluid ">
+    <div class="navboura container-fluid">
+        <nav class="navbar navbar-light ">
+            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+            <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
+            <div class="nav-item">
+                <button type="button" class="btn">Home</button>
+            </div>
+        </nav>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8 ">
+            <h1 class="checkintitle">main info</h1>
+        </div>
+        <div class="col-md-8 ">
+            <p style="text-align-last: center;">Fill up the forms with information needed to unlock your room/s.</p>
+        </div>
+    </div>
+
+    <ul id="progressbar">
+        <li class="active" id="account"><strong>Main info</strong></li>
+        <li id="personal"><strong>Add room</strong></li>
+        <li id="payment"><strong>Payment</strong></li>
+    </ul>
+    <div class="progress container">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0"
+            aria-valuemax="100"></div>
+    </div>
+    <form class="checkin container-fluid" >
+        <div class="form-row" >
+            <div class="form-group col-lg-12 form-floating mb-20">
+
+                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                <label for="firstname" class="label">First Name</label>
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20 ">
+
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                <label for="lastname" class="label">Last Name</label>
+            </div>
+            <div class="form-group col-lg-12">
+                <label for="birthdate" class="date-label">Birthdate</label>
+                <input type="date" class="form-control" id="birthdate">
+
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+                <input type="number" class="form-control" id="telnumber" placeholder="Phone Number">
+                <label for="tel_num" class="label">Phone Number</label>
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+                <input type="number" class="form-control" id="ID_num" placeholder="1">
+                <label for="ID_num" class="label">ID Card/Passport number</label>
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="email" class="label">Email Address</label>
+            </div>
+            <div class="form-group col-lg-12 ">
+                <label for="checkindate" class="date-label">Check-in Date</label>
+                <input type="date" class="form-control" id="checkindate" placeholder="">
+            </div>
+            <div class="form-group col-lg-12 ">
+                <label for="checkintime" class="date-label">Check-in Time</label>
+                <input type="time" class="form-control" id="checkintime" placeholder="">
+            </div>
+            <div class="form-group col-lg-12">
+                <label for="checkoutdate" class="date-label">Check-out Date</label>
+                <input type="date" class="form-control" id="checkoutdate" placeholder="">
+            </div>
+            <div class="form-group col-lg-12 ">
+                <label for="checkouttime" class="date-label">Check-out Time</label>
+                <input type="time" class="form-control" id="checkouttime" placeholder="">
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+
+                <input type="number" class="form-control" id="people_num" placeholder="1">
+                <label for="people_num" class="label">No. of People</label>
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+
+                <input type="number" class="form-control" id="room_num" placeholder="1">
+                <label for="room_num" class="label">No. of Rooms</label>
+            </div>
+            <div class="form-group col-lg-12 form-floating mb-20">
+
+                <input type="number" class="form-control" id="nights_num" placeholder="1">
+                <label for="nights_num" class="label">No. of Nights</label>
+            </div>
+            
+        
+                <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
+                    <button type="submit" class="btn btn-primary me-2">Next</button>
+                </div>
+            
+        </div>
+    </form>
+</div>
