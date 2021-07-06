@@ -58,7 +58,7 @@
             </a>
           </li>
 
-          <li class="nav-item left-nav-item" ngbDropdown >
+          <li class="nav-item left-nav-item" ngbDropdown>
             <a href="#" class="nav-link" role="button" style="color: #1E2B31">
               CheckIn
             </a>
@@ -68,6 +68,43 @@
       </div>
 
     </nav>
+
+    <div class="booking-tab">
+
+      <form class="d-flex flex-row">
+
+        <div class="booking-tab-item booking-tab-title align-middler">
+          <p class="align-middle">Reservations</p>
+        </div>
+
+        <div class="inputs-container booking-tab-item">
+
+        <div class="input-item form-group ">
+          <label for="checkindate" class="date-label">Check-in Date</label>
+          <input type="date" class="form-control" id="checkindate" placeholder="">
+        </div>
+
+        <div class="input-item form-group">
+          <label for="checkoutdate" class="date-label">Check-out Date</label>
+          <input type="date" class="form-control" id="checkoutdate" placeholder="">
+        </div>
+
+        <div class="input-item form-group">
+          <label for="people_num" class="label">No. of People</label>
+          <input type="number" class="form-control" id="people_num" placeholder="1">
+        </div>
+
+      </div>
+
+        <div class="booking-tab-item booking-tab-button d-flex align-item-center justify-content-center">
+          <a href="#" class="pt-2 d-flex align-item-center justify-content-center nav-link" role="button" style="color: #1E2B31">
+            Book Now!
+          </a>
+        </div>
+
+      </form>
+    </div>
+
   </div>
 
   <!-- SECONG SECTION -->
@@ -252,6 +289,7 @@
       <h1>Get To Know Us</h1>
     </div>
 
+
     <div class="row  d-flex justify-content-center flex-wrap w-100">
       <swiper style="z-index: -1 !important;"
       [spaceBetween]="30"
@@ -263,7 +301,7 @@
       [pagination]="{
         clickable: true
       }"
-  
+
     >
       <ng-template swiperSlide *ngFor="let person of persons ; let i=index" > <div
         class="col-11 col-xs-11 col-sm-10 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center w-100">
@@ -280,7 +318,7 @@
 
 
 
-    </div>
+
 
   </div>
 
