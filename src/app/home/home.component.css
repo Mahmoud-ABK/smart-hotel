@@ -68,7 +68,7 @@
   background-color: #fcf6ee61;
   color: #1E2B31;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 
 }
 
@@ -84,8 +84,30 @@
 .booking-tab-title, .booking-tab-button{
   color: #1E2B31;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
   font-family: alegreya;
+
+  vertical-align: center !important;
+
+}
+
+label{
+  pad: 3px;
+}
+
+input{
+  background-color: transparent;
+  border: none;
+  border-radius: 0%;
+  border-bottom: #182125 solid 2.5px;
+  transition: 0.2s;
+}
+
+input:hover, input:focus {
+  background-color: #f8f8f86c;
+  box-shadow: none;
+  border: none;
+  border-bottom: #262626 2.5px solid;
 }
 
 /* NAVBAR */
