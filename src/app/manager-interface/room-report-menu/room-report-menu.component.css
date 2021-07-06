@@ -1,0 +1,79 @@
+@import url("https://use.typekit.net/zdy7agl.css ");
+
+.big-container{
+    background-color: #FCF6EE;
+    padding: 0px !important;
+    height: 100%;
+}
+
+.navboura{
+    background-color:#1E2B31;
+    margin: 0px !important;
+}
+
+.btn{
+    margin: 2px;
+    border-radius: 0%;
+    color: #1E2B31;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #F8F8F8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.nav-item{
+    padding: 10px 20px;
+}
+
+.row {
+    padding: 50px;
+}
+
+.card-container{
+    margin: 25px;
+}
+
+.card {
+    margin: 0 auto;
+    max-width: 500px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+div.card-body{
+    padding: 0;
+}
+
+.titles {
+    background-color: #E3B04B;
+    padding: 20px;
+    color: #f8f8f8;
+}
+
+
+#reporter-data{
+    font-weight:bold ;
+}
+
+.container-data{
+    padding: 20px;
+}
+
+.report-container{
+    color: #1E2B31;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 400px){
+    .nav-item {
+        padding: 10px 5px;
+    }
+}

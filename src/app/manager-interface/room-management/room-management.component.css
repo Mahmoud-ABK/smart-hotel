@@ -1,0 +1,66 @@
+.big-container{
+    background-color: #FCF6EE
+}
+
+.navboura{
+    background-color:#1E2B31;
+}
+
+.nav-item{
+    padding: 10px;
+}
+
+.btn{
+    margin: 2px;
+    border-radius: 0%;
+    color: #1E2B31;
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: #F8F8F8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.navbar{
+    width: 100%;
+}
+
+.row {
+    padding: 50px;
+}
+
+.card {
+    max-width: 400px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+div.card-body{
+    padding: 0;
+}
+
+
+.titles {
+    background-color: #E3B04B;
+    padding: 20px;
+    color: #f8f8f8;
+}
+
+.container-data{
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   padding: 15px;
+   color: #1E2B31;
+}
+
+.data-item {
+    padding: 5px;
+}
+
+#zina {
+    font-weight: bold;
+}
