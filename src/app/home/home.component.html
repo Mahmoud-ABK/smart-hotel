@@ -20,7 +20,7 @@
         id="navbarContent">
         <ul class="navbar-nav ml-auto" style="margin: 0 auto;" justify-content-end>
 
-          <li ngbDropdown class="nav-item dropdown">
+          <!-- <li ngbDropdown class="nav-item dropdown">
             <a id="dropdownMenuButton navbarDropdown1" ngbDropdownToggle class="nav-link" href="#services" tabindex="0"
               ngbDropdownToggle role="button">Services</a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
@@ -28,6 +28,12 @@
               <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
               <a class="dropdown-item" href="#" (click)="$event.preventDefault()" ngbDropdownItem>Action</a>
             </div>
+          </li> -->
+
+          <li class="nav-item" ngbDropdown>
+            <a id="navbarDropdown2" class="nav-link" href="#services" role="button">
+              Services
+            </a>
           </li>
 
           <li class="nav-item" ngbDropdown>
@@ -46,15 +52,15 @@
             <div class="seperator"></div>
           </li>
 
-          <li class="nav-item" ngbDropdown style="background-color: #F8F8F8; margin: 2px;">
+          <li class="nav-item left-nav-item" ngbDropdown>
             <a href="#" class="nav-link" role="button" style="color: #1E2B31">
               LogIn
             </a>
           </li>
 
-          <li class="nav-item" ngbDropdown style="background-color: #F8F8F8; margin: 2px;">
+          <li class="nav-item left-nav-item" ngbDropdown >
             <a href="#" class="nav-link" role="button" style="color: #1E2B31">
-              checkIn
+              CheckIn
             </a>
           </li>
 
@@ -239,117 +245,143 @@
   </div>
 
   <!-- FIFTH SECTION -->
-  <section>
-    <div class="testimonial-heading d-flex justify-content-center flex-column">
+  <div class="container-fluid fifth-sec d-flex flex-column justify-content-center align-items-center" id="testimonials">
+
+    <div class="row testimonial-heading d-flex justify-content-center">
       <h2>Testimonials</h2>
       <h1>Get To Know Us</h1>
     </div>
 
-    <div class="fifth-sec d-flex justify-content-center align-items-center" id="testimonials">
+    <div class="row testimonial-container d-flex justify-content-center flex-wrap">
 
-      <swiper [pagination]="{
-      dynamicBullets: true
-    }" class="mySwiper">
-        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
-          <div class="w-50">
-            <div class="card-body">
-              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial.jpg">
-              <h5 class="card-title testimonial-name">Mike Jones</h5>
-              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
-                Cras
-                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
-                tristique
-                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
-            </div>
-          </div>
-        </ng-template>
+      <div
+        class="w-100 testimonial-item col-11 col-xs-11 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center w-50">
+        <div class="card-body">
+          <img class="mx-auto d-block" id="testimonial-pic" src="../../assets/testimonial.jpg">
+          <h5 class="card-title testimonial-name">Card title</h5>
+          <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+            Cras
+            sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+            tristique
+            tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+        </div>
+      </div>
 
-        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
-          <div class="w-50">
-            <div class="card-body">
-              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial2.jpg">
-              <h5 class="card-title testimonial-name">Addison Blue</h5>
-              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
-                Cras
-                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
-                tristique
-                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
-            </div>
-          </div>
-        </ng-template>
+      <div
+        class="w-100 testimonial-item col-11 col-xs-11 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center w-50">
+        <div class="card-body">
+          <img class="mx-auto d-block" id="testimonial-pic" src="../../assets/testimonial2.jpg">
+          <h5 class="card-title testimonial-name">Card title</h5>
+          <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+            Cras
+            sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+            tristique
+            tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+        </div>
+      </div>
 
-        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
-          <div class="w-50">
-            <div class="card-body">
-              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial3.png">
-              <h5 class="card-title testimonial-name">Candice Frey</h5>
-              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
-                Cras
-                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
-                tristique
-                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
-            </div>
-          </div>
-        </ng-template>
+      <div
+        class="w-100 testimonial-item col-11 col-xs-11 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center w-50">
+        <div class="card-body">
+          <img class="mx-auto d-block" id="testimonial-pic" src="../../assets/testimonial3.png">
+          <h5 class="card-title testimonial-name">Card title</h5>
+          <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+            Cras
+            sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+            tristique
+            tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+        </div>
+      </div>
 
-        <ng-template class="w-100 align-self-center d-flex justify-content-center" swiperSlide>
-          <div class="w-50">
-            <div class="card-body">
-              <img class="mx-auto d-block" id="testimonial-pic" src="./assets/testimonial4.png">
-              <h5 class="card-title testimonial-name">Card title</h5>
-              <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
-                Cras
-                sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
-                tristique
-                tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
-            </div>
-          </div>
-        </ng-template>
-
-      </swiper>
+      <div
+        class="w-100 testimonial-item col-11 col-xs-11 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex justify-content-center w-50">
+        <div class="card-body">
+          <img class="mx-auto d-block" id="testimonial-pic" src="../../assets/testimonial4.png">
+          <h5 class="card-title testimonial-name">Card title</h5>
+          <p class="card-text testimonial-speech">Nullam sit amet felis tristique, rhoncus sem vel, dictum ligula.
+            Cras
+            sit amet mollis velit, quis consequat lacus. Mauris eget blandit ex. Maecenas molestie ex lectus, a
+            tristique
+            tortor laoreet ut. Pellentesque nisl sapien, scelerisque at vestibulum ut, imperdiet ut tellus.</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+  </div>
 
   <!-- FOOTER -->
 
   <div class="foot container-fluid pb-0 mb-0 justify-content-center text-light ">
     <footer>
-        <div class="row my-5 justify-content-center py-5">
-            <div class="col-11">
-                <div class="row ">
-                    <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
-                        <h3 class="text-muted mb-md-0 mb-5 bold-text">Pepper.</h3>
-                    </div>
-                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                        <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
-                        <ul class="list-unstyled">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Blog</li>
-                            <li>Portfolio</li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-2 col-md-4 col-sm-4 col-12">
-                        <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>ADDRESS</b></h6>
-                        <p class="mb-1" style="text-transform: uppercase;">22 Rue de l'artisanat</p>
-                        <p>ARIANA 2025, TUNISIA</p>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
-                        <p class="social text-muted mb-0 pb-0 bold-text"> <span class="mx-2"><i class="fa fa-facebook" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-linkedin-square" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-twitter" aria-hidden="true"></i></span> <span class="mx-2"><i class="fa fa-instagram" aria-hidden="true"></i></span> </p><small class="rights"><span>&#174;</span> Pepper All Rights Reserved.</small>
-                    </div>
-                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
-                        <h6 class="mt-55 mt-2 text-muted bold-text"><b>ANIRUDH SINGLA</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> anirudh@gmail.com</small>
-                    </div>
-                    <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
-                        <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
-                    </div>
-                </div>
+      <div class="row my-5 justify-content-center py-5">
+        <div class="col-11">
+          <div class="row ">
+            <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+              <img style="height: 75px; width: auto; margin: 20px;" src="./assets/smarthotellogo.svg">
             </div>
+            <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+              <h6 class="footer-style mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+              <ul class="list-unstyled">
+                <li class="footer-style">Home</li>
+                <li class="footer-style">About</li>
+                <li class="footer-style">Blog</li>
+                <li class="footer-style">Portfolio</li>
+              </ul>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+              <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b class="footer-style">ADDRESS</b></h6>
+              <p class="footer-style mb-1" style="text-transform: uppercase;">22 Rue de l'artisanat</p>
+              <p class="footer-style">ARIANA 2025, TUNISIA</p>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+              <p class="social text-muted mb-0 pb-0 bold-text">
+                <span class="mx-2">
+                  <img class="sm" src="../../assets/facebook-logo.svg">
+                </span>
+                <span class="mx-2">
+                  <img class="sm" src="../../assets/linkedin.svg">
+                </span>
+                <span class="mx-2">
+                  <img class="sm" src="../../assets/twitter.svg">
+                </span>
+                <span class="mx-2">
+                  <img class="sm" src="../../assets/instagram.svg">
+                </span>
+              </p>
+              <small style="margin: 15px;" class="footer-style rights">
+                <span>&#174;</span>
+                SmartHotel All Rights Reserved.
+              </small>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+              <h6 class="footer-style mt-55 mt-2 text-muted bold-text">
+                <b>ANIRUDH SINGLA</b>
+              </h6>
+              <small class="footer-style">
+                <span>
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+                anirudh@gmail.com
+              </small>
+            </div>
+            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+              <h6 class="text-muted bold-text">
+                <b class="footer-style">RISHABH SHEKHAR</b>
+              </h6>
+              <small class="footer-style">
+                <span>
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+                rishab@gmail.com
+              </small>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
-</div>
+  </div>
 
 
 </div>

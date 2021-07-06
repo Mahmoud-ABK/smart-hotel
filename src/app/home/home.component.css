@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url("https://use.typekit.net/zdy7agl.css ");
 
 /* BODY */
+*{
+  font-family: alegreya;
+  font-weight: bold;
+}
 
 .section{
     margin: 0;
@@ -14,8 +19,40 @@
 /* FIRST SECTION */
 
 .first-sec{
-    background-image: url("https://dxfuztz1ia4nb.cloudfront.net/mahekalbeachresort.com-3258118679/cms/cache/v2/5ecd9872a153c.jpg/1920x1080/fit/80/ec59e48a15f5b9b7323bf1cdab21acd9.jpg");
+    background-image: url(../../assets/bg-1.jpg);
     /* top: 0; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 5s;
+
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animate{
+  0%{
+    background-image: url(../../assets/bg-2.jpg);
+  }
+  20%{
+    background-image: url(../../assets/bg-3.jpg);
+  }
+  40%{
+    background-image: url(../../assets/bg-4.jpg);
+  }
+  60%{
+    background-image: url(../../assets/bg-5.jpg);
+  }
+  80%{
+    background-image: url(../../assets/bg-6.jpg);
+  }
+  100%{
+    background-image: url(../../assets/bg-1.jpg);
+  }
 }
 
 /* NAVBAR */
@@ -51,16 +88,29 @@ nav{
     color: rgba(255, 255, 255, 0.671)
 }
 
+.navbar-light .navbar-toggler-icon{
+  background-image: url(../../assets/dropdown.svg);
+}
+
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
     color: rgba(255, 255, 255, 0.76);
 }
 
+li.nav-link{
+  font-family: lucida calligraphy !important;
+  text-transform: capitalize;
+}
 
+.left-nav-item{
+  margin: 3px;
+  background-color: #F8F8F8;
+  opacity: 0.7;
+  transition: 0.3s;
+  text-align: center;
+}
 
-.dropdown-item{
-    color: #4a3232;
-    background-color: transparent;
-    z-index: 2;
+.left-nav-item:hover{
+  opacity: 1;
 }
 
 /* SECOND SECTION */
@@ -220,14 +270,21 @@ nav{
   text-align: center;
 }
 
+.testimonial-item{
+  border: 2px #1E2B31 solid;
+  border-radius: 2%;
+  margin: 20px 0;
+/*   width: 90%; */
+}
+
 /* FOOTER */
 
 
 .foot {
   overflow: hidden;
-  margin-top: 250px;
   background: #262626;
   color: #627482 !important;
+  margin-top: 40px;
   margin-bottom: 0;
   padding-bottom: 0
 }
@@ -240,20 +297,22 @@ small {
   color: #989c9e !important
 }
 
-.mt-55 {
-  margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
-}
-
 h3 {
   font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
 }
 
-.social {
-  font-size: 21px !important
-}
-
 .rights {
   font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.footer-style:hover{
+  text-decoration: underline;
+}
+
+.sm{
+  height: 30px;
+  width: auto;
+  cursor: pointer;
 }
 
 /* MEDIA QUERRIES */
