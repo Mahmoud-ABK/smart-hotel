@@ -86,13 +86,12 @@
   font-weight: bold;
   font-size: 30px;
   font-family: alegreya;
-
   vertical-align: center !important;
-
+  transition: 0.3s;
 }
 
 label{
-  pad: 3px;
+  padding: 3px;
 }
 
 input{
@@ -100,7 +99,7 @@ input{
   border: none;
   border-radius: 0%;
   border-bottom: #182125 solid 2.5px;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 input:hover, input:focus {
@@ -108,6 +107,16 @@ input:hover, input:focus {
   box-shadow: none;
   border: none;
   border-bottom: #262626 2.5px solid;
+}
+
+.booking-tab-button:hover, .booking-tab-button:focus{
+  background-color:  #fcf6eea4;
+  /* -webkit-transition:  */
+}
+
+.submit-button, .reservation-button{
+  background-color: transparent;
+  border: none;
 }
 
 /* NAVBAR */
@@ -391,7 +400,7 @@ h3 {
 }
 
 
-@media (max-width: 1000px){
+@media (max-width: 1108px){
   .booking-tab{
     display: none;
   }

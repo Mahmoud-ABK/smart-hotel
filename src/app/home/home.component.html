@@ -71,35 +71,60 @@
 
     <div class="booking-tab">
 
-      <form class="d-flex flex-row">
+      <form 
+      class="d-flex flex-row"
+      (ngSubmit)="onSubmit(f)" #f="ngForm">
 
-        <div class="booking-tab-item booking-tab-title align-middler">
-          <p class="align-middle">Reservations</p>
+        <!-- <div class="booking-tab-item booking-tab-title align-middler">
+          <p class="align-middle">Reservation</p>
+        </div> -->
+
+        <div class="booking-tab-item booking-tab-title d-flex align-item-center justify-content-center">
+          <button role="button" class="reservation-button">Reservation</button>
         </div>
 
         <div class="inputs-container booking-tab-item">
 
         <div class="input-item form-group ">
           <label for="checkindate" class="date-label">Check-in Date</label>
-          <input type="date" class="form-control" id="checkindate" placeholder="">
+          <input 
+          type="date" 
+          class="form-control" 
+          id="checkindate" 
+          placeholder=""
+          ngModel
+          name="checkindate">
         </div>
 
         <div class="input-item form-group">
           <label for="checkoutdate" class="date-label">Check-out Date</label>
-          <input type="date" class="form-control" id="checkoutdate" placeholder="">
+          <input 
+          type="date" 
+          class="form-control" 
+          id="checkoutdate" 
+          placeholder=""
+          ngModel
+          name="checkoutdate">
         </div>
 
         <div class="input-item form-group">
-          <label for="people_num" class="label">No. of People</label>
-          <input type="number" class="form-control" id="people_num" placeholder="1">
+          <label for="people-num" class="label">No. of People</label>
+          <input 
+          type="number" 
+          class="form-control" 
+          id="people-num" 
+          placeholder="1"
+          ngModel
+          name="people-num">
         </div>
 
       </div>
 
         <div class="booking-tab-item booking-tab-button d-flex align-item-center justify-content-center">
-          <a href="#" class="pt-2 d-flex align-item-center justify-content-center nav-link" role="button" style="color: #1E2B31">
+          <!-- <a type="submit" href="#" class="pt-2 d-flex align-item-center justify-content-center nav-link" role="button" style="color: #1E2B31">
             Book Now!
-          </a>
+          </a> -->
+          <button type="submit" class="submit-button">Book Now</button>
         </div>
 
       </form>

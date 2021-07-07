@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
@@ -53,6 +54,11 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form);
+    
   }
 
 }
