@@ -1,17 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~swiper/swiper-bundle';
+@import "~swiper/swiper-bundle";
 
-@import '~swiper/swiper-bundle';
+@import "~swiper/swiper-bundle";
 @import url("https://use.typekit.net/zdy7agl.css");
 @import url("https://use.typekit.net/zdy7agl.css");
 @import url("https://use.typekit.net/zdy7agl.css");
 @font-face {
   font-family: lc;
-  src: url(./assets/fonts/LCALLIG.ttf) ;
+  src: url(./assets/fonts/LCALLIG.ttf);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-  height: auto !important;}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: auto !important;
+}
+mat-stepper{
+  background-color: #E3B04B !important;
+  display: flex ;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 
-
+.mat-horizontal-content-container{
+  padding: 0% !important;
+}
+.mat-stepper-bottom{
+  display: flex !important;
+  justify-content: flex-end !important
+  ;
+}
+.mat-step-header .mat-step-icon{
+  background-color: #F1D6AB;
+}
+.mat-step-header .mat-step-icon-selected {
+  background-color: #1E2B31;
+}
+/* mat-stepper>mat-step>div>button{
+ background-color: aqua !important;
+} */
+/*
+ .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+} */

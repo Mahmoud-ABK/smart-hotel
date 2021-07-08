@@ -1,3 +1,34 @@
-<!-- <app-step1></app-step1> -->
-<!-- <app-step2></app-step2> -->
-<!-- <app-step3></app-step3> -->
+<div class="navboura container-fluid">
+  <nav class="navbar navbar-light ">
+      <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+      <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
+      <div class="nav-item">
+          <button type="button" class="btn">Home</button>
+      </div>
+  </nav>
+</div>
+
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+         <!-- <app-step1></app-step1> -->
+         <app-step2></app-step2>
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <form [formGroup]="secondFormGroup">
+      <!-- <app-step2></app-step2> -->
+
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <app-step3></app-step3>
+
+  </mat-step>
+</mat-stepper>
+
+
+

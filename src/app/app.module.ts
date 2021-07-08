@@ -47,7 +47,7 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
-
+import {MatStepperModule} from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
 
 
@@ -91,7 +91,8 @@ import { SwiperModule } from 'swiper/angular';
     ReactiveFormsModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule
 
   ],
   providers: [],

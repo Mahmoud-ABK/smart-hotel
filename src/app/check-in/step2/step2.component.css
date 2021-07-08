@@ -34,7 +34,7 @@
     max-width: 80%;
     background-color: #ffffff;
     border: 1px solid #1E2B31;
-    
+
     border-radius: 10px;
 }
 .checkintitle{
@@ -48,9 +48,30 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-   
+
     padding-top: 30px;
 }
+.btn-primary1 {
+  background-image:  linear-gradient(125deg , #30424B,#101619);
+}
+.btn-primary2{
+  background-image:  linear-gradient(125deg , #E3B04B,goldenrod);
+}
+.btn-primary1 , .btn-primary2{
+border-radius: 0% !important;
+color:#fff;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 16px;
+padding: 8px 16px;
+width: 200px;
+height: 60px;
+cursor: pointer;
+margin-left: 40px;
+margin-top: 30px;
+border: 1px solid #1E2B31;
+}
+
 .row{
     margin-right: 0px;
 }
@@ -67,7 +88,7 @@
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
-    
+
 }
 
 
@@ -86,9 +107,9 @@
     margin-top: 30px;
     border: 1px solid #1E2B31;
     }
-    
-   
-    
+
+
+
 
 
 #progressbar {

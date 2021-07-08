@@ -1,0 +1,29 @@
+:host{
+  display: block;
+  background: #E3B04B !important;
+  width: 100%;
+  padding-left: 0px;
+  padding-bottom: 50px;
+  padding-right: 0px;
+  font-family: montserrat;
+}
+.navboura{
+  background-color:#1E2B31;
+}
+.btn{
+  margin: 2px;
+  border-radius: 0%;
+  color: #1E2B31;
+  background-color: #f8f8f8;
+  font-weight: normal;
+  font-size: 18px;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #F8F8F8;
+
+  font-size: 25px;
+}
+.mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+
