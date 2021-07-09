@@ -47,3 +47,18 @@ mat-stepper{
  .mat-horizontal-stepper-header {
   pointer-events: none !important;
 } */
+.mat-stepper-horizontal-line
+{
+  border-top-width:5px !important;
+}
+.mat-step-text-label
+{
+  font-size: medium !important;
+}
+.mat-step-icon-content, .mat-step-icon .mat-icon{
+  font-size: large;
+}
+.mat-horizontal-stepper-header .mat-step-icon{
+  width: 2em;
+  height: 2em;
+}

@@ -1,34 +1,47 @@
 <div class="navboura container-fluid">
   <nav class="navbar navbar-light ">
-      <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
-      <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
-      <div class="nav-item">
-          <button type="button" class="btn">Home</button>
-      </div>
+    <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+    <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
+
   </nav>
 </div>
 <div style="background-color: #E3B04B; padding-bottom: 20em;">
-<mat-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-         <app-step1></app-step1>
-         <!-- <app-step2></app-step2> -->
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
 
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-    <form [formGroup]="secondFormGroup">
-      <app-step2></app-step2>
+      <ng-template matStepLabel>Step1</ng-template>
+      <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8  ">
+            <app-step1></app-step1>
+            <!-- <app-step2></app-step2> -->
+          </div>
+        </div>
+      </div>
 
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <app-step3></app-step3>
 
-  </mat-step>
-</mat-stepper>
+
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Step2</ng-template>
+      <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
+            <app-step2></app-step2>
+          </div>
+        </div>
+      </div>
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Step3</ng-template>
+      <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
+            <app-step3></app-step3>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
 </div>
-
-

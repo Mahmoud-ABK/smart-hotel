@@ -1,3 +1,7 @@
+:host{
+  font-family: montserrat;
+  font-size: large;
+}
 .main{
     background: #E3B04B;
     width: 100%;
@@ -30,7 +34,7 @@
 .checkin{
     position: relative;
     box-shadow: 0 10px 30px 0 rgba(0,0,0,0.6);
-    padding: 20px;
+    padding: 15px;
     max-width: 80%;
     background-color: #ffffff;
     border: 1px solid #1E2B31;
@@ -75,16 +79,16 @@ border: 1px solid #1E2B31;
 .row{
     margin-right: 0px;
 }
-.form-row .form-group{
+.form-group{
     position: relative;
     margin: 32px 0;
 }
-.form-row .form-control{
+.form-control{
     display: block;
     width:100%;
     height: 36px;
     border-width:0 0 3px 0;
-    border-color:#5543ca;
+    border-color:#E3B04B;
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
@@ -246,4 +250,45 @@ border: 1px solid #1E2B31;
 }
 input[type=radio]:checked +.form-check-label{
     border: 4px solid #46300C;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+button:focus,
+button:checked {
+
+  border-color: goldenrod;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075)   ;
+  outline: 0 none;
+}
+.typetitle{
+  font-size: larger;
+  font-family: open Sans;
+  padding-bottom: 1em;
+
+}
+hr{
+  height: 3px;
+  background-color: goldenrod;
+}
+.confirm{
+  background-color: #F1D6AB;
+}
+.avroombtn{
+  background-color: #1E2B31;
+  color: #ffffff;
+  font-weight: normal;
 }

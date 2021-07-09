@@ -1,3 +1,7 @@
+:host{
+  font-family: montserrat;
+  font-size: medium;
+}
 .main{
     background: #E3B04B;
     width: 100%;
