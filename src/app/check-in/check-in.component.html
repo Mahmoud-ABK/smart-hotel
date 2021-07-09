@@ -7,19 +7,19 @@
       </div>
   </nav>
 </div>
-
+<div style="background-color: #E3B04B; padding-bottom: 20em;">
 <mat-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Fill out your name</ng-template>
-         <!-- <app-step1></app-step1> -->
-         <app-step2></app-step2>
+         <app-step1></app-step1>
+         <!-- <app-step2></app-step2> -->
 
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
     <form [formGroup]="secondFormGroup">
-      <!-- <app-step2></app-step2> -->
+      <app-step2></app-step2>
 
     </form>
   </mat-step>
@@ -29,6 +29,6 @@
 
   </mat-step>
 </mat-stepper>
-
+</div>
 
 
