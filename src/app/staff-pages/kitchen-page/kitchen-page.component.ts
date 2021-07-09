@@ -6,64 +6,71 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen-page.component.css']
 })
 export class KitchenPageComponent implements OnInit {
+  foodOrders: Array<object> = [
+    {
+      Roomid: 1,
+      guestName: "khalid ",
+      food: [
+        {
+          foodname: "Rasperries",
+          quantity: 3
+        },
+        {
+          foodname: "croissant",
+          quantity: 2
+        }
+      ]
+    },
+    {
+      Roomid: 2,
+      guestName: "3am khalid ",
+      food: [
+        {
+          foodname: "mtabga",
+          quantity: 2
+        },
+        {
+          foodname: "kosksi",
+          quantity: 1
+        },
+        {
+          foodname: "water",
+          quantity: 6
+        }
 
-  orders:Array<object>=[
-    {
-      roomID:1,
-      roomOwner:"khalid",
+      ]
     },
     {
-      roomID:2,
-      roomOwner:"bou khalid",
-    },
-    {
-      roomID:3,
-      roomOwner:"aamet khalid",
-    },
-  ]
+      Roomid: 3,
+      guestName: "5alat khalid ",
+      food: [
+        {
+          foodname: "rouz",
+          quantity: 2
+        },
+        {
+          foodname: "m7amsa",
+          quantity: 1
+        },
+        {
+          foodname: "Ma9arouna jerya",
+          quantity: 7
+        },
+        {
+          foodname: "3ejja belmergez",
+          quantity: 10
+        }
 
-  foodList:Array<object>=[
-    {
-      dishName: [
-        'coscous',
-        'lasagne',
-      ],
-      quantity: [
-        2,
-        3,
-        ],
+      ]
     },
-    {
-      dishName: [
-        'meal-1',
-        'meal-2',
-        'meal-3',
-      ],
-      quantity: [
-        2,
-        3,
-        1
-        ],
-    },
-    {
-      dishName: [
-        'ma9rouna',
-        'kaskrout',
-        'coscous',
-        'lasagne',
-      ],
-      quantity: [
-        1,
-        3,
-        5,
-        6
-        ],
-    },
+
   ]
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  OppaToArray(array:[]):[]{
+    return array
+  }
 }
