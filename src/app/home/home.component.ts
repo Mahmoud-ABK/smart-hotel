@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 
   onSubmit(form: NgForm){
     console.log(form);
-    
+
   }
 
 }

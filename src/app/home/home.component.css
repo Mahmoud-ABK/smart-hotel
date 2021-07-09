@@ -18,6 +18,7 @@
 
 /* FIRST SECTION */
 
+/* BACKGROUND IMAGES */
 .first-sec{
     background-image: url(../../assets/bg-1.jpg);
     /* top: 0; */
@@ -55,6 +56,8 @@
   }
 }
 
+/* MINI FORM */
+
 .booking-tab{
    width: 100%;
    display: flex;
@@ -87,11 +90,7 @@
   font-size: 30px;
   font-family: alegreya;
   vertical-align: center !important;
-  transition: 0.3s;
-}
-swiper .card:hover {
-   transform: scale(1) !important;
-  text-decoration: none;
+  transition: 1000ms;
 }
 
 label{
@@ -161,7 +160,7 @@ nav{
 }
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
-    color: rgba(255, 255, 255, 0.76);
+    color: #f8f8f8;
 }
 
 li.nav-link{
@@ -190,11 +189,11 @@ li.nav-link{
 }
 
 .services-card {
-    padding: 25px;
     background-color: #532E1C !important;
-    color: rgb(243, 240, 230);
-    border: 2px solid #532E1C;
+    color: #F8F8F8;
+    border-radius: 0%;
 }
+
 
 /* CARDS */
 #card-img {
@@ -291,11 +290,8 @@ li.nav-link{
 
 .card3{
     background-color: #c5a880c2;
-
-
-}
-.card1 , .card2 , .card3 {
-margin: 0 !important;
+    height: 100%!important;
+    margin: 0;
 }
 
 /* FOURTH SECTION */
@@ -319,17 +315,47 @@ margin: 0 !important;
     width: 30%;
 }
 
+.map-intro>h1{
+  font-family: alegreya;
+  color: #ffaf00;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.map-intro>h2{
+  font-family: alegreya;
+  font-size: 30px;
+}
+
 .map{
     flex-grow: 2;
 }
 
 /* FIFTH SECTION */
 
-.testimonial-heading{
+ .testimonial-heading{
   padding: 30px 0;
   text-align: center;
 }
 
+.testimonial-heading>h1,.testimonial-heading>h2{
+  font-family: alegreya;
+  font-weight: bold;
+}
+
+.testimonial-heading>h1{
+  font-size: 40px;
+}
+
+.testimonial-card{
+  background-color: #FCF6EE;
+  border: 2px #fdf3e6 solid;
+  border-radius: 2%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+/*
 #testimonial-pic{
   z-index: -1 !important;
   width: 150px;
@@ -345,8 +371,9 @@ margin: 0 !important;
   border: 2px #1E2B31 solid;
   border-radius: 2%;
   margin: 20px 0;
-/*   width: 90%; */
+   width: 90%;
 }
+*/
 
 /* FOOTER */
 
@@ -381,7 +408,7 @@ h3 {
 }
 
 .sm{
-  height: 30px;
+  height: 20px;
   width: auto;
   cursor: pointer;
 }
@@ -406,50 +433,16 @@ h3 {
     }
 }
 
-
 @media (max-width: 1108px){
   .booking-tab{
     display: none;
   }
 }
-/* FIFTH SECTION */
 
-.testimonial-heading{
-  padding: 30px 0;
-  text-align: center;
-}
+@media (max-width: 957px){
+  .map-intro{
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
-.testimonial-heading>h1,.testimonial-heading>h2{
-  font-family: alegreya;
-  font-weight: bold;
-}
-
-.testimonial-heading>h1{
-  font-size: 40px;
-}
-/*
-#testimonial-pic{
-  z-index: -1 !important;
-  width: 150px;
-  height: auto;
-  border-radius: 50%;
-}
-
-.testimonial-name, .testimonial-speech{
-  text-align: center;
-}
-
-.testimonial-item{
-  border: 2px #1E2B31 solid;
-  border-radius: 2%;
-  margin: 20px 0;
-   width: 90%;
-}
-*/
-
-.testimonial-card{
-  background-color: #FCF6EE;
-  border: 2px #fdf3e6 solid;
-  border-radius: 2%;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
