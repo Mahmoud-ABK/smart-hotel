@@ -109,7 +109,7 @@
       </ng-template>
     </div>
     <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-      <button type="button" mat-button matStepperNext class="btn2 btn-primary2" [disabled]="!confirmed">Next</button>
+      <button type="button" mat-button matStepperNext class="btn2 btn-primary2" [disabled]="!(confirmed && selectedRooms.length!=0)">Next</button>
     </div>
   </form>
 

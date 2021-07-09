@@ -66,7 +66,7 @@ export class Step2Component implements OnInit {
     this.checker()
 
   }
-
+ 
   checker() {
 
     let main = setInterval(() => {
