@@ -1,5 +1,15 @@
-.big-container{
-    background-color: #FCF6EE
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+    font-weight:700;
+    color: #1e2b31;
+}
+/* NAVBAR */
+
+.row{
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .navboura{
@@ -29,12 +39,14 @@
     width: 100%;
 }
 
+/* CARDS */
+
 .row {
     padding: 50px;
 }
 
 .card {
-    max-width: 400px;
+    width: 600px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
@@ -47,11 +59,11 @@ div.card-body{
     background-color: #E3B04B;
     padding: 20px;
     color: #f8f8f8;
+    text-align: center;
 }
 
 .container-data{
    flex-wrap: wrap;
-   align-items: center;
    justify-content: center;
    padding: 15px;
    color: #1E2B31;
@@ -63,4 +75,13 @@ div.card-body{
 
 #zina {
     font-weight: bold;
+}
+
+h5{
+    font-size: 20px;
+    font-weight: bold;
+}
+h6{
+    font-size: 16px;
+    font-weight: 500;
 }

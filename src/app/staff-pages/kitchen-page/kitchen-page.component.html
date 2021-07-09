@@ -1,1 +1,46 @@
-<p>kitchen-page works!</p>
+<div class="container-fluid big-container">
+
+    <div class="navboura w-100 container-fluid">
+        <nav class="navbar navbar-light ">
+            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+            <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
+            <div class="nav-item btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn">Log out</button>
+
+            </div>
+        </nav>
+    </div>
+    <div *ngFor="let order of orders ; let i=index"
+        class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <div class="titles">
+                    <h5 class="card-title">Room {{order.roomID}}</h5>
+                    <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{order.roomOwner}}</h6>
+                </div>
+
+                <div class="container-data justify-content-between">
+                    <div class="report-container">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Dish Name</th>
+                                    <th scope="col">quantity</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+<!--                                 <tr *ngFor="let food of foodList;i=index">
+                                    <td>{{food.dishName[0]}}</td>
+                                    <td>{{food.quantity[0]}}</td>
+                                </tr>
+ -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
