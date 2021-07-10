@@ -39,9 +39,10 @@
 
 /* CARDS */
 .card-container{
-  padding: 100px 0 100px 0;
+    padding: 50px 0;
     flex-direction: row;
     min-height: 100vh;
+    border: none;
 }
 
 .titles {

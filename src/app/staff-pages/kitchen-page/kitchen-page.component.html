@@ -2,7 +2,7 @@
 
   <div class="navboura w-100   p-0 m-0">
     <nav class="navbar navbar-light ">
-      <div><img src="./assets/smarthotellogo.svg" style="width: 110px; ;"></div>
+      <div><img src="./assets/smarthotellogo.svg" style=" margin-left: 20px; width: 110px; ;"></div>
       <span class="navbar-brand mb-0 h1 nav-item">Kitchen Page</span>
       <div class="nav-item btn-group" role="group" aria-label="Basic example">
         <button type="button" class="btn">Log out</button>
@@ -10,10 +10,16 @@
       </div>
     </nav>
   </div>
-  <div class="d-flex flex-wrap pt-2 ">
+  <div style="background-color: #fcf6ee; min-height: 100vh;" class="body-container">
+  <div class="empty d-flex justify-content-center" *ngIf="foodOrders.length==0">
+      <img style="filter: brightness(0.5);" src="../../../assets/empty.png">
+  </div>
+  <div class="d-flex justify-content-center flex-wrap pt-2 ">
     <div class=" card-container card
         col-12 col-xs-12 col-sm-10 col-md-6 col-lg-4 col-xl-4
-        d-flex  justify-content-center flex-wrap " *ngFor="let foodOrder of foodOrders; let i=index;">
+        d-flex  justify-content-center flex-wrap " 
+        *ngFor="let foodOrder of foodOrders; let i=index;"
+        style="background-color: #fcf6ee;;">
 
       <div class="card-body w-100">
         <div class="titles">
@@ -46,5 +52,5 @@
       </div>
     </div>
   </div>
-
+</div>
 </div>
