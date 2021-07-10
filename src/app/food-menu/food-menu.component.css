@@ -18,7 +18,7 @@ color: #e9e9e9;
   font-size: 2.5em;
 }
 
-th, td , .list{
+th, td , .list, .form-check{
   text-align: center;
   font-family: montserrat;
   font-size: large;
