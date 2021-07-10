@@ -2,7 +2,7 @@
 
 *{
   font-family: 'Inter', sans-serif;
- 
+
   color: #1e2b31;
 }
 
@@ -120,7 +120,7 @@ div.card-body{
 #zina{
   font-size: 1em;
   font-weight:700;
-  
+
 }
 .date{
   font-size:0.9em;
@@ -133,3 +133,4 @@ div.card-body{
       padding: 10px 5px;
   }
 }
+
