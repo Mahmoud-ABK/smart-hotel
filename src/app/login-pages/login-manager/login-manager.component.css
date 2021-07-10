@@ -29,3 +29,14 @@ h1{
     border:1px solid #bd9035;
     box-shadow: 0em 0em 1em #bd9035;
   }
+
+  button{
+    background-color:  #1E2B31;
+    color: whitesmoke;
+    transition: 0.2s;
+    border: 1px solid  #1E2B31;
+  }
+  button:hover{
+    background-color: transparent;
+    color:  #1E2B31;
+  }
