@@ -7,7 +7,7 @@
 
 
 .big-container{
-    background-color: #fcf6ee;
+    /* background-color: #fcf6ee; */
     padding: 0px !important;
     height: 100% !important;
 }
@@ -39,10 +39,10 @@
 
 /* CARDS */
 .card-container{
-    padding: 50px;
+  padding: 100px 0 100px 0;
     flex-direction: row;
     min-height: 100vh;
-} 
+}
 
 .titles {
     background-color: #e6991f;
@@ -75,7 +75,7 @@ h6{
 }
 
 .finish-button {
-    bottom:0; 
+    bottom:0;
     right:0;
     padding: 10px;
 }
