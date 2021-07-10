@@ -38,7 +38,7 @@
 .delete-button:hover {
     background-color: #1e2b31a8;
 }
-.card::before, .card::after {
+/* .card::before, .card::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -58,7 +58,7 @@
   }
   .card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
     transform: scale3d(1, 1, 1);
-  }
+  } */
 
 
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
@@ -82,6 +82,7 @@
 .card {
     margin: 0 auto;
     width: 500px;
+    max-height:250px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
