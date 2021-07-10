@@ -45,8 +45,9 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    console.log(form);
-
+    console.log(form.value.peopleNum);
+    console.log(form.value.checkindate);
+    console.log(form.value.checkoutdate);
   }
 
 }
