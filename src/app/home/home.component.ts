@@ -19,35 +19,23 @@ export class HomeComponent implements OnInit {
   collapsed:boolean=true;
   persons:Array<object>=[
     {
-      name:"name1",
-      text: `Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.`
+      name:"Jamel",
+      text: `Everything was fantastic from service to quality of room to the personal touches. Massive thanks to the staff.`
       , pic:"../../assets/testimonial1.jpg"
     } ,
     {
-      name:"name2",
-      text: `aaSome quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.`
+      name:"Manel",
+      text: `Thank you for a truly amazing stay! Your hospitality is quite outstanding. The advanced technology made my stay even enjoyable! `
       , pic:"../../assets/testimonial2.jpg"
     },
     {
-      name:"name3",
-      text: `bbSome quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.`
+      name:"Wassim",
+      text: `Beyond 5 stars! Stayed last week at this wonderful hotel. Everything exceeds one's wildest dream of a hotel. `
       , pic:"../../assets/testimonial3.png"
     },
     {
-      name:"name4",
-      text: `ccSome quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-      Some quick example text to build on the card title and make up the bulk of the card's content.`
+      name:"Karima",
+      text: `This is indeed a place you do not want to leave, and when you do it is with one hope – to come back.  `
       , pic:"../../assets/testimonial4.png"
     }
   ]

@@ -135,6 +135,7 @@ nav{
 .navbar-nav{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     font-weight: bold;
 }
 
@@ -217,8 +218,15 @@ li.nav-link{
     transition:0.5s;
     cursor:pointer;
     margin: 15px;
-    height: 550px;
+    height: 450px;
     width: auto;
+  }
+
+  .c{
+    height: auto !important;
+    width: 100% !important;
+    margin: 0;
+    text-align: center;
   }
 
   .card-contain{
@@ -226,7 +234,8 @@ li.nav-link{
   }
 
   .card-title{
-    font-size:15px;
+    text-transform: uppercase !important;
+    font-size: larger;
     transition:1s;
     cursor:pointer;
     padding: 25px 25px 0px;
@@ -325,7 +334,7 @@ li.nav-link{
 
 .map-intro>h2{
   font-family: alegreya;
-  font-size: 30px;
+  font-size: 27px;
 }
 
 .map{
