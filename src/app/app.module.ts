@@ -24,8 +24,6 @@ import { StaffPagesComponent } from './staff-pages/staff-pages.component';
 import { Step1Component } from './check-in/step1/step1.component';
 import { Step2Component } from './check-in/step2/step2.component';
 import { Step3Component } from './check-in/step3/step3.component';
-import { GuestRoomMenuComponent } from './guest-interface/guest-room-menu/guest-room-menu.component';
-import { RoomSettingsHomeComponent } from './guest-interface/room-settings-home/room-settings-home.component';
 import { RoomSecurityComponent } from './room-settings/room-security/room-security.component';
 import { RoomControlComponent } from './room-settings/room-control/room-control.component';
 import { RoomServicesComponent } from './room-settings/room-services/room-services.component';
@@ -68,8 +66,6 @@ import { ServantPageComponent } from './staff-pages/servant-page/servant-page.co
     Step1Component,
     Step2Component,
     Step3Component,
-    GuestRoomMenuComponent,
-    RoomSettingsHomeComponent,
     RoomSecurityComponent,
     RoomControlComponent,
     RoomServicesComponent,
