@@ -244,4 +244,9 @@ button:checked {
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075)   ;
   outline: 0 none;
 }
+button:disabled{
+  color: gray;
+  cursor:default;
+}
+
 

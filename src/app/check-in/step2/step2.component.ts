@@ -50,7 +50,7 @@ export class Step2Component implements OnInit {
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
-  selectedRooms: Array<{}> = []
+  selectedRooms:  Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [] ;
   confirmed: boolean = false
 
   ordinarytype: boolean = false
@@ -58,7 +58,7 @@ export class Step2Component implements OnInit {
   seaviewtype: boolean = false
   seaviewfloortype: boolean = false
 
-
+roomIDS:Array<number>=[]
   constructor() {
   }
 
@@ -66,7 +66,7 @@ export class Step2Component implements OnInit {
     this.checker()
 
   }
- 
+
   checker() {
 
     let main = setInterval(() => {
@@ -97,7 +97,7 @@ export class Step2Component implements OnInit {
         }
       })
       this.AvailableRoomList = inFunctionAVAILABLE
-      console.log(this.AvailableRoomList)
+
       this.AvailableRoomList.forEach(avRoom => {
         if (avRoom.price == 90) {
           this.ordinarytype = true
@@ -121,13 +121,13 @@ export class Step2Component implements OnInit {
 
   }
 
-  selector(room: object) {
+  selector(room:{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }) {
     this.selectedRooms.push(room)
     console.log(this.selectedRooms);
 
 
   }
-  deleter(room: object) {
+  deleter(room: { Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }) {
     this.selectedRooms.forEach((selected, index) => {
       if (selected === room) { this.selectedRooms.splice(index, 1); }
     });
@@ -139,6 +139,20 @@ export class Step2Component implements OnInit {
     this.floortype = false
     this.seaviewtype = false
     this.seaviewfloortype = false
+  }
+
+toArray(){
+  this.selectedRooms.forEach(element => {
+    this.roomIDS.push(element.Roomid)
+
+  });
+
+}
+  onSubmit(){
+    this.toArray()
+    console.log(this.roomIDS)
+    console.log(this.checkin)
+    console.log(this.checkout);
   }
 
 }

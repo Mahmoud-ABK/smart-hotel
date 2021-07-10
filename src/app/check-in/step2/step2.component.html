@@ -8,19 +8,19 @@
     </div>
   </div>
 
-  <form class="checkin container">
+  <form (ngSubmit)="onSubmit()" class="checkin container">
 
     <div class="form-group col-lg-12 ">
       <label for="checkindate" class="date-label">Check-in Date</label>
       <input type="date" class="form-control" [(ngModel)]="checkin" (change)="inialize()"
-        [ngModelOptions]="{standalone: true}" id="checkindate" min="{{chImin}}" #datein="ngModel">
+        [ngModelOptions]="{standalone: true}" id="checkindate" min="{{chImin}}" #datein="ngModel" ngMode>
 
     </div>
 
     <div class="form-group col-lg-12">
       <label for="checkoutdate" class="date-label">Check-out Date</label>
       <input type="date" class="form-control" [(ngModel)]="checkout" [ngModelOptions]="{standalone: true}"
-        id="checkoutdate" min="{{checkin}}" [value]="datein.value" #dateout="ngModel" (change)="inialize()">
+        id="checkoutdate" min="{{checkin}}" [value]="datein.value" #dateout="ngModel" (change)="inialize()" ngMode>
     </div>
 
 
@@ -30,122 +30,126 @@
 
     <!-- availabiity selection  -->
     <div *ngIf=" (checkin===checkout && (dateout.touched))" class="text-center ; "
-      style="font-size: medium; color: brown;">check in <<< check out!!</div>
-        <div *ngIf="checkin < checkout" class="container-fluid d-flex flex-column p-1">
-          <!--  -->
-          <div *ngIf="AvailableRoomList.length===0; else Notempty"> No rooms available </div>
-          <ng-template #Notempty>
-            <div class="container-fluid p-0 ">
-              <div class="text-center pt-5" style="font-size: larger;font-family: montserrat;">Available Rooms</div>
+      style="font-size: medium; color: brown;">
+      <div class="alert alert-primary">
+        check in <<< check out!! </div>
+      </div>
+
+      <div *ngIf="checkin < checkout" class="container-fluid d-flex flex-column p-1">
+        <!--  -->
+        <div *ngIf="AvailableRoomList.length===0; else Notempty"> No rooms available </div>
+        <ng-template #Notempty>
+          <div class="container-fluid p-0 ">
+            <div class="text-center pt-5" style="font-size: larger;font-family: montserrat;">Available Rooms</div>
+            <hr>
+            <div *ngIf="ordinarytype" class="pt-4 typetitle"> Ordinary Rooms of price 90$ </div>
+            <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
+
+              <div *ngIf="Aroom.price===90" class="container-fluid p-0">
+                <div class="row d-flex flex-column align-items-center">
+                  <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
+                    <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
+                      Room {{Aroom.Roomid}}
+                    </button>
+                    <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
+                      remove Room {{Aroom.Roomid}} from list
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <div *ngIf="floortype" class="pt-4 typetitle"> Ground floor Rooms of price 120$ </div>
+            <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
+
+              <div *ngIf="Aroom.price===120" class="container-fluid p-0">
+                <div class="row d-flex flex-column align-items-center">
+                  <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
+                    <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
+                      Room {{Aroom.Roomid}}
+                    </button>
+                    <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
+                      remove Room {{Aroom.Roomid}} from list
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div *ngIf="seaviewtype" class="pt-4 typetitle"> Sea view Rooms of price 150$ </div>
+            <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
+
+              <div *ngIf="Aroom.price===150" class="container-fluid p-0">
+                <div class="row d-flex flex-column align-items-center">
+                  <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
+                    <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
+                      Room {{Aroom.Roomid}}
+                    </button>
+                    <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
+                      remove Room {{Aroom.Roomid}} from list
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <div *ngIf="seaviewfloortype" class="pt-4 typetitle"> Ground floor Rooms with sea view of price 180$
+            </div>
+            <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
+
+              <div *ngIf="Aroom.price===180" class="container-fluid p-0">
+                <div class="row d-flex flex-column align-items-center">
+                  <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
+                    <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
+                      Room {{Aroom.Roomid}}
+                    </button>
+                    <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
+                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
+                      remove Room {{Aroom.Roomid}} from list
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- selectedRoomList (final ) -->
+            <div *ngIf="selectedRooms.length!=0" class="container-fluid p-0 d-flex flex-column align-items-center mt-5"
+              style="background-color: #f8f8f8; border-radius: 1em;">
+              <div class="text-center pt-5" style="font-size: larger;font-family: montserrat;">Selected Rooms</div>
               <hr>
-              <div *ngIf="ordinarytype" class="pt-4 typetitle"> Ordinary Rooms of price 90$ </div>
-              <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
-
-                <div *ngIf="Aroom.price===90" class="container-fluid p-0">
-                  <div class="row d-flex flex-column align-items-center">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                      <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
-                        Room {{Aroom.Roomid}}
-                      </button>
-                      <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
-                        remove Room {{Aroom.Roomid}} from list
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
+              <div *ngFor="let selected of selectedRooms" class="row d-flex justify-content-center py-2">
+                <div class="col text-center">Room {{selected.Roomid}} <button type="button" class="btn"
+                    data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(selected)">
+                    &#10008;
+                  </button></div>
               </div>
-              <div *ngIf="floortype" class="pt-4 typetitle"> Ground floor Rooms of price 120$ </div>
-              <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
-
-                <div *ngIf="Aroom.price===120" class="container-fluid p-0">
-                  <div class="row d-flex flex-column align-items-center">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                      <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
-                        Room {{Aroom.Roomid}}
-                      </button>
-                      <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
-                        remove Room {{Aroom.Roomid}} from list
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div *ngIf="seaviewtype" class="pt-4 typetitle"> Sea view Rooms of price 150$ </div>
-              <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
-
-                <div *ngIf="Aroom.price===150" class="container-fluid p-0">
-                  <div class="row d-flex flex-column align-items-center">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                      <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
-                        Room {{Aroom.Roomid}}
-                      </button>
-                      <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
-                        remove Room {{Aroom.Roomid}} from list
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-              <div *ngIf="seaviewfloortype" class="pt-4 typetitle"> Ground floor Rooms with sea view of price 180$
-              </div>
-              <div *ngFor="let Aroom of AvailableRoomList " class="py-1">
-
-                <div *ngIf="Aroom.price===180" class="container-fluid p-0">
-                  <div class="row d-flex flex-column align-items-center">
-                    <div class="col-12 col-sm-12 col-md-8 col-lg-5 col-xl-5">
-                      <button *ngIf="!(selectedRooms.includes(Aroom))" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="selector(Aroom)">
-                        Room {{Aroom.Roomid}}
-                      </button>
-                      <button *ngIf="selectedRooms.includes(Aroom)" type="button" class="btn avroombtn rounded w-100"
-                        data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(Aroom)">
-                        remove Room {{Aroom.Roomid}} from list
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-              <!-- selectedRoomList (final ) -->
-              <div *ngIf="selectedRooms.length!=0" class="container-fluid p-0 d-flex flex-column align-items-center mt-5"
-                style="background-color: #f8f8f8; border-radius: 1em;">
-                <div class="text-center pt-5" style="font-size: larger;font-family: montserrat;">Selected Rooms</div>
-                <hr>
-                <div *ngFor="let selected of selectedRooms" class="row d-flex justify-content-center py-2">
-                  <div class="col text-center">Room {{selected.Roomid}} <button type="button" class="btn"
-                      data-toggle="button" aria-pressed="false" autocomplete="off" (click)="deleter(selected)">
-                      &#10008;
-                    </button></div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                  <div class="col-12 d-flex justify-content-center pb-3 ">
-                    <button class="btn w-100 confirm rounded" (click)="confirmed=true">confirm</button>
-                  </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center pb-3 ">
+                  <button class="btn w-100 confirm rounded" (click)="confirmed=true">confirm</button>
                 </div>
               </div>
             </div>
-          </ng-template>
-        </div>
-        <!-- this button is used to send data out of the component all of the preivous steps are done to send these
+          </div>
+        </ng-template>
+      </div>
+      <!-- this button is used to send data out of the component all of the preivous steps are done to send these
           a function send all of the rooms (or roomIDs to the users RoomIDs part in the data base ) -->
-        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-          <button type="button" mat-button matStepperNext class="btn2 btn-primary2"
-            [disabled]="!confirmed || selectedRooms.length==0">Next</button>
-        </div>
+      <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
+        <button type="submit" mat-button matStepperNext class="btn2 btn-primary2"
+          [disabled]="!confirmed || selectedRooms.length==0">Next</button>
+      </div>
   </form>
 
 </div>

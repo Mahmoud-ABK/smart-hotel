@@ -18,60 +18,136 @@
 
 
 
-  <form class="checkin container-fluid">
+  <form (ngSubmit)="OnSubmit(step1)" class="checkin container-fluid" #step1="ngForm"
+    (keydown.enter)="handleEnterKeyPress($event)">
     <div class="form-row">
       <div class="form-group col-lg-12 form-floating mb-20">
 
-        <input type="text" class="form-control" id="firstname" placeholder="First Name">
+        <input type="text" class="form-control" id="firstname" #guestFName="ngModel" name="guestFirstName"
+          placeholder="First Name" ngModel required>
         <label for="firstname" class="label">First Name</label>
+        <div class="alert alert-warning" *ngIf="guestFName.touched && guestFName.invalid">
+          Invalid First Name
+        </div>
+        <div class="alert alert-secondary" *ngIf="step1.submitted && guestFName.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12 form-floating mb-20 ">
 
-        <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+        <input type="text" class="form-control" id="lastname" #LName="ngModel" name="guestLastname"
+          placeholder="Last Name" ngModel required>
         <label for="lastname" class="label">Last Name</label>
+        <div class="alert alert-warning" *ngIf="LName.invalid && LName.touched">
+          Invalid Last Name
+        </div>
+        <div class="alert alert-secondary" *ngIf="step1.submitted && LName.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12">
         <label for="birthdate" class="date-label">Birthdate</label>
-        <input type="date" class="form-control" id="birthdate">
+        <input type="date" class="form-control" max="2007-12-31" placeholder="1980-01-01" #bdate="ngModel"
+          id="birthdate" name="guestBirthdate" ngModel required>
+        <div class="alert alert-warning" *ngIf="bdate.invalid && bdate.touched">
+          birthdate is empty
+        </div>
+        <div class="alert alert-secondary" *ngIf="step1.submitted && bdate.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12 form-floating mb-20">
-        <input type="tel" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}" class="form-control" id="telnumber"
-          placeholder="Phone Number">
+        <input type="tel" name="guestPhoneNum" class="form-control" id="telnumber" placeholder="Phone Number" ngModel
+          required #phone="ngModel">
         <label for="tel_num" class="label">Phone </label>
+        <div class="alert alert-warning" *ngIf="phone.invalid && phone.touched">
+          Invalid phone number
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && phone.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12 form-floating mb-20">
-        <input type="number" class="form-control" id="ID_num" placeholder="1">
+        <input type="number" class="form-control" id="ID_num" name="guestIDorPass" #IDorPass="ngModel" placeholder="1"
+          ngModel required>
         <label for="ID_num" class="label">ID /Passport </label>
+        <div class="alert alert-warning" *ngIf="IDorPass.invalid && IDorPass.touched">
+          Invalid ID or Pass
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && IDorPass.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12 form-floating mb-20">
 
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" class="form-control" id="email" name="guestEmail" #email="ngModel"
+          placeholder="name@example.com" ngModel email required>
         <label for="email" class="label">Email Address</label>
+        <div class="alert alert-warning" *ngIf="email.invalid && email.touched">
+          Invalid email
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && email.invalid">
+          this field is required
+        </div>
       </div>
       <div class="form-group col-lg-12 form-floating mb-20">
 
-        <input type="number" class="form-control" id="guestpsw" placeholder="1">
+        <input type="password" class="form-control" id="guestpsw" name="guestPassword" #psw="ngModel"
+          placeholder="1" ngModel required>
         <label for="guestpsw" class="label">Password</label>
+        <div class="alert alert-warning" *ngIf="psw.invalid && psw.touched">
+          Invalid Password
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && psw.invalid">
+          this field is required
+        </div>
       </div>
 
 
       <div class="form-group col-lg-12 form-floating mb-20">
-        <input type="number" class="form-control" id="people_num" placeholder="1">
+        <input type="number" class="form-control" id="people_num" name="NoOfPeople" min="1" placeholder="1" ngModel
+          required #ppl="ngModel">
         <label for="people_num" class="label">No. of People</label>
+        <div class="alert alert-warning" *ngIf="ppl.invalid && ppl.touched">
+         Atleast 1
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && ppl.invalid">
+          this field is required
+        </div>
       </div>
 
       <div class="form-group col-lg-12 form-floating mb-20">
 
-        <input type="number" class="form-control" id="nights_num" placeholder="1">
+        <input type="number" class="form-control" id="nights_num" name="NoOfNights" min="1" placeholder="1" ngModel
+          required #nights="ngModel">
         <label for="nights_num" class="label">No. of Nights</label>
+        <div class="alert alert-warning" *ngIf="nights.invalid &&nights.touched">
+          Atleast 1
+         </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && nights.invalid">
+          this field is required
+        </div>
+      </div>
+      <div class="form-group col-lg-12 form-floating mb-20">
+
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic" id="image" placeholder="1" ngModel>
+        <label for="image" class="label" >Profile picture</label>
+
+
       </div>
 
 
+      <!-- <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
+        <button type="submit" class="btn1 btn-primary1 me-2" >Submit </button>
+      </div> -->
       <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" class="btn1 btn-primary1 me-2">Submit </button>
-      </div>
-      <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="button" mat-button matStepperNext class="btn1 btn-primary2  me-2">Next</button>
+        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid " class="btn1 btn-primary2  me-2">Next</button>
       </div>
 
     </div>
