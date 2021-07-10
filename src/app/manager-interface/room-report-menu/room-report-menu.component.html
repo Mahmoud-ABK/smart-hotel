@@ -1,118 +1,32 @@
-<div class="big-container container-fluid">
+<div class="row d-flex justify-content-center w-100">
 
-    <div class="navboura w-100 container-fluid">
-        <nav class="navbar navbar-light ">
-            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
-            <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
-            <div class="nav-item btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn">Room managment</button>
-                <button type="button" class="btn">Reports</button>
-            </div>
-        </nav>
-    </div>
+        <div *ngFor="let report of reports ; let i=index" class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <div class="titles">
+                    <h5 class="card-title">Room {{report.roomID}}</h5>
+                    <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{report.roomOwner}}</h6>
+                    <h6 class="card-text"><span id="reporter-data">time sent: </span>{{report.timeSent}}</h6>
+                    <h6 class="card-text"><span id="reporter-data">phone number: </span>{{report.PhoneNumber}}</h6>
+                </div>
 
-    <div class="row d-flex justify-content-center w-100">
-
-        <div class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text"><span id="reporter-data">Room owner: </span>John Cina.</h6>
-                        <h6 class="card-text"><span id="reporter-data">time sent: </span>12:25 AM</h6>
-                        <h6 class="card-text"><span id="reporter-data">phone number: </span>12 345 678</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="report-container">
-                            <div class="report-details">
-                                <p>Sed eget dictum massa. Aenean tempus at augue vitae vehicula. Phasellus eu dignissim nibh. In porttitor eros
-                                    orci. Aliquam erat volutpat. Praesent ullamcorper maximus tortor non sodales.</p>
-                            </div>
-                            <div class="report-details"></div>
-                            <div class="report-details">
-                                <p class="p">Maecenas sodales eros sed odio vehicula, at fringilla ligula tempor. Vestibulum tincidunt aliquam leo, ut
-                                    pharetra purus facilisis a. Fusce sollicitudin nisi in gravida molestie. Aliquam sed blandit mauris, fermentum
-                                    fermentum elit. Aenean non sem in erat faucibus porttitor eu sed libero. Morbi lobortis turpis eu lacus rutrum,
-                                    a volutpat nisi porta.</p>
-                            </div>
-                            <div class="report-details text-center" >
-                                <img class="card-img-bottom" src="./assets/hotel-problem.png">
-                            </div>
+                <div class="container-data justify-content-between">
+                    <div class="report-container">
+                        <div style="font-family: 'Josefin Sans', sans-serif;" class="report-details">
+                            <p>{{report.Title}}</p>
                         </div>
-                        
+                        <div class="report-details"></div>
+                        <div class="report-details">
+                            <p class="p">{{report.Details}}</p>
+                        </div>
+                        <div class="report-details text-center">
+                            <img class="card-img-bottom" [src]="report.Pic">
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
-        <div class="card-container col-11 col-xs-11 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text"><span id="reporter-data">Room owner: </span>John Cina.</h6>
-                        <h6 class="card-text"><span id="reporter-data">time sent: </span>12:25 AM</h6>
-                        <h6 class="card-text"><span id="reporter-data">phone number: </span>12 345 678</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="report-container">
-                            <div class="report-details">
-                                <p>Sed eget dictum massa. Aenean tempus at augue vitae vehicula. Phasellus eu dignissim nibh. In porttitor eros
-                                    orci. Aliquam erat volutpat. Praesent ullamcorper maximus tortor non sodales.</p>
-                            </div>
-                            <div class="report-details"></div>
-                            <div class="report-details">
-                                <p>Maecenas sodales eros sed odio vehicula, at fringilla ligula tempor. Vestibulum tincidunt aliquam leo, ut
-                                    pharetra purus facilisis a. Fusce sollicitudin nisi in gravida molestie. Aliquam sed blandit mauris, fermentum
-                                    fermentum elit. Aenean non sem in erat faucibus porttitor eu sed libero. Morbi lobortis turpis eu lacus rutrum,
-                                    a volutpat nisi porta.</p>
-                            </div>
-                            <div class="report-details text-center" >
-                                <img src="./assets/hotel-problem.png">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-container col-11 col-xs-11 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text"><span id="reporter-data">Room owner: </span>John Cina.</h6>
-                        <h6 class="card-text"><span id="reporter-data">time sent: </span>12:25 AM</h6>
-                        <h6 class="card-text"><span id="reporter-data">phone number: </span>12 345 678</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="report-container">
-                            <div class="report-details">
-                                <p>Sed eget dictum massa. Aenean tempus at augue vitae vehicula. Phasellus eu dignissim nibh. In porttitor eros
-                                    orci. Aliquam erat volutpat. Praesent ullamcorper maximus tortor non sodales.</p>
-                            </div>
-                            <div class="report-details"></div>
-                            <div class="report-details">
-                                <p>Maecenas sodales eros sed odio vehicula, at fringilla ligula tempor. Vestibulum tincidunt aliquam leo, ut
-                                    pharetra purus facilisis a. Fusce sollicitudin nisi in gravida molestie. Aliquam sed blandit mauris, fermentum
-                                    fermentum elit. Aenean non sem in erat faucibus porttitor eu sed libero. Morbi lobortis turpis eu lacus rutrum,
-                                    a volutpat nisi porta.</p>
-                            </div>
-                            <div class="report-details text-center" >
-                                <img src="./assets/hotel-problem.png">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
     </div>
 
 </div>

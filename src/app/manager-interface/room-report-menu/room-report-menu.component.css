@@ -1,33 +1,9 @@
-@import url("https://use.typekit.net/zdy7agl.css ");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
 
-.big-container{
-    background-color: #FCF6EE;
-    padding: 0px !important;
-    height: 100%;
-}
-
-.navboura{
-    background-color:#1E2B31;
-    margin: 0px !important;
-}
-
-.btn{
-    margin: 2px;
-    border-radius: 0%;
-    color: #1E2B31;
-    background-color: #f8f8f8;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: #F8F8F8;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.nav-item{
-    padding: 10px 20px;
+*{
+    font-family: 'Inter', sans-serif;
+    font-weight:700;
+    color: #1e2b31;
 }
 
 .row {
@@ -72,8 +48,21 @@ img {
     height: auto;
 }
 
+h5{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h6{
+    font-size: 1em;
+}
+
 @media (max-width: 400px){
     .nav-item {
         padding: 10px 5px;
     }
+}
+
+:host{
+    font-size: larger !important;
 }

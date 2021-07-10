@@ -1,146 +1,31 @@
-<div class="big-container">
-    <div class="navboura">
-        <nav class="navbar navbar-light ">
-            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
-            <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
-            <div class="nav-item btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn">Room managment</button>
-                <button type="button" class="btn">Reports</button>
-            </div>
-        </nav>
-    </div>
+   <div class="row d-flex justify-content-center">
 
-    <div class="row d-flex justify-content-center">
-
-        <div class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div *ngFor="let room of rooms; let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3" >
             <div class="card">
                 <div class="card-body">
                     <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text">John Cina.</h6>
+                        <h5 class="card-title"><span id="zina">Room n° </span>{{room.roomID}}</h5>
+                        <h6 class="card-text"><span id="zina" >Room Owner: </span>{{room.roomOwner}}</h6>
                     </div>
                     
-                    <div class="container-data justify-content-between">
+                    <div class="container-data d-flex flex-column justify-content-between">
                         <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> available</p>
+                            <p><span id="zina">Availability:</span> {{room.availability}}</p>
                         </div>
                         <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> safe</p>
+                            <p><span id="zina">Gas Status:</span> {{room.gas}}</p>
                         </div>
                         <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> safe</p>
+                            <p><span id="zina">Fire status:</span> {{room.fire}}</p>
                         </div>
                         <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> locked</p>
+                            <p><span id="zina">Door Status:</span> {{room.door}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text">John Cina.</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> available</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> locked</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text">John Cina.</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> available</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> locked</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text">John Cina.</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> available</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> locked</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title">Room n°0</h5>
-                        <h6 class="card-text">John Cina.</h6>
-                    </div>
-                    
-                    <div class="container-data justify-content-between">
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> available</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> safe</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> locked</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
     </div>
-</div>
