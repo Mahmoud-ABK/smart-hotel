@@ -63,6 +63,52 @@ export class KitchenPageComponent implements OnInit {
 
       ]
     },
+    {
+      Roomid: 4,
+      guestName: "5alet khalid ",
+      food: [
+        {
+          foodname: "roouz",
+          quantity: 0
+        },
+        {
+          foodname: "m7amssa",
+          quantity: 9
+        },
+        {
+          foodname: "Maa9arouna jeerya",
+          quantity: 9
+        },
+        {
+          foodname: "3eejja belmergez",
+          quantity: 15
+        }
+
+      ]
+    },
+    {
+      Roomid: 5,
+      guestName: "om khalid ",
+      food: [
+        {
+          foodname: "rouz kk",
+          quantity: 3
+        },
+        {
+          foodname: "m7ammsa",
+          quantity: 2
+        },
+        {
+          foodname: "Maa9arouna jerya",
+          quantity: 6
+        },
+        {
+          foodname: "3ejjaa belmergez",
+          quantity: 100
+        }
+
+      ]
+    },
 
   ]
 
@@ -70,7 +116,15 @@ export class KitchenPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   OppaToArray(array:[]):[]{
     return array
   }
+
+  removerFromList(a:object) {
+    this.foodOrders.forEach((foodOrder, index) => {
+    if(foodOrder === a) this.foodOrders.splice(index, 1);
+    });
+  }
+
 }
