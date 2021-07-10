@@ -1,19 +1,136 @@
-nav{
-  background-color: #053742;
+
+
+*{
+  font-family: 'Inter', sans-serif;
+
+  color: #1e2b31;
+}
+
+.body{
+  height: 100% !important;
+}
+.big-container{
+  background-color: #FCF6EE;
+  padding: 0px !important;
+  height: 100% !important;
+}
+
+.navbar{
+  background-color:#1E2B31;
+  margin: 0px !important;
+}
+
+.btn{
+  margin: 2px;
+  border-radius: 0%;
+  color: #1E2B31;
+  background-color: #f8f8f8;
+  font-weight: bold;
+  font-size: 18px;
 }
 h3, p {
-color: aliceblue;
+  color: aliceblue;
+  }
+.go-to {
+  background-color: #1E2B31;
+  color: #f8f8f8;
+  transition: 0.2s;
+  font-size: 14px;
 }
-a{
-  margin-left: 1em;
-  border-radius: 1em;
-  background-color: white;
-  color: #053742 !important;
+
+.go-to:hover {
+  background-color: #1e2b31a8;
 }
-.inside{
-  display: block;
-  height: 100%;
-  background-color: #E8F0F2;
-padding-bottom: 50%;
+/* .card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+} */
+
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #F8F8F8;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.nav-item{
+  padding: 10px 20px;
+}
+.row {
+  padding: 50px;
+  margin:0;
+}
+
+.card-container{
+  margin: 25px;
+}
+
+.card {
+  margin: 0 auto;
+  width: 500px;
+  max-height:250px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+div.card-body{
+  padding: 0;
+}
+
+.titles {
+  background-color: #E3B04B;
+  padding: 20px;
+  color: #f8f8f8;
+}
+
+
+#reporter-data{
+  font-weight:bold ;
+}
+
+.container-data{
+  padding: 20px;
+}
+
+.report-container{
+  color: #1E2B31;
+}
+
+.card-title{
+  color: #1E2B31;
+  font-weight: 800;
+  font-size: 30px;
+}
+#zina{
+  font-size: 1em;
+  font-weight:700;
+
+}
+.date{
+  font-size:0.9em;
+  font-weight:500;
+  color:black
+}
+
+@media (max-width: 400px){
+  .nav-item {
+      padding: 10px 5px;
+  }
 }
 

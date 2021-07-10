@@ -49,6 +49,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import {MatStepperModule} from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
+import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
 
 
 
@@ -80,7 +81,8 @@ import { SwiperModule } from 'swiper/angular';
     LoginGuestComponent,
     LoginManagerComponent,
     KitchenPageLoginComponent,
-    LoginRoundaboutComponent
+    LoginRoundaboutComponent,
+    ServantPageComponent
   ],
   imports: [
 
