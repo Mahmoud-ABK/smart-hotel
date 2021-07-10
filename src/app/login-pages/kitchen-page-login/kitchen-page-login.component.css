@@ -38,8 +38,3 @@ h1{
     background-color: transparent;
     color:  #1E2B31;
   }
-
-  button:disabled,
-button[disabled]{
-  color: red;
-}
