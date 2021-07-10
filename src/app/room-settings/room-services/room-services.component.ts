@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-room-services',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-services.component.css']
 })
 export class RoomServicesComponent implements OnInit {
-disable:boolean=false
+disable:boolean
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onSubmit(form: NgForm){
+    console.log(form.value.cleaningDateTime);
+    console.log("hey")
+  }
 }
