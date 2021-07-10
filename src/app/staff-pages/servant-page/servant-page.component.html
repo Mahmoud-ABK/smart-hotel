@@ -1,1 +1,41 @@
-<p>servant-page works!</p>
+<div class="big-container container-fluid">
+
+    <div class="navboura w-100 container-fluid">
+        <nav class="navbar navbar-light ">
+            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
+            <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
+            <div class="nav-item btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn">Room managment</button>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="row d-flex justify-content-center" style="min-height: 100vh;">
+
+        <div *ngFor="let service of services;let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="titles">
+                        <h5 class="card-title">Room n°{{service.roomID}}</h5>
+                    </div>
+                    
+                    <div class=" d-flex flex-column container-data justify-content-between">
+                        <div class="data-item d-inline-flex">
+                            <p ><span id="zina">Room Owner:</span> {{service.roomOwner}}</p>
+                        </div>
+                        <div class="data-item d-inline-flex">
+                            <p><span id="zina">Proposed Time:</span> {{service.Time}}</p>
+                        </div>
+                        <div class="data-item d-inline-flex justify-content-end w-100">
+                            <button type="button" class="btn delete-button" (click)="remove(service)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+    </div>
+</div>
