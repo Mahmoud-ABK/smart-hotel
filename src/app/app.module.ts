@@ -49,6 +49,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
 import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
+import { LoginServantPageComponent } from './login-pages/login-servant-page/login-servant-page.component';
 
 
 
@@ -79,7 +80,8 @@ import { ServantPageComponent } from './staff-pages/servant-page/servant-page.co
     LoginManagerComponent,
     KitchenPageLoginComponent,
     LoginRoundaboutComponent,
-    ServantPageComponent
+    ServantPageComponent,
+    LoginServantPageComponent
   ],
   imports: [
 
