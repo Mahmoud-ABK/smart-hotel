@@ -16,7 +16,7 @@ SwiperCore.use([Pagination, Navigation]);
   styleUrls: ['./food-menu.component.css']
 })
 export class FoodMenuComponent implements OnInit {
-  
+
   breakfast: {
     name: string, pic: string
     , checked: boolean, label: string
@@ -198,33 +198,52 @@ export class FoodMenuComponent implements OnInit {
 
 
     ]
-  list: string[] = [
+  list: Array<{ foodName: string, quantity: number }> = [
 
   ]
+  toRoom:boolean=false
   constructor() { }
 
   ngOnInit(): void {
+
   }
-  removerFromList(a:string) {
-    this.list.forEach((name, index) => {
-      if (name === a) this.list.splice(index, 1);
+  removerFromList(a: { foodName: string, quantity: number }) {
+    this.list.forEach((el, index) => {
+      if (el.foodName === a.foodName) this.list.splice(index, 1);
     });
+    [this.breakfast,this.dinner,this.drinks,this.lunch,this.snacks].forEach(foodArray =>{
+      foodArray.forEach(foodItem=>{
+        if(foodItem.checked){
+          foodItem.checked=!foodItem.checked
+          foodItem.label = "Add to list"
+        }
+      })
+    })
+
   }
-  onChecked(item) {
+  onChecked(item: {
+    name: string, pic: string
+    , checked: boolean, label: string
+  }) {
     item.checked = !item.checked
-    console.log(item.checked)
+
     if (item.checked) {
-      this.list.push(item.name)
-      console.log(this.list);
+      this.list.push({ foodName: item.name, quantity: 1 })
 
       item.label = "Remove from list"
     }
     else {
       item.label = "Add to list"
-      this.removerFromList(item.name)
-      console.log(this.list)
+      this.removerFromList({ foodName: item.name, quantity: 1 })
 
     }
+
+  }
+  onSend() {
+    console.log(this.list)
+    console.log("toRoom?");
+    console.log(this.toRoom);
+
 
   }
 

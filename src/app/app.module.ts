@@ -44,6 +44,7 @@ import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-r
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {MatStepperModule} from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
@@ -90,7 +91,8 @@ import { ServantPageComponent } from './staff-pages/servant-page/servant-page.co
     MatButtonModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCheckboxModule
 
   ],
   providers: [],
