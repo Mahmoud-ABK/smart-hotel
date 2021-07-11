@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { Routes, RouterModule } from '@angular/router';
 
 
 
@@ -52,7 +52,7 @@ import { ServantPageComponent } from './staff-pages/servant-page/servant-page.co
 import { LoginServantPageComponent } from './login-pages/login-servant-page/login-servant-page.component';
 
 
-
+const appRoutes: Routes =[]
 
 
 @NgModule({
@@ -94,7 +94,8 @@ import { LoginServantPageComponent } from './login-pages/login-servant-page/logi
     BrowserAnimationsModule,
     FormsModule,
     MatStepperModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+  
 
   ],
   providers: [],
