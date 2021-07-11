@@ -1,14 +1,10 @@
 <form class="w-100" (ngSubmit)="onSubmit(f)" #f="ngForm" >
-  <div class="container py-2 w-100" style=" font-size: large;background-color: #FCF6EE; border-radius: 1em; border: 0.1em solid #E3B04B;">
-    <div class="row pb-2 w-100">
-      <div class="col-12 w-100">
-        <h5> </h5>
-      </div>
-    </div>
+  <div class="container py-2 w-100" style=" font-size: large;background-color: #FCF6EE; border-radius: 0.5em; border: 0.1em solid #E3B04B;">
+    
     <div class="row pb-2 w-100">
       <div class="form-floating mb-3">
         <input ngModel type="text" class="form-control" id="problemTitle" name="problemTitle" placeholder="probtitle" required>
-        <label for="floatingInput" class="ms-4">How can we help you?</label>
+        <label for="floatingInput" class="ms-4" style="color: #29596f;">How can we help you?</label>
       </div>
     </div>
 
@@ -17,7 +13,7 @@
       <div class="col-12  w-100">
         <div class="form-floating">
           <textarea ngModel class="form-control" placeholder="probDesciption" id="problemDesciption" name="problemDesciption" required></textarea>
-          <label for="floatingTextarea" class="ms-4">Can you provide us with further details about the problem you're facing? </label>
+          <label for="floatingTextarea" class="ms-4" style="color: #29596f;">Can you provide us with further details about the problem you're facing? </label>
          
         </div>
       </div>
@@ -26,8 +22,8 @@
     <div class="row py-3  ">
       <div class="col-12">
         <div>
-          <label for="formFileLg" class="form-label">Do you have a picture or a screenshot?</label>
-          <input ngModel class="form-control form-control-lg w-75"  name="formFileLg" id="formFileLg" type="file">
+          <label for="formFileLg" class="form-label" style="color: #29596f;">Do you have a picture or a screenshot?</label>
+          <input ngModel style="color: #29596f;" class="form-control form-control-lg w-75"  name="formFileLg" id="formFileLg" type="file">
         </div>
       </div>
     </div>
