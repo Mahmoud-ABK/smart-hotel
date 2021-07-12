@@ -30,10 +30,22 @@
       </div>
       <div class="col">
         <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center; ">
-          <a class="flex-sm-fill text-sm-center nav-link active" href="#" style="color: #F8F8F8;">Room control</a>
-          <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: #F8F8F8;">Room security</a>
-          <a class="flex-sm-fill text-sm-center nav-link" href="#" style="color: #F8F8F8;">Room services</a>
-          <a class="flex-sm-fill text-sm-center nav-link " href="#" style="color: #F8F8F8;">Report</a>
+          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;" name=""
+          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="roomcontrol">
+          Room control
+         </a>
+          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;" 
+           routerLinkActive="active" routerLink="roomsecurity">
+            Room security
+          </a>
+          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;" 
+           routerLinkActive="active" routerLink="roomservices">
+            Room services
+          </a>
+          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;"  
+          routerLinkActive="active" routerLink="roomreport">
+          Report
+        </a>
         </nav>
       </div>
     </div>
@@ -43,12 +55,13 @@
     <!-- <app-room-control></app-room-control> -->
     <!-- <app-room-security></app-room-security> -->
     <!-- <app-room-services></app-room-services> -->
-    <app-room-report></app-room-report>
+    <!-- <app-room-report></app-room-report> -->
+    <router-outlet></router-outlet>
 <hr>
     <div class="container d-flex flex-row justify-content-between pb-5 pt-4" >
 
-      <div class="m0"><button mat-button class=" prev-next">&laquo; Back</button></div>
-      <div><button mat-button class=" prev-next">having a problem?</button></div>
+      <div class="m0"><button  mat-button (click)="onReport()" class=" prev-next">&laquo; Back</button></div>
+      <!-- <div><button mat-button routerLink="/roomsettings/roomreport"  class="prev-next">having a problem?</button></div> -->
     </div>
 
   </div>
