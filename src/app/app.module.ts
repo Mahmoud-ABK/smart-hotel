@@ -50,6 +50,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
 import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
 import { LoginServantPageComponent } from './login-pages/login-servant-page/login-servant-page.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 
 
 const appRoutes: Routes =[]
@@ -95,7 +98,10 @@ const appRoutes: Routes =[]
     FormsModule,
     MatStepperModule,
     MatCheckboxModule,
-  
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
+
+
 
   ],
   providers: [],
