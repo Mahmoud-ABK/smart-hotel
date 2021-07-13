@@ -10,9 +10,10 @@
     </div>
     <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
       <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large;">
-        <li class="nav-item bg-light m-2 rounded">
+        <!-- <li class="nav-item bg-light m-2 rounded">
           <a class="nav-link " href="#">Interface</a>
-        </li>
+          
+        </li> -->
         <li class="nav-item bg-light m-2 rounded">
           <a class="nav-link" href="#">Log out</a>
         </li>
@@ -39,7 +40,7 @@
               <p class="date"><span id="zina">Checkout Date:</span> {{room.checkoutDate}}</p>
             </div>
             <div class="data-item d-inline-flex justify-content-end w-100 pt-5">
-              <button type="button" class="btn go-to">Room settings</button>
+              <button type="button" class="btn go-to" routerLink="/roomsettings/roomcontrol">Room settings</button>
             </div>
           </div>
         </div>

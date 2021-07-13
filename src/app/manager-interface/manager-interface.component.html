@@ -5,12 +5,12 @@
             <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
             <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
             <div class="nav-item btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn">Room managment</button>
-                <button type="button" class="btn">Reports</button>
+                <button type="button" routerLink="roommanagement" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="btn">Room managment</button>
+                <button type="button" routerLink="roomreportmenu" routerLinkActive="active" class="btn">Reports</button>
             </div>
         </nav>
     </div>
     <!-- <app-room-management></app-room-management> -->
-    <app-room-report-menu></app-room-report-menu>
-
+    <!-- <app-room-report-menu></app-room-report-menu> -->
+    <router-outlet></router-outlet>
 </div>
