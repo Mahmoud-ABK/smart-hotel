@@ -17,6 +17,11 @@
     background-color: #f8f8f8;
     font-weight: bold;
     font-size: 18px;
+    border: 2px solid #1E2B31;
+}
+
+.btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
 }
 
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
@@ -27,4 +32,10 @@
 
 .nav-item{
     padding: 10px 20px;
+}
+
+.active{
+    background-color: #1E2B31;
+    color: #f8f8f8; /*cho hethi cho*/
+    border-color: #f8f8f8;
 }
