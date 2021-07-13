@@ -16,3 +16,10 @@
     border:1px solid #bd9035;
     box-shadow: 0em 0em 1em #bd9035;
   }
+  .container.py-2.w-100{
+  font-size: large;
+  background-color: #FCF6EE; 
+  border-radius: 0.5em; 
+  border: 0.1em solid #E3B04B;
+  padding: 50px !important;
+  }
