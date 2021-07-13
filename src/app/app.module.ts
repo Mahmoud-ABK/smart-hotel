@@ -53,6 +53,8 @@ import { LoginServantPageComponent } from './login-pages/login-servant-page/logi
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { SignInUpService } from './Services/sign-in-up.service';
+import { DataImporterService } from './Services/data-importer.service';
 
 
 const appRoutes: Routes =[]
@@ -99,12 +101,13 @@ const appRoutes: Routes =[]
     MatStepperModule,
     MatCheckboxModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+
 
 
 
   ],
-  providers: [],
+  providers: [SignInUpService, DataImporterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

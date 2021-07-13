@@ -1,6 +1,9 @@
 import { SimpleChanges } from '@angular/core';
 import { Component, OnChanges, OnInit, SimpleChange } from '@angular/core';
 import { formatDate } from '@angular/common';
+import { DataImporterService } from 'src/app/Services/data-importer.service';
+import { RoomModel } from 'src/app/Models/room-model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-step2',
@@ -8,41 +11,42 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./step2.component.css']
 })
 export class Step2Component implements OnInit {
-  RoomsTest: Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [
-    {
-      Roomid: 1,
-      price: 90,
-      checkinRoom: [],
-      checkoutRoom: [],
-    },
-    {
-      Roomid: 2,
-      price: 120,
-      checkinRoom: ["2021-07-10"],
-      checkoutRoom: ["2021-07-12"],
+  /*RoomsTest: Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [
+     {
+       Roomid: 1,
+       price: 90,
+       checkinRoom: [],
+       checkoutRoom: [],
+     },
+     {
+       Roomid: 2,
+       price: 120,
+       checkinRoom: ["2021-07-10"],
+       checkoutRoom: ["2021-07-12"],
 
-    },
-    {
-      Roomid: 3,
-      price: 150,
-      checkinRoom: ["2021-07-13", "2021-07-17"],
-      checkoutRoom: ["2021-07-16", "2021-07-19"],
-    },
-    {
-      Roomid: 4,
-      price: 180,
-      checkinRoom: ["2021-08-04", "2021-08-25", "2021-10-18"],
-      checkoutRoom: ["2021-08-22", "2021-09-18", "2021-12-18"],
-    },
-    {
-      Roomid: 5,
-      price: 120,
-      checkinRoom: ["2021-07-10"],
-      checkoutRoom: ["2021-07-12"],
+     },
+     {
+       Roomid: 3,
+       price: 150,
+       checkinRoom: ["2021-07-13", "2021-07-17"],
+       checkoutRoom: ["2021-07-16", "2021-07-19"],
+     },
+     {
+       Roomid: 4,
+       price: 180,
+       checkinRoom: ["2021-08-04", "2021-08-25", "2021-10-18"],
+       checkoutRoom: ["2021-08-22", "2021-09-18", "2021-12-18"],
+     },
+     {
+       Roomid: 5,
+       price: 120,
+       checkinRoom: ["2021-07-10"],
+       checkoutRoom: ["2021-07-12"],
 
-    },
-  ]
-  AvailableRoomList: Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = []
+     },
+   ] */
+  RoomList: RoomModel[] = []
+  AvailableRoomList: Array<RoomModel> = []
   RoomlistDisplay: boolean = false
   add = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en')) + (1000 * 60 * 60 * 24)
   chImin = formatDate(new Date(), 'yyyy-MM-dd', 'en');
@@ -50,7 +54,7 @@ export class Step2Component implements OnInit {
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
-  selectedRooms:  Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [] ;
+  selectedRooms: Array<RoomModel> = [];
   confirmed: boolean = false
 
   ordinarytype: boolean = false
@@ -58,27 +62,50 @@ export class Step2Component implements OnInit {
   seaviewtype: boolean = false
   seaviewfloortype: boolean = false
 
-roomIDS:Array<number>=[]
-  constructor() {
-  }
+  roomIDS: Array<number> = []
 
+
+  constructor(private dataImporter: DataImporterService) {
+    this.dataImporter.RoomImporter().snapshotChanges()
+      .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
+
+        this.RoomList = result;
+
+
+      })
+
+
+
+  }
+  prom = new Promise((resolve, reject) => {
+    if (this.RoomList.length == 0) {
+      resolve(this.checker())
+    }
+
+  });
   ngOnInit(): void {
-    this.checker()
+
+
+
+
+    this.prom.then()
 
   }
 
   checker() {
+    this.RoomlistDisplay = true
+
 
     let main = setInterval(() => {
       let parsedCHECKIN = Date.parse(this.checkin)
       let parsedCHECKOUT = Date.parse(this.checkout)
       let inFunctionAVAILABLE: any = []
-      this.RoomsTest.forEach(RoomSample => {
+      this.RoomList.forEach(RoomSample => {
 
-        let Roomcheckin = RoomSample.checkinRoom
-        let Roomcheckout = RoomSample.checkoutRoom
+        let Roomcheckin = RoomSample.RoomCheckinDate
+        let Roomcheckout = RoomSample.RoomCheckoutDate
         let checkie = []
-        if (Roomcheckin.length === 0 && Roomcheckout.length === 0) {
+        if (Roomcheckin.includes('empty') && Roomcheckout.includes('empty')) {
           checkie.push(true)
         } else {
           for (let i = 0; i < Roomcheckin.length; i++) {
@@ -99,13 +126,13 @@ roomIDS:Array<number>=[]
       this.AvailableRoomList = inFunctionAVAILABLE
 
       this.AvailableRoomList.forEach(avRoom => {
-        if (avRoom.price == 90) {
+        if (avRoom.RoomPrice == 90) {
           this.ordinarytype = true
-        } else if (avRoom.price == 120) {
+        } else if (avRoom.RoomPrice == 120) {
           this.floortype = true
-        } else if (avRoom.price == 150) {
+        } else if (avRoom.RoomPrice == 150) {
           this.seaviewtype = true
-        } else  {
+        } else {
           this.seaviewfloortype = true
         }
       })
@@ -121,17 +148,30 @@ roomIDS:Array<number>=[]
 
   }
 
-  selector(room:{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }) {
+  selector(room: RoomModel) {
     this.selectedRooms.push(room)
-    console.log(this.selectedRooms);
+    // console.log(this.selectedRooms);
 
 
   }
-  deleter(room: { Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }) {
+  deleter(room: RoomModel) {
     this.selectedRooms.forEach((selected, index) => {
-      if (selected === room) { this.selectedRooms.splice(index, 1); }
+      if (selected === room) {
+        this.selectedRooms.splice(index, 1);
+        this.roomIDS.forEach((id, i) => {
+          if (id = selected.roomid) {
+            this.roomIDS.splice(i, 1)
+          }
+        });
+      }
+
     });
-    console.log(this.selectedRooms);
+    // console.log(this.selectedRooms);
+    this.roomIDS.forEach(id => {
+
+
+
+    });
   }
   inialize() {
     this.selectedRooms = [];
@@ -141,18 +181,25 @@ roomIDS:Array<number>=[]
     this.seaviewfloortype = false
   }
 
-toArray(){
-  this.selectedRooms.forEach(element => {
-    this.roomIDS.push(element.Roomid)
 
-  });
-
-}
-  onSubmit(){
+  toArray() {
+    this.selectedRooms.forEach(element => {
+      this.roomIDS.push(element.roomid)
+    });
+  }
+  onSubmit() {
     this.toArray()
-    console.log(this.roomIDS)
-    console.log(this.checkin)
-    console.log(this.checkout);
+    console.log(this.roomIDS);
+
+    // console.log(this.selectedRooms);
+    // console.log(this.checkin)
+    // console.log(this.checkout);
+    this.dataImporter.ToStep3fromStep2({
+      Roomids: this.roomIDS,
+      SelectedRooms: this.selectedRooms,
+      checkin: this.checkin,
+      checkout: this.checkout
+    })
   }
 
 }

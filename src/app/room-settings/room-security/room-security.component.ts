@@ -6,7 +6,7 @@ import {formatDate} from '@angular/common';
   styleUrls: ['./room-security.component.css']
 })
 export class RoomSecurityComponent implements OnInit {
-door:boolean = true;
+doorOpen:boolean = true;
 doorstatus:string= "Closed"
 historyList:{action:string , time:any}[]=[
 
@@ -23,10 +23,10 @@ doorswitch(door:boolean){
    this.doorstatus="Open"
    console.log(door)
  } else{
-
+  console.log(door)
   this.doorstatus="Closed"
  }
- this.door=!this.door
+ this.doorOpen=!this.doorOpen
 }
 adderToHistory(status:string){
 this.historyList.push({action:status.toLowerCase() ,time:formatDate(new Date(), 'MMM d, y, h:mm:ss a','en-US')})
