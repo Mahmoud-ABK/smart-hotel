@@ -21,32 +21,18 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Type Price</th>
-            <th scope="col">Meals Price</th>
-            <th scope="col">---</th>
+
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">Room 1</th>
-            <td>10</td>
-            <td>7.5</td>
-            <td>$$</td>
-          </tr>
-          <tr>
-            <th scope="row">Room 2</th>
-            <td>20</td>
-            <td>7.5</td>
-            <td>$$</td>
-          </tr>
-          <tr>
-            <th scope="row">Room 3</th>
-            <td>20</td>
-            <td>4</td>
-            <td>$$</td>
+          <tr *ngFor="let selected of SelectedRooms ; let i=index" >
+            <th scope="row" >Room {{selected.roomid}}</th>
+            <td>{{selected.RoomPrice}}</td>
           </tr>
           <tr>
             <th scope="row">your total is</th>
-            <td colspan="2" colspan="3" style="text-align: center;">$$</td>
+            <td colspan="2" colspan="3" style="text-align: center;">{{sum}} $</td>
         </tbody>
       </table>
 

@@ -54,7 +54,7 @@ export class Step2Component implements OnInit {
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
-  selectedRooms: Array<RoomModel> = [];
+  selectedRooms: RoomModel[] =[];
   confirmed: boolean = false
 
   ordinarytype: boolean = false

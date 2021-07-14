@@ -10,7 +10,7 @@ export class DataImporterService {
   step1GuestData: Step1data
   step2RoomData: {
     Roomids: number[],
-    SelectedRooms: object[],
+    SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }
@@ -34,7 +34,7 @@ export class DataImporterService {
   //sending step2 data to step3
   ToStep3fromStep2(object: {
     Roomids: number[],
-    SelectedRooms: object[],
+    SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GuestDataModel } from 'src/app/Models/guest-data-model';
+import { RoomModel } from 'src/app/Models/room-model';
 import { Step1data } from 'src/app/Models/step1data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
@@ -13,25 +14,32 @@ export class Step3Component implements OnInit {
   step1GuestData: Step1data
   step2RoomsData: {
     Roomids: number[],
-    SelectedRooms: object[],
+    SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }
   finalGuestData= new GuestDataModel()
+  SelectedRooms: RoomModel[]
+  sum:number=0
 
 
-  constructor(private dataImporter: DataImporterService, private SignInUp: SignInUpService) { }
+  constructor(private dataImporter: DataImporterService, private SignInUp: SignInUpService) {
+
+   }
 
   ngOnInit(): void {
-
+    let getter = setInterval(()=>{this.GettingData},200)
 
   }
+
   GettingData() {
     this.step1GuestData = this.dataImporter.step1GuestData
     console.log(this.step1GuestData);
-
-
-    this.step2RoomsData = this.dataImporter.step2RoomData
+  this.step2RoomsData = this.dataImporter.step2RoomData
+  this.SelectedRooms = this.step2RoomsData.SelectedRooms
+  this.SelectedRooms.forEach(element => {
+    this.sum = this.sum + element.RoomPrice
+  });
 
   }
   checkIN(email, password) {
