@@ -9,7 +9,10 @@ import { Step1data } from '../Models/step1data';
 export class DataImporterService {
   step1GuestData: Step1data
   step2RoomData: {
-    Roomids: number[],
+    Roomids:Array<{
+      id:number,
+      length:number
+    }> ,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
@@ -17,6 +20,7 @@ export class DataImporterService {
   database: AngularFireDatabase
   Roomsref: AngularFireList<RoomModel>
   constructor(db: AngularFireDatabase) {
+    this.database = db
     this.Roomsref = db.list('/Rooms')
     // console.log(this.Roomsref)
 
@@ -33,13 +37,25 @@ export class DataImporterService {
   }
   //sending step2 data to step3
   ToStep3fromStep2(object: {
-    Roomids: number[],
+    Roomids: Array<{
+      id:number,
+      length:number
+    }> ,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }) {
     this.step2RoomData = object
 
+  }
+  RoomUpdaterCHECKIN(key: any, value: any,path:number) {
+    return this.database.object('/Rooms/' + String(key) + '/RoomCheckinDate').update({[path]:value})
+  }
+  RoomUpdaterCHECKOUT(key: any, value: any,path:number) {
+    return this.database.object('/Rooms/' + String(key) + '/RoomCheckoutDate').update({[path]:value})
+  }
+  RoomUpdaterIDhistory(key: any, value: any,path:number) {
+    return this.database.object('/Rooms/' + String(key) + '/guestHistoryID').update({[path]:value})
   }
 }
 

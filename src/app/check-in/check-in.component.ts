@@ -11,6 +11,11 @@ export class CheckInComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  step3=false
+  displayer(event)
+  {
+    this.step3=event
+  }
 
   constructor( private _formBuilder: FormBuilder) { }
 

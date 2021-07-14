@@ -22,7 +22,7 @@
       <input type="date" class="form-control" [(ngModel)]="checkout" [ngModelOptions]="{standalone: true}"
         id="checkoutdate" min="{{checkin}}" [value]="datein.value" #dateout="ngModel" (change)="inialize()" ngMode>
     </div>
-    <div *ngIf=" (checkin===checkout && (dateout.touched))" class="text-center ; "
+    <div *ngIf=" ( (datein.value >= dateout.value) && (dateout.touched || datein.touched ))" class="text-center ; "
     style="font-size: medium; color: brown;">
     <div class="alert alert-primary">
       check in <<< check out!! </div>
@@ -36,7 +36,7 @@
       <!-- availabiity selection  *ngIf="RoomlistDisplay"-->
 
 
-        <div *ngIf="checkin < checkout" class="container-fluid d-flex flex-column p-1">
+        <div *ngIf="datein.value < dateout.value" class="container-fluid d-flex flex-column p-1">
           <!--  -->
           <div *ngIf="AvailableRoomList.length===0; else Notempty"> No rooms available </div>
           <ng-template #Notempty>

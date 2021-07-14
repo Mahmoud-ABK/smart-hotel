@@ -13,13 +13,47 @@ import { SignInUpService } from 'src/app/Services/sign-in-up.service';
 export class Step3Component implements OnInit {
   step1GuestData: Step1data
   step2RoomsData: {
-    Roomids: number[],
+    Roomids: Array<{
+      id:number,
+      length:number
+    }> ,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }
   finalGuestData= new GuestDataModel()
-  SelectedRooms: RoomModel[]
+  SelectedRooms: RoomModel[] =[
+    /* {
+      roomid:1,
+      RoomCheckinDate : [],
+      RoomCheckoutDate:[] ,
+      RoomPrice:90,
+      RoomTemperature: 1 ,
+      Roomhumidity:1,
+      RoomLighting:[false,false,false,false] ,
+      WaterTempertaure:1,
+      Gas:false,
+      Fire:12 ,
+      guestHistoryID:[],
+      doorOpen:true,
+      doorHistory:[]
+    },
+    {
+      roomid:2,
+      RoomCheckinDate : [],
+      RoomCheckoutDate:[] ,
+      RoomPrice:200,
+      RoomTemperature: 1 ,
+      Roomhumidity:1,
+      RoomLighting:[false,false,false,false] ,
+      WaterTempertaure:1,
+      Gas:false,
+      Fire:12 ,
+      guestHistoryID:[],
+      doorOpen:true,
+      doorHistory:[]
+    } */
+  ]
   sum:number=0
 
 
@@ -28,7 +62,8 @@ export class Step3Component implements OnInit {
    }
 
   ngOnInit(): void {
-    let getter = setInterval(()=>{this.GettingData},200)
+
+      this.GettingData()
 
   }
 
@@ -37,10 +72,15 @@ export class Step3Component implements OnInit {
     console.log(this.step1GuestData);
   this.step2RoomsData = this.dataImporter.step2RoomData
   this.SelectedRooms = this.step2RoomsData.SelectedRooms
-  this.SelectedRooms.forEach(element => {
-    this.sum = this.sum + element.RoomPrice
-  });
 
+  this.calc()
+
+  }
+  calc():number{
+      this.SelectedRooms.forEach(element => {
+     this.sum = this.sum + element.RoomPrice
+  });
+  return this.sum
   }
   checkIN(email, password) {
     this.SignInUp.signUp(email, password).then(
@@ -69,13 +109,14 @@ export class Step3Component implements OnInit {
     this.finalGuestData.Pic = this.step1GuestData.Pic
     this.finalGuestData.People = this.step1GuestData.people
     this.finalGuestData.Nights = this.step1GuestData.nights
-
     console.log(this.finalGuestData);
-
-
-
     this.checkIN(this.step1GuestData.Email, this.step1GuestData.Password)
     this.SignInUp.GuestDataPusher(this.finalGuestData)
+    this.step2RoomsData.Roomids.forEach(element => {
+      this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin,element.length)
+     this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout,element.length)
+      this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email,element.length)
+    });
 
   }
 

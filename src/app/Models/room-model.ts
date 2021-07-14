@@ -5,13 +5,13 @@ export class RoomModel {
     RoomPrice:number;
     RoomTemperature: number ;
     Roomhumidity:number;
-    RoomLighting:[false,false,false,false];
+    RoomLighting:[Boolean,Boolean,Boolean,Boolean];
     WaterTempertaure:number;
     Gas:boolean;
     Fire:number ;
     guestHistoryID:string[];
     doorOpen:boolean;
-    doorHistory:[]
+    doorHistory:any[]
 
 
 
