@@ -16,6 +16,7 @@ import { LoginServantPageComponent } from './login-pages/login-servant-page/logi
 import { ManagerInterfaceComponent } from './manager-interface/manager-interface.component';
 import { RoomManagementComponent } from './manager-interface/room-management/room-management.component';
 import { RoomReportMenuComponent } from './manager-interface/room-report-menu/room-report-menu.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { RoomControlComponent } from './room-settings/room-control/room-control.component';
 import { RoomReportComponent } from './room-settings/room-report/room-report.component';
 import { RoomSecurityComponent } from './room-settings/room-security/room-security.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:"managerlogin",component:LoginManagerComponent},
   {path:"kitchenlogin",component:KitchenPageLoginComponent},
   {path:"servantlogin",component:LoginServantPageComponent},
+  { path:"passwordreset", component:PasswordResetComponent },
   {path:"guestinterface",component:GuestInterfaceComponent},
   {path:"servantpage",component:ServantPageComponent},
   {path:"kitchenpage",component:KitchenPageComponent},
