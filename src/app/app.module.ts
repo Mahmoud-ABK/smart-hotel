@@ -55,6 +55,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { SignInUpService } from './Services/sign-in-up.service';
 import { DataImporterService } from './Services/data-importer.service';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 const appRoutes: Routes =[]
@@ -86,7 +87,8 @@ const appRoutes: Routes =[]
     KitchenPageLoginComponent,
     LoginRoundaboutComponent,
     ServantPageComponent,
-    LoginServantPageComponent
+    LoginServantPageComponent,
+    PasswordResetComponent
   ],
   imports: [
 
