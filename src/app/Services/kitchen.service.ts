@@ -10,14 +10,19 @@ export class KitchenService {
   database: AngularFireDatabase
   kitchenref: AngularFireList<Kitchen>
   servantref:AngularFireList<Kitchen>
+  managerref:AngularFireList<Kitchen>
   constructor(db: AngularFireDatabase) {
-    this.kitchenref = db.list('/staff credentials/kitchen/chef1')
-    this.servantref = db.list('/staff credentials/servaant/servant1')
+    this.kitchenref = db.list('/StaffCredentials/kitchen')
+    this.servantref = db.list('/StaffCredentials/servant')
+    this.managerref = db.list('/StaffCredentials/manager')
    }
    kitchendataimporter(){
     return this.kitchenref
    }
    servantdataimporter(){
     return this.servantref
+   }
+   managerdataimporter(){
+    return this.managerref
    }
 }

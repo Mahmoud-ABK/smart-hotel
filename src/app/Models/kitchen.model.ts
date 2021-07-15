@@ -1,4 +1,4 @@
 export class Kitchen {
-    kitchenID:any
+    ID:any
     password:any
 }

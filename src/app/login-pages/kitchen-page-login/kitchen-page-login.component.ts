@@ -21,7 +21,7 @@ export class KitchenPageLoginComponent implements OnInit {
     .pipe(map(kitchendata=>kitchendata.map(kit=>({kitchenID:kit.payload.val()}))))
     .subscribe(res=>{console.log(res[0].kitchenID) 
        console.log(res[1].kitchenID)
-    this.result.kitchenID=res[0].kitchenID
+    this.result.ID=res[0].kitchenID
     this.result.password=res[1].kitchenID
   })
   console.log(this.result)
@@ -37,7 +37,7 @@ export class KitchenPageLoginComponent implements OnInit {
   }
   onclick(){
     this.clicked=true
-    if(this.result.kitchenID!=this.loggedemail ||
+    if(this.result.ID!=this.loggedemail ||
       this.result.password!= this.loggedpsw){
         this.a=false
       }else{
