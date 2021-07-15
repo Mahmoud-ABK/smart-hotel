@@ -10,6 +10,10 @@ import { KitchenService } from 'src/app/Services/kitchen.service';
 })
 export class KitchenPageLoginComponent implements OnInit {
  result:Kitchen=new Kitchen()
+ loggedemail:any
+ loggedpsw:any
+ clicked:boolean=false
+ a:boolean=true
   constructor(private kitchendata : KitchenService) { }
 
   ngOnInit(): void {
@@ -27,8 +31,21 @@ export class KitchenPageLoginComponent implements OnInit {
     console.log(form.value.kitchenID);
     console.log(form.value.kitchenpsw);
     console.log("hey")
-   
+
+    this.loggedemail=form.value.kitchenID
+    this.loggedpsw=form.value.kitchenpsw
   }
+  onclick(){
+    this.clicked=true
+    if(this.result.kitchenID!=this.loggedemail ||
+      this.result.password!= this.loggedpsw){
+        this.a=false
+      }else{
+        this.a=true
+      }
+  }
+    
+  
 
   
 }
