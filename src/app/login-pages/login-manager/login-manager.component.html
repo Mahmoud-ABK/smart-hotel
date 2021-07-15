@@ -19,19 +19,19 @@
         <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
           <div class="container ">
             <div class="row my-2 d-flex justify-content-center">
+              <span  style="font-weight: bold ;color: red;padding-bottom: 30px;" *ngIf="this.clicked && !this.a" class="help-block w-100 text-center ">
+                invalid ID or password
+              </span>
               <div class="form-floating mb-3 d-flex flex-column ">
                 <input 
-                type="email" 
+                type="text" 
                 class="form-control" 
-                id="email" 
+                id="managerid" 
                 placeholder="aaaaa"
-                name="email"
+                name="managerid"
                 ngModel
-                required
-                email
-                #email="ngModel">
-                <label for="email" class="ms-4">Manager ID</label>
-                <span style="font-weight: bold ;color: red;" *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email</span>
+                required>
+                <label for="managerid" class="ms-4">Manager ID</label>
               </div>
             </div>
 
@@ -50,7 +50,7 @@
 
             <div class="row my-5 d-flex justify-content-center text-center">
               <div class=" d-flex flex-column justify-content-center ">
-                <button mat-raised-button w-100  routerLink="/managerinterface/roommanagement" type="submit">Login</button>
+                <button mat-raised-button w-100 (click)="onclick()"  routerLink="/managerinterface/roommanagement" type="submit">Login</button>
               </div>
             </div>
 
