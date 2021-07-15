@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { NgForm } from '@angular/forms';
 import { GuestDataModel } from 'src/app/Models/guest-data-model';
 import { RoomModel } from 'src/app/Models/room-model';
@@ -12,19 +13,37 @@ import { DataImporterService } from 'src/app/Services/data-importer.service';
   styleUrls: ['./step1.component.css']
 })
 export class Step1Component implements OnInit {
-  step1data:Step1data
-  profilePic:any="/assets/user-profile.svg"
+  step1data: Step1data
+  profilePic: string
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
+  next=false
+  waiting=false
+
+
+  constructor(private dataImporter: DataImporterService, private firestorage: AngularFireStorage) { }
   onFileSelected(event) {
-    if (!(event.target.files.length==0)){
-    this.profilePic = event.target.files[event.target.files.length-1];
-    console.log(this.profilePic);}
+    /*  if (!(event.target.files.length==0)){
+     this.profilePic = event.target.files[0];
+     console.log(this.profilePic);} */
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.firestorage.ref(id);
+    this.task = this.ref.put(event.target.files[0])
+    this.task.then((data) => {
+      data.ref.getDownloadURL().then((url) => {
+        console.log(url);
+
+        this.profilePic = String(url)
+        console.log(this.profilePic)
+
+      })
+    })
+    this.waiting=true
+  
   }
-
-  constructor(private dataImporter :DataImporterService) { }
-
   ngOnInit(): void {
   }
-  OnSubmit(form:NgForm){
+  OnSubmit(form: NgForm) {
     /*console.log(this.profilePic)
     console.log(form.value.guestFirstName)
     console.log(form.value.guestLastname)
@@ -35,19 +54,19 @@ export class Step1Component implements OnInit {
     console.log(form.value.guestPhoneNum)
     console.log(form.value.NoOfNights)
     console.log(form.value.NoOfPeople)*/
-    this.step1data={
-      Pic: this.profilePic ,
-      Firstname:form.value.guestFirstName ,
-      Lastname: form.value.guestLastname ,
+    this.step1data = {
+      Pic: this.profilePic,
+      Firstname: form.value.guestFirstName,
+      Lastname: form.value.guestLastname,
       IDorPass: form.value.guestIDorPass,
       Birthdate: form.value.guestBirthdate,
       Email: form.value.guestEmail,
       Password: form.value.guestPassword,
       PhoneNum: form.value.guestPhoneNum,
       nights: form.value.NoOfNights,
-      people:form.value.NoOfPeople
+      people: form.value.NoOfPeople
     }
-    // console.log(this.step1data);
+    console.log(this.step1data);
     this.dataImporter.ToStep3(this.step1data)
 
 
@@ -55,16 +74,16 @@ export class Step1Component implements OnInit {
 
 
   }
-//   NoOfNights: ""
-// NoOfPeople: ""
-// guestBirthdate: ""
-// guestEmail: ""
-// guestFirstName: ""
-// guestIDorPass: ""
-// guestLastname: ""
-// guestPassword: ""
-// guestPhoneNum: ""
-// profilePic: ""
+  //   NoOfNights: ""
+  // NoOfPeople: ""
+  // guestBirthdate: ""
+  // guestEmail: ""
+  // guestFirstName: ""
+  // guestIDorPass: ""
+  // guestLastname: ""
+  // guestPassword: ""
+  // guestPhoneNum: ""
+  // profilePic: ""
 
   handleEnterKeyPress(event) {
     const tagName = event.target.tagName.toLowerCase();

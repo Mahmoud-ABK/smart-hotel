@@ -1,87 +1,74 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GuestDataModel } from 'src/app/Models/guest-data-model';
 import { RoomModel } from 'src/app/Models/room-model';
 import { Step1data } from 'src/app/Models/step1data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-step3',
   templateUrl: './step3.component.html',
   styleUrls: ['./step3.component.css']
 })
-export class Step3Component implements OnInit {
+export class Step3Component implements OnInit, OnDestroy {
+  //Initialization
+           //placeholders for dataimporter data
+           //step1
   step1GuestData: Step1data
+          //step2
   step2RoomsData: {
-    Roomids: Array<{
-      id:number,
-      length:number
-    }> ,
+    Roomids: Array<{id: number,length: number}>,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }
-  finalGuestData= new GuestDataModel()
-  SelectedRooms: RoomModel[] =[
-    /* {
-      roomid:1,
-      RoomCheckinDate : [],
-      RoomCheckoutDate:[] ,
-      RoomPrice:90,
-      RoomTemperature: 1 ,
-      Roomhumidity:1,
-      RoomLighting:[false,false,false,false] ,
-      WaterTempertaure:1,
-      Gas:false,
-      Fire:12 ,
-      guestHistoryID:[],
-      doorOpen:true,
-      doorHistory:[]
-    },
-    {
-      roomid:2,
-      RoomCheckinDate : [],
-      RoomCheckoutDate:[] ,
-      RoomPrice:200,
-      RoomTemperature: 1 ,
-      Roomhumidity:1,
-      RoomLighting:[false,false,false,false] ,
-      WaterTempertaure:1,
-      Gas:false,
-      Fire:12 ,
-      guestHistoryID:[],
-      doorOpen:true,
-      doorHistory:[]
-    } */
-  ]
-  sum:number=0
+  //another placeholder
+  SelectedRooms: RoomModel[] = []
+  //price counter
+  sum: number = 0
+//imgUrl
+  imgURL: any
+//final output
+  finalGuestData = new GuestDataModel()
+
+
 
 
   constructor(private dataImporter: DataImporterService, private SignInUp: SignInUpService) {
 
-   }
-
+  }
+//getting data and putting img in their places
   ngOnInit(): void {
 
-      this.GettingData()
+    this.GettingData()
+
+    if (this.step1GuestData.Pic === "undefined") {
+      this.imgURL = "https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/user-profile.svg?alt=media&token=a3567d4c-824e-4916-89a7-868bb3f361de"
+
+    } else {
+      this.imgURL = this.step1GuestData.Pic
+    }
 
   }
-
+//getting step1 and 2 data and calc
   GettingData() {
     this.step1GuestData = this.dataImporter.step1GuestData
     console.log(this.step1GuestData);
-  this.step2RoomsData = this.dataImporter.step2RoomData
-  this.SelectedRooms = this.step2RoomsData.SelectedRooms
+    this.step2RoomsData = this.dataImporter.step2RoomData
+    this.SelectedRooms = this.step2RoomsData.SelectedRooms
 
-  this.calc()
+    this.calc()
 
   }
-  calc():number{
-      this.SelectedRooms.forEach(element => {
-     this.sum = this.sum + element.RoomPrice
-  });
-  return this.sum
+  //calculating Sum
+  calc(): number {
+    this.SelectedRooms.forEach(element => {
+      this.sum = this.sum + element.RoomPrice
+    });
+    return this.sum
   }
+  //sign Up
   checkIN(email, password) {
     this.SignInUp.signUp(email, password).then(
 
@@ -92,11 +79,10 @@ export class Step3Component implements OnInit {
 
   }
   // this func is to put in the finished btn
-
-
   bigFunction() {
+    //again
     this.GettingData()
-
+    //setting each value into place
     this.finalGuestData.FirstName = this.step1GuestData.Firstname
     this.finalGuestData.LastName = this.step1GuestData.Lastname
     this.finalGuestData.Birthdate = this.step1GuestData.Birthdate
@@ -106,21 +92,26 @@ export class Step3Component implements OnInit {
     this.finalGuestData.RoomidS = this.step2RoomsData.Roomids
     this.finalGuestData.checkin = this.step2RoomsData.checkin
     this.finalGuestData.checkout = this.step2RoomsData.checkout
-    this.finalGuestData.Pic = this.step1GuestData.Pic
+    this.finalGuestData.Pic = this.imgURL
     this.finalGuestData.People = this.step1GuestData.people
     this.finalGuestData.Nights = this.step1GuestData.nights
+    //just for testing
     console.log(this.finalGuestData);
+    //checkin func
     this.checkIN(this.step1GuestData.Email, this.step1GuestData.Password)
+    //uploadta
     this.SignInUp.GuestDataPusher(this.finalGuestData)
     this.step2RoomsData.Roomids.forEach(element => {
-      this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin,element.length)
-     this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout,element.length)
-      this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email,element.length)
+      this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin, element.length)
+      this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
+      this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email, element.length)
     });
 
   }
 
-
+  ngOnDestroy() {
+    this.SignInUp.loggingOut()
+  }
 
 }
 

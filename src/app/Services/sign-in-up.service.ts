@@ -20,7 +20,9 @@ export class SignInUpService {
   GuestDataPusher(GuestData:GuestDataModel):any{
     return this.db.database.ref().child('GuestList').push(GuestData)
   }
-
+loggingOut(){
+  this.auth.signOut
+}
 
 
 
