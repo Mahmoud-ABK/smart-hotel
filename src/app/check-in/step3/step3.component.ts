@@ -5,6 +5,7 @@ import { Step1data } from 'src/app/Models/step1data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-step3',
@@ -35,7 +36,7 @@ export class Step3Component implements OnInit, OnDestroy {
 
 
 
-  constructor(private dataImporter: DataImporterService, private SignInUp: SignInUpService) {
+  constructor(private dataImporter: DataImporterService, private SignInUp: SignInUpService, public router:Router) {
 
   }
 //getting data and putting img in their places
@@ -106,6 +107,8 @@ export class Step3Component implements OnInit, OnDestroy {
       this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
       this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email, element.length)
     });
+    this.router.navigate(['/guestlogin'])
+
 
   }
 

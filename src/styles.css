@@ -63,3 +63,7 @@ mat-stepper{
   width: 2em;
   height: 2em;
 }
+.mat-simple-snackbar{
+  line-height: 30px !important;
+  font-size: large;
+}

@@ -21,9 +21,14 @@ export class SignInUpService {
     return this.db.database.ref().child('GuestList').push(GuestData)
   }
 loggingOut(){
-  this.auth.signOut
+  this.auth.signOut()
 }
-
+logginIn(email:string,password:string){
+  return this.auth.signInWithEmailAndPassword(email,password)
+}
+passEmail(a){
+  return this.auth.sendPasswordResetEmail(a)
+}
 
 
 }
