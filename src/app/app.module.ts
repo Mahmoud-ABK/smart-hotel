@@ -58,6 +58,8 @@ import { DataImporterService } from './Services/data-importer.service';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KitchenService } from './Services/kitchen.service';
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 
@@ -112,7 +114,7 @@ const appRoutes: Routes = []
 
 
   ],
-  providers: [SignInUpService, DataImporterService,KitchenService],
+  providers: [SignInUpService, DataImporterService,KitchenService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { KitchenauthGuard } from 'src/app/guards/kitchenauth.guard';
 import { Kitchen } from 'src/app/Models/kitchen.model';
 import { KitchenService } from 'src/app/Services/kitchen.service';
 
@@ -15,7 +17,7 @@ export class LoginServantPageComponent implements OnInit {
   loggedpsw:any
   clicked:boolean=false
   a:boolean=true
-  constructor(private servantdata : KitchenService) { }
+  constructor(private servantdata : KitchenService, private kitchenstatus :KitchenauthGuard, public route : Router) { }
 
   ngOnInit(): void {
     this.servantdata.servantdataimporter().snapshotChanges()
@@ -29,10 +31,17 @@ export class LoginServantPageComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+    const promise = new Promise((resolve , reject)=> {
     console.log(form.value.servantid);
     console.log(form.value.servantpsw);
     this.loggedemail=form.value.servantid
     this.loggedpsw=form.value.servantpsw
+    this.onclick()
+    if (this.a ) {
+      resolve(this.servantdata.servantdataretriever(this.a))
+      this.route.navigate(['servantpage'])
+    }
+})
   }
   onclick(){
     this.clicked=true

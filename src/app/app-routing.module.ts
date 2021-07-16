@@ -6,6 +6,9 @@ import { CheckInComponent } from './check-in/check-in.component';
 import { Step1Component } from './check-in/step1/step1.component';
 import { Step2Component } from './check-in/step2/step2.component';
 import { Step3Component } from './check-in/step3/step3.component';
+import { AuthGuard } from './guards/auth.guard';
+import { KitchenauthGuard } from './guards/kitchenauth.guard';
+
 import { GuestInterfaceComponent } from './guest-interface/guest-interface.component';
 import { HomeComponent } from './home/home.component';
 import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
@@ -45,11 +48,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingLoggedInToGuestInterface },
   },
-  { path: "loginroundabout", component: LoginRoundaboutComponent },
-  { path: "managerlogin", component: LoginManagerComponent },
-  { path: "kitchenlogin", component: KitchenPageLoginComponent },
-  { path: "servantlogin", component: LoginServantPageComponent },
-  { path: "passwordreset", component: PasswordResetComponent },
+
   {
     path: "guestinterface",
     component: GuestInterfaceComponent,
@@ -58,10 +57,44 @@ const routes: Routes = [
   },
   { path: "servantpage", component: ServantPageComponent },
   { path: "kitchenpage", component: KitchenPageComponent },
+
+
+  {
+    path: "loginroundabout",
+    component: LoginRoundaboutComponent
+  },
+  {
+    path: "managerlogin",
+    component: LoginManagerComponent
+  },
+  {
+    path: "kitchenlogin",
+    component: KitchenPageLoginComponent
+  },
+  {
+    path: "servantlogin",
+    component: LoginServantPageComponent
+  },
+  {
+    path: "passwordreset",
+    component: PasswordResetComponent
+  },
+
+  {
+    path: "servantpage",
+    component: ServantPageComponent
+  },
+  {
+    path: "kitchenpage",
+    component: KitchenPageComponent,
+    canActivate: [KitchenauthGuard]
+  },
   {
     path: "managerinterface",
     component: ManagerInterfaceComponent,
+    canActivate: [AuthGuard],
     children: [
+
       {
         path: "roommanagement",
         component: RoomManagementComponent
