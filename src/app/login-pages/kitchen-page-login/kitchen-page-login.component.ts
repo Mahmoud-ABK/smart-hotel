@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { KitchenauthGuard } from 'src/app/guards/kitchenauth.guard';
 import { Kitchen } from 'src/app/Models/kitchen.model';
 import { KitchenService } from 'src/app/Services/kitchen.service';
 @Component({
@@ -14,7 +16,7 @@ export class KitchenPageLoginComponent implements OnInit {
  loggedpsw:any
  clicked:boolean=false
  a:boolean=true
-  constructor(private kitchendata : KitchenService) { }
+  constructor(private kitchendata : KitchenService, private kitchenstatus :KitchenauthGuard, public route : Router) { }
 
   ngOnInit(): void {
     this.kitchendata.kitchendataimporter().snapshotChanges()
@@ -28,12 +30,20 @@ export class KitchenPageLoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    console.log(form.value.kitchenID);
-    console.log(form.value.kitchenpsw);
-    console.log("hey")
-
-    this.loggedemail=form.value.kitchenID
-    this.loggedpsw=form.value.kitchenpsw
+    const promise = new Promise((resolve , reject)=> {
+      console.log(form.value.kitchenID);
+      console.log(form.value.kitchenpsw);
+      console.log("hey")
+  
+      this.loggedemail=form.value.kitchenID
+      this.loggedpsw=form.value.kitchenpsw
+      this.onclick()
+      if (this.a ) {
+        resolve(this.kitchendata.kitchendataretriever(this.a))
+        this.route.navigate(['/kitchenpage'])
+      }
+    })
+   
   }
   onclick(){
     this.clicked=true

@@ -57,6 +57,7 @@ import { SignInUpService } from './Services/sign-in-up.service';
 import { DataImporterService } from './Services/data-importer.service';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -112,7 +113,7 @@ const appRoutes: Routes = []
 
 
   ],
-  providers: [SignInUpService, DataImporterService],
+  providers: [SignInUpService, DataImporterService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
