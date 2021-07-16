@@ -55,8 +55,6 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome }
   },
-  { path: "servantpage", component: ServantPageComponent },
-  { path: "kitchenpage", component: KitchenPageComponent },
 
 
   {
