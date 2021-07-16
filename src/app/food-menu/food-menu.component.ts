@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import { SignInUpService } from '../Services/sign-in-up.service';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -202,7 +204,7 @@ export class FoodMenuComponent implements OnInit {
 
   ]
   toRoom:boolean=false
-  constructor() { }
+  constructor(public loggingOut:SignInUpService, public router:Router) { }
 
   ngOnInit(): void {
 
@@ -238,6 +240,12 @@ export class FoodMenuComponent implements OnInit {
 
     }
 
+  }
+  ToInterface(){
+    this.router.navigate(['/guestinterface'])
+  }
+  onLogout(){
+    this.loggingOut.loggingOut()
   }
   onSend() {
     console.log(this.list)

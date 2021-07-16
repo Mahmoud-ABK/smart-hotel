@@ -20,15 +20,16 @@
         <div class="col-lg-3">when?</div>
         <div class="col-12 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex flex-row ">
 
-          <input ngModel id="cleaningDateTime" name="cleaningDateTime" class="form-control"
-           type="datetime-local" placeholder="date and time" [disabled]="!disable">
+          <input ngModel id="cleaningDateTime" name="cleaningDateTime" class="form-control" type="datetime-local"
+            placeholder="date and time" [disabled]="!disable">
 
 
         </div>
       </div>
       <div class="row d-flex flex-row justify-content-center">
-        <div class="col-4 d-flex flex-row justify-content-end"><button class=" submit-button " [disabled]="!disable" mat-button
-            disabled type="submit" style="background-color: #E3B04B; color: #f8f8f8;">Send demand</button></div>
+        <div class="col-4 d-flex flex-row justify-content-end"><button class=" submit-button " [disabled]="!disable"
+            mat-button disabled type="submit" style="background-color: #E3B04B; color: #f8f8f8;">Send demand</button>
+        </div>
       </div>
     </div>
 
@@ -45,7 +46,7 @@
     <div class="col-12 d-flex flex-row ">visit our food menu?</div>
   </div>
   <div class="row d-flex flex-row  m-2 pt-2">
-    <div class="col-12 d-flex flex-row r"><button class="button  " mat-button type="button"
+    <div class="col-12 d-flex flex-row r"><button class="button " [routerLink]="['/foodmenu']" mat-button type="button"
         style="background-color: #E3B04B; color: #f8f8f8;">Food menu</button></div>
   </div>
 </div>

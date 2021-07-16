@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SignInUpService } from '../Services/sign-in-up.service';
 
 @Component({
   selector: 'app-guest-interface',
@@ -17,9 +19,11 @@ rooms:Array<object>=[
       roomID:9,
       checkoutDate:"33/33/3733"}
 ]
-  constructor() { }
+  constructor(public loggingOutService:SignInUpService , public route:Router) { }
 
   ngOnInit(): void {
   }
-
+  loggingOut(){
+    this.loggingOutService.loggingOut()
+  }
 }

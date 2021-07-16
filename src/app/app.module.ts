@@ -57,7 +57,7 @@ import { SignInUpService } from './Services/sign-in-up.service';
 import { DataImporterService } from './Services/data-importer.service';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { KitchenService } from './Services/kitchen.service';
 
 
 
@@ -112,7 +112,7 @@ const appRoutes: Routes = []
 
 
   ],
-  providers: [SignInUpService, DataImporterService],
+  providers: [SignInUpService, DataImporterService,KitchenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

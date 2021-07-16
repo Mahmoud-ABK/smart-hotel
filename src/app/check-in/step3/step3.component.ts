@@ -71,9 +71,7 @@ export class Step3Component implements OnInit, OnDestroy {
   }
   //sign Up
   checkIN(email, password) {
-    this.SignInUp.signUp(email, password).then(
-
-    )
+    return this.SignInUp.signUp(email, password)
 
 
 
@@ -99,21 +97,23 @@ export class Step3Component implements OnInit, OnDestroy {
     //just for testing
     console.log(this.finalGuestData);
     //checkin func
-    this.checkIN(this.step1GuestData.Email, this.step1GuestData.Password)
-    //uploadta
-    this.SignInUp.GuestDataPusher(this.finalGuestData)
+    this.checkIN(this.step1GuestData.Email, this.step1GuestData.Password).then(() => {
+        //uploadta
+         this.SignInUp.GuestDataPusher(this.finalGuestData)
     this.step2RoomsData.Roomids.forEach(element => {
       this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin, element.length)
       this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
       this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email, element.length)
     });
-    this.router.navigate(['/guestlogin'])
+    //logging out on signUp
+    this.SignInUp.loggingOut()
+    })
+
 
 
   }
-
   ngOnDestroy() {
-    this.SignInUp.loggingOut()
+
   }
 
 }
