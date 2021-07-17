@@ -185,7 +185,7 @@ li.nav-link{
 
 .second-sec{
     padding: 50px 0px;
-    background-color: #F1D6AB;
+    background-color: #eaddca;
     background-size: 500px;
 }
 
@@ -289,16 +289,21 @@ li.nav-link{
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
   /* PRICING CARDS */
+.cardOne{
+  background-color: #e6ccb2;
+}
+
 .card1{
-    background-color: #d1c5b58c;
+    background-color: #ddb892;
 }
 
 .card2{
-    background-color: #c5a8808c;
+    background-color: #b08968;
 }
 
 .card3{
-    background-color: #c5a880c2;
+    background-color: #a9714c;
+    color: #f8f8f8;
     height: 100%!important;
     margin: 0;
 }

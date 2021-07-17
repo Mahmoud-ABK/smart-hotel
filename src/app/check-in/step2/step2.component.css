@@ -3,7 +3,7 @@
   font-size: large;
 }
 .main{
-    background: #E3B04B;
+    background-color: #eaddca !important;
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
@@ -181,7 +181,7 @@ border: 1px solid #1E2B31;
     height: 2rem;
     overflow: hidden;
     font-size: .75rem;
-    background-color: #e9ecef;
+    background-color: #eaddca !important;
     border-radius: .25rem;
     margin: 0 auto 10px auto;
     max-width: 75%;
@@ -220,7 +220,7 @@ border: 1px solid #1E2B31;
     color: #fff !important
 }
 .paper-title{
-    color: #E3B04B;
+    color:#eaddca !important;;
     margin-bottom: 20px;
     font-size: 18px;
     padding-bottom: 12px;
@@ -282,7 +282,7 @@ button:checked {
 }
 hr{
   height: 3px;
-  background-color: goldenrod;
+  background-color: #eaddca !important;
 }
 .confirm{
   background-color: #F1D6AB;
