@@ -1,9 +1,15 @@
 :host{
   font-family: montserrat;
   font-size: medium;
+  background-color: #eaddca !important;
 }
+
+.body{
+    background-color: #eaddca !important;
+}
+
 .main{
-    background: #E3B04B;
+    background-color: #eaddca;
     width: 100%;
     padding-left: 0px;
     padding-bottom: 50px;
@@ -197,7 +203,7 @@ border: 1px solid #1E2B31;
     height: 2rem;
     overflow: hidden;
     font-size: .75rem;
-    background-color: #e9ecef;
+    background-color: #eaddca;
     border-radius: .25rem;
     margin: 0 auto 10px auto;
     max-width: 75%;
