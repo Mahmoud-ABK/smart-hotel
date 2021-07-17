@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,9 @@ export class InAppOperationsService {
     id: string
   }
   RoomID: number
-  database:AngularFireDatabase
+  database: AngularFireDatabase
 
-  constructor(public db:AngularFireDatabase) {
+  constructor(public db: AngularFireDatabase) {
 
   }
   IDtransmitter(id: number) {
@@ -51,24 +52,29 @@ export class InAppOperationsService {
     this.currentLoginInData = data
     console.log(this.currentLoginInData)
   }
-  updating(key: any,tem:number,h:number,light:boolean[],w:number) {
-    return this.db.object('/Rooms/' + String(key)).update({RoomTemperature:tem ,
-      Roomhumidity:h,
-      RoomLighting:light,
-      WaterTempertaure:w
-     })
+  updating(key: any, tem: number, h: number, light: boolean[], w: number) {
+    return this.db.object('/Rooms/' + String(key)).update({
+      RoomTemperature: tem,
+      Roomhumidity: h,
+      RoomLighting: light,
+      WaterTempertaure: w
+    })
   }
-  /* hum(key: any,value:number) {
-    return this.db.object('/Rooms/' + String(key)).update({Roomhumidity:value })
+  doorStatusUpdater(id, val) {
+    return this.db.object('/Rooms/' + String(id)).update({ doorOpen: val })
   }
-  lights(key: any,value:boolean[]) {
-    return this.db.object('/Rooms/' + String(key)).update({RoomLighting:value })
+  doorhisoryUpdater(id, val) {
+    return this.db.list('/Rooms/' + String(id) + '/doorHistory').push(val)
   }
-  WaterTemp(key: any,value:number) {
-    return this.db.object('/Rooms/' + String(key)).update({WaterTempertaure:value })
-  }
- */
+  doorHistoryImporter(key: number) {
+    var firelist:AngularFireList<{action:string,time:string}>
+    firelist=this.db
+      .list('/Rooms/' + String(key) + '/doorHistory')
+    return firelist
+      .snapshotChanges()
+      .pipe(map((changes => changes.map(r => ({ key: r.payload.key , ...r.payload.val() })))))
+     
 
 
-
+  }
 }

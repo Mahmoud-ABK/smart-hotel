@@ -13,7 +13,10 @@ font-size: x-large;
     background-color: #477264 !important;
     border: #477264;
   }
+.hover:hover{
+  cursor: pointer;
 
+}
   input:focus {
     outline: none !important;
     border:1px solid #477264;
