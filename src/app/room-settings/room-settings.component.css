@@ -5,13 +5,19 @@ font-size: large;
   padding-bottom: 20em;
   background-color: #EAE2B6 !important;
 }
+img{
+  display: block;
+  border-radius: 50%;
+  height: 100px !important;
+  width: 100px !important;
+}
 .navbar {
   background-color: #182125;
 }
 .room-ctrl
 {
   height: 100%;
-  
+
   background-color: #FCF6EE !important;
 }
 .profile-name ,.profile-info{

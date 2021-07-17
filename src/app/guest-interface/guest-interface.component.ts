@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataImporterService } from '../Services/data-importer.service';
+import { InAppOperationsService } from '../Services/in-app-operations.service';
 import { SignInUpService } from '../Services/sign-in-up.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SignInUpService } from '../Services/sign-in-up.service';
 })
 export class GuestInterfaceComponent implements OnInit {
   currentEmail: string
-  data:{
+  data: {
     FirstName: string;
     LastName: string;
     Birthdate: string;
@@ -23,12 +24,12 @@ export class GuestInterfaceComponent implements OnInit {
     Pic: string;
     checkin: string;
     checkout: string;
-    id:string
+    id: string
   }
   rooms: Array<number>
   OutDate
 
-  constructor(public loggingOutService: SignInUpService, public route: Router, public dataImporter: DataImporterService) { }
+  constructor(public loggingOutService: SignInUpService, public route: Router, public dataImporter: DataImporterService, public Tosettings:InAppOperationsService) { }
 
   ngOnInit(): void {
     this.dataImporter.currentEmail().then((data) => {
@@ -36,23 +37,24 @@ export class GuestInterfaceComponent implements OnInit {
       console.log(this.currentEmail);
       this.dataImporter.currentEmailrelatedData(this.currentEmail).subscribe((res) => {
         res.forEach((element) => {
-          if (element.Email==this.currentEmail) {
-            this.data=element
+          if (element.Email == this.currentEmail) {
+            this.data = element
 
           }
         })
         console.log(this.data);
-        this.rooms=this.data.RoomidS
+        this.rooms = this.data.RoomidS
         this.OutDate = this.data.checkout
 
       })
     });
-
-
-
-
   }
   loggingOut() {
     this.loggingOutService.loggingOut()
+  }
+  ToRoomSettings(id: number) {
+    this.Tosettings.IDtransmitter(id)
+    this.Tosettings.currentDataTransmitter(this.data)
+    this.route.navigate([id,'roomsettings','roomcontrol'])
   }
 }

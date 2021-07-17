@@ -105,7 +105,7 @@ const routes: Routes = [
 
   },
   {
-    path: "roomsettings",
+    path: ":roomid/roomsettings",
     component: RoomSettingsComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome },

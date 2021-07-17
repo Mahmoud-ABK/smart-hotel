@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-light navboura ">
   <div class="container">
     <div class="row p-0">
-      <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
-          style="width: 80%;"></div>
-      <div class="col-6">
-        <h3>profile</h3>
-        <p>name</p>
+      <div class="col-7"><img src="{{data.Pic}}" class="img" alt="Responsive image"
+         ></div>
+      <div class="col-5">
+        <h3>{{data.FirstName}} {{data.LastName.concat()}}</h3>
+        <p></p>
       </div>
     </div>
     <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
@@ -40,7 +40,8 @@
               <p class="date"><span id="zina">Checkout Date:</span> {{OutDate}}</p>
             </div>
             <div class="data-item d-inline-flex justify-content-end w-100 pt-5">
-              <button type="button" class="btn go-to" routerLink="/roomsettings/roomcontrol">Room settings</button>
+              <button type="button" class="btn go-to" (click)="ToRoomSettings(room.id)">Room settings</button>
+              <!-- routerLink="/roomsettings/roomcontrol" -->
             </div>
           </div>
         </div>

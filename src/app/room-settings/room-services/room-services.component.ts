@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-room-services',
@@ -9,12 +10,15 @@ import { NgForm } from '@angular/forms';
 export class RoomServicesComponent implements OnInit {
 disable:boolean
 
-  constructor() { }
+  constructor(public router:Router, public thisroute:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
   onSubmit(form: NgForm){
     console.log(form.value.cleaningDateTime);
     console.log("hey")
+  }
+  ToFoodmenu(){
+    this.router.navigate(['/foodmenu'])
   }
 }
