@@ -1,5 +1,5 @@
 .main{
-    background: #E3B04B;
+    background:  #eaddca;
     padding-bottom: 50px;
     padding-left: 0px;
     padding-right: 0px;
@@ -27,11 +27,11 @@
   background-image:  linear-gradient(125deg , #30424B,#101619);
 }
 .btn-primary2{
-  background-image:  linear-gradient(125deg , #E3B04B,goldenrod);
+    background-image:  linear-gradient(125deg , #eaddca ,#e6bf84 );
 }
 .btn-primary1 , .btn-primary2{
-  border-radius: 0% !important;
-color:#fff;
+    border-radius: 1rem !important;
+    color:#1E2B31;
 text-transform: uppercase;
 letter-spacing: 2px;
 font-size: 16px;
@@ -51,7 +51,7 @@ border: 1px solid #1E2B31;
     position: relative;
     box-shadow: 0 10px 30px 0 rgba(0,0,0,0.6);
     padding: 20px;
-    max-width: 80%;
+    max-width: 85%;
     background-color: #ffffff;
     border: 1px solid #1E2B31;
     margin-top: 20px;
@@ -106,98 +106,11 @@ border: 1px solid #1E2B31;
     border: 1px solid #1E2B31;
     }
 
-#progressbar {
-    margin-bottom: 10px;
-    overflow: hidden;
-    color: lightgrey;
-    margin-top: 30px;
-}
 
-#progressbar .active {
-    color: #1E2B31
-}
-
-#progressbar li {
-    list-style-type: none;
-    font-size: 15px;
-    width: 33.33%;
-    float: left;
-    position: relative;
-    font-weight: 400;
-    text-align: center;
-}
-
-#progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\f13e"
-}
-#progressbar #personal:before {
-    font-family: FontAwesome;
-    content: "\f007"
-}
-
-#progressbar #payment:before {
-    font-family: FontAwesome;
-    content: "\f030"
-}
-
-
-#progressbar li:before {
-    width: 50px;
-    height: 50px;
-    line-height: 45px;
-    display: block;
-    font-size: 20px;
-    color: #ffffff;
-    background: lightgray;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    padding: 2px
-}
-
-#progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: lightgray;
-    position: absolute;
-    left: 0;
-    top: 25px;
-    z-index: -1
-}
-
-.progress {
-    display: flex;
-    height: 2rem;
-    overflow: hidden;
-    font-size: .75rem;
-    background-color: #e9ecef;
-    border-radius: .25rem;
-    margin: 0 auto 10px auto;
-    max-width: 75%;
-}
-#progressbar li.active:before,
-#progressbar li.active:after {
-    background: #1E2B31
-}
-
-
-
-.progress-bar {
-    background-color: #1E2B31
-}
-
-.fit-image {
-    width: 100%;
-    object-fit: cover
-}
-/*.page-item a.active{
-    background-image: linear-gradient(125deg, #a72879,#064497);
-    color:#fff;
-}*/
+    
 
 .paper-title{
-    color: #E3B04B;
+    color: #b9a78d;
     margin-bottom: 20px;
     font-size: 18px;
     padding-bottom: 12px;
