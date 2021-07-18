@@ -15,6 +15,7 @@ export class RoomSecurityComponent implements OnInit , OnDestroy {
   constructor(public inApp: InAppOperationsService) { }
 
   ngOnInit(): void {
+    this.inApp.RoomID=+localStorage.getItem('Rid')
     this.inApp.doorHistoryImporter(this.inApp.RoomID).subscribe(res =>
       this.historyList = res
     )

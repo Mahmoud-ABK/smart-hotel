@@ -10,7 +10,7 @@ import { SignInUpService } from '../Services/sign-in-up.service';
   templateUrl: './room-settings.component.html',
   styleUrls: ['./room-settings.component.css']
 })
-export class RoomSettingsComponent implements OnInit , OnDestroy{
+export class RoomSettingsComponent implements OnInit, OnDestroy {
   data: {
     FirstName: string;
     LastName: string;
@@ -27,32 +27,36 @@ export class RoomSettingsComponent implements OnInit , OnDestroy{
     id: string
   }
 
-  constructor(private router:Router,public loggingOut:SignInUpService,public Logindata:InAppOperationsService ,public dataImporter:DataImporterService) {
-    this.dataImporter.currentEmail().then((data) => {
-      data.email
+  constructor(private router: Router, public loggingOut: SignInUpService, public Logindata: InAppOperationsService, public dataImporter: DataImporterService) {
+    // this.dataImporter.currentEmail().then((data) => {
+    //   data.email
 
-      this.dataImporter.currentEmailrelatedData(data.email).subscribe((res) => {
-        res.forEach((element) => {
-          if (element.Email == data.email) {
-            this.data = element
+    //   this.dataImporter.currentEmailrelatedData(data.email).subscribe((res) => {
+    //     res.forEach((element) => {
+    //       if (element.Email == data.email) {
+    //         this.data = element
 
-          }
-        })
-        console.log(this.data);
+    //       }
+    //     })
+    //     console.log(this.data);
 
-      })
-    });
-   }
-
-  ngOnInit(): void {
+    //   })
+    // });
+    this.Logindata.currentLoginInData = JSON.parse(localStorage.getItem('GuestData'))
+    this.data = JSON.parse(localStorage.getItem('GuestData'))
   }
-  onReport(){
+  roomID:any
+  ngOnInit(): void {
+    this.roomID = localStorage.getItem('Rid')
+
+  }
+  onReport() {
     this.router.navigate(["/guestinterface"]);
   }
-  onLogout(){
+  onLogout() {
     this.loggingOut.loggingOut()
   }
-  ngOnDestroy(){
-    this.Logindata.RoomID= this.Logindata.RoomID
+  ngOnDestroy() {
+    this.Logindata.RoomID = this.Logindata.RoomID
   }
 }

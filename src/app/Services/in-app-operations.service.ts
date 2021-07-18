@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -31,8 +32,15 @@ export class InAppOperationsService {
   IDtransmitter(id: number) {
     this.RoomID = id
     console.log(this.RoomID);
+    localStorage.setItem('Rid',id.toString())
+   
+
 
   }
+
+
+
+
   currentDataTransmitter(
     data: {
       FirstName: string;

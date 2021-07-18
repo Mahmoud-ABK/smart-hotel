@@ -212,6 +212,9 @@ export class FoodMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log( JSON.parse(localStorage.getItem('GuestData')));
+    this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
+    this.inApp.RoomID=+localStorage.getItem('Rid')
 
   }
   removerFromList(a: { foodName: string, quantity: number }) {
@@ -256,7 +259,7 @@ export class FoodMenuComponent implements OnInit {
     // console.log(this.list)
     // console.log("toRoom?");
     // console.log(this.toRoom);
-    this.FoodOrder.name = this.inApp.currentLoginInData.LastName + ' ' + this.inApp.currentLoginInData.LastName
+    this.FoodOrder.name = this.inApp.currentLoginInData.FirstName + ' ' + this.inApp.currentLoginInData.LastName
     this.FoodOrder.email = this.inApp.currentLoginInData.Email
     this.FoodOrder.list = this.list
     this.FoodOrder.ToRoom = this.toRoom

@@ -32,6 +32,7 @@ export class GuestInterfaceComponent implements OnInit {
   constructor(public loggingOutService: SignInUpService, public route: Router, public dataImporter: DataImporterService, public Tosettings:InAppOperationsService) { }
 
   ngOnInit(): void {
+
     this.dataImporter.currentEmail().then((data) => {
       this.currentEmail = data.email
       console.log(this.currentEmail);
@@ -43,6 +44,7 @@ export class GuestInterfaceComponent implements OnInit {
           }
         })
         console.log(this.data);
+        localStorage.setItem('GuestData', JSON.stringify(this.data));
         this.rooms = this.data.RoomidS
         this.OutDate = this.data.checkout
 
@@ -53,8 +55,11 @@ export class GuestInterfaceComponent implements OnInit {
     this.loggingOutService.loggingOut()
   }
   ToRoomSettings(id: number) {
+    localStorage.removeItem('Rid')
+    this.Tosettings.RoomID=0
     this.Tosettings.IDtransmitter(id)
     this.Tosettings.currentDataTransmitter(this.data)
-    this.route.navigate([id,'roomsettings','roomcontrol'])
+
+    this.route.navigate(['roomsettings','roomcontrol'])
   }
 }
