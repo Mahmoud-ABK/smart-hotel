@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataImporterService } from '../Services/data-importer.service';
 import { InAppOperationsService } from '../Services/in-app-operations.service';
@@ -10,7 +10,7 @@ import { SignInUpService } from '../Services/sign-in-up.service';
   templateUrl: './room-settings.component.html',
   styleUrls: ['./room-settings.component.css']
 })
-export class RoomSettingsComponent implements OnInit {
+export class RoomSettingsComponent implements OnInit , OnDestroy{
   data: {
     FirstName: string;
     LastName: string;
@@ -51,5 +51,8 @@ export class RoomSettingsComponent implements OnInit {
   }
   onLogout(){
     this.loggingOut.loggingOut()
+  }
+  ngOnDestroy(){
+    this.Logindata.RoomID= this.Logindata.RoomID
   }
 }

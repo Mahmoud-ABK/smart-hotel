@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
@@ -8,7 +8,7 @@ import { InAppOperationsService } from 'src/app/Services/in-app-operations.servi
   templateUrl: './room-control.component.html',
   styleUrls: ['./room-control.component.css']
 })
-export class RoomControlComponent implements OnInit {
+export class RoomControlComponent implements OnInit ,OnDestroy {
   disable = {
     a: true,
     b: true,
@@ -21,9 +21,10 @@ export class RoomControlComponent implements OnInit {
     c: false,
     d: false,
   }
-
+id:number
   constructor(public inApp:InAppOperationsService,private _snackBar: MatSnackBar) {
     console.log(this.inApp.RoomID)
+    this.id=this.inApp.RoomID
   }
 
   ngOnInit(): void {
@@ -73,5 +74,10 @@ export class RoomControlComponent implements OnInit {
     } else {
       return formcontrol
     }
+  }
+  ngOnDestroy(){
+    this.inApp.RoomID= this.id
+    console.log(this.inApp.RoomID);
+
   }
 }

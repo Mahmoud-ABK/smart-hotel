@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -24,7 +25,7 @@ export class InAppOperationsService {
   RoomID: number
   database: AngularFireDatabase
 
-  constructor(public db: AngularFireDatabase) {
+  constructor(public db: AngularFireDatabase, public Snackbar: MatSnackBar) {
 
   }
   IDtransmitter(id: number) {
@@ -67,14 +68,25 @@ export class InAppOperationsService {
     return this.db.list('/Rooms/' + String(id) + '/doorHistory').push(val)
   }
   doorHistoryImporter(key: number) {
-    var firelist:AngularFireList<{action:string,time:string}>
-    firelist=this.db
+    var firelist: AngularFireList<{ action: string, time: string }>
+    firelist = this.db
       .list('/Rooms/' + String(key) + '/doorHistory')
     return firelist
       .snapshotChanges()
-      .pipe(map((changes => changes.map(r => ({ key: r.payload.key , ...r.payload.val() })))))
-     
-
+      .pipe(map((changes => changes.map(r => ({ key: r.payload.key, ...r.payload.val() })))))
 
   }
+  // NG ON DESTROY TO STORE ID IN EVERY COMPO
+
+  /*  multiPusher(path:string,val:any){
+     return this.db.database.ref().child(path).push(val)
+   } */
+  multiPusher(path: string, val: any, snackbarMsg: string) {
+    return this.db.list(path).push(val).then(() => {
+      this.Snackbar.open(snackbarMsg, '', {
+        duration: 2500
+      })
+    })
+  }
+
 }

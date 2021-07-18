@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 @Component({
@@ -6,7 +6,7 @@ import { InAppOperationsService } from 'src/app/Services/in-app-operations.servi
   templateUrl: './room-security.component.html',
   styleUrls: ['./room-security.component.css']
 })
-export class RoomSecurityComponent implements OnInit {
+export class RoomSecurityComponent implements OnInit , OnDestroy {
   doorOpen: boolean = true;
   doorstatus: string = "Closed"
   historyList: { action: string, time: any }[] = [
@@ -51,6 +51,9 @@ export class RoomSecurityComponent implements OnInit {
         test: 'test'}
       }
     })
+  }
+  ngOnDestroy(){
+    this.inApp.RoomID= this.inApp.RoomID
   }
 
 }

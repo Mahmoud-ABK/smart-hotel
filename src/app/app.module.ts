@@ -63,6 +63,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 
+
 const appRoutes: Routes = []
 
 
@@ -109,7 +110,8 @@ const appRoutes: Routes = []
     MatCheckboxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
 
 
 
