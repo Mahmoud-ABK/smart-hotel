@@ -6,4 +6,6 @@ export class ReportModel {
     reporttitle:string
     reportdes:string
     img:string
+    email:string
+    num:string
 }

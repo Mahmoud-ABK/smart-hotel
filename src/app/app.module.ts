@@ -57,6 +57,7 @@ import { SignInUpService } from './Services/sign-in-up.service';
 import { DataImporterService } from './Services/data-importer.service';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { KitchenService } from './Services/kitchen.service';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -109,12 +110,13 @@ const appRoutes: Routes = []
     MatCheckboxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+
 
 
 
   ],
-  providers: [SignInUpService, DataImporterService, AuthGuard],
+  providers: [SignInUpService, DataImporterService,KitchenService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

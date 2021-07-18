@@ -2,6 +2,9 @@
   font-family: Open Sans;
 
 }
+img:hover{
+cursor: pointer !important;
+}
 .form-check-input{
 background-color: whitesmoke;
 }

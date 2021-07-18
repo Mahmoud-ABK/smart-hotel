@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CheckInComponent } from './check-in/check-in.component';
 import { Step1Component } from './check-in/step1/step1.component';
 import { Step2Component } from './check-in/step2/step2.component';
@@ -27,94 +27,118 @@ import { RoomServicesComponent } from './room-settings/room-services/room-servic
 import { RoomSettingsComponent } from './room-settings/room-settings.component';
 import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.component';
 import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
+import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { FoodMenuComponent } from './food-menu/food-menu.component';
+
+const redirectingUnauthorizedToHome = () => redirectUnauthorizedTo(['/guestlogin']);
+const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestinterface']);
 
 
 const routes: Routes = [
+  { path: "", component: HomeComponent },
   {
-  path:"",
-  component:HomeComponent
+    path: "guestlogin",
+    component: LoginGuestComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingLoggedInToGuestInterface },
   },
   {
-    path:"guestlogin",
-    component:LoginGuestComponent
+    path: "checkin",
+    component: CheckInComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingLoggedInToGuestInterface },
   },
-  { path:"checkin",
-     component:CheckInComponent
+
+  {
+    path: "guestinterface",
+    component: GuestInterfaceComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingUnauthorizedToHome }
+  },
+
+
+  {
+    path: "loginroundabout",
+    component: LoginRoundaboutComponent
   },
   {
-    path:"loginroundabout",
-     component:LoginRoundaboutComponent
-  },
-  { path:"managerlogin",
-    component:LoginManagerComponent
-  },
-  { path:"kitchenlogin",
-    component:KitchenPageLoginComponent
+    path: "managerlogin",
+    component: LoginManagerComponent
   },
   {
-    path:"servantlogin",
-    component:LoginServantPageComponent
+    path: "kitchenlogin",
+    component: KitchenPageLoginComponent
   },
   {
-    path:"passwordreset",
-    component:PasswordResetComponent
-   },
-  {
-    path:"guestinterface",
-    component:GuestInterfaceComponent
+    path: "servantlogin",
+    component: LoginServantPageComponent
   },
   {
-    path:"servantpage",
-    component:ServantPageComponent},
+    path: "passwordreset",
+    component: PasswordResetComponent
+  },
+
   {
-    path:"kitchenpage",
-    component:KitchenPageComponent,
-    canActivate:[KitchenauthGuard]
+    path: "servantpage",
+    component: ServantPageComponent
   },
   {
-    path:"managerinterface",
-    component:ManagerInterfaceComponent,
-    canActivate:[AuthGuard],
-    children:[
+    path: "kitchenpage",
+    component: KitchenPageComponent,
+    canActivate: [KitchenauthGuard]
+  },
+  {
+    path: "managerinterface",
+    component: ManagerInterfaceComponent,
+    canActivate: [AuthGuard],
+    children: [
+
       {
-        path:"roommanagement",
-        component:RoomManagementComponent
+        path: "roommanagement",
+        component: RoomManagementComponent
       },
       {
-        path:"roomreportmenu",
-        component:RoomReportMenuComponent
+        path: "roomreportmenu",
+        component: RoomReportMenuComponent
       }
     ]
-  
+
   },
   {
-    path:"roomsettings",
-    component:RoomSettingsComponent,
-    children:[
+    path: ":roomid/roomsettings",
+    component: RoomSettingsComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingUnauthorizedToHome },
+    children: [
       {
-        path:"roomservices",
-        component:RoomServicesComponent
+        path: "roomservices",
+        component: RoomServicesComponent
       },
       {
-        path:"roomreport",
-        component:RoomReportComponent
+        path: "roomreport",
+        component: RoomReportComponent
       },
       {
-        path:"roomsecurity",
-        component:RoomSecurityComponent
+        path: "roomsecurity",
+        component: RoomSecurityComponent
       },
       {
-        path:"roomcontrol",
-        component:RoomControlComponent
+        path: "roomcontrol",
+        component: RoomControlComponent
       },
     ]
   },
+  {
+    path: "foodmenu",
+    component: FoodMenuComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingUnauthorizedToHome },
+  },
 
-  
- ];
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),IvyCarouselModule],
+  imports: [RouterModule.forRoot(routes), IvyCarouselModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -25,7 +25,7 @@ export class LoginManagerComponent implements OnInit {
   ngOnInit(): void {
     this.managerdata.managerdataimporter().snapshotChanges()
     .pipe(map(managerdata=>managerdata.map(ser=>({managerID:ser.payload.val()}))))
-    .subscribe(res=>{console.log(res[0].managerID) 
+    .subscribe(res=>{console.log(res[0].managerID)
        console.log(res[1].managerID)
     this.result.ID=res[0].managerID
     this.result.password=res[1].managerID
@@ -33,7 +33,7 @@ export class LoginManagerComponent implements OnInit {
   console.log(this.result)
   }
 
-  
+
   onSubmit(form: NgForm){
     const promise = new Promise((resolve , reject)=> {
     console.log(form.value.managerid);

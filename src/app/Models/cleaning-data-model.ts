@@ -1,4 +1,5 @@
 export class CleaningDataModel {
-    dateandtime:string
+    date:string
+    time:string
     roomid:number
 }

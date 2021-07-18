@@ -5,8 +5,8 @@
     <hr>
   </div>
   <div class="row py-4 d-flex justify-content-center">
-    <div class="col-8 col-sm-6 col-md-3 col-lg-2  d-flex justify-content-center "
-      (click)="doorswitch(doorOpen); adderToHistory(doorstatus)">
+    <div class="col-8 col-sm-6 col-md-3 col-lg-2  d-flex justify-content-center hover"
+      (click)="bigFun(doorOpen,doorstatus)">
       <img *ngIf="doorOpen" src="./../../../assets/padlock.svg" alt="" class="w-100 h-100">
       <img *ngIf="!doorOpen" src="./../../../assets/unlocked.svg" alt="" class="w-100 h-100">
     </div>
@@ -24,7 +24,7 @@
     <div class="col d-flex justify-content-center py-2" style="font-size: 1.5em;margin-top:1em;;">Status history</div>
     <hr>
   </div>
-  <div *ngIf="historyList.length===0; else NotEmpty" class="d-flex justify-content-center py-3"
+  <div *ngIf="historyList.length===1; else NotEmpty" class="d-flex justify-content-center py-3"
     style="font-family: montserrat;">No Items to show </div>
   <ng-template #NotEmpty>
     <div class="d-flex flex-column align-items-center " style="background-color: #FCF6EE; border-radius: 1em; border: 0.1em solid #E3B04B;">
@@ -38,13 +38,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let hist of historyList">
+          <tr *ngFor="let hist of historyList | slice:1">
             <td>door {{hist.action}}</td>
             <td>{{hist.time}}</td>
           </tr>
         </tbody>
       </table>
-      <button mat-button (click)="historyList=[]">Clear Status history</button>
+      <button mat-button (click)="Clearer()">Clear Status history</button>
     </div>
   </ng-template>
 

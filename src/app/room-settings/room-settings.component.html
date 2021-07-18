@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-sm  navbar-light ">
     <div class="container">
       <div class="row">
-        <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
+        <div class="col-4"><img src="{{data.Pic}}" class="img-fluid" alt="Responsive image"
             style="width: 80%;"></div>
         <div class="col-6">
-          <h3 class="profile-name">profile</h3>
-          <p class="profile-info">info</p>
+          <h3 class="profile-name"></h3>
+          <p class="profile-info">{{data.FirstName}} {{data.LastName}}</p>
         </div>
       </div>
       <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
@@ -15,7 +15,7 @@
             <a class="nav-link " routerLink="/guestinterface" style="color: #1E2B31;">Interface</a>
           </li>
           <li class="nav-item border-1 bg-light p-1 m-1 ">
-            <a class="nav-link" routerLink="" style="color: #1E2B31;">Log out</a>
+            <a class="nav-link" (click)="onLogout()" style="color: #1E2B31;">Log out</a>
           </li>
 
         </ul>
@@ -34,15 +34,15 @@
           routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="roomcontrol">
           Room control
          </a>
-          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;" 
+          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;"
            routerLinkActive="active" routerLink="roomsecurity">
             Room security
           </a>
-          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;" 
+          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;"
            routerLinkActive="active" routerLink="roomservices">
             Room services
           </a>
-          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;"  
+          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;"
           routerLinkActive="active" routerLink="roomreport">
           Report
         </a>
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <div style="padding: 40px !important" class="room-ctrl pt-3">
+  <div style="padding: 2em 1em 4em 1em !important" class="room-ctrl pt-3">
     <!-- <app-room-control></app-room-control> -->
     <!-- <app-room-security></app-room-security> -->
     <!-- <app-room-services></app-room-services> -->

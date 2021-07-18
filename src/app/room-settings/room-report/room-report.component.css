@@ -1,6 +1,6 @@
 :host{
   font-family: Open Sans !important;
-  
+  padding-bottom: 200px;
 
 }
 .form-check-input{
@@ -18,8 +18,8 @@
   }
   .container.py-2.w-100{
   font-size: large;
-  background-color: #FCF6EE; 
-  border-radius: 0.5em; 
+  background-color: #FCF6EE;
+  border-radius: 0.5em;
   border: 0.1em solid #E3B04B;
   padding: 50px !important;
   }
