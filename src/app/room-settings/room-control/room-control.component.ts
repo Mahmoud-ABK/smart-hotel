@@ -22,9 +22,12 @@ export class RoomControlComponent implements OnInit ,OnDestroy {
     d: false,
   }
 id:number
-  constructor(public inApp:InAppOperationsService,private _snackBar: MatSnackBar) {
+  constructor(public inApp:InAppOperationsService,private _snackBar: MatSnackBar, ) {
+    this.inApp.RoomID=+localStorage.getItem('Rid')
     console.log(this.inApp.RoomID)
-    this.id=this.inApp.RoomID
+
+    this.id=+localStorage.getItem('Rid')
+    console.log(+localStorage.getItem('Rid'));
   }
 
   ngOnInit(): void {

@@ -18,13 +18,14 @@ export class RoomServicesComponent implements OnInit, OnDestroy {
   Cdata: CleaningDataModel = new CleaningDataModel()
 
   constructor(public router: Router, public thisroute: ActivatedRoute, public inApp: InAppOperationsService, public snackBar: MatSnackBar) {
+    this.inApp.RoomID=+localStorage.getItem('Rid')
     console.log(this.todaysDate);
     this.id = inApp.RoomID
 
   }
 
   ngOnInit(): void {
- 
+
   }
   onSubmit(form: NgForm) {
     console.log(this.inApp.RoomID);

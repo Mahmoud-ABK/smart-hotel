@@ -7,6 +7,7 @@ import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 
 @Component({
   selector: 'app-login-guest',
@@ -15,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class LoginGuestComponent implements OnInit {
   Rooms: RoomModel[]
-  constructor(public signingIN: SignInUpService, public data: DataImporterService, public snackBar:MatSnackBar,public router:Router) { }
+  constructor(public InApp:InAppOperationsService,public signingIN: SignInUpService, public data: DataImporterService, public snackBar:MatSnackBar,public router:Router) { }
   dateNow = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en'))
   access: boolean
   dateobject: {
@@ -26,6 +27,9 @@ export class LoginGuestComponent implements OnInit {
   error:string
 
   ngOnInit(): void {
+    localStorage.removeItem('Rid')
+    this.InApp.RoomID=0
+
     this.data.RoomImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 

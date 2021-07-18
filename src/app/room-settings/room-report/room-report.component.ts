@@ -43,6 +43,10 @@ export class RoomReportComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   console.log( JSON.parse(localStorage.getItem('GuestData')));
+   this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
+
+    this.inApp.RoomID=+localStorage.getItem('Rid')
   }
   onSubmit(form: NgForm) {
     /*    console.log(this.inApp.RoomID);
