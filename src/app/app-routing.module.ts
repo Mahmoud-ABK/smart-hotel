@@ -29,6 +29,7 @@ import { KitchenPageComponent } from './staff-pages/kitchen-page/kitchen-page.co
 import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { ServantauthGuard } from './guards/servantauth.guard';
 
 const redirectingUnauthorizedToHome = () => redirectUnauthorizedTo(['/guestlogin']);
 const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestinterface']);

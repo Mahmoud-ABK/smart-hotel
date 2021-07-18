@@ -17,15 +17,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="titles">
-                        <h5 class="card-title">Room n°{{service.roomID}}</h5>
+                        <h5 class="card-title">Room n°{{service.roomid}}</h5>
                     </div>
 
                     <div class=" d-flex flex-column container-data justify-content-between">
                         <div class="data-item d-inline-flex">
-                            <p ><span id="zina">Room Owner:</span> {{service.roomOwner}}</p>
+                            <p ><span id="zina">Proposed Date:</span> {{service.date}}</p>
                         </div>
                         <div class="data-item d-inline-flex">
-                            <p><span id="zina">Proposed Time:</span> {{service.Time}}</p>
+                            <p><span id="zina">Proposed Time:</span> {{service.time}}</p>
                         </div>
                         <div class="data-item d-inline-flex justify-content-end w-100">
                             <button type="button" class="btn delete-button" (click)="remove(service)">Remove</button>

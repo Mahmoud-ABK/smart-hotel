@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 import { map } from 'rxjs/operators';
 
 @Injectable({

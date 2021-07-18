@@ -1,31 +1,33 @@
-   <div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center">
 
-        <div *ngFor="let room of rooms; let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3" >
-            <div class="card">
-                <div class="card-body">
-                    <div class="titles">
-                        <h5 class="card-title"><span id="zina">Room n° </span>{{room.roomID}}</h5>
-                        <h6 class="card-text"><span id="zina" >Room Owner: </span>{{room.roomOwner}}</h6>
+    <div *ngFor="let room of rooms; let i=index"
+        class="d-flex justify-content-center m-2 col-12 col-sm-10 col-md-6 col-lg-4 col-xl-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="titles">
+                    <h5 class="card-title"><span id="zina">Room n° </span>{{room.roomid}}</h5>
+                    <h6 class="card-text"><span id="zina">Room Owner: </span>{{room.guestHistoryID[1]}}</h6>
+                </div>
+
+                <div class="container-data d-flex flex-column justify-content-between">
+                    <div class="data-item d-inline-flex">
+                        <p><span id="zina">Availability:</span> {{room.availability}}</p>
                     </div>
-                    
-                    <div class="container-data d-flex flex-column justify-content-between">
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Availability:</span> {{room.availability}}</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Gas Status:</span> {{room.gas}}</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Fire status:</span> {{room.fire}}</p>
-                        </div>
-                        <div class="data-item d-inline-flex">
-                            <p><span id="zina">Door Status:</span> {{room.door}}</p>
-                        </div>
+                    <div class="data-item d-inline-flex">
+                        <p><span id="zina">Gas Status:</span> {{room.Gas}}</p>
                     </div>
+                    <div class="data-item d-inline-flex">
+                        <p><span id="zina">Fire status:</span> {{room.Fire}}</p>
+                    </div>
+                    <div class="data-item d-inline-flex">
+                        <p><span id="zina">Door Status:</span> {{room.doorOpen}}</p>
+                    </div>
+                    <button (click)="HEYHEY()">warrini</button>
                 </div>
             </div>
         </div>
-
-      
-
     </div>
+
+
+
+</div>

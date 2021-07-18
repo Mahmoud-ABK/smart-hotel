@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { Cleaning } from 'src/app/Models/cleaning.model';
+import { DataImporterService } from 'src/app/Services/data-importer.service';
 
 @Component({
   selector: 'app-servant-page',
@@ -7,31 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServantPageComponent implements OnInit {
 
-  services:Array<object>=[
-    {
-      roomID:1,
-      roomOwner:"khalid",
-      Time:"26.00"
-    },
-    {
-      roomID:2,
-      roomOwner:"om khalid",
-      Time:"29.00"
-    },
-    {
-      roomID:3,
-      roomOwner:"sghar khalid",
-      Time:"36.00"
-    }
+  
+  services:Cleaning[] = []
+  constructor(private dataImporter: DataImporterService) { 
+    this.dataImporter.cleaningImporter().snapshotChanges()
+    .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
-  ]
-  constructor() { }
+      this.services= result;
+      console.log(this.services)
+
+    })
+
+  }
 
   ngOnInit(): void {
   }
   remove(a:object) {
     this.services.forEach((service, index) => {
-      if (service === a) this.services.splice(index, 1);
-    });
+      if (service === a){
+        this.dataImporter. cleaningRemover(index);
+
+      } 
+     });
   }
+
 }

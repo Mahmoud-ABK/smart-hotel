@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { RoomModel } from 'src/app/Models/room-model';
+import { DataImporterService } from 'src/app/Services/data-importer.service';
 
 @Component({
   selector: 'app-room-management',
@@ -7,52 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomManagementComponent implements OnInit {
 
-  rooms:Array<object>=[
-    {
-      roomID:1,
-      roomOwner:"khalid la9ab",
-      availability:"available",
-      gas:"safe",
-      fire:"safe",
-      door:"locked"
-    },
-    {
-      roomID:2,
-      roomOwner:"khalid",
-      availability:"available",
-      gas:"safe",
-      fire:"safe",
-      door:"unlocked"
-    },
-    {
-      roomID:3,
-      roomOwner:"khalid",
-      availability:"available",
-      gas:"safe",
-      fire:"safe",
-      door:"locked"
-    },
-    {
-      roomID:4,
-      roomOwner:"khalid",
-      availability:"available",
-      gas:"safe",
-      fire:"safe",
-      door:"locked"
-    },
-    {
-      roomID:5,
-      roomOwner:"khalid",
-      availability:"available",
-      gas:"safe",
-      fire:"safe",
-      door:"locked"
-    }
-  ]
+ 
 
-  constructor() { }
+  rooms: RoomModel[] = []
+  constructor(private dataImporter:DataImporterService) { 
+    this.dataImporter.RoomImporter().snapshotChanges()
+    .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
-  ngOnInit(): void {
+      this.rooms= result;
+      console.log(this.rooms)
+
+    })
+
+
+    
   }
 
+  ngOnInit(): void {
+    
+  }
+  HEYHEY(){
+    
+    console.log(this.rooms[0])
+    console.log("HEY")
+  }
 }
