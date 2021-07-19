@@ -15,6 +15,8 @@ export class RoomSecurityComponent implements OnInit , OnDestroy {
   constructor(public inApp: InAppOperationsService) { }
 
   ngOnInit(): void {
+    this.doorOpen=localStorage.getItem('door')==='true'
+    this.doorstatus=localStorage.getItem('doorStat')
     this.inApp.RoomID=+localStorage.getItem('Rid')
     this.inApp.doorHistoryImporter(this.inApp.RoomID).subscribe(res =>
       this.historyList = res
@@ -24,6 +26,8 @@ export class RoomSecurityComponent implements OnInit , OnDestroy {
 
   }
   doorswitch(door: boolean) {
+    localStorage.removeItem('door')
+    localStorage.removeItem('doorStat')
     if (door) {
 
       this.doorstatus = "Open"
@@ -33,6 +37,8 @@ export class RoomSecurityComponent implements OnInit , OnDestroy {
       this.doorstatus = "Closed"
     }
     this.doorOpen = !this.doorOpen
+    localStorage.setItem('door',String(this.doorOpen))
+    localStorage.setItem('doorStat',String(this.doorstatus))
   }
   bigFun(a,b){
     this.doorswitch(a)

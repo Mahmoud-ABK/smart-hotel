@@ -64,6 +64,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 
+
 const appRoutes: Routes = []
 
 
@@ -94,7 +95,8 @@ const appRoutes: Routes = []
     LoginRoundaboutComponent,
     ServantPageComponent,
     LoginServantPageComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    
   ],
   imports: [
 

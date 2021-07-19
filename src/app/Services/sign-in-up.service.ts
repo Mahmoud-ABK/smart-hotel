@@ -22,6 +22,8 @@ export class SignInUpService {
     return this.db.database.ref().child('GuestList').push(GuestData)
   }
 loggingOut(){
+  localStorage.removeItem('door')
+  localStorage.removeItem('doorStat')
   localStorage.removeItem("Rid");
   localStorage.removeItem("GuestData");
   return this.auth.signOut().then(() => {

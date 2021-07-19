@@ -29,7 +29,7 @@ export class GuestInterfaceComponent implements OnInit {
   rooms: Array<number>
   OutDate
 
-  constructor(public loggingOutService: SignInUpService, public route: Router, public dataImporter: DataImporterService, public Tosettings:InAppOperationsService) { }
+  constructor(public loggingOutService: SignInUpService, public route: Router, public dataImporter: DataImporterService, public Tosettings: InAppOperationsService) { }
 
   ngOnInit(): void {
 
@@ -55,11 +55,13 @@ export class GuestInterfaceComponent implements OnInit {
     this.loggingOutService.loggingOut()
   }
   ToRoomSettings(id: number) {
+    localStorage.removeItem('door')
+    localStorage.removeItem('doorStat')
     localStorage.removeItem('Rid')
-    this.Tosettings.RoomID=0
+    this.Tosettings.RoomID = 0
     this.Tosettings.IDtransmitter(id)
     this.Tosettings.currentDataTransmitter(this.data)
 
-    this.route.navigate(['roomsettings','roomcontrol'])
+    this.route.navigate(['roomsettings', 'roomcontrol'])
   }
 }
