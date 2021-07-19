@@ -4,23 +4,23 @@
         <div class="card">
             <div class="card-body">
                 <div class="titles">
-                    <h5 class="card-title">Room {{report.roomID}}</h5>
-                    <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{report.roomOwner}}</h6>
-                    <h6 class="card-text"><span id="reporter-data">time sent: </span>{{report.timeSent}}</h6>
-                    <h6 class="card-text"><span id="reporter-data">phone number: </span>{{report.PhoneNumber}}</h6>
+                    <h5 class="card-title">Room {{report.roomid}}</h5>
+                    <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{report.firstname}} {{report.lastname}}</h6>
+                    <h6 class="card-text"><span id="reporter-data">time sent: </span>{{report.timesent}}</h6>
+                    <h6 class="card-text"><span id="reporter-data">phone number: </span>{{report.num}}</h6>
                 </div>
 
                 <div class="container-data justify-content-between">
                     <div class="report-container">
                         <div style="font-family: 'Josefin Sans', sans-serif;" class="report-details">
-                            <p>{{report.Title}}</p>
+                            <p>{{report.reporttitle}}</p>
                         </div>
                         <div class="report-details"></div>
                         <div class="report-details">
-                            <p class="p">{{report.Details}}</p>
+                            <p class="p">{{report.reportdes}}</p>
                         </div>
                         <div class="report-details text-center">
-                            <img class="card-img-bottom" [src]="report.Pic">
+                            <img class="card-img-bottom" [src]="report.img">
                         </div>
                     </div>
 

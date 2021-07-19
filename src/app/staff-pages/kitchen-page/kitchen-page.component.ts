@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { FoodOrderModel } from 'src/app/Models/food-order-model';
+import { DataImporterService } from 'src/app/Services/data-importer.service';
+import { KitchenService } from 'src/app/Services/kitchen.service';
 
 @Component({
   selector: 'app-kitchen-page',
@@ -6,113 +11,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen-page.component.css']
 })
 export class KitchenPageComponent implements OnInit {
-  foodOrders: Array<object> = [
-    {
-      Roomid: 1,
-      guestName: "khalid ",
-      food: [
-        {
-          foodname: "Rasperries",
-          quantity: 3
-        },
-        {
-          foodname: "croissant",
-          quantity: 2
-        }
-      ]
-    },
-    {
-      Roomid: 2,
-      guestName: "3am khalid ",
-      food: [
-        {
-          foodname: "mtabga",
-          quantity: 2
-        },
-        {
-          foodname: "kosksi",
-          quantity: 1
-        },
-        {
-          foodname: "water",
-          quantity: 6
-        }
+  param:boolean
+  foodOrders: FoodOrderModel[] = []
+  constructor(private dataImporter: DataImporterService, private kitchenguard:KitchenService,  public route : Router) {
+    this.dataImporter.foodImporter().snapshotChanges()
+    .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
-      ]
-    },
-    {
-      Roomid: 3,
-      guestName: "5alat khalid ",
-      food: [
-        {
-          foodname: "rouz",
-          quantity: 2
-        },
-        {
-          foodname: "m7amsa",
-          quantity: 1
-        },
-        {
-          foodname: "Ma9arouna jerya",
-          quantity: 7
-        },
-        {
-          foodname: "3ejja belmergez",
-          quantity: 10
-        }
+      this.foodOrders = result;
+      console.log(this.foodOrders)
 
-      ]
-    },
-    {
-      Roomid: 4,
-      guestName: "5alet khalid ",
-      food: [
-        {
-          foodname: "roouz",
-          quantity: 0
-        },
-        {
-          foodname: "m7amssa",
-          quantity: 9
-        },
-        {
-          foodname: "Maa9arouna jeerya",
-          quantity: 9
-        },
-        {
-          foodname: "3eejja belmergez",
-          quantity: 15
-        }
-
-      ]
-    },
-    {
-      Roomid: 5,
-      guestName: "om khalid ",
-      food: [
-        {
-          foodname: "rouz kk",
-          quantity: 3
-        },
-        {
-          foodname: "m7ammsa",
-          quantity: 2
-        },
-        {
-          foodname: "Maa9arouna jerya",
-          quantity: 6
-        },
-        {
-          foodname: "3ejjaa belmergez",
-          quantity: 100
-        }
-
-      ]
-    },
-
-  ]
-
-  constructor() { }
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -123,8 +32,24 @@ export class KitchenPageComponent implements OnInit {
 
   removerFromList(a:object) {
     this.foodOrders.forEach((foodOrder, index) => {
-    if(foodOrder === a) this.foodOrders.splice(index, 1);
+    if(foodOrder === a){
+      this.foodOrders.splice(index, 1);
+    } 
     });
+    this.dataImporter.db.object('/').update({
+      FoodOrders: this.foodOrders
+    })
   }
-
+  logout(){
+    this.param=false
+    this.kitchenguard.kitchendataretriever(this.param)
+    this.route.navigate(['/loginroundabout'])
+   }
+   translator(param:boolean):string{
+    if(param){
+      return "yes"
+    }else{
+      return "no"
+    }
+   }
 }

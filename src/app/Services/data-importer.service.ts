@@ -3,7 +3,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { Cleaning } from '../Models/cleaning.model';
+import { FoodOrderModel } from '../Models/food-order-model';
 import { GuestDataModel } from '../Models/guest-data-model';
+import { ReportModel } from '../Models/report-model';
 import { RoomModel } from '../Models/room-model';
 import { Step1data } from '../Models/step1data';
 
@@ -25,12 +27,16 @@ export class DataImporterService {
   Roomsref: AngularFireList<RoomModel>
   guestdataRef:AngularFireList<GuestDataModel>
   cleaningref:AngularFireList<Cleaning>
+  reportref:AngularFireList<ReportModel>
+  foodref:AngularFireList<FoodOrderModel>
 
   constructor(public db: AngularFireDatabase, public current: AngularFireAuth) {
     this.database = db
     this.Roomsref = db.list('/Rooms')
     this.guestdataRef= db.list('/GuestList')
     this.cleaningref=db.list('/CleaningDataList')
+    this.reportref=db.list('/RoomReports')
+    this.foodref=db.list('/FoodOrders')
     // console.log(this.Roomsref)
 
   }
@@ -81,6 +87,12 @@ export class DataImporterService {
   }
   cleaningRemover(key){
     return this.cleaningref.remove(key)
+  }
+  reportImporter(){
+    return this.reportref
+  }
+  foodImporter(){
+    return this.foodref
   }
 }
 
