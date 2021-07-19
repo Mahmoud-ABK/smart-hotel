@@ -10,28 +10,30 @@ import { DataImporterService } from 'src/app/Services/data-importer.service';
 })
 export class ServantPageComponent implements OnInit {
 
-  
-  services:Cleaning[] = []
-  constructor(private dataImporter: DataImporterService) { 
+
+  services: Cleaning[] = []
+  constructor(private dataImporter: DataImporterService) {
     this.dataImporter.cleaningImporter().snapshotChanges()
-    .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
+      .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
-      this.services= result;
-      console.log(this.services)
+        this.services = result;
+        console.log(this.services)
 
-    })
+      })
 
   }
 
   ngOnInit(): void {
   }
-  remove(a:object) {
+  remove(a: object) {
     this.services.forEach((service, index) => {
-      if (service === a){
-        this.dataImporter. cleaningRemover(index);
-
-      } 
-     });
+      if (service === a) {
+        this.services.splice(index, 1)
+      }
+    });
+    this.dataImporter.db.object('/').update({
+      CleaningDataList: this.services
+    })
   }
 
 }

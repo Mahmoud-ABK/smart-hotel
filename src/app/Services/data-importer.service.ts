@@ -26,7 +26,7 @@ export class DataImporterService {
   guestdataRef:AngularFireList<GuestDataModel>
   cleaningref:AngularFireList<Cleaning>
 
-  constructor(db: AngularFireDatabase, public current: AngularFireAuth) {
+  constructor(public db: AngularFireDatabase, public current: AngularFireAuth) {
     this.database = db
     this.Roomsref = db.list('/Rooms')
     this.guestdataRef= db.list('/GuestList')
