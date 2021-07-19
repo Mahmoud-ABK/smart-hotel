@@ -38,6 +38,7 @@ export class ServantPageComponent implements OnInit {
     })
   }
  logout(){
+  localStorage.removeItem('serAccess')
   this.param=false
   this.servantguard.servantdataretriever(this.param)
   this.route.navigate(['/loginroundabout'])

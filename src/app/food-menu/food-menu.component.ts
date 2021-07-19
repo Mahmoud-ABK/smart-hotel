@@ -215,6 +215,8 @@ export class FoodMenuComponent implements OnInit {
     console.log( JSON.parse(localStorage.getItem('GuestData')));
     this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
     this.inApp.RoomID=+localStorage.getItem('Rid')
+    this.loggingOut.finishedSession(this.inApp.currentLoginInData.checkin,this.inApp.currentLoginInData.checkout)
+    
 
   }
   removerFromList(a: { foodName: string, quantity: number }) {

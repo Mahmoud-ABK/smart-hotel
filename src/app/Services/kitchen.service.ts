@@ -18,6 +18,8 @@ export class KitchenService {
   constructor(db: AngularFireDatabase, private router: Router
     ) {
     this.manageraccess=localStorage.getItem('manAccess')=='true'
+    this.kitchenaccess=localStorage.getItem('kitAccess')=='true'
+    this.servantaccess=localStorage.getItem('serAccess')=='true'
     this.kitchenref = db.list('/StaffCredentials/kitchen')
     this.servantref = db.list('/StaffCredentials/servant')
     this.managerref = db.list('/StaffCredentials/manager')
@@ -37,9 +39,11 @@ export class KitchenService {
  }
  kitchendataretriever(param:boolean){
   this.kitchenaccess=param
+  localStorage.setItem('kitAccess',String(param))
 }
 servantdataretriever(param:boolean){
   this.servantaccess=param
+  localStorage.setItem('serAccess',String(param))
 }
 
 }
