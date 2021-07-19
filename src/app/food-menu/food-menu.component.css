@@ -25,3 +25,23 @@ th, td , .list, .form-check{
   font-family: montserrat;
   font-size: large;
 }
+
+.styleButton{
+    margin: 3px;
+    background-color: #F8F8F8;
+    opacity: 0.7;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0% !important;
+  }
+  
+  .styleButton:hover{
+    opacity: 1;
+  }
+
+  .buttonContent{
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+  }

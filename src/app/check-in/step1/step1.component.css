@@ -139,14 +139,6 @@ border: 1px solid #1E2B31;
 
 
 
-
-
-
-
-
-
-
-
 .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
     opacity: .65;
     transform: scale(.85) translateY(-1.2rem) translateX(.15rem);

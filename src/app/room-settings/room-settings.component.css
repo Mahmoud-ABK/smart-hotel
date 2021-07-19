@@ -8,12 +8,27 @@ font-size: large;
 img{
   display: block;
   border-radius: 50%;
-  height: 100px !important;
-  width: 100px !important;
+  height: 75px !important;
+  width: 75px !important;
 }
 .navbar {
   background-color: #182125;
 }
+
+.buttonStyle{
+  margin: 3px;
+  background-color: #F8F8F8;
+  opacity: 0.7;
+  transition: 0.3s;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0% !important;
+}
+
+.buttonStyle:hover{
+  opacity: 1;
+}
+
 .room-ctrl
 {
 
@@ -25,11 +40,21 @@ img{
 .a{
   margin: 0% !important;
 }
+
 .active{
-  background-color: #1E2B31 !important;
+  background-color: #eaddca !important;
+  color: #1E2B31 !important;
+  border-color: #eaddca;
 }
-.prev-next{
-  border-color: #1E2B31;
-  background-color: #1E2B31 !important;
-  color: #f8F8F8;
+
+.setting{
+  background-color: #1E2B31;
+  color: #f8f8f8;
+  border: 2px solid #1E2B31;
+  border-radius: 0%;
+  margin: 2px;
+}
+
+.setting:hover{
+  opacity: 0.8;
 }

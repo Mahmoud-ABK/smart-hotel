@@ -10,17 +10,17 @@
     </div>
     <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4 pt-1 ">
       <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large; ">
-        <li class="nav-item pe-2">
-          <a class="btn-light nav-link m-2"  (click)="ToInterface()" style="color: #1E2B31 !important;">Interface</a>
+        <li class="nav-item pe-2 styleButton">
+          <a class="btn-light nav-link m-2 buttonContent" (click)="ToInterface()" style="color: #1E2B31 !important;">Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="btn-light nav-link m-2" (click)="onLogout()" style="color: #1E2B31 !important;">Log out</a>
-        </li>
-        <li class="nav-item ps-2">
 
-          <a class="btn-light nav-link m-2" href="#your-list"
-            style="font-family:Open sans;color: #fae5c6 !important;">Your
-            list</a>
+        <li class="nav-item ps-2 styleButton">
+          <a class="btn-light nav-link m-2 buttonContent" href="#your-list"
+            style="font-family:Open sans;color: #1E2B31">Your list</a>
+        </li>
+
+        <li class="nav-item styleButton">
+          <a class="btn-light nav-link m-2 buttonContent" (click)="onLogout()" style="color: #1E2B31 !important;">Log out</a>
         </li>
 
       </ul>
@@ -194,7 +194,8 @@
             </tbody>
           </table>
           <div class="col  pt-2 pb-5 d-flex justify-content-center">
-            <mat-checkbox color="Warn" style="font-size: larger;" [checked]="toRoom" (change)="toRoom=!toRoom">Do you want your order delivered to
+            <mat-checkbox color="Warn" style="font-size: larger;" [checked]="toRoom" (change)="toRoom=!toRoom">Do you
+              want your order delivered to
               your room?</mat-checkbox>
           </div>
         </div>
