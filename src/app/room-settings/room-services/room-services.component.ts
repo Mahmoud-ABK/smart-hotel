@@ -3,7 +3,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CleaningDataModel } from 'src/app/Models/cleaning-data-model';
+
+import { Cleaning } from 'src/app/Models/cleaning.model';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class RoomServicesComponent implements OnInit, OnDestroy {
   disable: boolean
   id: any
   todaysDate = formatDate(new Date(), 'yyyy-MM-ddThh:mm a', 'en');
-  Cdata: CleaningDataModel = new CleaningDataModel()
+  Cdata: Cleaning = new Cleaning()
 
   constructor(public router: Router, public thisroute: ActivatedRoute, public inApp: InAppOperationsService, public snackBar: MatSnackBar) {
     this.inApp.RoomID=+localStorage.getItem('Rid')
@@ -42,7 +43,7 @@ export class RoomServicesComponent implements OnInit, OnDestroy {
       duration: 2000
     })
   }
-  cleaningDataSender(CleanData: CleaningDataModel) {
+  cleaningDataSender(CleanData: Cleaning) {
     this.inApp.multiPusher('/CleaningDataList', CleanData, 'Cleaning Data Sent')
   }
   ToFoodmenu() {

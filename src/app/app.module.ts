@@ -96,7 +96,8 @@ const appRoutes: Routes = []
     LoginRoundaboutComponent,
     ServantPageComponent,
     LoginServantPageComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    
   ],
   imports: [
 

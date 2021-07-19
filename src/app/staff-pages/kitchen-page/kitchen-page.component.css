@@ -46,7 +46,7 @@
 }
 
 .titles {
-    background-color: #e6991f;
+    background-color: #d4b78d;
     padding: 20px;
 }
 
@@ -89,4 +89,9 @@ h6{
 
 .delete-button:hover {
     background-color: #1e2b31a8;
+}
+#zina{
+    font-size: 1em;
+    font-weight:700;
+    
 }

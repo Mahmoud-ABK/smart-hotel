@@ -27,7 +27,7 @@ export class RoomSettingsComponent implements OnInit, OnDestroy {
     id: string
   }
 
-  constructor(private router: Router, public loggingOut: SignInUpService, public Logindata: InAppOperationsService, public dataImporter: DataImporterService) {
+  constructor(private router: Router, public loggingOut: SignInUpService, public Logindata:InAppOperationsService, public dataImporter: DataImporterService) {
     // this.dataImporter.currentEmail().then((data) => {
     //   data.email
 

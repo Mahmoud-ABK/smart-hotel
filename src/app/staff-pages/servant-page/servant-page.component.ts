@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { Cleaning } from 'src/app/Models/cleaning.model';
+import { DataImporterService } from 'src/app/Services/data-importer.service';
+import { KitchenService } from 'src/app/Services/kitchen.service';
 
 @Component({
   selector: 'app-servant-page',
@@ -7,31 +12,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServantPageComponent implements OnInit {
 
-  services:Array<object>=[
-    {
-      roomID:1,
-      roomOwner:"khalid",
-      Time:"26.00"
-    },
-    {
-      roomID:2,
-      roomOwner:"om khalid",
-      Time:"29.00"
-    },
-    {
-      roomID:3,
-      roomOwner:"sghar khalid",
-      Time:"36.00"
-    }
+  param:boolean
+  services: Cleaning[] = []
+  constructor(private dataImporter: DataImporterService, private servantguard:KitchenService,  public route : Router ) {
+    this.dataImporter.cleaningImporter().snapshotChanges()
+      .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
-  ]
-  constructor() { }
+        this.services = result;
+        console.log(this.services)
+
+      })
+
+  }
 
   ngOnInit(): void {
   }
-  remove(a:object) {
+  remove(a: object) {
     this.services.forEach((service, index) => {
-      if (service === a) this.services.splice(index, 1);
+      if (service === a) {
+        this.services.splice(index, 1)
+      }
     });
+    this.dataImporter.db.object('/').update({
+      CleaningDataList: this.services
+    })
   }
+ logout(){
+  this.param=false
+  this.servantguard.servantdataretriever(this.param)
+  this.route.navigate(['/loginroundabout'])
+ }
 }

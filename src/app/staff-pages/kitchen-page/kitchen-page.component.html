@@ -23,8 +23,8 @@
 
       <div class="card-body w-100">
         <div class="titles">
-          <h5 class="card-title">Room {{foodOrder.Roomid}} </h5>
-          <h6 class="card-text"><span id="reporter-data">Room owner: {{foodOrder.guestName}}</span></h6>
+          <h5 class="card-title">Room {{foodOrder.roomid}} </h5>
+          <h6 class="card-text"><span id="reporter-data">Room owner: {{foodOrder.name}}</span></h6>
         </div>
 
         <div class="order-container d-flex">
@@ -37,16 +37,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="foodItem of OppaToArray(foodOrder.food) ; let j=index;">
-                <td> {{OppaToArray(foodOrder.food)[j].foodname}} </td>
-                <td> {{OppaToArray(foodOrder.food)[j].quantity}}</td>
+              <tr *ngFor="foodItem of OppaToArray(foodOrder.list) ; let j=index;">
+                <td> {{OppaToArray(foodOrder.list)[j].foodName}} </td>
+                <td> {{OppaToArray(foodOrder.list)[j].quantity}}</td>
               </tr>
 
             </tbody>
           </table>
         </div>
+        <div class="data-item d-inline-flex">
+          <p><span id="zina">delivery to room:</span> {{translator(foodOrder.ToRoom)}}</p>
+      </div>
         <div class="d-flex align-self-end finish-button">
-          <button class="btn delete-button" (click)="removerFromList(foodOrder)">Finished !</button>
+          <button class="btn delete-button" (click)="removerFromList(foodOrder)">Finished!</button>
         </div>
 
       </div>

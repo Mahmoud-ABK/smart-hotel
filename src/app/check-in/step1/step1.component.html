@@ -134,10 +134,10 @@
           this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
-
+      <div class="form-group col-lg-12 mb-20">
+        <label for="image" class="date-label" style="margin-bottom: 10px;" >Profile Picture</label>
         <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic" id="image" placeholder="1" ngModel>
-        <label for="image" class="label" >Profile picture</label>
+        
 
       </div>
       <div class="alert alert-warning" *ngIf="waiting && profilePic==undefined">
