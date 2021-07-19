@@ -4,6 +4,8 @@ import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
+import { InAppOperationsService } from '../Services/in-app-operations.service';
+
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -39,9 +41,10 @@ export class HomeComponent implements OnInit {
       , pic:"../../assets/testimonial4.png"
     }
   ]
-  constructor() { }
+  constructor(public InApp:InAppOperationsService) { }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(form: NgForm){

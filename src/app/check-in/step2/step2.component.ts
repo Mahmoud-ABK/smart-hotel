@@ -1,4 +1,4 @@
-import { SimpleChanges } from '@angular/core';
+import { EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { Component, OnChanges, OnInit, SimpleChange } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
@@ -11,6 +11,11 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./step2.component.css']
 })
 export class Step2Component implements OnInit {
+  @Output() step3display: EventEmitter<boolean> = new EventEmitter<boolean>()
+  step3(){
+    this.step3display.emit(true)
+
+  }
   /*RoomsTest: Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [
      {
        Roomid: 1,
@@ -45,6 +50,8 @@ export class Step2Component implements OnInit {
 
      },
    ] */
+
+
   RoomList: RoomModel[] = []
   AvailableRoomList: Array<RoomModel> = []
   RoomlistDisplay: boolean = false
@@ -62,7 +69,10 @@ export class Step2Component implements OnInit {
   seaviewtype: boolean = false
   seaviewfloortype: boolean = false
 
-  roomIDS: Array<number> = []
+  roomIDS: Array<{
+    id:number,
+    length:number
+  }> = []
 
 
   constructor(private dataImporter: DataImporterService) {
@@ -105,10 +115,11 @@ export class Step2Component implements OnInit {
         let Roomcheckin = RoomSample.RoomCheckinDate
         let Roomcheckout = RoomSample.RoomCheckoutDate
         let checkie = []
-        if (Roomcheckin.includes('empty') && Roomcheckout.includes('empty')) {
+        if (Roomcheckin.length==1) {
           checkie.push(true)
         } else {
-          for (let i = 0; i < Roomcheckin.length; i++) {
+          for (let i =1; i < Roomcheckin.length; i++) {
+
             if ((parsedCHECKIN <= Date.parse(Roomcheckin[i]) && parsedCHECKOUT <= Date.parse(Roomcheckin[i]))
               || (parsedCHECKIN >= Date.parse(Roomcheckout[i]) && parsedCHECKOUT >= Date.parse(Roomcheckout[i]))
             ) {
@@ -158,11 +169,7 @@ export class Step2Component implements OnInit {
     this.selectedRooms.forEach((selected, index) => {
       if (selected === room) {
         this.selectedRooms.splice(index, 1);
-        this.roomIDS.forEach((id, i) => {
-          if (id = selected.roomid) {
-            this.roomIDS.splice(i, 1)
-          }
-        });
+
       }
 
     });
@@ -184,9 +191,11 @@ export class Step2Component implements OnInit {
 
   toArray() {
     this.selectedRooms.forEach(element => {
-      this.roomIDS.push(element.roomid)
+      this.roomIDS.push({id: element.roomid, length:element.RoomCheckinDate.length}
+        )
     });
   }
+
   onSubmit() {
     this.toArray()
     console.log(this.roomIDS);
@@ -198,8 +207,10 @@ export class Step2Component implements OnInit {
       Roomids: this.roomIDS,
       SelectedRooms: this.selectedRooms,
       checkin: this.checkin,
-      checkout: this.checkout
+      checkout: this.checkout,
+
     })
+    this.step3()
   }
 
 }

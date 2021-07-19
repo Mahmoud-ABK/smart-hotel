@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
+import { map } from 'rxjs/operators';
+import { GuestDataModel } from '../Models/guest-data-model';
 import { RoomModel } from '../Models/room-model';
 import { Step1data } from '../Models/step1data';
 
@@ -9,15 +12,22 @@ import { Step1data } from '../Models/step1data';
 export class DataImporterService {
   step1GuestData: Step1data
   step2RoomData: {
-    Roomids: number[],
+    Roomids: Array<{
+      id: number,
+      length: number
+    }>,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
   }
   database: AngularFireDatabase
   Roomsref: AngularFireList<RoomModel>
-  constructor(db: AngularFireDatabase) {
+  guestdataRef:AngularFireList<GuestDataModel>
+  constructor(db: AngularFireDatabase, public current: AngularFireAuth) {
+    this.database = db
     this.Roomsref = db.list('/Rooms')
+    this.guestdataRef= db.list('/GuestList')
+
     // console.log(this.Roomsref)
 
   }
@@ -33,7 +43,10 @@ export class DataImporterService {
   }
   //sending step2 data to step3
   ToStep3fromStep2(object: {
-    Roomids: number[],
+    Roomids: Array<{
+      id: number,
+      length: number
+    }>,
     SelectedRooms: RoomModel[],
     checkin: string,
     checkout: string
@@ -41,6 +54,27 @@ export class DataImporterService {
     this.step2RoomData = object
 
   }
+  RoomUpdaterCHECKIN(key: any, value: any, path: number) {
+    return this.database.object('/Rooms/' + String(key) + '/RoomCheckinDate').update({ [path]: value })
+  }
+  RoomUpdaterCHECKOUT(key: any, value: any, path: number) {
+    return this.database.object('/Rooms/' + String(key) + '/RoomCheckoutDate').update({ [path]: value })
+  }
+  RoomUpdaterIDhistory(key: any, value: any, path: number) {
+    return this.database.object('/Rooms/' + String(key) + '/guestHistoryID').update({ [path]: value })
+  }
+  currentEmail() {
+   return this.current.currentUser
+  }
+
+
+  currentEmailrelatedData(email:string){
+    return this.guestdataRef.snapshotChanges().pipe(map(changes => changes.map(r => ({ id: r.payload.key, ...r.payload.val() }))))
+
+
+
+  }
+
 }
 
 

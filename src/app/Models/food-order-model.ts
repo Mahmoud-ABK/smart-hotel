@@ -1,5 +1,8 @@
 export class FoodOrderModel {
+    name:string
+    email:string
+    num:string
     list:any[]
     roomid:number
-    remarks:string
+    ToRoom:boolean
 }

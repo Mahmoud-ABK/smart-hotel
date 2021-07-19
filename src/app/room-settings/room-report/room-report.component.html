@@ -1,6 +1,6 @@
 <form class="w-100" (ngSubmit)="onSubmit(f)" #f="ngForm" >
   <div class="container py-2 w-100">
-    
+
     <div class="row pb-2 w-100">
       <div class="form-floating mb-3">
         <input ngModel type="text" class="form-control" id="problemTitle" name="problemTitle" placeholder="probtitle" required>
@@ -8,13 +8,13 @@
       </div>
     </div>
 
-    
+
     <div class="row pb-2  w-100 ">
       <div class="col-12  w-100">
         <div class="form-floating">
           <textarea ngModel class="form-control" placeholder="probDesciption" id="problemDesciption" name="problemDesciption" required></textarea>
           <label for="floatingTextarea" class="ms-4" style="color: #29596f;">Can you provide us with further details about the problem you're facing? </label>
-         
+
         </div>
       </div>
     </div>
@@ -23,9 +23,15 @@
       <div class="col-12">
         <div>
           <label for="formFileLg" class="form-label" style="color: #29596f;">Do you have a picture or a screenshot?</label>
-          <input ngModel style="color: #29596f;" class="form-control form-control-lg w-75"  name="formFileLg" id="formFileLg" type="file">
+          <input ngModel style="color: #29596f;" class="form-control form-control-lg w-75"  name="formFileLg" id="formFileLg" type="file" (change)="onFileSelected($event)">
         </div>
       </div>
+    </div>
+    <div class="alert alert-warning" *ngIf="waiting && reportPic==undefined">
+      uploading....
+    </div>
+    <div class="alert alert-primary" *ngIf="reportPic!=undefined">
+      uploaded
     </div>
 
 
@@ -34,7 +40,7 @@
 
 
     <div class="row d-flex flex-row justify-content-center pt-3">
-      <div class="col-12 d-flex flex-row justify-content-end"><button class="button  " style="background-color: #E3B04B; color: #f8f8f8;" mat-button type="submit" [disabled]="f.invalid">send
+      <div class="col-12 d-flex flex-row justify-content-end"><button class="button  " style="background-color: #E3B04B; color: #f8f8f8;" mat-button type="submit" [disabled]="f.invalid || waiting==true" >send
           report</button></div>
     </div>
   </div>

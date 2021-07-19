@@ -36,17 +36,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPagesComponent } from './login-pages/login-pages.component';
 import { LoginGuestComponent } from './login-pages/login-guest/login-guest.component';
 import { LoginManagerComponent } from './login-pages/login-manager/login-manager.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButton, MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
 import { LoginRoundaboutComponent } from './login-pages/login-roundabout/login-roundabout.component';
 import { FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { SwiperModule } from 'swiper/angular';
 import { ServantPageComponent } from './staff-pages/servant-page/servant-page.component';
 import { LoginServantPageComponent } from './login-pages/login-servant-page/login-servant-page.component';
@@ -57,9 +57,16 @@ import { SignInUpService } from './Services/sign-in-up.service';
 import { DataImporterService } from './Services/data-importer.service';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { KitchenService } from './Services/kitchen.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
-const appRoutes: Routes =[]
+
+
+
+
+const appRoutes: Routes = []
 
 
 @NgModule({
@@ -105,12 +112,15 @@ const appRoutes: Routes =[]
     MatCheckboxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    MatSnackBarModule,
+
+
 
 
 
 
   ],
-  providers: [SignInUpService, DataImporterService],
+  providers: [SignInUpService, DataImporterService,KitchenService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

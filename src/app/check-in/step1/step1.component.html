@@ -139,7 +139,12 @@
         <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic" id="image" placeholder="1" ngModel>
         <label for="image" class="label" >Profile picture</label>
 
-
+      </div>
+      <div class="alert alert-warning" *ngIf="waiting && profilePic==undefined">
+        Waiting for upload....
+      </div>
+      <div class="alert alert-primary" *ngIf="profilePic!=undefined">
+        uploaded
       </div>
 
 
@@ -147,7 +152,7 @@
         <button type="submit" class="btn1 btn-primary1 me-2" >Submit </button>
       </div> -->
       <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid " class="btn1 btn-primary2  me-2">Next</button>
+        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || profilePic==undefined " class="btn1 btn-primary2  me-2">Next</button>
       </div>
 
     </div>

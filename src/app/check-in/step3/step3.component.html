@@ -19,16 +19,16 @@
       <table class="table table-hover col">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Room</th>
             <th scope="col">Type Price</th>
 
-            <th scope="col"></th>
+
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let selected of SelectedRooms ; let i=index" >
             <th scope="row" >Room {{selected.roomid}}</th>
-            <td>{{selected.RoomPrice}}</td>
+            <td colspan="2" colspan="3" style="text-align: center;">{{selected.RoomPrice}} $</td>
           </tr>
           <tr>
             <th scope="row">your total is</th>

@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import { FoodOrderModel } from '../Models/food-order-model';
+import { InAppOperationsService } from '../Services/in-app-operations.service';
+import { SignInUpService } from '../Services/sign-in-up.service';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
@@ -201,20 +205,26 @@ export class FoodMenuComponent implements OnInit {
   list: Array<{ foodName: string, quantity: number }> = [
 
   ]
-  toRoom:boolean=false
-  constructor() { }
+  toRoom: boolean = false
+  FoodOrder: FoodOrderModel = new FoodOrderModel()
+  constructor(public loggingOut: SignInUpService, public router: Router, public inApp: InAppOperationsService) {
+
+  }
 
   ngOnInit(): void {
+    console.log( JSON.parse(localStorage.getItem('GuestData')));
+    this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
+    this.inApp.RoomID=+localStorage.getItem('Rid')
 
   }
   removerFromList(a: { foodName: string, quantity: number }) {
     this.list.forEach((el, index) => {
       if (el.foodName === a.foodName) this.list.splice(index, 1);
     });
-    [this.breakfast,this.dinner,this.drinks,this.lunch,this.snacks].forEach(foodArray =>{
-      foodArray.forEach(foodItem=>{
-        if(foodItem.checked){
-          foodItem.checked=!foodItem.checked
+    [this.breakfast, this.dinner, this.drinks, this.lunch, this.snacks].forEach(foodArray => {
+      foodArray.forEach(foodItem => {
+        if (foodItem.checked) {
+          foodItem.checked = !foodItem.checked
           foodItem.label = "Add to list"
         }
       })
@@ -239,12 +249,29 @@ export class FoodMenuComponent implements OnInit {
     }
 
   }
+  ToInterface() {
+    this.router.navigate(['/guestinterface'])
+  }
+  onLogout() {
+    this.loggingOut.loggingOut()
+  }
   onSend() {
-    console.log(this.list)
-    console.log("toRoom?");
-    console.log(this.toRoom);
-
-
+    // console.log(this.list)
+    // console.log("toRoom?");
+    // console.log(this.toRoom);
+    this.FoodOrder.name = this.inApp.currentLoginInData.FirstName + ' ' + this.inApp.currentLoginInData.LastName
+    this.FoodOrder.email = this.inApp.currentLoginInData.Email
+    this.FoodOrder.list = this.list
+    this.FoodOrder.ToRoom = this.toRoom
+    this.FoodOrder.num = this.inApp.currentLoginInData.PhoneNumber
+    this.FoodOrder.roomid = this.inApp.RoomID
+    console.log(this.FoodOrder);
+    this.inApp.multiPusher('/FoodOrders',this.FoodOrder,"food order sent!")
+  }
+  scrolling(list){
+    console.log(`scrolling to ${list}`);
+    let el = document.getElementById(list);
+    el.scrollIntoView();
   }
 
 

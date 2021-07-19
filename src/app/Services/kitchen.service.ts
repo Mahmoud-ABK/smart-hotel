@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Kitchen } from '../Models/kitchen.model';
-
-
+import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot} from '@angular/router';
+import { LoginManagerComponent } from '../login-pages/login-manager/login-manager.component';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,11 @@ export class KitchenService {
   kitchenref: AngularFireList<Kitchen>
   servantref:AngularFireList<Kitchen>
   managerref:AngularFireList<Kitchen>
-  constructor(db: AngularFireDatabase) {
+  manageraccess:boolean
+  kitchenaccess:boolean
+  servantaccess:boolean
+  constructor(db: AngularFireDatabase, private router: Router
+    ) {
     this.kitchenref = db.list('/StaffCredentials/kitchen')
     this.servantref = db.list('/StaffCredentials/servant')
     this.managerref = db.list('/StaffCredentials/manager')
@@ -25,4 +30,14 @@ export class KitchenService {
    managerdataimporter(){
     return this.managerref
    }
+  managerdataretriever(param:boolean){
+   this.manageraccess=param
+ }
+ kitchendataretriever(param:boolean){
+  this.kitchenaccess=param
+}
+servantdataretriever(param:boolean){
+  this.servantaccess=param
+}
+
 }

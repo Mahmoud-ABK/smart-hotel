@@ -1,3 +1,5 @@
+import { Url } from "url"
+
 export class GuestDataModel {
 
   FirstName:string
@@ -9,7 +11,7 @@ export class GuestDataModel {
   People:number
   Nights:number
   RoomidS:Array<any>
-  Pic:any
+  Pic:string
   checkin:string
   checkout:string
 }

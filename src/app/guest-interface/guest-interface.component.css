@@ -5,7 +5,12 @@
 
   color: #1e2b31;
 }
-
+img{
+  display: block;
+  border-radius: 50%;
+  height: 100px !important;
+  width: 100px !important;
+}
 .body{
   height: 100% !important;
 }
