@@ -91,6 +91,7 @@ export class LoginGuestComponent implements OnInit {
     } else {
       // alert("you can't enter the your interface before the check in date nor after the checkout date")
        this.openSnackBar()
+       form.reset()
     }
 
 

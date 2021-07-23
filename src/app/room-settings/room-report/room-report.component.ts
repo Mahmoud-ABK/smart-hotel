@@ -12,7 +12,7 @@ import { InAppOperationsService } from 'src/app/Services/in-app-operations.servi
 export class RoomReportComponent implements OnInit {
   reportPic: string
   waiting = false
-  noImg: string = "noImg"
+  noImg: string = "https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/unAVrsmall.svg?alt=media&token=cad7d134-cdc8-4e1a-ac69-e2847e136a0e"
   report: ReportModel = new ReportModel()
   todaysDate = formatDate(new Date(), 'hh:mm a', 'en');
 
@@ -74,7 +74,6 @@ export class RoomReportComponent implements OnInit {
     this.report.timesent = this.todaysDate
     if (this.reportPic === undefined) {
       this.report.img = this.noImg
-
 
     } else {
       this.report.img = this.reportPic;

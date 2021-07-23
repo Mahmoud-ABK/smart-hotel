@@ -47,6 +47,7 @@ export class GuestInterfaceComponent implements OnInit {
         localStorage.setItem('GuestData', JSON.stringify(this.data));
         this.rooms = this.data.RoomidS
         this.OutDate = this.data.checkout
+        this.loggingOutService.finishedSession(this.data.checkin,this.data.checkout)
 
       })
     });

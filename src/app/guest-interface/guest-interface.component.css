@@ -2,15 +2,29 @@
 
 *{
   font-family: 'Inter', sans-serif;
-
   color: #1e2b31;
 }
+
+.styleButton{
+  margin: 3px;
+  background-color: #F8F8F8;
+  opacity: 0.7;
+  transition: 0.3s;
+  text-align: center;
+  border-radius: 0% !important;
+}
+
+.styleButton:hover{
+  opacity: 1;
+}
+
 img{
   display: block;
   border-radius: 50%;
-  height: 100px !important;
-  width: 100px !important;
+  height: 75px !important;
+  width: 75px  !important;
 }
+
 .body{
   height: 100% !important;
 }
@@ -140,4 +154,10 @@ div.card-body{
       padding: 10px 5px;
   }
 }
+.profile-info{
+  color: #F8F8F8;
+  font-size: larger;
+  font-family: montserrat;
+  line-height: normal;
+ }
 

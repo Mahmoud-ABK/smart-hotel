@@ -12,7 +12,7 @@
       <h1 class="checkintitle text-center ">main info</h1>
     </div>
     <div class="col d-flex justify-content-center">
-      <p class="text-center">Fill up the forms with information needed to unlock your room/s.</p>
+      <p class="text-center">Fill up the form with information needed to unlock your room/s.</p>
     </div>
   </div>
 
@@ -99,10 +99,23 @@
           placeholder="1" ngModel required>
         <label for="guestpsw" class="label">Password</label>
         <div class="alert alert-warning" *ngIf="psw.invalid && psw.touched">
-         Password is atleast 6 charactes long
+          Password is atleast 6 charactes long
         </div>
 
+
         <div class="alert alert-secondary" *ngIf="step1.submitted && psw.invalid">
+          this field is required
+        </div>
+      </div>
+      <div class="form-group col-lg-12 form-floating mb-20">
+        <input minlength="6" type="password" class="form-control" id="Confirmguestpsw" name="ConfirmguestPassword"
+          #cpsw="ngModel" placeholder="1" ngModel required>
+        <label for="Confirmguestpsw" class="label">Confirm Password</label>
+        <div class="alert alert-danger" *ngIf="cpsw.value!=psw.value && cpsw.touched">
+          this value doesn't match the password you entered
+        </div>
+
+        <div class="alert alert-secondary" *ngIf="step1.submitted && (cpsw.invalid || cpsw.value!=psw.value)">
           this field is required
         </div>
       </div>
@@ -113,7 +126,7 @@
           required #ppl="ngModel">
         <label for="people_num" class="label">No. of People</label>
         <div class="alert alert-warning" *ngIf="ppl.invalid && ppl.touched">
-         Atleast 1
+          Atleast 1
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && ppl.invalid">
@@ -128,16 +141,17 @@
         <label for="nights_num" class="label">No. of Nights</label>
         <div class="alert alert-warning" *ngIf="nights.invalid &&nights.touched">
           Atleast 1
-         </div>
+        </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && nights.invalid">
           this field is required
         </div>
       </div>
       <div class="form-group col-lg-12 mb-20">
-        <label for="image" class="date-label" style="margin-bottom: 10px;" >Profile Picture</label>
-        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic" id="image" placeholder="1" ngModel>
-        
+        <label for="image" class="date-label" style="margin-bottom: 10px;">Profile Picture</label>
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic"
+          id="image" placeholder="1" ngModel>
+
 
       </div>
       <div class="alert alert-warning" *ngIf="waiting && profilePic==undefined">
@@ -152,7 +166,8 @@
         <button type="submit" class="btn1 btn-primary1 me-2" >Submit </button>
       </div> -->
       <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || profilePic==undefined " class="btn1 btn-primary2  me-2">Next</button>
+        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || profilePic==undefined "
+          class="btn1 btn-primary2  me-2">Next</button>
       </div>
 
     </div>

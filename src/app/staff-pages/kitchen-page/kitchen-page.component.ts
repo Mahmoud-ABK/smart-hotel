@@ -34,13 +34,14 @@ export class KitchenPageComponent implements OnInit {
     this.foodOrders.forEach((foodOrder, index) => {
     if(foodOrder === a){
       this.foodOrders.splice(index, 1);
-    } 
+    }
     });
     this.dataImporter.db.object('/').update({
       FoodOrders: this.foodOrders
     })
   }
   logout(){
+    localStorage.removeItem('kitAccess')
     this.param=false
     this.kitchenguard.kitchendataretriever(this.param)
     this.route.navigate(['/loginroundabout'])

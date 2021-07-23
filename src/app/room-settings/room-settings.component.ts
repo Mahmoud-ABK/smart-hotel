@@ -48,6 +48,7 @@ export class RoomSettingsComponent implements OnInit, OnDestroy {
   roomID:any
   ngOnInit(): void {
     this.roomID = localStorage.getItem('Rid')
+    this.loggingOut.finishedSession(this.data.checkin,this.data.checkout)
 
   }
   onReport() {

@@ -100,8 +100,6 @@ export class RoomManagementComponent implements OnInit {
       if ((todaysdate > Date.parse(checkinHistory[index])) && (todaysdate < Date.parse(checkoutHistory[index]))) {
         Avcheckie.push(iDhistory[index])
       }
-
-
     }
     if (Avcheckie.length == 0) {
       return {

@@ -5,6 +5,7 @@ import { SwiperComponent } from "swiper/angular";
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
 import { FoodOrderModel } from '../Models/food-order-model';
+import { GuestDataModel } from '../Models/guest-data-model';
 import { InAppOperationsService } from '../Services/in-app-operations.service';
 import { SignInUpService } from '../Services/sign-in-up.service';
 
@@ -210,11 +211,15 @@ export class FoodMenuComponent implements OnInit {
   constructor(public loggingOut: SignInUpService, public router: Router, public inApp: InAppOperationsService) {
 
   }
+  Data:GuestDataModel
 
   ngOnInit(): void {
     console.log( JSON.parse(localStorage.getItem('GuestData')));
     this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
     this.inApp.RoomID=+localStorage.getItem('Rid')
+    this.loggingOut.finishedSession(this.inApp.currentLoginInData.checkin,this.inApp.currentLoginInData.checkout)
+    this.Data=this.inApp.currentLoginInData
+
 
   }
   removerFromList(a: { foodName: string, quantity: number }) {

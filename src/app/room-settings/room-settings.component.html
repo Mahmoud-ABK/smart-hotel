@@ -2,19 +2,20 @@
   <nav class="navbar navbar-expand-sm  navbar-light ">
     <div class="container">
       <div class="row">
-        <div class="col-4"><img src="{{data.Pic}}" class="img-fluid" alt="Responsive image"
-            style="width: 80%;"></div>
+        <div class="col-4">
+          <img src="{{data.Pic}}" class="img-fluid" alt="Responsive image" style="width: 80%;">
+          </div>
         <div class="col-6">
           <h3 class="profile-name"></h3>
-          <p class="profile-info">{{data.FirstName}} {{data.LastName}}</p>
+          <p class="profile-info">{{data.FirstName.toString()}} {{data.LastName.toString()}}</p>
         </div>
       </div>
       <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4  ">
         <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large;">
-          <li class="nav-item  border-1 bg-light p-1 m-1">
-            <a class="nav-link " routerLink="/guestinterface" style="color: #1E2B31;">Interface</a>
+          <li class="nav-item buttonStyle border-1 bg-light p-1 m-1">
+            <a class="nav-link " routerLink="/guestinterface" style="color: #1E2B31;">Profile</a>
           </li>
-          <li class="nav-item border-1 bg-light p-1 m-1 ">
+          <li class="nav-item buttonStyle border-1 bg-light p-1 m-1 ">
             <a class="nav-link" (click)="onLogout()" style="color: #1E2B31;">Log out</a>
           </li>
 
@@ -23,26 +24,26 @@
     </div>
   </nav>
 
-  <div class="container-fluid w-100 a pb-4" style="padding-top: 2%; background-color: #E3B04B;">
+  <div class="container-fluid w-100 a pb-4" style="padding-top: 2%; background-color: #eaddca;">
     <div class="row">
       <div class="col-md-12 col-lg-4 col-xl-4">
-        <h3 style="text-align:center ;color:#F8F8F8; font-size: xx-large; font-family: montserrat;">Room {{roomID}}</h3>
+        <h3 style="text-align:center ;color:#1E2B31; font-size: xx-large; font-family: montserrat;">Room {{roomID}}</h3>
       </div>
       <div class="col">
         <nav class="nav nav-pills flex-column flex-sm-row" style="text-align:center; ">
-          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;"
+          <a class="flex-sm-fill text-sm-center nav-link setting"
           routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="roomcontrol">
           Room control
          </a>
-          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;"
+          <a class="flex-sm-fill text-sm-center nav-link setting"
            routerLinkActive="active" routerLink="roomsecurity">
             Room security
           </a>
-          <a class="flex-sm-fill text-sm-center nav-link"  style="color: #F8F8F8;"
+          <a class="flex-sm-fill text-sm-center nav-link setting"
            routerLinkActive="active" routerLink="roomservices">
             Room services
           </a>
-          <a class="flex-sm-fill text-sm-center nav-link "  style="color: #F8F8F8;"
+          <a class="flex-sm-fill text-sm-center nav-link setting"
           routerLinkActive="active" routerLink="roomreport">
           Report
         </a>
