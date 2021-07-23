@@ -29,15 +29,16 @@ th, td , .list, .form-check{
 .styleButton{
     margin: 3px;
     background-color: #F8F8F8;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: 0.3s;
     text-align: center;
     font-weight: bold;
     border-radius: 0% !important;
   }
-  
+
   .styleButton:hover{
     opacity: 1;
+    cursor: pointer;
   }
 
   .buttonContent{
@@ -45,3 +46,15 @@ th, td , .list, .form-check{
     padding: 0px;
     text-align: center;
   }
+  .img{
+    display: block;
+    border-radius: 50%;
+    height: 75px !important;
+    width: 75px  !important;
+  }
+  .profile-info{
+    color: #F8F8F8;
+    font-size: larger;
+    font-family: montserrat;
+    line-height: normal;
+   }

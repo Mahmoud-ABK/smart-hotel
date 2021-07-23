@@ -1,29 +1,28 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-light w-100 " style="background-color: #1E2B31;">
   <div class="container">
-    <div class="row">
-      <div class="col-6"><img src="../../assets/user-profile.svg" class="img-fluid" alt="Responsive image"
-          style="width: 80%;"></div>
-      <div class="col-6">
-        <h3 style="font-size: larger; color: #f8f8f8;">profile</h3>
-        <p style="font-size: larger; color: #f8f8f8;">name</p>
+    <div class="row p-0">
+      <div class="col-4 "><img src="{{Data.Pic}}" class="img" alt="Responsive image"></div>
+      <div class="col-8">
+        <h3 style="font-size: larger; color: #f8f8f8;"></h3>
+        <p class="profile-info">{{Data.FirstName.toString()}} {{Data.LastName.toString()}}</p>
       </div>
     </div>
     <div class=" col-12 col-sm-5 col-md-5 col-lg-5 col-xl-4 pt-1 ">
       <ul class="nav d-flex flex-row justify-content-center " style="text-align: center; font-size: large; ">
-        <li class="nav-item pe-2 styleButton">
-          <a class="btn-light nav-link m-2 buttonContent" (click)="ToInterface()"
-            style="color: #1E2B31 !important;">Profile</a>
+        <li class="nav-item  styleButton d-flex align-items-center " (click)="ToInterface()">
+          <a class="btn-light nav-link m-2 buttonContent  rounded "
+            style="color: #1E2B31 !important; ">Profile</a>
         </li>
 
-        <li class="nav-item ps-2 styleButton">
-          <a class="btn-light nav-link m-2 buttonContent" (click)="onLogout()" style="color: #1E2B31 !important;">Log
+        <li class="nav-item  styleButton d-flex align-items-center" (click)="onLogout()">
+          <a class="btn-light nav-link m-2 buttonContent rounded"  style="color: #1E2B31 !important;">Log
             out</a>
 
 
         </li>
-        <li class="nav-item styleButton">
-          <a class="btn-light nav-link m-2" (click)="scrolling('your-list')"
-            style="font-family:Open sans;color: #fae5c6 !important;">Your
+        <li class="nav-item styleButton stylebtn2" (click)="scrolling('your-list')">
+          <a class="btn-light nav-link m-2 rounded"
+            style="font-family:Open sans;color: #f3d08b !important;">Your
             list</a>
         </li>
 
