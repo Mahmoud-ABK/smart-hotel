@@ -1,8 +1,9 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-light navboura ">
   <div class="container">
     <div class="row p-0">
-      <div class="col-7"><img src="{{data.Pic}}" class="img" alt="Responsive image"
-         ></div>
+      <div class="col-7">
+        <img src="{{data.Pic}}" class="img" alt="Responsive image">
+      </div>
       <div class="col-5">
         <h3>{{data.FirstName}} {{data.LastName.concat()}}</h3>
         <p></p>
@@ -14,8 +15,8 @@
           <a class="nav-link " href="#">Interface</a>
 
         </li> -->
-        <li class="nav-item bg-light m-2">
-          <a class="nav-link" style="cursor: pointer;" (click)="loggingOut()" >Log out</a>
+        <li class="nav-item m-2 styleButton">
+          <a class="nav-link" style="cursor: pointer; color: #1e2b31;" (click)="loggingOut()" >Log out</a>
         </li>
 
       </ul>

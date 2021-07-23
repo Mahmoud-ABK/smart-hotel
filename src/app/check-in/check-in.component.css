@@ -28,3 +28,28 @@
   pointer-events: none !important;
 }
 
+.mat-step-header .mat-step-icon {
+  background-color: #e3b04b;
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: #1E2B31 !important;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active{
+  color: #1E2B31;
+  font-weight: bold;
+}
+
+.homeButton{
+  margin: 3px;
+  background-color: #F8F8F8;
+  opacity: 0.7;
+  transition: 0.3s;
+  text-align: center;
+  border-radius: 0% !important;
+}
+
+.homeButton:hover{
+  opacity: 1;
+}

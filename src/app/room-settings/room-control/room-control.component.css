@@ -24,3 +24,11 @@ h4{
   font-weight: bold !important;
   color: #1E2B31 !important;
 }
+
+span{
+  font-weight: bold;
+}
+
+.subtn{
+  border-radius: 0%;
+}
