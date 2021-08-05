@@ -105,7 +105,11 @@ export class Step3Component implements OnInit, OnDestroy {
       this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin, element.length)
       this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
       this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email, element.length)
+
     });
+    this.SignInUp.pusherToCurrentGuests(this.finalGuestData.Email).then(() => {
+      console.log('pushing to Current guests done');
+    })
     //logging out on signUp
     this.SignInUp.loggingOut()
     })

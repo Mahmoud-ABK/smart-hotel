@@ -77,9 +77,7 @@ export class LoginGuestComponent implements OnInit {
     if (this.access) {
       this.signingIN.logginIn(form.value.email, form.value.guestpsw).then((data) => {
         console.log(data.user.email);
-        this.signingIN.pusherToCurrentGuests(form.value.email).then(() => {
-          console.log('pushing to Current guests done');
-        })
+       
         this.router.navigate(['/guestinterface'])
 
       }).catch((err:Error) => {
