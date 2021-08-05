@@ -40,7 +40,6 @@ export class GuestInterfaceComponent implements OnInit {
         res.forEach((element) => {
           if (element.Email == this.currentEmail) {
             this.data = element
-
           }
         })
         console.log(this.data);

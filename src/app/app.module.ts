@@ -60,6 +60,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KitchenService } from './Services/kitchen.service';
 import { AuthGuard } from './guards/auth.guard';
+import { CheckingOutComponent } from './checking-out/checking-out.component';
 
 
 
@@ -97,6 +98,7 @@ const appRoutes: Routes = []
     ServantPageComponent,
     LoginServantPageComponent,
     PasswordResetComponent,
+    CheckingOutComponent,
     
   ],
   imports: [

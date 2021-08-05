@@ -60,7 +60,7 @@ export class LoginGuestComponent implements OnInit {
     return console.log(this.dateobject);
   }
   comparing() {
-    if ((this.dateNow >= Date.parse(this.dateobject.checkin)) && (this.dateNow <= Date.parse(this.dateobject.checkout))) {
+    if ((this.dateNow >= Date.parse(this.dateobject.checkin))) {
       this.access = true
     } else {
       this.access = false
@@ -68,7 +68,7 @@ export class LoginGuestComponent implements OnInit {
     console.log(this.access);
   }
   openSnackBar() {
-    this.snackBar.open("you can't enter the your interface before the check in date nor after the checkout date", "Close");
+    this.snackBar.open("you can't enter the your interface before the check in date ", "Close");
   }
 
   onSubmit(form: NgForm) {
@@ -77,6 +77,9 @@ export class LoginGuestComponent implements OnInit {
     if (this.access) {
       this.signingIN.logginIn(form.value.email, form.value.guestpsw).then((data) => {
         console.log(data.user.email);
+        this.signingIN.pusherToCurrentGuests(form.value.email).then(() => {
+          console.log('pushing to Current guests done');
+        })
         this.router.navigate(['/guestinterface'])
 
       }).catch((err:Error) => {

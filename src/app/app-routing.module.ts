@@ -30,9 +30,11 @@ import { ServantPageComponent } from './staff-pages/servant-page/servant-page.co
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { ServantauthGuard } from './guards/servantauth.guard';
+import { CheckingOutComponent } from './checking-out/checking-out.component';
 
 const redirectingUnauthorizedToHome = () => redirectUnauthorizedTo(['/guestlogin']);
 const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestinterface']);
+
 
 
 const routes: Routes = [
@@ -137,6 +139,12 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome },
   },
+  {
+    path:"checkingout",
+    component:CheckingOutComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectingUnauthorizedToHome }
+  }
 
 ];
 

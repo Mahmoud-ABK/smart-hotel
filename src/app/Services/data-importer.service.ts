@@ -25,24 +25,29 @@ export class DataImporterService {
   }
   database: AngularFireDatabase
   Roomsref: AngularFireList<RoomModel>
-  guestdataRef:AngularFireList<GuestDataModel>
-  cleaningref:AngularFireList<Cleaning>
-  reportref:AngularFireList<ReportModel>
-  foodref:AngularFireList<FoodOrderModel>
+  guestdataRef: AngularFireList<GuestDataModel>
+  cleaningref: AngularFireList<Cleaning>
+  reportref: AngularFireList<ReportModel>
+  foodref: AngularFireList<FoodOrderModel>
+  currentGuests: AngularFireList<any>
 
   constructor(public db: AngularFireDatabase, public current: AngularFireAuth) {
     this.database = db
     this.Roomsref = db.list('/Rooms')
-    this.guestdataRef= db.list('/GuestList')
-    this.cleaningref=db.list('/CleaningDataList')
-    this.reportref=db.list('/RoomReports')
-    this.foodref=db.list('/FoodOrders')
+    this.guestdataRef = db.list('/GuestList')
+    this.cleaningref = db.list('/CleaningDataList')
+    this.reportref = db.list('/RoomReports')
+    this.foodref = db.list('/FoodOrders')
+    this.currentGuests = db.list('/CurrentGuests')
     // console.log(this.Roomsref)
 
   }
   //getting rooms
   RoomImporter() {
     return this.Roomsref
+  }
+  currents() {
+    return this.currentGuests
   }
   //sending step1 data to step3
   ToStep3(object: Step1data) {
@@ -75,23 +80,23 @@ export class DataImporterService {
   }
 
   currentEmail() {
-   return this.current.currentUser
+    return this.current.currentUser
   }
 
 
-  currentEmailrelatedData(email:string){
+  currentEmailrelatedData(email: string) {
     return this.guestdataRef.snapshotChanges().pipe(map(changes => changes.map(r => ({ id: r.payload.key, ...r.payload.val() }))))
   }
-  cleaningImporter(){
+  cleaningImporter() {
     return this.cleaningref
   }
-  cleaningRemover(key){
+  cleaningRemover(key) {
     return this.cleaningref.remove(key)
   }
-  reportImporter(){
+  reportImporter() {
     return this.reportref
   }
-  foodImporter(){
+  foodImporter() {
     return this.foodref
   }
 }

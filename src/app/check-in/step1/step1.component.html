@@ -83,10 +83,13 @@
       <div class="form-group col-lg-12 form-floating mb-20">
 
         <input type="email" class="form-control" id="email" name="guestEmail" #email="ngModel"
-          placeholder="name@example.com" ngModel email required>
+          placeholder="name@example.com" ngModel email required (ngModelChange)="emailChcecker(email.value)">
         <label for="email" class="label">Email Address</label>
         <div class="alert alert-warning" *ngIf="email.invalid && email.touched">
           Invalid email
+        </div>
+        <div class="alert alert-danger" *ngIf="usedEmail">
+         Email already in use
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && email.invalid">
@@ -150,23 +153,23 @@
       <div class="form-group col-lg-12 mb-20">
         <label for="image" class="date-label" style="margin-bottom: 10px;">Profile Picture</label>
         <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic"
-          id="image" placeholder="1" ngModel>
+          id="image" placeholder="1" ngModel #img="ngModel">
 
 
       </div>
-      <div class="alert alert-warning" *ngIf="waiting && profilePic==undefined">
+      <div class="alert alert-warning" *ngIf="waiting && profilePic===undefined">
         Waiting for upload....
       </div>
-      <div class="alert alert-primary" *ngIf="profilePic!=undefined">
+      <!-- <div class="alert alert-primary" *ngIf="uploaded">
         uploaded
-      </div>
+      </div> -->
 
 
       <!-- <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
         <button type="submit" class="btn1 btn-primary1 me-2" >Submit </button>
       </div> -->
       <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || profilePic==undefined "
+        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || waiting || usedEmail"
           class="btn1 btn-primary2  me-2">Next</button>
       </div>
 
