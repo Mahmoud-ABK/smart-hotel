@@ -6,6 +6,7 @@
 @import url("https://use.typekit.net/zdy7agl.css");
 @import url("https://use.typekit.net/zdy7agl.css");
 @import url("https://use.typekit.net/zdy7agl.css");
+@import url("../node_modules/angular-notifier/styles.css");
 @font-face {
   font-family: lc;
   src: url(./assets/fonts/LCALLIG.ttf);

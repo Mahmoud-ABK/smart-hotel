@@ -16,19 +16,19 @@ import { InAppOperationsService } from 'src/app/Services/in-app-operations.servi
 })
 export class LoginGuestComponent implements OnInit {
   Rooms: RoomModel[]
-  constructor(public InApp:InAppOperationsService,public signingIN: SignInUpService, public data: DataImporterService, public snackBar:MatSnackBar,public router:Router) { }
+  constructor(public InApp: InAppOperationsService, public signingIN: SignInUpService, public data: DataImporterService, public snackBar: MatSnackBar, public router: Router) { }
   dateNow = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en'))
   access: boolean
   dateobject: {
     checkin: string,
     checkout: string
   }
-  invalid:boolean=false
-  error:string
+  invalid: boolean = false
+  error: string
 
   ngOnInit(): void {
     localStorage.removeItem('Rid')
-    this.InApp.RoomID=0
+    this.InApp.RoomID = 0
 
     this.data.RoomImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
@@ -48,10 +48,13 @@ export class LoginGuestComponent implements OnInit {
         a.guestHistoryID.forEach((id, index) => {
           if (id == email) {
             ind = index
-            this.dateobject = {
-              checkin: a.RoomCheckinDate[ind],
-              checkout: a.RoomCheckoutDate[ind]
+            if (Date.parse(a.RoomCheckoutDate[ind]) > this.dateNow) {
+              this.dateobject = {
+                checkin: a.RoomCheckinDate[ind],
+                checkout: a.RoomCheckoutDate[ind]
+              }
             }
+
           }
         })
         this.comparing()
@@ -77,22 +80,22 @@ export class LoginGuestComponent implements OnInit {
     if (this.access) {
       this.signingIN.logginIn(form.value.email, form.value.guestpsw).then((data) => {
         console.log(data.user.email);
-       
+
         this.router.navigate(['/guestinterface'])
 
-      }).catch((err:Error) => {
-        this.invalid=true
+      }).catch((err: Error) => {
+        this.invalid = true
         console.log(err);
         console.log(err.message);
-        this.error=err.message
+        this.error = err.message
 
 
 
       })
     } else {
       // alert("you can't enter the your interface before the check in date nor after the checkout date")
-       this.openSnackBar()
-       form.reset()
+      this.openSnackBar()
+      form.reset()
     }
 
 

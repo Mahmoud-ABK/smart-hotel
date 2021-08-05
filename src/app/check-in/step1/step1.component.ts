@@ -28,6 +28,7 @@ export class Step1Component implements OnInit {
 
   constructor(public InApp:InAppOperationsService,private dataImporter: DataImporterService, private firestorage: AngularFireStorage, public signingIn: SignInUpService) { }
   onFileSelected(event) {
+  
     this.waiting = true
     /*  if (!(event.target.files.length==0)){
      this.profilePic = event.target.files[0];

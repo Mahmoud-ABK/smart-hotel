@@ -61,6 +61,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KitchenService } from './Services/kitchen.service';
 import { AuthGuard } from './guards/auth.guard';
 import { CheckingOutComponent } from './checking-out/checking-out.component';
+import { NotifierModule } from 'angular-notifier';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 
 
@@ -99,7 +102,7 @@ const appRoutes: Routes = []
     LoginServantPageComponent,
     PasswordResetComponent,
     CheckingOutComponent,
-    
+
   ],
   imports: [
 
@@ -116,11 +119,33 @@ const appRoutes: Routes = []
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     MatSnackBarModule,
+    MatBadgeModule,
+    NotifierModule.withConfig({
+      behaviour: {
+
+        /**
+         * Defines whether each notification will hide itself automatically after a timeout passes
+         * @type {number | false}
+         */
+        autoHide: false,
+
+        /**
+         * Defines what happens when someone clicks on a notification
+         * @type {'hide' | false}
+         */
+        onClick: false,
+
+        /**
+         * Defines whether the dismiss button is visible or not
+         * @type {boolean}
+         */
+        showDismissButton: true,
 
 
+        stacking: 100
 
-
-
+      }
+    })
 
   ],
   providers: [SignInUpService, DataImporterService,KitchenService, AuthGuard],

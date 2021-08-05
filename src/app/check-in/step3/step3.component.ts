@@ -58,8 +58,7 @@ export class Step3Component implements OnInit, OnDestroy {
     console.log(this.step1GuestData);
     this.step2RoomsData = this.dataImporter.step2RoomData
     this.SelectedRooms = this.step2RoomsData.SelectedRooms
-
-
+    this.calc()
 
   }
   //calculating Sum
@@ -80,8 +79,8 @@ export class Step3Component implements OnInit, OnDestroy {
   // this func is to put in the finished btn
   bigFunction() {
     //again
-    this.GettingData()
-    this.calc()
+   // this.GettingData()
+
     //setting each value into place
     this.finalGuestData.FirstName = this.step1GuestData.Firstname
     this.finalGuestData.LastName = this.step1GuestData.Lastname
