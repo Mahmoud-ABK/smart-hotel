@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
 import { map } from 'rxjs';
 import { ReportModel } from 'src/app/Models/report-model';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { RoomModel } from '../Models/room-model';
 import { TranslatedRoomData } from '../Models/translated-room-data';
+import { KitchenService } from '../Services/kitchen.service';
 
 @Component({
   selector: 'app-manager-interface',
@@ -15,7 +17,7 @@ export class ManagerInterfaceComponent implements OnInit {
 
   rooms: RoomModel[] = []
 
-  constructor(private dataImporter: DataImporterService, public notification:NotifierService ) {
+  constructor(private dataImporter: DataImporterService, public notification:NotifierService ,public logout:KitchenService , public router:Router) {
     localStorage.removeItem('report')
     this.dataImporter.reportImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
@@ -76,5 +78,11 @@ export class ManagerInterfaceComponent implements OnInit {
     file.src = "../../assets/mixkit-message-pop-alert-2354.mp3";
     file.load();
     file.play();
+  }
+  loggingOut(){
+    this.logout.managerdataretriever(false)
+    this.router.navigate(['managerlogin'])
+
+
   }
 }

@@ -3,11 +3,19 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { map } from 'rxjs/operators';
 import { Cleaning } from '../Models/cleaning.model';
+import { Food } from '../Models/food';
 import { FoodOrderModel } from '../Models/food-order-model';
 import { GuestDataModel } from '../Models/guest-data-model';
 import { ReportModel } from '../Models/report-model';
 import { RoomModel } from '../Models/room-model';
 import { Step1data } from '../Models/step1data';
+interface listOfFood {
+  breakfast: Array<Food>,
+  dinner: Array<Food>,
+  lunch: Array<Food>,
+  drinks:Array<Food>,
+  snacks:Array<Food>,
+}
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +38,7 @@ export class DataImporterService {
   reportref: AngularFireList<ReportModel>
   foodref: AngularFireList<FoodOrderModel>
   currentGuests: AngularFireList<any>
+  foodList: listOfFood ={breakfast:[], dinner:[], lunch:[], drinks:[], snacks:[]}
 
   constructor(public db: AngularFireDatabase, public current: AngularFireAuth) {
     this.database = db
@@ -40,6 +49,7 @@ export class DataImporterService {
     this.foodref = db.list('/FoodOrders')
     this.currentGuests = db.list('/CurrentGuests')
     // console.log(this.Roomsref)
+
 
   }
   //getting rooms
@@ -98,6 +108,9 @@ export class DataImporterService {
   }
   foodImporter() {
     return this.foodref
+  }
+  FoodListImporter(){
+    return this.database.object('Food').snapshotChanges().pipe(map(changes => changes.payload.val() ))
   }
 }
 
