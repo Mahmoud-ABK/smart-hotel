@@ -25,7 +25,9 @@
           <div class="data-item d-inline-flex">
             <p><span id="zina">Door Status:</span> {{room.Door}}</p>
           </div>
-
+          <div class="data-item d-inline-flex justify-content-end">
+            <button mat-raised-button  style="background-color: inherit;" [routerLink]="'../Additionalroominfo/'+room.roomid" >Addtional Info</button>
+          </div>
         </div>
       </div>
     </div>
