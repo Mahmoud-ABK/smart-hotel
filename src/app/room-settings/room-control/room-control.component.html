@@ -1,122 +1,216 @@
 <form action="" (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div class="container py-4"
+  <div class="container py-4 "
     style="margin-top:3% ; font-size: large; box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
-    <div class="row m-2">
-      <h4><span ngbTooltip="optimal room temperatue is around 20°C and 25°C">&#9432;</span> Room temperature</h4>
-      <hr class="w-50">
+    <div class="row m-2 d-flex flex-row ">
+      <div class="d-flex flex-row justify-content-between w-75">
+        <h4>
+          <i-bs ngbTooltip="optimal room temperatue is around 20°C and 25°C" name="info-circle" width="20" height="20">
+          </i-bs>
+          Room temperature
 
+        </h4>
+        <div> current value: {{Temp}} °C
+          <i-bs *ngIf="Temp>33" class="outlinehot"  color="red" name="thermometer-high" width="30" height="30">hot
+          </i-bs>
+          <i-bs *ngIf="Temp>20 && Temp<=33" class="outlinmedium"  color="red" name="thermometer-half" width="30" height="30"> medium
+          </i-bs>
+          <i-bs  *ngIf="Temp<=20" class="outlinecold"  color="red" name="thermometer-low" width="30" height="30"> cold
+          </i-bs>
+        </div>
+      </div>
+
+      <hr class="w-75">
     </div>
     <div class="row m-3">
       <div class="col-lg-5">you want to set the room temperature to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="tempswitch" checked (change)="disable.a=!disable.a" />
+          <mat-slide-toggle class="" type="checkbox" id="tempswitch" checked (change)="disable.a=!disable.a ">
+          </mat-slide-toggle>
         </div>
       </div>
     </div>
     <div class="row m-3">
-      <div class="col-lg-5">what temperature do you want? (in °C)</div>
-      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-        <div class="form-outline">
+      <div class="col-lg-5 py-1">what temperature do you want? (in °C)</div>
+      <div class="col-12 col-sm-10 col-md-4 col-lg-2  py-1 ">
+        <div class="form-outline ">
           <input ngModel #temp="ngModel" type="number" name="tempvalue" id="tempvalue"
-            class="form-control form-control-sm"  [disabled]="disable.a" />
+            class="form-control form-control-sm" [disabled]="disable.a" #tempval="ngModel" />
         </div>
-       
+
+      </div>
+      <div class="row d-flex flex-row justify-content-end py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
+          <button mat-button class="subtn button w-100 " type="button"
+            (click)="Updater('RoomTemperature',undefinedtem(tempval.value))"
+            style="color: #f8f8f8; background-color: #bd9035;">
+            Save <mat-icon>save</mat-icon>
+          </button>
+        </div>
       </div>
 
     </div>
+    <div class="row m-2 d-flex flex-row ">
+      <div class="d-flex flex-row justify-content-between w-75">
+        <h4>
+          <i-bs ngbTooltip="According to the Environmental Protection Agency, the best indoor relative humidity falls between 30% and 50%" name="info-circle" width="20" height="20">
+          </i-bs>
+          Room humidity
+        </h4>
+        <div> current value: {{humidity}}%
+          <i-bs *ngIf="humidity>50" class="outlinehot"  color="red" name="moisture" width="30" height="30">hot
+          </i-bs>
+          <i-bs *ngIf="humidity>= 30 && humidity<=50"  class="outlinmedium"  color="red" name="moisture" width="30" height="30"> medium
+          </i-bs>
+          <i-bs  *ngIf="humidity<30" class="outlinecold"  color="red" name="moisture" width="30" height="30"> cold
+          </i-bs>
+        </div>
+      </div>
 
-    <div class="row m-2">
-      <h4><span
-        ngbTooltip="According to the Environmental Protection Agency, the best indoor relative humidity falls between 30% and 50%">&#9432;</span> Room humidity</h4>
-      <hr class="w-50">
+      <hr class="w-75">
     </div>
     <div class="row m-3">
       <div class="col-lg-5">you want to set the room humidity to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="hswitch" checked (change)="disable.b=!disable.b" />
+          <mat-slide-toggle class="" type="checkbox" id="hswitch" checked (change)="disable.b=!disable.b">
+          </mat-slide-toggle>
         </div>
       </div>
     </div>
     <div class="row m-3">
-      <div class="col-lg-5">what humidity do you want? (in %)</div>
-      <div class="col-6 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+      <div class="col-lg-5 py-1">what humidity do you want? (in %)</div>
+      <div class="col-12 col-sm-10 col-md-4 col-lg-2 d-flex justify-content-center py-1">
         <div class="form-outline w-100 ">
           <input type="number" min="12" max="30" ngModel name="hvalue" id="hvalue" class="form-control form-control-sm "
-            [disabled]="disable.b" required />
+            [disabled]="disable.b" required #humval="ngModel" />
+        </div>
+      </div>
+      <div class="row d-flex flex-row justify-content-end py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
+          <button mat-button class="subtn button w-100 " type="button"
+            (click)="Updater('Roomhumidity',undefinedhum(humval.value))"
+            style="color: #f8f8f8; background-color: #bd9035;">
+            Save <mat-icon>save</mat-icon>
+          </button>
         </div>
       </div>
     </div>
 
     <div class="row m-2">
-      <h4><span ngbTooltip="each room has the same lights">&#9432;</span> Room lighting </h4>
-      <hr class="w-50"> 
+      <h4>
+        <i-bs ngbTooltip="each room has the same lights" name="info-circle" width="20" height="20"></i-bs>
+
+        <!-- <span ngbTooltip="">&#9432;</span> -->
+        Room lighting
+      </h4>
+      <hr class="w-75">
     </div>
-    <div class="row m-3">
+    <div class="row m-3 ">
+      <div class="col-5 col-lg-5">Turn {{OnOrOff}} all</div>
+      <div class="col">
+        <div class="form-check form-switch">
+          <mat-slide-toggle [checked]="lights[0] && lights[1] && lights[2] && lights[3]"
+            (change)='turner($event.checked)' class="" type="checkbox"></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+    <div class="row m-3 ps-4">
       <div class="col-5 col-lg-5">Bedroom</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input ngModel name="lightswitch1" [(ngModel)]="lights.a" class="form-check-input" type="checkbox"
-            id="lightswitch1" />
+          <mat-slide-toggle ngModel name="lightswitch1" [(ngModel)]="lights[0]" class="" type="checkbox"
+            id="lightswitch1" (change)="onornot()"></mat-slide-toggle>
         </div>
       </div>
     </div>
-    <div class="row m-3">
+    <div class="row m-3 ps-4">
       <div class="col-5 col-lg-5">Dining room</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input ngModel name="lightswitch2" class="form-check-input" [(ngModel)]="lights.b" type="checkbox"
-            id="lightswitch2" />
+          <mat-slide-toggle ngModel name="lightswitch2" class="" [(ngModel)]="lights[1]" type="checkbox"
+            id="lightswitch2" (change)="onornot()"></mat-slide-toggle>
         </div>
       </div>
     </div>
-    <div class="row m-3">
+    <div class="row m-3 ps-4">
       <div class="col-5 col-lg-5">living room</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input ngModel name="lightswitch3" class="form-check-input" type="checkbox" [(ngModel)]="lights.c"
-            id="lightswitch3" />
+          <mat-slide-toggle ngModel name="lightswitch3" class="" type="checkbox" [(ngModel)]="lights[2]"
+            id="lightswitch3" (change)="onornot()"></mat-slide-toggle>
         </div>
       </div>
     </div>
-    <div class="row m-3">
+    <div class="row m-3 ps-4">
       <div class="col-5 col-lg-5">bathroom</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input ngModel name="lightswitch4" class="form-check-input" type="checkbox" [(ngModel)]="lights.d"
-            id="lightswitch4" />
+          <mat-slide-toggle ngModel name="lightswitch4" class="" type="checkbox" [(ngModel)]="lights[3]"
+            id="lightswitch4" (change)="onornot()"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="row d-flex flex-row justify-content-end py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
+          <button mat-button class="subtn button w-100 " type="button" (click)="Updater('RoomLighting',lights)"
+            style="color: #f8f8f8; background-color: #bd9035;">
+            Save <mat-icon>save</mat-icon>
+          </button>
         </div>
       </div>
     </div>
 
-    <div class="row m-2">
-      <h4><span
-          ngbTooltip="most dermatologists recommend keeping the temperature at an average of 37°C to 38.3°C or no more than 41°C.">&#9432;</span> Water temperature
-      </h4>
-      <hr class="w-50">
+    <div class="row m-2 d-flex flex-row ">
+      <div class="d-flex flex-row justify-content-between w-75">
+        <h4>
+          <i-bs ngbTooltip="some dermatologists recommend keeping the temperature at an average of 37°C to 38.3°C or no more than 41°C." name="info-circle" width="20" height="20">
+          </i-bs>
+          Water temperature
+        </h4>
+        <div> current value: {{watertemp}} °C
+          <i-bs *ngIf="watertemp>41" class="outlinehot"  color="red" name="thermometer-high" width="30" height="30">hot
+          </i-bs>
+          <i-bs *ngIf="watertemp>30 && watertemp<=41"  class="outlinmedium"  color="red" name="thermometer-half" width="30" height="30"> medium
+          </i-bs>
+          <i-bs  *ngIf="watertemp<=30" class="outlinecold"  color="red" name="thermometer-low" width="30" height="30"> cold
+          </i-bs>
+        </div>
+      </div>
+
+      <hr class="w-75">
     </div>
+
     <div class="row m-3">
-      <div class="col-lg-5">you want to set the water temperature to automatic?</div>
+      <div class="col-lg-5 ">you want to set the water temperature to automatic?</div>
       <div class="col">
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="hswitch" checked (change)="disable.c=!disable.c" />
+          <mat-slide-toggle class="" type="checkbox" id="wtswitch" checked (change)="disable.c=!disable.c">
+          </mat-slide-toggle>
         </div>
       </div>
     </div>
     <div class="row m-3">
-      <div class="col-lg-5">what water temperature do you want? (in %)</div>
-      <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+      <div class="col-lg-5 py-1">what water temperature do you want? (in %)</div>
+      <div class="col-12 col-sm-10 col-md-4 col-lg-2 py-1">
         <div class="form-outline">
           <input ngModel name="watertempvalue" type="number" id="watertempvalue" class="form-control form-control-sm "
-            [disabled]="disable.c" />
+            [disabled]="disable.c" #watertempval="ngModel" />
+        </div>
+      </div>
+      <div class="row d-flex flex-row justify-content-end py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
+          <button mat-button class="subtn button w-100 " type="button"
+            (click)="Updater('WaterTemperature',undefinedwatertemp(watertempval.value))"
+            style="color: #f8f8f8; background-color: #bd9035;">
+            Save <mat-icon>save</mat-icon>
+          </button>
         </div>
       </div>
     </div>
-    <div class="row d-flex flex-row justify-content-end">
+    <div class="row d-flex flex-row justify-content-center">
       <div class="col-12 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
         <button mat-button class="subtn button w-100 " type="submit" style="color: #f8f8f8; background-color: #bd9035;">
-          Confirm modifications
+          Save all
         </button>
       </div>
     </div>

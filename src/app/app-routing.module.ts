@@ -31,6 +31,10 @@ import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { ServantauthGuard } from './guards/servantauth.guard';
 import { CheckingOutComponent } from './checking-out/checking-out.component';
+import { RoomInfoComponent } from './manager-interface/room-management/room-info/room-info.component';
+import { ArchiveComponent } from './archive/archive.component';
+import { CleaningdataComponent } from './archive/cleaningdata/cleaningdata.component';
+import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-data.component';
 
 const redirectingUnauthorizedToHome = () => redirectUnauthorizedTo(['/guestlogin']);
 const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestinterface']);
@@ -100,11 +104,31 @@ const routes: Routes = [
 
       {
         path: "roommanagement",
-        component: RoomManagementComponent
+        component: RoomManagementComponent,
+
       },
       {
         path: "roomreportmenu",
         component: RoomReportMenuComponent
+      },
+      {
+        path: "Archive",
+        component: ArchiveComponent,
+        children:[
+          {
+            path: "CleaningArchive",
+            component:CleaningdataComponent
+          },
+          {
+            path: "FoodOrdersArchive",
+            component:FoodOrdersDataComponent
+          }
+
+        ]
+      },
+      {
+        path: "Additionalroominfo/:Rid",
+        component:RoomInfoComponent
       }
     ]
 

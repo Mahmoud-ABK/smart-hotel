@@ -48,7 +48,9 @@ export class RoomSecurityComponent implements OnInit , OnDestroy {
   adderToHistory(status: string) {
     this.inApp.doorStatusUpdater(this.inApp.RoomID, !this.doorOpen)
     this.inApp.doorhisoryUpdater(this.inApp.RoomID, { action: status.toLowerCase(), time: formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en-US') })
-  //  this.historyList.push({ action: status.toLowerCase(), time: formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en-US') })
+    this.inApp.doorhisoryArchiveUpdater(this.inApp.RoomID, { action: status.toLowerCase(), time: formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en-US') })
+
+    //  this.historyList.push({ action: status.toLowerCase(), time: formatDate(new Date(), 'MMM d, y, h:mm:ss a', 'en-US') })
     console.log(this.historyList);
   }
   Clearer(){

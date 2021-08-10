@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class Step2Component implements OnInit {
   @Output() step3display: EventEmitter<boolean> = new EventEmitter<boolean>()
-  step3(){
+  step3() {
     this.step3display.emit(true)
 
   }
@@ -61,7 +61,7 @@ export class Step2Component implements OnInit {
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
 
-  selectedRooms: RoomModel[] =[];
+  selectedRooms: RoomModel[] = [];
   confirmed: boolean = false
 
   ordinarytype: boolean = false
@@ -70,8 +70,8 @@ export class Step2Component implements OnInit {
   seaviewfloortype: boolean = false
 
   roomIDS: Array<{
-    id:number,
-    length:number
+    id: number,
+    length: number
   }> = []
 
 
@@ -80,6 +80,7 @@ export class Step2Component implements OnInit {
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
         this.RoomList = result;
+        this.checker()
 
 
       })
@@ -87,67 +88,59 @@ export class Step2Component implements OnInit {
 
 
   }
-  prom = new Promise((resolve, reject) => {
-    if (this.RoomList.length == 0) {
-      resolve(this.checker())
-    }
 
-  });
   ngOnInit(): void {
 
 
 
 
-    this.prom.then()
+
 
   }
 
   checker() {
     this.RoomlistDisplay = true
+    let parsedCHECKIN = Date.parse(this.checkin)
+    let parsedCHECKOUT = Date.parse(this.checkout)
+    let inFunctionAVAILABLE: any = []
+    this.RoomList.forEach(RoomSample => {
 
+      let Roomcheckin = RoomSample.RoomCheckinDate
+      let Roomcheckout = RoomSample.RoomCheckoutDate
+      let checkie = []
+      if (Roomcheckin.length == 1) {
+        checkie.push(true)
+      } else {
+        for (let i = 1; i < Roomcheckin.length; i++) {
 
-    let main = setInterval(() => {
-      let parsedCHECKIN = Date.parse(this.checkin)
-      let parsedCHECKOUT = Date.parse(this.checkout)
-      let inFunctionAVAILABLE: any = []
-      this.RoomList.forEach(RoomSample => {
-
-        let Roomcheckin = RoomSample.RoomCheckinDate
-        let Roomcheckout = RoomSample.RoomCheckoutDate
-        let checkie = []
-        if (Roomcheckin.length==1) {
-          checkie.push(true)
-        } else {
-          for (let i =1; i < Roomcheckin.length; i++) {
-
-            if ((parsedCHECKIN <= Date.parse(Roomcheckin[i]) && parsedCHECKOUT <= Date.parse(Roomcheckin[i]))
-              || (parsedCHECKIN >= Date.parse(Roomcheckout[i]) && parsedCHECKOUT >= Date.parse(Roomcheckout[i]))
-            ) {
-              checkie.push(true)
-            } else {
-              checkie.push(false)
-            }
+          if ((parsedCHECKIN <= Date.parse(Roomcheckin[i]) && parsedCHECKOUT <= Date.parse(Roomcheckin[i]))
+            || (parsedCHECKIN >= Date.parse(Roomcheckout[i]) && parsedCHECKOUT >= Date.parse(Roomcheckout[i]))
+          ) {
+            checkie.push(true)
+          } else {
+            checkie.push(false)
           }
         }
-        // console.log(checkie)
-        if (!checkie.includes(false)) {
-          inFunctionAVAILABLE.push(RoomSample)
-        }
-      })
-      this.AvailableRoomList = inFunctionAVAILABLE
+      }
+      // console.log(checkie)
+      if (!checkie.includes(false)) {
+        inFunctionAVAILABLE.push(RoomSample)
+      }
+    })
+    this.AvailableRoomList = inFunctionAVAILABLE
 
-      this.AvailableRoomList.forEach(avRoom => {
-        if (avRoom.RoomPrice == 90) {
-          this.ordinarytype = true
-        } else if (avRoom.RoomPrice == 120) {
-          this.floortype = true
-        } else if (avRoom.RoomPrice == 150) {
-          this.seaviewtype = true
-        } else {
-          this.seaviewfloortype = true
-        }
-      })
-    }, 100)
+    this.AvailableRoomList.forEach(avRoom => {
+      if (avRoom.RoomPrice == 90) {
+        this.ordinarytype = true
+      } else if (avRoom.RoomPrice == 120) {
+        this.floortype = true
+      } else if (avRoom.RoomPrice == 150) {
+        this.seaviewtype = true
+      } else {
+        this.seaviewfloortype = true
+      }
+    })
+
 
   }
 
@@ -191,8 +184,8 @@ export class Step2Component implements OnInit {
 
   toArray() {
     this.selectedRooms.forEach(element => {
-      this.roomIDS.push({id: element.roomid, length:element.RoomCheckinDate.length}
-        )
+      this.roomIDS.push({ id: element.roomid, length: element.RoomCheckinDate.length }
+      )
     });
   }
 

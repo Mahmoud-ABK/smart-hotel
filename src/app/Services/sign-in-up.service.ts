@@ -75,7 +75,7 @@ export class SignInUpService {
         localStorage.clear()
         this.router.navigate(['']).then(() => {
           localStorage.clear()
-          this.InApp.Snackbar.open('account Deleted', '', {
+          this.InApp.Snackbar.open('Account Deleted', '', {
             duration: 3000
           })
         })})                                 .catch(() => {

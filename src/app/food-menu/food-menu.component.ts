@@ -109,6 +109,7 @@ export class FoodMenuComponent implements OnInit {
     this.FoodOrder.roomid = this.inApp.RoomID
     console.log(this.FoodOrder);
     this.inApp.multiPusher('/FoodOrders', this.FoodOrder, "food order sent!")
+    this.inApp.ToArchive('/FoodOrders',this.inApp.RoomID,this.FoodOrder)
   }
   scrolling(list) {
     console.log(`scrolling to ${list}`);

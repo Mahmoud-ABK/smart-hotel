@@ -63,6 +63,14 @@ import { AuthGuard } from './guards/auth.guard';
 import { CheckingOutComponent } from './checking-out/checking-out.component';
 import { NotifierModule } from 'angular-notifier';
 import {MatBadgeModule} from '@angular/material/badge';
+import { RoomInfoComponent } from './manager-interface/room-management/room-info/room-info.component';
+import {MatIconModule} from '@angular/material/icon';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import {NgPipesModule} from 'ngx-pipes';
+import { ArchiveComponent } from './archive/archive.component';
+import { CleaningdataComponent } from './archive/cleaningdata/cleaningdata.component';
+import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-data.component';
+
 
 
 
@@ -102,6 +110,10 @@ const appRoutes: Routes = []
     LoginServantPageComponent,
     PasswordResetComponent,
     CheckingOutComponent,
+    RoomInfoComponent,
+    ArchiveComponent,
+    CleaningdataComponent,
+    FoodOrdersDataComponent,
 
   ],
   imports: [
@@ -120,6 +132,10 @@ const appRoutes: Routes = []
     AngularFireDatabaseModule,
     MatSnackBarModule,
     MatBadgeModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+    NgPipesModule,
     NotifierModule.withConfig({
       behaviour: {
 

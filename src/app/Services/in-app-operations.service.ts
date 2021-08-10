@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { map } from 'rxjs/operators';
+import { Cleaning } from '../Models/cleaning.model';
+import { FoodOrderModel } from '../Models/food-order-model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +34,7 @@ export class InAppOperationsService {
     this.RoomID = id
     console.log(this.RoomID);
     localStorage.setItem('Rid',id.toString())
-   
+
 
 
   }
@@ -60,11 +62,37 @@ export class InAppOperationsService {
     this.currentLoginInData = data
     console.log(this.currentLoginInData)
   }
-  updating(key: any, tem: number, h: number, light: boolean[], w: number) {
+  updating(key: any, tem: number, h: number, light: any[], w: number) {
     return this.db.object('/Rooms/' + String(key)).update({
       RoomTemperature: tem,
       Roomhumidity: h,
       RoomLighting: light,
+      WaterTempertaure: w
+    })
+  }
+  updatingPerPart(key: any, name: string, val: any ) {
+    return this.db.object('/Rooms/' + String(key)).update({
+      [name]:val
+    })
+  }
+
+  updatingRoomTemp(key: any, tem: number ) {
+    return this.db.object('/Rooms/' + String(key)).update({
+      RoomTemperature: tem,
+    })
+  }
+  updatingRoomhum(key: any, h: number) {
+    return this.db.object('/Rooms/' + String(key)).update({
+      Roomhumidity: h
+    })
+  }
+  updatingRoomLighting(key: any, tem: number, h: number, light: boolean[], w: number) {
+    return this.db.object('/Rooms/' + String(key)).update({
+      RoomLighting: light,
+    })
+  }
+  updatingWaterTemp(key: any, w: number) {
+    return this.db.object('/Rooms/' + String(key)).update({
       WaterTempertaure: w
     })
   }
@@ -73,6 +101,9 @@ export class InAppOperationsService {
   }
   doorhisoryUpdater(id, val) {
     return this.db.list('/Rooms/' + String(id) + '/doorHistory').push(val)
+  }
+  doorhisoryArchiveUpdater(id, val) {
+    return this.db.list('/Rooms/' + String(id) + '/doorHistoryArchive').push(val)
   }
   doorHistoryImporter(key: number) {
     var firelist: AngularFireList<{ action: string, time: string }>
@@ -94,6 +125,10 @@ export class InAppOperationsService {
         duration: 2500
       })
     })
+  }
+  ToArchive(pathfromArchive:string,roomid:number,val:Cleaning | FoodOrderModel){
+    return this.db.list('Archive/'+pathfromArchive).push(val)
+
   }
 
 }

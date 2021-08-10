@@ -1,2 +1,61 @@
-<p>{{id}}</p>
-<p *ngFor="let item of room.RoomCheckinDate">{{item}}</p>
+<div class="container">
+  <!-- Room data  -->
+  <h1 class="Roomnumber">Room {{id}}</h1>
+  <h3>price: {{Roominfo.RoomPrice}}</h3>
+  <h3>Room status</h3>
+  <h4>Temperatue: {{Roominfo.RoomTemperature}}</h4>
+  <h4>humidity: {{Roominfo.Roomhumidity}}</h4>
+  <h4>Water Temperatue {{Roominfo.WaterTempertaure}}</h4>
+  <h4>lights</h4>
+  <ul>
+    <li>Bedroom: {{Roominfo.RoomLighting[0]}} </li>
+    <li>Dining Room: {{Roominfo.RoomLighting[1]}}</li>
+    <li>Living Room: {{Roominfo.RoomLighting[2]}}</li>
+    <li>bathroom: {{Roominfo.RoomLighting[3]}}</li>
+  </ul>
+  <!-- ness li 3emlou checkin ll room hedhi -->
+  <h2>guest list</h2>
+  <div *ngIf="Roominfo.listOfGuestsNames.length===0">No informations to display</div>
+  <table *ngIf="Roominfo.listOfGuestsNames.length!==0" class="table table-bordered">
+    <thead>
+      <tr>
+        <th> </th>
+        <th>Guest </th>
+        <th>number</th>
+        <th>Email</th>
+        <th>check in </th>
+        <th>check out </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let guestdata of Roominfo.listOfGuestsNames ; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{guestdata}}</td>
+        <td>{{Roominfo.listOfGuestNumbers[i]}}</td>
+        <td>{{this.Roominfo.guestHistoryID[i+1]}}</td>
+        <td>{{this.Roominfo.RoomCheckinDate[i+1]}}</td>
+        <td>{{this.Roominfo.RoomCheckoutDate[i+1]}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- history of door lock -->
+  <h2>Door lock history</h2>
+  <div *ngIf="Roominfo.doorHistoryArchive.length===1">No informations to display</div>
+  <table *ngIf="Roominfo.doorHistoryArchive.length!==1" class="table ">
+    <thead>
+      <tr>
+
+        <th scope="col">Action</th>
+        <th scope="col">Time</th>
+
+      </tr>
+    </thead>
+    <tbody  >
+      <tr *ngFor="let hist of Roominfo.doorHistoryArchive | slice:1 | reverse">
+        <td>door {{hist.action}}</td>
+        <td>{{hist.time}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -13,8 +13,8 @@
 .btn{
     margin-right: 10px;
     border-radius: 0%;
-    color: #1E2B31;
-    background-color: #f8f8f8;
+    color: #f8f8f8;
+    background-color:#1E2B31 ;
     font-weight: bold;
     font-size: 18px;
     border: 2px solid #1E2B31;
@@ -31,11 +31,18 @@
 }
 
 .nav-item{
+  /* display: flex;
+  flex-flow: row wrap; */
     padding: 10px 20px;
 }
 
 .active{
-    background-color: #1E2B31;
-    color: #f8f8f8; /*cho hethi cho*/
+    background-color: #f8f8f8;
+    color: #1E2B31; /*cho hethi cho*/
     border-color: #f8f8f8;
+}
+.center
+{
+  display: flex;
+  justify-content: center;
 }

@@ -35,8 +35,10 @@ export class DataImporterService {
   Roomsref: AngularFireList<RoomModel>
   guestdataRef: AngularFireList<GuestDataModel>
   cleaningref: AngularFireList<Cleaning>
+  cleaningrefArchive: AngularFireList<Cleaning>
   reportref: AngularFireList<ReportModel>
   foodref: AngularFireList<FoodOrderModel>
+  foodrefArchive:AngularFireList<FoodOrderModel>
   currentGuests: AngularFireList<any>
   foodList: listOfFood ={breakfast:[], dinner:[], lunch:[], drinks:[], snacks:[]}
 
@@ -48,6 +50,8 @@ export class DataImporterService {
     this.reportref = db.list('/RoomReports')
     this.foodref = db.list('/FoodOrders')
     this.currentGuests = db.list('/CurrentGuests')
+    this.foodrefArchive =db.list('/Archive/FoodOrders')
+    this.cleaningrefArchive=db.list('/Archive/Cleaning')
     // console.log(this.Roomsref)
 
 
@@ -55,6 +59,9 @@ export class DataImporterService {
   //getting rooms
   RoomImporter() {
     return this.Roomsref
+  }
+  RoomImporterForinfo(a) {
+    return this.db.object(`/Rooms/${a}`)
   }
   currents() {
     return this.currentGuests
@@ -100,6 +107,9 @@ export class DataImporterService {
   cleaningImporter() {
     return this.cleaningref
   }
+  cleaningDataArchiveImporter() {
+    return this.cleaningrefArchive
+  }
   cleaningRemover(key) {
     return this.cleaningref.remove(key)
   }
@@ -109,6 +119,11 @@ export class DataImporterService {
   foodImporter() {
     return this.foodref
   }
+  foodDataArchiveImporter() {
+    return this.foodrefArchive
+  }
+
+
   FoodListImporter(){
     return this.database.object('Food').snapshotChanges().pipe(map(changes => changes.payload.val() ))
   }

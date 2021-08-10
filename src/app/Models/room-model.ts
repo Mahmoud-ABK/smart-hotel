@@ -12,6 +12,7 @@ export class RoomModel {
     guestHistoryID:string[];
     doorOpen:boolean;
     doorHistory:any[]
+    doorHistoryArchive:any[]
 
 
 
