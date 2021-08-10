@@ -1,0 +1,49 @@
+<div class="container-fluid big-container p-0 m-0">
+
+
+  <div style="background-color: #fcf6ee; min-height: 100vh;" class="body-container">
+  <div class="empty d-flex justify-content-center" *ngIf="foodOrders.length==0">
+      <img style="filter: brightness(0.5);" src="../../../assets/empty.png">
+  </div>
+  <div class="d-flex justify-content-center flex-wrap pt-2 ">
+    <div class=" card-container card
+        col-12 col-xs-12 col-sm-10 col-md-6 col-lg-4 col-xl-4
+        d-flex  justify-content-center flex-wrap "
+        *ngFor="let foodOrder of foodOrders | reverse; let i=index; "
+        style="background-color: #fcf6ee;;">
+
+      <div class="card-body w-100">
+        <div class="titles">
+          <h5 class="card-title">Room {{foodOrder.roomid}} </h5>
+          <h6 class="card-text"><span id="reporter-data">Room owner: {{foodOrder.name}}</span></h6>
+          <h6 class="card-text"><span id="reporter-data"> Email: {{foodOrder.email}}</span></h6>
+          <h6 class="card-text"><span id="reporter-data"> number: {{foodOrder.num}}</span></h6>
+        </div>
+
+        <div class="order-container d-flex">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Dish Name</th>
+                <th scope="col">quantity</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="foodItem of OppaToArray(foodOrder.list) ; let j=index;">
+                <td> {{OppaToArray(foodOrder.list)[j].foodName}} </td>
+                <td> {{OppaToArray(foodOrder.list)[j].quantity}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="data-item d-inline-flex">
+          <p><span id="zina">delivery to room:</span> {{translator(foodOrder.ToRoom)}}</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
