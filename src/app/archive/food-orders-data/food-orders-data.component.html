@@ -15,9 +15,9 @@
       <div class="card-body w-100">
         <div class="titles">
           <h5 class="card-title">Room {{foodOrder.roomid}} </h5>
-          <h6 class="card-text"><span id="reporter-data">Room owner: {{foodOrder.name}}</span></h6>
-          <h6 class="card-text"><span id="reporter-data"> Email: {{foodOrder.email}}</span></h6>
-          <h6 class="card-text"><span id="reporter-data"> number: {{foodOrder.num}}</span></h6>
+          <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{foodOrder.name}}</h6>
+          <h6 class="card-text"><span id="reporter-data">Owner's Email: </span>{{foodOrder.email}}</h6>
+          <h6 class="card-text"><span id="reporter-data">Owner's Phone Num: </span>{{foodOrder.num}}</h6>
         </div>
 
         <div class="order-container d-flex">
@@ -38,8 +38,8 @@
             </tbody>
           </table>
         </div>
-        <div class="data-item d-inline-flex">
-          <p><span id="zina">delivery to room:</span> {{translator(foodOrder.ToRoom)}}</p>
+        <div style="padding-left: 20px;" class="data-item d-inline-flex">
+          <p><span id="zina">Delivery to room:</span> {{translator(foodOrder.ToRoom)}}</p>
       </div>
 
       </div>

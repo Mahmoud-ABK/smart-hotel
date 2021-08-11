@@ -26,6 +26,11 @@
     font-size: 18px;
 }
 
+.logout:hover{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
 .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
     color: #F8F8F8;
     font-weight: bold;

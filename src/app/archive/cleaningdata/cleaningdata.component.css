@@ -28,16 +28,7 @@
   font-weight: bold;
   font-size: 18px;
 }
-.delete-button {
-  background-color: #1E2B31;
-  color: #f8f8f8;
-  transition: 0.2s;
-  font-size: 14px;
-}
 
-.delete-button:hover {
-  background-color: #1e2b31a8;
-}
 /* .card::before, .card::after {
   position: absolute;
   top: 0;
@@ -82,7 +73,7 @@
 .card {
   margin: 0 auto;
   width: 500px;
-  max-height:250px;
+  height: fit-content;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
@@ -120,6 +111,9 @@ div.card-body{
 
 }
 
+h6{
+  font-size: 1em;
+}
 
 @media (max-width: 400px){
   .nav-item {
