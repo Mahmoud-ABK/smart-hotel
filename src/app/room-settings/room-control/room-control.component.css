@@ -32,3 +32,33 @@ span{
 .subtn{
   border-radius: 0%;
 }
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color:  #bd9035;
+  /* hedhi  aka twila ta3 slide toggle*/
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #c49a46;
+  /* hedhi  aka ras ta3 slide toggle*/
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-ripple .mat-ripple-element {
+  background-color: #bd9035;
+   /* jsp bedhabt ta3 chenhi hedhi ama dhaherli aka zay doura li 7dhe e slide toggle wa9t l click ama jsp*/
+}
+.outlinhot{
+  margin: 0;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+.outlinmedium{
+  color: green;
+  border-color: green;
+
+}
+.outlinecold
+{color: blue;
+  border-color: blue;
+
+}

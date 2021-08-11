@@ -58,7 +58,6 @@ export class Step3Component implements OnInit, OnDestroy {
     console.log(this.step1GuestData);
     this.step2RoomsData = this.dataImporter.step2RoomData
     this.SelectedRooms = this.step2RoomsData.SelectedRooms
-
     this.calc()
 
   }
@@ -80,7 +79,8 @@ export class Step3Component implements OnInit, OnDestroy {
   // this func is to put in the finished btn
   bigFunction() {
     //again
-    this.GettingData()
+   // this.GettingData()
+
     //setting each value into place
     this.finalGuestData.FirstName = this.step1GuestData.Firstname
     this.finalGuestData.LastName = this.step1GuestData.Lastname
@@ -104,7 +104,11 @@ export class Step3Component implements OnInit, OnDestroy {
       this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin, element.length)
       this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
       this.dataImporter.RoomUpdaterIDhistory(element.id, this.finalGuestData.Email, element.length)
+
     });
+    this.SignInUp.pusherToCurrentGuests(this.finalGuestData.Email).then(() => {
+      console.log('pushing to Current guests done');
+    })
     //logging out on signUp
     this.SignInUp.loggingOut()
     })

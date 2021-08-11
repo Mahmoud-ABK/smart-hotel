@@ -18,11 +18,15 @@ export class LoginManagerComponent implements OnInit {
   loggedpsw:any
   clicked:boolean=false
   a:boolean
-  constructor(private managerdata : KitchenService, private managerstatus :AuthGuard, public route : Router) { 
+  constructor(private managerdata : KitchenService, private managerstatus :AuthGuard, public route : Router) {
+    if (this.managerdata.manageraccess) {
+      this.route.navigate(['managerinterface/roommanagement'])
 
+    }
   }
 
   ngOnInit(): void {
+
     this.managerdata.managerdataimporter().snapshotChanges()
     .pipe(map(managerdata=>managerdata.map(ser=>({managerID:ser.payload.val()}))))
     .subscribe(res=>{console.log(res[0].managerID)
@@ -56,7 +60,7 @@ export class LoginManagerComponent implements OnInit {
       }else{
         this.a=true
       }
-  
+
     }
-    
+
 }

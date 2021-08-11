@@ -1,8 +1,11 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
 import { map } from 'rxjs';
 import { RoomModel } from 'src/app/Models/room-model';
 import { TranslatedRoomData } from 'src/app/Models/translated-room-data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
+
 
 @Component({
   selector: 'app-room-management',
@@ -15,24 +18,32 @@ export class RoomManagementComponent implements OnInit {
 
   rooms: RoomModel[] = []
   translation: TranslatedRoomData[] = []
-  constructor(private dataImporter: DataImporterService) {
+  constructor(private dataImporter: DataImporterService, public notification:NotifierService) {
     this.dataImporter.RoomImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
         this.translation = []
+
         this.rooms = result;
         console.log(this.rooms)
         this.rooms.forEach((room, index) => {
           let translated: TranslatedRoomData = new TranslatedRoomData()
+
+
           translated.roomid = room.roomid
           if (room.Gas) {
             translated.Gas = 'Not Safe !'
+         /*    this.notification.notify('error','Gas problem at room number '+String(room.roomid),'gas'+String(room.roomid))
+            this.audioplayer() */
           } else {
-            translated.Gas = ' Safe '
+            translated.Gas = 'Safe'
+            // this.notification.hide('gas'+String(room.roomid))
           }
-          if (room.Fire >= 500) {
+          if (room.Fire ) {
             translated.Fire = 'Not Safe !'
+
           } else {
-            translated.Fire = ' Safe '
+            translated.Fire = 'Safe'
+            // this.notification.hide('fire'+String(room.roomid))
           }
           if (room.doorOpen) {
             translated.Door = 'Open'
@@ -53,7 +64,25 @@ export class RoomManagementComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
   }
+  badge(a,b){
+    if(a==b && a=='Safe'){
+      return null
+    }else if(a!=b){
+      return 1
+    }else{
+      return 2
+    }
+
+  }
+audioplayer(){
+  let file = new Audio();
+  file.src = "../../../assets/mixkit-message-pop-alert-2354.mp3";
+  file.load();
+  file.play();
+}
   /*  checker() {
 
 

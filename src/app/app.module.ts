@@ -60,6 +60,18 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { KitchenService } from './Services/kitchen.service';
 import { AuthGuard } from './guards/auth.guard';
+import { CheckingOutComponent } from './checking-out/checking-out.component';
+import { NotifierModule } from 'angular-notifier';
+import {MatBadgeModule} from '@angular/material/badge';
+import { RoomInfoComponent } from './manager-interface/room-management/room-info/room-info.component';
+import {MatIconModule} from '@angular/material/icon';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import {NgPipesModule} from 'ngx-pipes';
+import { ArchiveComponent } from './archive/archive.component';
+import { CleaningdataComponent } from './archive/cleaningdata/cleaningdata.component';
+import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-data.component';
+
+
 
 
 
@@ -97,7 +109,12 @@ const appRoutes: Routes = []
     ServantPageComponent,
     LoginServantPageComponent,
     PasswordResetComponent,
-    
+    CheckingOutComponent,
+    RoomInfoComponent,
+    ArchiveComponent,
+    CleaningdataComponent,
+    FoodOrdersDataComponent,
+
   ],
   imports: [
 
@@ -114,11 +131,37 @@ const appRoutes: Routes = []
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     MatSnackBarModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    NgxBootstrapIconsModule.pick(allIcons),
+    NgPipesModule,
+    NotifierModule.withConfig({
+      behaviour: {
+
+        /**
+         * Defines whether each notification will hide itself automatically after a timeout passes
+         * @type {number | false}
+         */
+        autoHide: false,
+
+        /**
+         * Defines what happens when someone clicks on a notification
+         * @type {'hide' | false}
+         */
+        onClick: false,
+
+        /**
+         * Defines whether the dismiss button is visible or not
+         * @type {boolean}
+         */
+        showDismissButton: true,
 
 
+        stacking: 100
 
-
-
+      }
+    })
 
   ],
   providers: [SignInUpService, DataImporterService,KitchenService, AuthGuard],

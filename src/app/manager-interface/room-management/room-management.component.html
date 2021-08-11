@@ -1,9 +1,9 @@
 <div class="row d-flex justify-content-center">
 
   <div *ngFor="let room of translation; let i=index"
-    class="d-flex justify-content-center m-2 col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4">
-    <div class="card">
-      <div class="card-body">
+    class="d-flex justify-content-center m-2 col-12 col-sm-10 col-md-8 col-lg-5 col-xl-5">
+    <div class="card"  >
+      <div class="card-body" [matBadge]="badge(room.Gas,room.Fire)" matBadgeColor="warn">
         <div class="titles">
           <h5 class="card-title"><span id="zina">Room n° </span>{{room.roomid}}</h5>
 
@@ -11,25 +11,28 @@
 
         <div class="container-data d-flex flex-column justify-content-between">
           <div class="data-item d-inline-flex">
-            <h6 class="card-text"><span id="zina">Room Owner's Email: </span>{{room.CurrentEmail}}</h6>
+            <h6 class="card-text" ><span id="zina">Room Owner's Email: </span><div style=" word-break: break-all;">{{room.CurrentEmail}}</div></h6>
           </div>
           <div class="data-item d-inline-flex">
             <p style="font-weight: normal !important;"><span id="zina">Availability:</span> {{room.availibility}}</p>
           </div>
           <div class="data-item d-inline-flex">
-            <p><span id="zina">Gas Status:</span> {{room.Gas}}</p>
+            <p [ngStyle]="{'color': room.Gas==='Safe' ? 'black' :  'red'  }"><span id="zina">Gas Status:</span> {{room.Gas}}</p>
           </div>
           <div class="data-item d-inline-flex">
-            <p><span id="zina">Fire status:</span> {{room.Fire}}</p>
+            <p [ngStyle]="{'color': room.Fire==='Safe' ? 'black' :  'red'  }" ><span id="zina">Fire status:</span> {{room.Fire}}</p>
           </div>
           <div class="data-item d-inline-flex">
             <p><span id="zina">Door Status:</span> {{room.Door}}</p>
           </div>
-
+          <div class="data-item d-inline-flex justify-content-end">
+            <button mat-raised-button  style="background-color: inherit;" [routerLink]="'../Additionalroominfo/'+room.roomid" >Addtional Info</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 
 
 

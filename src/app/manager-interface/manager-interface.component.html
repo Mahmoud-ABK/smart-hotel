@@ -1,16 +1,31 @@
-<div class="container-fluid big-container">
+<div class="container-fluid big-container ">
 
-    <div class="navboura w-100 container-fluid">
-        <nav class="navbar navbar-light ">
-            <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
-            <span class="navbar-brand mb-0 h1 nav-item">Manager Page</span>
-            <div class="nav-item btn-group" role="group" aria-label="Basic example">
-                <button type="button" routerLink="roommanagement" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="btn">Room managment</button>
-                <button type="button" routerLink="roomreportmenu" routerLinkActive="active" class="btn">Reports</button>
-            </div>
-        </nav>
-    </div>
-    <!-- <app-room-management></app-room-management> -->
-    <!-- <app-room-report-menu></app-room-report-menu> -->
-    <router-outlet></router-outlet>
+  <div class="navboura w-100 container-fluid  ">
+    <nav class="navbar navbar-light d-flex ">
+      <div ><img src="./assets/smarthotellogo.svg" class=" col-5 col-sm-6 col-md-6 col-lg-6" style="width: 110px; height: auto;"></div>
+      <span class="navbar-brand mb-0 h1 nav-item col-5 col-sm-6 col-md-6 col-lg-6">Manager Page</span>
+      <div class="nav-item btn-group d-flex justify-content-center col-12 col-sm-12 col-md-12 col-lg-12  " role="group" aria-label="Basic example">
+        <div class="row w-100 d-flex justify-content-center">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3 center">  <button mat-button type="button" routerLink="roommanagement" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" class="btn rounded ">Room managment</button></div>
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 center ">  <button mat-button type="button" routerLink="roomreportmenu" routerLinkActive="active"
+            class="btn rounded ">Reports</button></div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 center"> <button routerLinkActive="active" mat-button type="button" style="font-size: larger;" class="btn rounded "
+              routerLink="Archive" >Archive</button></div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-3 center"> <button mat-button  style="font-size: larger;" class="btn rounded "
+            (click)="loggingOut()">Logout</button></div>
+
+
+
+        </div>
+      </div>
+    </nav>
+
+  </div>
+  <div class="d-flex justify-content-end pe-5 pt-3"></div>
+
+  <!-- <app-room-management></app-room-management> -->
+  <!-- <app-room-report-menu></app-room-report-menu> -->
+  <router-outlet></router-outlet>
+  <notifier-container></notifier-container>
 </div>

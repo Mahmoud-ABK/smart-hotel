@@ -1,0 +1,97 @@
+
+*{
+  font-family: 'Inter', sans-serif;
+  font-weight:700;
+  color: #1e2b31;
+}
+
+
+.big-container{
+  /* background-color: #fcf6ee; */
+  padding: 0px !important;
+  height: 100% !important;
+}
+
+.navboura{
+  background-color:#1E2B31;
+  margin: 0px !important;
+}
+
+.btn{
+  margin-right: 10px;
+  border-radius: 0%;
+  color: #1E2B31;
+  background-color: #f8f8f8;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #F8F8F8;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
+.nav-item{
+  padding: 10px 20px;
+}
+
+/* CARDS */
+.card-container{
+  padding: 50px 0;
+  flex-direction: row;
+  min-height: 100vh;
+  border: none;
+}
+
+.titles {
+  background-color: #d4b78d;
+  padding: 20px;
+}
+
+h5{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h6{
+  font-size: 1em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  margin: 20px ;
+  max-width: 350px;
+  padding: 0;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.order-container{
+  padding: 20px;
+  margin-top: 0 !important;
+}
+
+.finish-button {
+  bottom:0;
+  right:0;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: #1E2B31;
+  color: #f8f8f8;
+  transition: 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #1e2b31a8;
+}
+#zina{
+  font-size: 1em;
+  font-weight:700;
+
+}

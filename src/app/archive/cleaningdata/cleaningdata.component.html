@@ -1,0 +1,35 @@
+<div class="big-container container-fluid">
+
+
+
+
+  <div class="row d-flex justify-content-center" style="min-height: 100vh;">
+
+      <div *ngFor="let service of services | reverse;  let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="card">
+              <div class="card-body">
+                  <div class="titles">
+                      <h5 class="card-title">Room n°{{service.roomid}}</h5>
+                      <h6 class="card-text"><span id="reporter-data">Room owner: {{service.name}}</span></h6>
+                      <h6 class="card-text"><span id="reporter-data">Room owner: {{service.email}}</span></h6>
+                      <h6 class="card-text"><span id="reporter-data">Room owner: {{service.number}}</span></h6>
+                  </div>
+
+                  <div class=" d-flex flex-column container-data justify-content-between">
+                      <div class="data-item d-inline-flex">
+                          <p ><span id="zina">Proposed Date:</span> {{service.date}}</p>
+                      </div>
+                      <div class="data-item d-inline-flex">
+                          <p><span id="zina">Proposed Time:</span> {{service.time}}</p>
+                      </div>
+                   
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+  </div>
+</div>
+

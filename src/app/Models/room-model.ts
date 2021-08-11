@@ -8,10 +8,11 @@ export class RoomModel {
     RoomLighting:[Boolean,Boolean,Boolean,Boolean];
     WaterTempertaure:number;
     Gas:boolean;
-    Fire:number ;
+    Fire:boolean ;
     guestHistoryID:string[];
     doorOpen:boolean;
     doorHistory:any[]
+    doorHistoryArchive:any[]
 
 
 

@@ -4,8 +4,10 @@ import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from "swiper/core";
+import { Food } from '../Models/food';
 import { FoodOrderModel } from '../Models/food-order-model';
 import { GuestDataModel } from '../Models/guest-data-model';
+import { DataImporterService } from '../Services/data-importer.service';
 import { InAppOperationsService } from '../Services/in-app-operations.service';
 import { SignInUpService } from '../Services/sign-in-up.service';
 
@@ -13,7 +15,13 @@ import { SignInUpService } from '../Services/sign-in-up.service';
 SwiperCore.use([Pagination, Navigation]);
 
 
-
+interface listOfFood {
+  breakfast: Array<Food>,
+  dinner: Array<Food>,
+  lunch: Array<Food>,
+  drinks: Array<Food>,
+  snacks: Array<Food>,
+}
 
 @Component({
   selector: 'app-food-menu',
@@ -22,203 +30,35 @@ SwiperCore.use([Pagination, Navigation]);
 })
 export class FoodMenuComponent implements OnInit {
 
-  breakfast: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }[] = [
-      {
-        name: "croissant",
-        pic: "croissant",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "cake",
-        pic: "cake",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "cupcake",
-        pic: "cupcake",
-        checked: false,
-        label: "Add to list"
-      },
-
-      {
-        name: "mille feuilles",
-        pic: "mille feuilles",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "pancake",
-        pic: "pancake",
-        checked: false,
-        label: "Add to list"
-
-
-      },
-
-
-    ]
-  drinks: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }[] = [
-      {
-        name: "chocolate smoothie",
-        pic: "chocosmoothie",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "milk",
-        pic: "milk",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "coffee",
-        pic: "coffee",
-        checked: false,
-        label: "Add to list"
-      },
-
-      {
-        name: "water",
-        pic: "water",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "kiwi coctail",
-        pic: "kiwi coctail",
-        checked: false,
-        label: "Add to list"
-
-      },
-    ]
-  lunch: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }[] = [
-      {
-        name: "couscous",
-        pic: "couscous",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "salad",
-        pic: "salad",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "pizza",
-        pic: "pizza",
-        checked: false,
-        label: "Add to list"
-      },
-
-      {
-        name: "rice",
-        pic: "rice",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "spaghetti",
-        pic: "spaghetti",
-        checked: false,
-        label: "Add to list"
-
-      },
-
-
-    ]
-  dinner: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }[] = [
-      {
-        name: "mtabga",
-        pic: "mtabga",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "salmon",
-        pic: "salmon",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "soup",
-        pic: "soup",
-        checked: false,
-        label: "Add to list"
-      },
-
-
-
-    ]
-  snacks: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }[] = [
-      {
-        name: "Raspberries",
-        pic: "raspberries",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "yogurt",
-        pic: "yogurt",
-        checked: false,
-        label: "Add to list"
-
-      },
-      {
-        name: "ice cream",
-        pic: "ice cream",
-        checked: false,
-        label: "Add to list"
-      },
-
-
-
-    ]
+  breakfast: Array<Food>
+  drinks: Array<Food>
+  lunch: Array<Food>
+  dinner: Array<Food>
+  snacks: Array<Food>
   list: Array<{ foodName: string, quantity: number }> = [
-
   ]
   toRoom: boolean = false
   FoodOrder: FoodOrderModel = new FoodOrderModel()
-  constructor(public loggingOut: SignInUpService, public router: Router, public inApp: InAppOperationsService) {
-
+  constructor(public loggingOut: SignInUpService, public router: Router, public inApp: InAppOperationsService, public dataImporter: DataImporterService) {
+    // this.dataImporter.FoodListImporter(this.breakfast, this.dinner, this.drinks, this.lunch, this.snacks)
   }
-  Data:GuestDataModel
+  Data: GuestDataModel
 
   ngOnInit(): void {
-    console.log( JSON.parse(localStorage.getItem('GuestData')));
-    this.inApp.currentLoginInData= JSON.parse(localStorage.getItem('GuestData'))
-    this.inApp.RoomID=+localStorage.getItem('Rid')
-    this.loggingOut.finishedSession(this.inApp.currentLoginInData.checkin,this.inApp.currentLoginInData.checkout)
-    this.Data=this.inApp.currentLoginInData
+    console.log(JSON.parse(localStorage.getItem('GuestData')));
+    this.inApp.currentLoginInData = JSON.parse(localStorage.getItem('GuestData'))
+    this.inApp.RoomID = +localStorage.getItem('Rid')
+    this.loggingOut.finishedSession(this.inApp.currentLoginInData.checkin, this.inApp.currentLoginInData.checkout)
+    this.Data = this.inApp.currentLoginInData
+    console.log(this.breakfast);
+    this.dataImporter.FoodListImporter().subscribe((a: listOfFood) => {
+      this.breakfast = a.breakfast
+      this.dinner = a.dinner
+      this.drinks = a.drinks
+      this.lunch = a.lunch
+      this.snacks = a.snacks
+    })
+
 
 
   }
@@ -236,10 +76,7 @@ export class FoodMenuComponent implements OnInit {
     })
 
   }
-  onChecked(item: {
-    name: string, pic: string
-    , checked: boolean, label: string
-  }) {
+  onChecked(item: Food) {
     item.checked = !item.checked
 
     if (item.checked) {
@@ -271,9 +108,10 @@ export class FoodMenuComponent implements OnInit {
     this.FoodOrder.num = this.inApp.currentLoginInData.PhoneNumber
     this.FoodOrder.roomid = this.inApp.RoomID
     console.log(this.FoodOrder);
-    this.inApp.multiPusher('/FoodOrders',this.FoodOrder,"food order sent!")
+    this.inApp.multiPusher('/FoodOrders', this.FoodOrder, "food order sent!")
+    this.inApp.ToArchive('/FoodOrders',this.inApp.RoomID,this.FoodOrder)
   }
-  scrolling(list){
+  scrolling(list) {
     console.log(`scrolling to ${list}`);
     let el = document.getElementById(list);
     el.scrollIntoView();
