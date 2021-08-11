@@ -20,7 +20,7 @@ font-size: x-large;
    
   }
   input:disabled , button:disabled{
-    color: rgb(161, 161, 161) !important;
+    color: rgb(214, 213, 213) !important;
   }
   h4{
     font-family: monserrat;
