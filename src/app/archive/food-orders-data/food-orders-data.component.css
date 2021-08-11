@@ -75,21 +75,7 @@ h6{
   margin-top: 0 !important;
 }
 
-.finish-button {
-  bottom:0;
-  right:0;
-  padding: 10px;
-}
 
-.delete-button {
-  background-color: #1E2B31;
-  color: #f8f8f8;
-  transition: 0.2s;
-}
-
-.delete-button:hover {
-  background-color: #1e2b31a8;
-}
 #zina{
   font-size: 1em;
   font-weight:700;

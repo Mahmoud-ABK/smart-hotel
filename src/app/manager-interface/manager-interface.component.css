@@ -36,13 +36,44 @@
     padding: 10px 20px;
 }
 
-.active{
-    background-color: #f8f8f8;
-    color: #1E2B31; /*cho hethi cho*/
-    border-color: #f8f8f8;
-}
 .center
 {
   display: flex;
   justify-content: center;
 }
+
+.buttonStyle{
+    margin: 3px;
+    background-color: #F8F8F8;
+    opacity: 0.7;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0% !important;
+  }
+  
+  .buttonStyle:hover{
+    opacity: 1;
+  }
+
+  .sec-nav-item{
+      background-color: #f8f8f8;
+      border: 2px solid #F8F8F8;
+      width: 225px;
+      color: #1E2B31;
+  }
+
+  .active{
+    background-color: #1E2B31 !important;
+    color: #f8f8f8 !important;
+  }
+
+  .dropdown-menu{
+      margin-top: 45px;
+      text-align: center;
+  }
+
+  a.dropdown-item:hover{
+    background-color: #d4b78d;
+    color: #f8f8f8;
+  }

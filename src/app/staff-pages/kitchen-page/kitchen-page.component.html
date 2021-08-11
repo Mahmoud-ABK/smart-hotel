@@ -2,11 +2,17 @@
 
   <div class="navboura w-100   p-0 m-0">
     <nav class="navbar navbar-light ">
-      <div><img src="./assets/smarthotellogo.svg" style=" margin-left: 20px; width: 110px; ;"></div>
+      <div>
+        <img src="./assets/smarthotellogo.svg" style=" margin-left: 20px; width: 110px; ;">
+      </div>
       <span class="navbar-brand mb-0 h1 nav-item">Kitchen Page</span>
       <div class="nav-item btn-group" role="group" aria-label="Basic example">
+<<<<<<< HEAD
         <button  routerLink="/loginroundabout" type="button" class="btn logout">Log out</button>
 
+=======
+        <button  routerLink="/loginroundabout" type="button" class="logout btn">Log out</button>
+>>>>>>> 2041b3c2643791da0528743d665b6a080f0a9482
       </div>
     </nav>
   </div>
@@ -45,8 +51,10 @@
             </tbody>
           </table>
         </div>
+
         <div class="data-item d-inline-flex " style="font-weight: bold;margin: 20px;">
           <p><span id="okhtzina">Delivery to room:</span> {{translator(foodOrder.ToRoom)}}</p>
+
       </div>
         <div class="d-flex align-self-end finish-button">
           <button class="btn delete-button" (click)="removerFromList(foodOrder)">Finished!</button>
