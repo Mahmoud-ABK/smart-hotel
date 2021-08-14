@@ -37,14 +37,14 @@ export class HomeComponent implements OnInit {
     },
     {
       name:"Karima",
-      text: `This is indeed a place you do not want to leave, and when you do it is with one hope – to come back.  `
+      text: `This is indeed a place I do not want to leave, and when I do it is with one hope – to come back.  `
       , pic:"../../assets/testimonial4.png"
     }
   ]
   constructor(public InApp:InAppOperationsService) { }
 
   ngOnInit(): void {
-   
+
   }
 
   onSubmit(form: NgForm){

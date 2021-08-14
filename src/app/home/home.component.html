@@ -65,15 +65,15 @@
           </li>
 
           <li class="nav-item left-nav-item" ngbDropdown>
-            <a routerLink="guestlogin" class="nav-link" role="button" style="color: #1E2B31">
-              LogIn
-            </a>
+            <button mat-button routerLink="guestlogin" class="nav-link" role="button" style="color: #1E2B31 ;  font-family: montserrat;">
+              Log In
+            </button>
           </li>
 
           <li class="nav-item left-nav-item" ngbDropdown>
-            <a routerLink="checkin" class="nav-link" role="button" style="color: #1E2B31">
-              CheckIn
-            </a>
+            <button mat-button routerLink="checkin" class="nav-link" role="button"  style="color: #1E2B31; font-family: montserrat;">
+              Check In
+            </button>
           </li>
 
         </ul>
@@ -84,7 +84,9 @@
     <!-- MINI FORM -->
     <div class="booking-tab">
 
-      <form class="d-flex flex-row" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <h1 style="font-family: lc;font-size: xx-large; font-weight: bolder;" class="mt-5">Welcome To our Website</h1>
+
+      <form class="d-flex flex-row " (ngSubmit)="onSubmit(f)" #f="ngForm">
 
         <!-- <div class="booking-tab-item booking-tab-title align-middler">
           <p class="align-middle">Reservation</p>
@@ -113,11 +115,11 @@
 
         </div>
 
-        <div class="booking-tab-item booking-tab-button d-flex align-item-center justify-content-center">
+        <div class="d-flex align-item-center justify-content-center ">
           <!-- <a type="submit" href="#" class="pt-2 d-flex align-item-center justify-content-center nav-link" role="button" style="color: #1E2B31">
             Book Now!
           </a> -->
-          <button type="submit" routerLink="checkin" class="submit-button">Book Now</button>
+          <button mat-button style="font-size:xx-large;" type="submit" routerLink="checkin" class="booking-tab-item booking-tab-button submit-button">Book Now</button>
         </div>
 
       </form>
@@ -134,8 +136,11 @@
       <div class="row d-flex justify-content-center ">
         <div class="card-contain col-lg-5 col-md-12 mb-4 ">
           <div class="services-card card c card-block">
-            <h1 style="font-size: x-large !important; font-family: alegreya;" class="card-title mt-3 mb-3">Our Services</h1>
-            <p style="font-size: large; font-weight: normal;" class="card-text">Our guest comfort and satisfaction is our biggest priority, that's why we’re employing various methods to bring the best possible experience to our lovely customers, ranging from:</p>
+            <h1 style="font-size: x-large !important; font-family: alegreya;" class="card-title mt-3 mb-3">Our Services
+            </h1>
+            <p style="font-size: large; font-weight: normal;" class="card-text">Our guest comfort and satisfaction is
+              our biggest priority, that's why we’re employing various methods to bring the best possible experience to
+              our lovely customers, ranging from:</p>
           </div>
         </div>
       </div>
@@ -151,10 +156,10 @@
 
         <div class="card-contain col-md-3 col-sm-6">
           <div class="card card-block">
-            <img id="card-img" src="../../assets/room-control.jpg"
-              alt="Photo of sunset">
+            <img id="card-img" src="../../assets/room-control.jpg" alt="Photo of sunset">
             <h5 class="card-title mt-3 mb-3">smart room control</h5>
-            <p class="card-text">You can control your room remotely according to your preferences, changing parameters such as room temperature, lighting and even more! </p>
+            <p class="card-text">You can control your room remotely according to your preferences, changing parameters
+              such as room temperature, lighting and even more! </p>
           </div>
         </div>
 
@@ -162,7 +167,8 @@
           <div class="card card-block">
             <img id="card-img" src="../../assets/room-cleaning.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Personalized Room Service</h5>
-            <p class="card-text">We’ve got amazing 24/7 room service, all accessible through our website. You can simply order a sweep through your room at your convenience. 
+            <p class="card-text">We’ve got amazing 24/7 room service, all accessible through our website. You can simply
+              order a sweep through your room at your convenience.
 
               Schedule your room cleaning easily</p>
           </div>
@@ -170,8 +176,7 @@
 
         <div class="card-contain col-md-3 col-sm-6">
           <div class="card card-block">
-            <img id="card-img" src="../../assets/room-service.jpg"
-              alt="Photo of sunset">
+            <img id="card-img" src="../../assets/room-service.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Modern Food Service</h5>
             <p class="card-text">Pick the dishes and get them delivered to your room whenever you want! </p>
           </div>
@@ -179,8 +184,7 @@
 
         <div class="card-contain col-md-3 col-sm-6">
           <div class="card card-block">
-            <img id="card-img" src="../../assets/room-security.jpg"
-              alt="Photo of sunset">
+            <img id="card-img" src="../../assets/room-security.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Enhanced privacy and security</h5>
             <p class="card-text">Remote door lock and smart alarming system. </p>
           </div>
@@ -211,14 +215,16 @@
             <div class="card-body">
 
               <h5 class="card-title">Normal Room </h5>
-              <small class='text-muted'>3 people per room  </small>
+              <small class='text-muted'>3 people per room </small>
               <br><br>
               <span class="h2">$90</span>/night
               <br><br>
               <div class="d-grid my-3">
                 <button routerLink="checkin" class="btn btn-outline-dark btn-block">Check in Now!</button>
               </div>
-              <p>These cabanas are either individual bungalows or individual rooms on the upper level of a two-unit, two-level casita with unique high-rise thatched palapa roofs. Deluxe Garden View Palapa rooms are only 18.5 meters from the beach. </p>
+              <p>These cabanas are either individual bungalows or individual rooms on the upper level of a two-unit,
+                two-level casita with unique high-rise thatched palapa roofs. Deluxe Garden View Palapa rooms are only
+                18.5 meters from the beach. </p>
             </div>
 
 
@@ -237,7 +243,9 @@
               <div class="d-grid my-3">
                 <button routerLink="checkin" class="btn btn-outline-dark btn-block">Check in Now!</button>
               </div>
-              <p>The cabanas in the Deluxe Garden View section are the most quiet, secluded and relaxing guestrooms, located on the first level. These rooms are within 27.8 meters of the beach and are only steps away from the pool. Lush green gardens and a beautiful Mexican fountain decorate the surrounding area. </p>
+              <p>The cabanas in the Deluxe Garden View section are the most quiet, secluded and relaxing guestrooms,
+                located on the first level. These rooms are within 27.8 meters of the beach and are only steps away from
+                the pool. Lush green gardens and a beautiful Mexican fountain decorate the surrounding area. </p>
             </div>
           </div>
         </div>
@@ -246,7 +254,7 @@
           <div class="card2 h-100">
             <div class="card-body">
 
-              <h5 class="card-title">Sea view room  </h5>
+              <h5 class="card-title">Sea view room </h5>
               <small class='text-muted' style="color: #f8f8f8 !important;">3 people per room</small>
               <br><br>
               <span class="h2">$150</span>/night
@@ -254,7 +262,10 @@
               <div class="d-grid my-3">
                 <button routerLink="checkin" class="btn btn-outline-dark btn-block">Check in Now!</button>
               </div>
-              <p>Deluxe Sea View rooms offer open spaces accomplishing harmony and relaxation on the lower level of a two-story casita. Luxury Mexican decor and art is brought in detail; silk “rebozos” (shawls) from Michoacán state add beauty to the two queen size or a king-size bed, and pottery from Oaxaca bring a colorful touch to the room. </p>
+              <p>Deluxe Sea View rooms offer open spaces accomplishing harmony and relaxation on the lower level of a
+                two-story casita. Luxury Mexican decor and art is brought in detail; silk “rebozos” (shawls) from
+                Michoacán state add beauty to the two queen size or a king-size bed, and pottery from Oaxaca bring a
+                colorful touch to the room. </p>
             </div>
 
           </div>
@@ -266,7 +277,7 @@
           <div class=" card card3 h-100">
             <div class="card-body">
 
-              <h5 class="card-title">Ground floor  with Sea view room  </h5>
+              <h5 class="card-title">Ground floor with Sea view room </h5>
               <small class='text-muted' style="color: white !important;">4 people per room</small>
               <br><br>
               <span class="h2">$180</span>/night
@@ -274,7 +285,10 @@
               <div class="d-grid my-3">
                 <button routerLink="checkin" class="btn btn-outline-dark btn-block">Check in Now!</button>
               </div>
-              <p>Enjoy direct, unobscured views of the Ras Angela, 10 steps from the water while when staying in our Sea Front Casita. Listen to sounds of the waves from your terrace, relax in a hammock, and take a dip in your personal plunge pool or stroll along the white sand beach. Inspired by the Mayan style of thatched roof palapas, this spacious casita evokes all of your senses. </p>
+              <p>Enjoy direct, unobscured views of the Ras Angela, 10 steps from the water while when staying in our Sea
+                Front Casita. Listen to sounds of the waves from your terrace, relax in a hammock, and take a dip in
+                your personal plunge pool or stroll along the white sand beach. Inspired by the Mayan style of thatched
+                roof palapas, this spacious casita evokes all of your senses. </p>
             </div>
 
 
@@ -291,7 +305,8 @@
 
       <div class="map-intro">
         <h1>Location ?</h1>
-        <h2>located on the edge of the forest, 500 m from the center of Montana offers all modern comforts. Cross-country ski slopes, a soccer field and paintball field are all within 100 m from the hotel.
+        <h2>located on the edge of the forest, 500 m from the center of Montana offers all modern comforts.
+          Cross-country ski slopes, a soccer field and paintball field are all within 100 m from the hotel.
           Couples in particular like the location – they rated it 8.3 for a two-person trip </h2>
       </div>
       <div class="map d-flex justify-content-center">
@@ -321,8 +336,6 @@
       <swiper style="z-index: -1 !important;" [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
         delay: 3000,
         disableOnInteraction: false
-      }" [pagination]="{
-        clickable: true
       }">
         <ng-template class="d-flex justify-content-center" swiperSlide *ngFor="let person of persons ; let i=index">
           <div class="col-11 col-xs-11 col-sm-10 col-md-6 col-lg-4 col-xl-4 d-flex justify-content-center ">
