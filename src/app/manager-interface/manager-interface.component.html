@@ -5,7 +5,7 @@
       <!-- FIRST NAVBAR -->
       <div class="first-navbtn-group d-flex justify-content-between col-12 col-sm-12 col-md-12 col-lg-12">
         <!-- LOGO -->
-        <div>
+        <div class="logo">
           <img src="./assets/smarthotellogo.svg" 
             class="nav-item col-5 col-sm-6 col-md-6 col-lg-6"
             style="width: 110px; height: auto;">
@@ -15,9 +15,15 @@
           <span class="nav-item navbar-brand mb-0 h1 nav-item col-5 col-sm-6 col-md-6 col-lg-6">Manager Page</span>
         </div>
         <!-- LOGOUT BTN -->
-        <div class="nav-item btn-group " role="group" aria-label="Basic example">
-          <button routerLink="/loginroundabout" type="button" class="buttonStyle logout btn" style="color: #1E2B31;">Log out</button>
+        <div class="nav-item btn-group logout" role="group" aria-label="Basic example">
+          <button (click)="loggingOut()" type="button" class="buttonStyle logout btn" style="color: #1E2B31;">Log out</button>
 
+        </div>
+        <!-- LOGOUT PHONE -->
+        <div style="display: none;" class="nav-item phone-logout">
+          <img (click)="loggingOut()" type="button" 
+          src="../../assets/logout.svg"
+          style="width: 32px; height: auto;">
         </div>
       </div>
 
@@ -28,7 +34,7 @@
 
         <div class="row w-100 d-flex justify-content-center">
           <!-- ROOM MANAGEMENT -->
-          <div class="col-12 col-sm-12 col-md-4 col-lg-3 center">
+          <div class=" col-12 col-sm-12 col-md-4 col-lg-3 center">
             <button mat-button type="button" routerLink="roommanagement" routerLinkActive="active"
               [routerLinkActiveOptions]="{exact:true}" class="sec-nav-item btn ">
               Room managment
@@ -47,13 +53,14 @@
             ngbDropdownToggle class="mr-2 btn sec-nav-item" tabindex="0"
               ngbDropdownToggle role="button">Archive</a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-              <a class="dropdown-item" routerLink="Archive/FoodOrdersArchive" (click)="$event.preventDefault()" ngbDropdownItem>Food Orders</a>
-              <a class="dropdown-item" routerLink="Archive/CleaningArchive" (click)="$event.preventDefault()" ngbDropdownItem>Room Cleaning</a>
+              <a class="dropdown-item" routerLinkActive="active" routerLink="Archive/FoodOrdersArchive" (click)="$event.preventDefault()" ngbDropdownItem>Food Orders</a>
+              <a class="dropdown-item" routerLinkActive="active" routerLink="Archive/CleaningArchive" (click)="$event.preventDefault()" ngbDropdownItem>Room Cleaning</a>
             </div>
           </div>
 
         </div>
       </div>
+
     </nav>
 
   </div>
