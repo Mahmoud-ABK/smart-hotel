@@ -39,7 +39,7 @@
 
 /* CARDS */
 .card-container{
-  padding: 50px 0;
+  padding: 30px 0;
   flex-direction: row;
   min-height: 100vh;
   border: none;
@@ -80,4 +80,10 @@ h6{
   font-size: 1em;
   font-weight:700;
 
+}
+
+@media (max-width: 390px){
+  .card-container{
+    padding: 20px 30px;
+  }
 }
