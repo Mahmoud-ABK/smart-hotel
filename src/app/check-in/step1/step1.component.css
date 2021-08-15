@@ -1,100 +1,99 @@
-:host{
+:host {
   font-family: montserrat;
   font-size: medium;
   background-color: #eaddca !important;
 }
 
-.body{
-    background-color: #eaddca !important;
+.body {
+  background-color: #eaddca !important;
 }
 
-.main{
-    background-color: #eaddca;
-    width: 100%;
-    padding-left: 0px;
-    padding-bottom: 50px;
-    padding-right: 0px;
+.main {
+  background-color: #eaddca;
+  width: 100%;
+  padding-left: 0px;
+  padding-bottom: 50px;
+  padding-right: 0px;
 }
-.row{
-    margin-right:0px
+.row {
+  margin-right: 0px;
 }
-.navboura{
-    background-color:#1E2B31;
-}
-
-.btn1{
-    margin: 2px;
-    border-radius: 0%;
-    color: #1E2B31;
-    background-color: #f8f8f8;
-    font-weight: bold;
-    font-size: 18px;
+.navboura {
+  background-color: #1e2b31;
 }
 
-.navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: #F8F8F8;
-    font-weight: bold;
-    font-size: 25px;
+.btn1 {
+  margin: 2px;
+  border-radius: 0%;
+  color: #1e2b31;
+  background-color: #f8f8f8;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.nav-item{
-    padding: 10px 20px;
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+  color: #f8f8f8;
+  font-weight: bold;
+  font-size: 25px;
 }
-.checkin{
-    position: relative;
-    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.6);
-    padding: 20px;
-    max-width: 85%;
-    background-color: #ffffff;
-    border: 1px solid #1E2B31;
-    margin-top: 20px;
-    border-radius: 10px;
 
+.nav-item {
+  padding: 10px 20px;
 }
-.checkintitle{
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 3px;
-    font-size: 3em;
-    line-height: 48px;
-    color: #1E2B31;
-    background: linear-gradient(to right, #101619 0%, #30424B 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.checkin {
+  position: relative;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  max-width: 85%;
+  background-color: #ffffff;
+  border: 1px solid #1e2b31;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.checkintitle {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 3em;
+  line-height: 48px;
+  color: #1e2b31;
+  background: linear-gradient(to right, #101619 0%, #30424b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    padding-top: 30px;
+  padding-top: 30px;
 }
-.form-row .form-group{
-    position: relative;
-    margin: 32px 0;
+.form-row .form-group {
+  position: relative;
+  margin: 32px 0;
 }
-.form-row .form-control{
-    display: block;
-    width:100%;
-    height: 36px;
-    border-width:0 0 3px 0;
-    border-color:#eaddca ;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-
-
+.form-row .form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 3px 0;
+  border-color: #eaddca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
 }
-.form-floating>.form-control {
-    padding: 2rem .75rem;
-    padding-bottom: 20px;
+.form-floating > .form-control {
+  padding: 2rem 0.75rem;
+  padding-bottom: 20px;
 }
-.form-floating>label {
-    position:absolute;
-    left:20px;
-    bottom:11px;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #1E2B31;
-    cursor: text;
-    transition: transform 0.2s ease-in-out;
+.form-floating > label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #1e2b31;
+  cursor: text;
+  transition: transform 0.2s ease-in-out;
 }
 /*.form-control:focus{
     transform: translateY(-24px);
@@ -108,40 +107,40 @@
 }*/
 
 .date-label {
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #1E2B31 ;
-    transition: transform 0.2s ease-in-out;
-    padding-left: 30px;
-
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #1e2b31;
+  transition: transform 0.2s ease-in-out;
+  padding-left: 30px;
 }
 .btn-primary1 {
-  background-image:  linear-gradient(125deg , #30424B,#101619);
+  background-image: linear-gradient(125deg, #30424b, #101619);
 }
-.btn-primary2{
-  background-image:  linear-gradient(125deg , #eaddca ,#e6bf84 );
+.btn-primary2 {
+  background-image: linear-gradient(125deg, #eaddca, #e6bf84);
 }
-.btn-primary1 , .btn-primary2{
+.btn-primary1,
+.btn-primary2 {
   border-radius: 1rem !important;
-color:#1E2B31;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 16px;
-padding: 8px 16px;
-width: 200px;
-height: 60px;
-cursor: pointer;
-margin-left: 40px;
-margin-top: 30px;
-border: 1px solid #1E2B31;
+  color: #1e2b31;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  width: 200px;
+  height: 60px;
+  cursor: pointer;
+  margin-left: 40px;
+  margin-top: 30px;
+  border: 1px solid #1e2b31;
 }
 
-
-
-.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
-    opacity: .65;
-    transform: scale(.85) translateY(-1.2rem) translateX(.15rem);
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-1.2rem) translateX(0.15rem);
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -161,14 +160,32 @@ input[type="color"]:focus,
 .uneditable-input:focus,
 button:focus,
 button:checked {
-
   border-color: goldenrod;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075)   ;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.075);
   outline: 0 none;
 }
-button:disabled{
+button:disabled {
   color: gray;
-  cursor:default;
+  cursor: default;
 }
+.previewimg {
+  border-radius: 50%;
+  width: 15em;
+  height: 15em;
+  margin: 2em;
+  border: #e6bf84 solid 0.5em;
+}
+::ng-deep .uploadedsnackbar{
+  background-color: #101619 !important;
+  color:#e6bf84;
+ }
+ /* ::ng-deep .uploadedsnackbar >*{
 
+ }
+ ::ng-deep .uploadedsnackbar button {
 
+ }
+ ::ng-deep .uploadedsnackbar span {
+
+ }
+ */

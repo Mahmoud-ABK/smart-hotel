@@ -78,6 +78,7 @@ import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-
 
 
 
+
 const appRoutes: Routes = []
 
 
@@ -128,6 +129,7 @@ const appRoutes: Routes = []
     FormsModule,
     MatStepperModule,
     MatCheckboxModule,
+    MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     MatSnackBarModule,
