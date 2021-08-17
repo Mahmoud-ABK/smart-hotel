@@ -96,3 +96,9 @@ h6{
 .info-btn:hover {
     background-color: #1e2b31a8;
 }
+
+@media (max-width: 360px){
+    .row{
+        padding: 0px;
+    }
+}

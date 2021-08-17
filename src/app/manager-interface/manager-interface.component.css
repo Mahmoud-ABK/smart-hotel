@@ -74,6 +74,47 @@
   }
 
   a.dropdown-item:hover{
-    background-color: #d4b78d;
-    color: #f8f8f8;
+    background-color: #1e2b313a;
+  }
+
+  @media (max-width: 530px){
+
+    .nav-item{
+      padding: 5px;
+    }
+
+    .logo{
+      display: none;
+    }
+
+    .logout{
+      display: none;
+    }
+
+    .phone-logout{
+      display: block !important;
+    }
+
+    .first-navbtn-group{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sec-nav-item{
+      padding: 0px;
+      max-height: 40px;
+    }
+
+    .btn{
+      margin-right: 0px;
+    }
+
+  }
+
+  @media (max-width: 767px){
+    
+    .sec-nav-item{
+    margin-top: 5px;
+  }
+
   }

@@ -1,13 +1,19 @@
 .card{
-  transition: transform .2s;
+  transition: transform .4s;
+  border: 2px solid #1E2B31;
+  border-radius: 0%;
 }
+
 .card:hover{
   cursor: pointer;
   transform: scale(1.05);
-  box-shadow: 4px 4px 4px gray;
-
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  color: #1E2B31;
+  background-color: #f3f6f7da;
 }
+
 .bg{
   padding-bottom: 10px;
-    background-color: #FCF6EE;
+  background-color: #FCF6EE;
+  height: 100vh;
 }

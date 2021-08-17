@@ -1,5 +1,5 @@
 <div class="bg">
-  <div class="navboura container-fluid" style="background-color: #1E2B31;;">
+  <div class="navboura container-fluid" style="background-color: #1E2B31;">
     <nav class="navbar navbar-light ">
       <div><img src="./../../../assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
       <span class="navbar-brand mb-0 h1 nav-item" style="color: #f8f8f8;">Login</span>
@@ -10,32 +10,36 @@
   </div>
  
   <div class="container my-3 py-5 d-flex justify-content-center flex-column text-center"
-    style="font-family: Roboto; background-color: #FCF6EE; border-radius:1em ;">
+    style="font-family: Roboto; background-color: #FCF6EE; border-radius:1em ; ">
 
-    <div class="row d-flex justify-content-center">
-      <div class="col-sm-9 col-md-5   mt-4 ">
-        <div routerLink="/managerlogin" class="card  " style="border: 0.5em solid #856634; border-radius: 1em;">
+    <div class="row d-flex justify-content-center ">
+      <!-- MANAGER -->
+      <div class="col-sm-9 col-md-5  mt-4 card-contain">
+        <div routerLink="/managerlogin" class="card ">
           <div class="card-body">
-            <img class="card-img-top" style=" width: 10em; height: 10em;" src="../../../assets/manager.svg"
+            <img class="card-img-top" style="width: auto; height: 6em; padding-bottom: 10px;" 
+              src="../../../assets/manager.svg"
               alt="manager pic">
             <h1 class="card-title">Manager</h1>
           </div>
         </div>
       </div>
-      <div class="col-sm-9 col-md-5  mt-4 ">
-        <div routerLink="/kitchenlogin" class="card " style="border: 0.5em solid #E3B04B; border-radius: 1em;">
+      <!-- KITCHEN CHEF -->
+      <div class="col-sm-9 col-md-5  mt-4 card-contain">
+        <div routerLink="/kitchenlogin" class="card " >
           <div class="card-body">
-            <img class="card-img-top " style=" width: 10em; height: 10em;"
+            <img class="card-img-top " style="width: auto; height: 6em; padding-bottom: 10px;"
               src="../../../assets/kitchen-stove-cooking-pot-non-stick.svg" alt="manager pic">
             <h1 class="card-title">Kitchen staff</h1>
 
           </div>
         </div>
       </div>
-      <div class="col-sm-9 col-md-5  mt-4 ">
-        <div routerLink="/servantlogin" class="card" style="border: 0.5em solid #E3B04B; border-radius: 1em;">
+      <!-- SERVANT -->
+      <div class="col-sm-9 col-md-5 mt-4 card-contain">
+        <div routerLink="/servantlogin" class="card" >
           <div class="card-body">
-            <img class="card-img-top " style=" width: 10em; height: 10em;" src="../../../assets/reception-bell.svg"
+            <img class="card-img-top " style="width: auto; height: 6em; padding-bottom: 10px;" src="../../../assets/reception-bell.svg"
               alt="manager pic">
             <h1 class="card-title">Servant or Maid</h1>
 
