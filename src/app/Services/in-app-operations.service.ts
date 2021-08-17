@@ -121,8 +121,8 @@ export class InAppOperationsService {
    } */
   multiPusher(path: string, val: any, snackbarMsg: string) {
     return this.db.list(path).push(val).then(() => {
-      this.Snackbar.open(snackbarMsg, '', {
-        duration: 2500
+      this.Snackbar.open(snackbarMsg, 'Close', {
+        duration: 2500 ,  panelClass:"uploadedsnackbar"
       })
     })
   }

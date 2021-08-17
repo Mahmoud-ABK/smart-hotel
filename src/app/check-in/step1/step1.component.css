@@ -175,10 +175,7 @@ button:disabled {
   margin: 2em;
   border: #e6bf84 solid 0.5em;
 }
-::ng-deep .uploadedsnackbar{
-  background-color: #101619 !important;
-  color:#e6bf84;
- }
+
  /* ::ng-deep .uploadedsnackbar >*{
 
  }

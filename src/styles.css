@@ -82,4 +82,19 @@ a:disabled{
   color: gray !important;
   cursor:default !important;
 }
+ .uploadedsnackbar{
+  background-color: #101619 !important;
+  color:#e6bf84;
+ }
+ [matBadgeColor=custom]
+  .mat-badge-content{
+      background : #f0ad4e;
+      color:#101619 ;
+  }
+  [matBadgeColor=warn]
+  .mat-badge-content{
+
+      color:#101619 ;
+  }
+
 

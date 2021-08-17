@@ -1,4 +1,5 @@
 export class ReportModel {
+  repkey?:any
     roomid:number
     timesent:string
     firstname:string
@@ -8,4 +9,5 @@ export class ReportModel {
     img:string
     email:string
     num:string
+    read:boolean
 }

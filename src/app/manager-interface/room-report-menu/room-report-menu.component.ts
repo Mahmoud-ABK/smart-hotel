@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 import { map } from 'rxjs';
+
 import { ReportModel } from 'src/app/Models/report-model';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
+
 
 @Component({
   selector: 'app-room-report-menu',
@@ -16,7 +18,7 @@ export class RoomReportMenuComponent implements OnInit {
   constructor(private dataImporter: DataImporterService, public notification:NotifierService ) {
     /* localStorage.removeItem('report') */
     this.dataImporter.reportImporter().snapshotChanges()
-      .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
+      .pipe(map(changes => changes.map(r => ({ repkey: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
         this.reports = result;
         console.log(this.reports)
@@ -41,5 +43,17 @@ export class RoomReportMenuComponent implements OnInit {
     file.load();
     file.play();
   }
+  read(key:any,bool:boolean){
+    this.dataImporter.db.object('/RoomReports/'+key).update({
+      'read': !bool
+    })
 
+  }
+  marker(){
+    this.reports.forEach(rep=>{
+      this.read(rep.repkey,false)
+    })
+
+
+  }
 }

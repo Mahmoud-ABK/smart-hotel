@@ -1,9 +1,13 @@
-<div class="row d-flex justify-content-center w-100">
+<div class="row d-flex justify-content-end w-100 p-0 m-0">
+  <button mat-button (click)="marker()" style="background-color: #d4b78d; ;" class="col-6 col-sm-4 col-md-3 col-lg-2 me-5  "> mark all as read</button>
+</div>
+<div class="row d-flex justify-content-center w-100 ">
 
-        <div *ngFor="let report of reports ; let i=index" class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+        <div *ngFor="let report of reports | reverse ; let i=index" class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" [matBadge]="!report.read? '&#8203;': undefined" matBadgeColor="warn">
                 <div class="titles">
+
                     <h5 class="card-title">Room {{report.roomid}}</h5>
                     <h6 class="card-text"><span id="reporter-data">Room owner: </span>{{report.firstname}} {{report.lastname}}</h6>
                     <h6 class="card-text"><span id="reporter-data">time sent: </span>{{report.timesent}}</h6>
@@ -23,8 +27,12 @@
                             <img class="card-img-bottom" [src]="report.img">
                         </div>
                     </div>
+                    <div class="d-flex justify-content-end my-2">
+                      <button style="background-color: #1E2B31 ; color: #f8f8f8;" mat-button (click)="read(report.repkey,report.read)">{{report.read===true? 'Mark as unread' : 'Mark as read' }}</button>
+                    </div>
 
                 </div>
+
             </div>
         </div>
     </div>

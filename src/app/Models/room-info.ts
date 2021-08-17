@@ -7,7 +7,7 @@ export class RoomInfo {
   RoomLighting: string[];
   doorOpen: boolean;
   doorHistoryArchive: any[]
-  WaterTempertaure: number;
+  WaterTemperature: number;
   //Guestrelated
   listOfGuestsNames: string[]
   listOfGuestNumbers: any[]

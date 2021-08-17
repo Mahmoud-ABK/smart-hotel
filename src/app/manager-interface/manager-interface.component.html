@@ -3,52 +3,56 @@
   <div class="navboura w-100 container-fluid  ">
     <nav class="navbar navbar-light d-flex ">
       <!-- FIRST NAVBAR -->
-      <div class="first-navbtn-group d-flex justify-content-between col-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="first-navbtn-group d-flex justify-content-between col-12 container-fluid">
         <!-- LOGO -->
-        <div>
-          <img src="./assets/smarthotellogo.svg" 
-            class="nav-item col-5 col-sm-6 col-md-6 col-lg-6"
-            style="width: 110px; height: auto;">
-        </div>
-        <!-- TITLE -->
-        <div class="nav-item d-flex">
-          <span class="nav-item navbar-brand mb-0 h1 nav-item col-5 col-sm-6 col-md-6 col-lg-6">Manager Page</span>
-        </div>
-        <!-- LOGOUT BTN -->
-        <div class="nav-item btn-group " role="group" aria-label="Basic example">
-          <button routerLink="/loginroundabout" type="button" class="buttonStyle logout btn" style="color: #1E2B31;">Log out</button>
+        <div class="row justify-content-center w-100">
+          <div class="nav-item col-4 col-sm-3 col-md-4">
+            <img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;">
+          </div>
+          <!-- TITLE -->
+          <div class="nav-item d-flex col-8 col-sm-4 col-md-4">
+            <span class="nav-item navbar-brand mb-0 h1 nav-item ">Manager Page</span>
+          </div>
+          <!-- LOGOUT BTN -->
+          <div class="nav-item btn-group col-12 col-sm-4  col-md-3 d-flex justify-content-center" role="group" aria-label="Basic example">
+            <button mat-button (click)="loggingOut()" type="button" class="buttonStyle logout btn w-100 "
+              style="color: #1E2B31;">Log out</button>
 
+          </div>
         </div>
+
       </div>
 
 
       <!-- SECOND NAVBAR-->
       <div class="nav-item btn-group d-flex justify-content-center col-12 col-sm-12 col-md-12 col-lg-12  " role="group"
         aria-label="Basic example">
+       
 
         <div class="row w-100 d-flex justify-content-center">
           <!-- ROOM MANAGEMENT -->
           <div class="col-12 col-sm-12 col-md-4 col-lg-3 center">
             <button mat-button type="button" routerLink="roommanagement" routerLinkActive="active"
-              [routerLinkActiveOptions]="{exact:true}" class="sec-nav-item btn ">
+              [routerLinkActiveOptions]="{exact:true}" class="sec-nav-item btn " [matBadge]="fg==0?undefined: fg" matBadgeColor="custom" >
               Room managment
             </button>
           </div>
           <!-- REPORTS -->
-          <div class="col-12 col-sm-12 col-md-3 col-lg-3 center ">
-            <button mat-button type="button" routerLink="roomreportmenu" 
-            routerLinkActive="active" class="sec-nav-item btn">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 center "  matBadgeColor="warn">
+            <button mat-button type="button" [matBadge]="rep==0?undefined: rep" matBadgeColor="custom" routerLink="roomreportmenu" routerLinkActive="active"
+              class="sec-nav-item btn">
               Reports
             </button>
           </div>
           <!-- ARCHIVE -->
           <div class="col-12 col-sm-12 col-md-3 col-lg-3 center" ngbDropdown dropdown>
-            <a id="dropdownMenuButton navbarDropdown1" 
-            ngbDropdownToggle class="mr-2 btn sec-nav-item" tabindex="0"
+            <a id="dropdownMenuButton navbarDropdown1" ngbDropdownToggle class="mr-2 btn sec-nav-item" tabindex="0"
               ngbDropdownToggle role="button">Archive</a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-              <a class="dropdown-item" routerLink="Archive/FoodOrdersArchive" (click)="$event.preventDefault()" ngbDropdownItem>Food Orders</a>
-              <a class="dropdown-item" routerLink="Archive/CleaningArchive" (click)="$event.preventDefault()" ngbDropdownItem>Room Cleaning</a>
+              <a class="dropdown-item" routerLink="Archive/FoodOrdersArchive" (click)="$event.preventDefault()"
+                ngbDropdownItem>Food Orders</a>
+              <a class="dropdown-item" routerLink="Archive/CleaningArchive" (click)="$event.preventDefault()"
+                ngbDropdownItem>Room Cleaning</a>
             </div>
           </div>
 

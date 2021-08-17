@@ -6,7 +6,7 @@ export class RoomModel {
     RoomTemperature: number ;
     Roomhumidity:number;
     RoomLighting:[Boolean,Boolean,Boolean,Boolean];
-    WaterTempertaure:number;
+    WaterTemperature:number;
     Gas:boolean;
     Fire:boolean ;
     guestHistoryID:string[];

@@ -72,6 +72,7 @@ export class RoomReportComponent implements OnInit {
     this.report.reporttitle = form.value.problemTitle
     this.report.reportdes = form.value.problemDesciption
     this.report.timesent = this.todaysDate
+    this.report.read=false
     if (this.reportPic === undefined) {
       this.report.img = this.noImg
 
