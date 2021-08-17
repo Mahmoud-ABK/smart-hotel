@@ -42,9 +42,9 @@
       <div class="row d-flex flex-row justify-content-end py-3">
         <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
           <button mat-button class="subtn button w-100 " type="button"
-            (click)="Updater('RoomTemperature',undefinedtem(tempval.value))"
+            (click)="Updater('RoomTemperature',undefinedtem(tempval.value),tempval.disabled,26)"
             style="color: #f8f8f8; background-color: #bd9035;">
-            Save <mat-icon>save</mat-icon>
+            Save 
           </button>
         </div>
       </div>
@@ -89,9 +89,9 @@
       <div class="row d-flex flex-row justify-content-end py-3">
         <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
           <button mat-button class="subtn button w-100 " type="button"
-            (click)="Updater('Roomhumidity',undefinedhum(humval.value))"
+            (click)="Updater('Roomhumidity',undefinedhum(humval.value),humval.disabled,30)"
             style="color: #f8f8f8; background-color: #bd9035;">
-            Save <mat-icon>save</mat-icon>
+            Save 
           </button>
         </div>
       </div>
@@ -152,9 +152,9 @@
       </div>
       <div class="row d-flex flex-row justify-content-end py-3">
         <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
-          <button mat-button class="subtn button w-100 " type="button" (click)="Updater('RoomLighting',lights)"
+          <button mat-button class="subtn button w-100 " type="button" (click)="Updater('RoomLighting',lights,false,undefined)"
             style="color: #f8f8f8; background-color: #bd9035;">
-            Save <mat-icon>save</mat-icon>
+            Save 
           </button>
         </div>
       </div>
@@ -190,7 +190,7 @@
       </div>
     </div>
     <div class="row m-3">
-      <div class="col-lg-5 py-1">what water temperature do you want? (in %)</div>
+      <div class="col-lg-5 py-1">what water temperature do you want? (in °C)</div>
       <div class="col-12 col-sm-10 col-md-4 col-lg-2 py-1">
         <div class="form-outline">
           <input ngModel name="watertempvalue" type="number" id="watertempvalue" class="form-control form-control-sm "
@@ -200,9 +200,9 @@
       <div class="row d-flex flex-row justify-content-end py-3">
         <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-start">
           <button mat-button class="subtn button w-100 " type="button"
-            (click)="Updater('WaterTemperature',undefinedwatertemp(watertempval.value))"
+            (click)="Updater('WaterTemperature',undefinedwatertemp(watertempval.value),watertempval.disabled,37)"
             style="color: #f8f8f8; background-color: #bd9035;">
-            Save <mat-icon>save</mat-icon>
+            Save 
           </button>
         </div>
       </div>

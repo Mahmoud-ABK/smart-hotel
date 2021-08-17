@@ -38,7 +38,7 @@ export class RoomInfoComponent implements OnInit {
             this.Roominfo.RoomLighting = this.RoomLightening(result.RoomLighting)
             this.Roominfo.doorOpen = result.doorOpen
             this.Roominfo.doorHistoryArchive = this.ToArray(result.doorHistoryArchive)
-            this.Roominfo.WaterTempertaure = result.WaterTempertaure
+            this.Roominfo.WaterTemperature = result.WaterTemperature
             //Guestrelated
             this.Roominfo.listOfGuestsNames = Namenum[0]
             this.Roominfo.listOfGuestNumbers = Namenum[1]

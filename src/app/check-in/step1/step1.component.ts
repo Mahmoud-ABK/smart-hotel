@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { NgForm } from '@angular/forms';
 import { GuestDataModel } from 'src/app/Models/guest-data-model';
@@ -12,12 +12,14 @@ import { SignInUpService } from 'src/app/Services/sign-in-up.service';
 @Component({
   selector: 'app-step1',
   templateUrl: './step1.component.html',
-  styleUrls: ['./step1.component.css']
+  styleUrls: ['./step1.component.css'] ,
+
 })
+
 export class Step1Component implements OnInit {
   step1data: Step1data
-  url="https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/user-profile.svg?alt=media&token=a3567d4c-824e-4916-89a7-868bb3f361de"
-  profilePic: string
+profilePic: string="https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/user-profile.svg?alt=media&token=a3567d4c-824e-4916-89a7-868bb3f361de"
+url:any
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
   next = false
@@ -28,8 +30,9 @@ export class Step1Component implements OnInit {
 
   constructor(public InApp:InAppOperationsService,private dataImporter: DataImporterService, private firestorage: AngularFireStorage, public signingIn: SignInUpService) { }
   onFileSelected(event) {
-  
+
     this.waiting = true
+    this.InApp.Snackbar.open('uploading','close',{ panelClass:"uploadedsnackbar"})
     /*  if (!(event.target.files.length==0)){
      this.profilePic = event.target.files[0];
      console.log(this.profilePic);} */
@@ -41,10 +44,12 @@ export class Step1Component implements OnInit {
         console.log(url);
 
         this.profilePic = String(url)
+        this.url=String(url)
         console.log(this.profilePic)
         this.uploaded=true
         this.waiting = false
-       this.InApp.Snackbar.open('image uploaded','close',{duration:4000})
+       this.InApp.Snackbar.open('image uploaded','close',{duration:4000, panelClass:"uploadedsnackbar"})
+
       })
     })
 
@@ -58,11 +63,11 @@ export class Step1Component implements OnInit {
     }
   }
   ngOnInit(): void {
+    // this.InApp.Snackbar.open('test','s',{panelClass:'uploadedsnackbar'})
+
   }
   OnSubmit(form: NgForm) {
-    if (this.profilePic===undefined) {
-      this.profilePic=this.url
-    }
+
     /*console.log(this.profilePic)
     console.log(form.value.guestFirstName)
     console.log(form.value.guestLastname)

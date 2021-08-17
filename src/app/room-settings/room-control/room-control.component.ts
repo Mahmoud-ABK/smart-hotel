@@ -13,16 +13,16 @@ import { allIcons } from 'ngx-bootstrap-icons';
 })
 export class RoomControlComponent implements OnInit, OnDestroy {
   OnOrOff: string
-  Temp:number
-  humidity:number
-  watertemp:number
+  Temp: number
+  humidity: number
+  watertemp: number
   disable = {
     a: true,
     b: true,
     c: true,
 
   }
-  lights :[Boolean,Boolean,Boolean,Boolean]= [
+  lights: [Boolean, Boolean, Boolean, Boolean] = [
     false,
     false,
     false,
@@ -37,14 +37,14 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     this.id = +localStorage.getItem('Rid')
     console.log(+localStorage.getItem('Rid'));
 
-    this.inApp.db.object('Rooms/' + String(this.inApp.RoomID) )
+    this.inApp.db.object('Rooms/' + String(this.inApp.RoomID))
       .snapshotChanges().pipe
-      (map(changes => changes.payload.val())).subscribe((res:RoomModel) => {
+      (map(changes => changes.payload.val())).subscribe((res: RoomModel) => {
         console.log(res);
         this.lights = res.RoomLighting
         this.Temp = res.RoomTemperature
         this.humidity = res.Roomhumidity
-        this.watertemp = res.WaterTempertaure
+        this.watertemp = res.WaterTemperature
         this.onornot()
 
 
@@ -54,14 +54,21 @@ export class RoomControlComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   openSnackBar(message: string) {
-    this._snackBar.open(message, '', {
-      duration: 3000
+    this._snackBar.open(message, 'close', {
+      duration: 3000, panelClass:"uploadedsnackbar"
     });
   }
-  Updater(name: string, val: any) {
-    this.inApp.updatingPerPart(this.inApp.RoomID, name, val).then(() => {
-      this.openSnackBar('Saved')
-    })
+  Updater(name: string, val: any, auto: boolean, def: any) {
+    if (auto) {
+      this.inApp.updatingPerPart(this.inApp.RoomID, name, def).then(() => {
+        this.openSnackBar('Saved')
+      })
+    } else {
+      this.inApp.updatingPerPart(this.inApp.RoomID, name, val).then(() => {
+        this.openSnackBar('Saved')
+      })
+    }
+
   }
 
   onSubmit(form: NgForm) {
@@ -105,12 +112,12 @@ export class RoomControlComponent implements OnInit, OnDestroy {
       return formcontrol
     }
   }
-  onornot(){
+  onornot() {
     if (this.lights.includes(false)) {
-      this.OnOrOff='on'
+      this.OnOrOff = 'on'
 
     } else {
-      this.OnOrOff='off'
+      this.OnOrOff = 'off'
 
     }
   }

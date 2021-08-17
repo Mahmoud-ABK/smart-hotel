@@ -89,7 +89,7 @@
           Invalid email
         </div>
         <div class="alert alert-danger" *ngIf="usedEmail">
-         Email already in use
+          Email already in use
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && email.invalid">
@@ -150,16 +150,18 @@
           this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 mb-20">
+      <div class="form-group col-lg-12 mb-20" >
         <label for="image" class="date-label" style="margin-bottom: 10px;">Profile Picture</label>
-        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" name="profilePic"
-          id="image" placeholder="1" ngModel #img="ngModel">
+        <div class="d-flex flex-column align-items-center">
+          <img *ngIf="url!=undefined" class=" previewimg" [src]="url" alt="">
+          <input type="file" accept="image/*" hidden="true" (change)="onFileSelected($event)"  class="form-control w-50" name="profilePic"
+            id="image" placeholder="1" ngModel #imgup #img="ngModel" >
+        <button style="font-family: monserrat;font-size: large;" mat-raised-button class="my-4" type="button" (click)="imgup.click()"> choose image</button>
 
 
+        </div>
       </div>
-      <div class="alert alert-warning" *ngIf="waiting && profilePic===undefined">
-        Waiting for upload....
-      </div>
+
       <!-- <div class="alert alert-primary" *ngIf="uploaded">
         uploaded
       </div> -->

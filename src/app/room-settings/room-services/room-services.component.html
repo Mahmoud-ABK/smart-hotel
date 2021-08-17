@@ -1,12 +1,14 @@
 <div class="container mt-4" style="background-color: #FCF6EE; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container py-2 ">
+
       <div class="row m-2">
         <h4>Room cleaning service</h4>
-
         <hr class="w-50">
-
       </div>
+
+
+
       <div class="row m-3">
         <!-- <div class="col-lg-5">- </div> -->
         <!-- <div class="col">
@@ -16,8 +18,12 @@
           </div>
         </div> -->
       </div>
+
+
       <div class="row m-3">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-8 py-1" style="line-height: normal;">Do you want your room to be cleaned? When?</div>
+        
+        
+      <div class="col-12 col-sm-12 col-md-12 col-lg-8 py-1" style="line-height: normal;">Do you want your room to be cleaned? When?</div>
         <div class="col-12 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex flex-row py-1">
 
           <input ngModel id="cleaningDateTime" name="cleaningDateTime" class="form-control" type="datetime-local"
@@ -26,10 +32,15 @@
 
         </div>
       </div>
+
+
+
       <div class="row d-flex flex-row justify-content-center">
         <div class="col-4 d-flex flex-row justify-content-end"><button class=" submit-button " [disabled]="!disable || dateTimeInput.value<todaysDate"
             mat-button disabled type="submit" style="background-color: #3d3920; color: #f8f8f8;" >Send demand</button>
       </div>
+    </div>
+    
     </div>
 
   </form>
