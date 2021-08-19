@@ -1,8 +1,10 @@
+import { AotSummaryResolver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { google } from 'ngx-bootstrap-icons';
 import { $ } from 'protractor';
 import { SwiperComponent } from "swiper/angular";
+import  AOS from "aos";
 
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
@@ -51,7 +53,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(this.x);
-  
+    AOS.init()
+
 
   }
 
