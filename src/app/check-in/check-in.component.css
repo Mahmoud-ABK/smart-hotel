@@ -1,12 +1,17 @@
-:host{
+  :host{
   display: block;
-  background-color: #eaddca !important;
- padding-bottom: 10em;
+  background-color: #B7C7CE !important;
+
   width: 100%;
   padding-left: 0px;
   padding-bottom: 50px;
   padding-right: 0px;
   font-family: montserrat;
+  height: 100%;
+}
+.bg{
+  background-image: radial-gradient(circle, #184454, #416271, #67838f, #8fa4ae, #b7c7ce);
+  padding-bottom: 7em
 }
 .navboura{
   background-color:#1E2B31;
@@ -28,9 +33,7 @@
   pointer-events: none !important;
 }
 
-.mat-step-header .mat-step-icon {
-  background-color: #e3b04b;
-}
+
 
 .mat-step-header .mat-step-icon-selected {
   background-color: #1E2B31 !important;

@@ -1,3 +1,4 @@
+import AOS from 'aos'
 import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -17,9 +18,13 @@ export class CheckInComponent implements OnInit {
     this.step3=event
   }
 
-  constructor( private _formBuilder: FormBuilder) { }
+  constructor( private _formBuilder: FormBuilder) {
 
-  ngOnInit(): void {this.firstFormGroup = this._formBuilder.group({
+   }
+
+  ngOnInit(): void {
+    AOS.init()
+    this.firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required]
   });
   this.secondFormGroup = this._formBuilder.group({

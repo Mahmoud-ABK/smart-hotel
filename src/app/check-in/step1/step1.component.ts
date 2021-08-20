@@ -7,6 +7,7 @@ import { Step1data } from 'src/app/Models/step1data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
+import AOS from 'aos'
 
 
 @Component({
@@ -64,6 +65,7 @@ url:any
   }
   ngOnInit(): void {
     // this.InApp.Snackbar.open('test','s',{panelClass:'uploadedsnackbar'})
+    AOS.init()
 
   }
   OnSubmit(form: NgForm) {

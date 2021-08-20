@@ -3,7 +3,7 @@
   font-size: large;
 }
 .main{
-    background-color: #eaddca !important;
+    background-color: transparent !important;
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
@@ -189,4 +189,49 @@ hr{
   background-color: #1E2B31;
   color: #ffffff;
   font-weight: normal;
+}
+.nextbtn:disabled{
+  color: #B7C7CE !important;
+  opacity: 0.5;
+}
+.nextbtn{
+  font-size: larger;
+  height: 3em;
+color: #f8f8f8;
+  background-color: #184454 !important ;
+}
+::ng-deep  .mat-calendar-body-selected{
+  background-color: #CD7E2B !important;
+}
+::ng-deep  .mat-calendar-body-cell-content:hover{
+ background: #B7C7CE !important;
+}
+::ng-deep .mat-datepicker-content-container {
+ background-color: #1E2B31 !important;
+}
+.alert, .alert-secondary{
+  margin: 0 !important;
+}
+
+
+mat-datepicker-toggle {
+ color: #CD7E2B !important;
+}
+.und{
+  display: block;
+  width: 100%;
+
+  border-radius: 3px;
+  border-color:#CD7E2B;
+
+  border-bottom: 3px solid #CD7E2B ;
+
+}
+.date-label {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #1e2b31;
+  transition: transform 0.2s ease-in-out;
+  padding-left: 30px;
 }

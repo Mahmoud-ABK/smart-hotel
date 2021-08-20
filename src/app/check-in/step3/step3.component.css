@@ -1,5 +1,5 @@
 .main{
-    background:  #eaddca;
+    background:  transparent;
     padding-bottom: 50px;
     padding-left: 0px;
     padding-right: 0px;
@@ -107,7 +107,7 @@ border: 1px solid #1E2B31;
     }
 
 
-    
+
 
 .paper-title{
     color: #b9a78d;

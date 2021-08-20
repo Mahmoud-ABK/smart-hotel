@@ -53,7 +53,7 @@
   border-radius: 10px;
 }
 .checkintitle {
-
+  
   text-align: center;
   letter-spacing: 3px;
   font-size: 3em;
@@ -68,7 +68,7 @@
 }
 .form-row .form-group {
   position: relative;
-  margin: 2em 0;
+  margin: 32px 0;
 }
 .form-row .form-control {
   display: block;
@@ -169,7 +169,7 @@ button:disabled {
   cursor: default;
 }
 .previewimg {
-   border: #B7C7CE  solid  0.5em !important;
+  border: #CD7E2B  solid  0.5em !important;
   border-radius: 50%;
   width: 15em;
   height: 15em;
@@ -202,7 +202,7 @@ button:disabled {
 
  ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
-  background-color: #CD7E2B !important;;
+  background-color: CD7E2B !important;;
   display: none;
  }
 
@@ -215,26 +215,6 @@ button:disabled {
   transition: transform 0.2s ease-in-out;
 
 
-
- }
- .b>*{
-   font-family: montserrat;
- }
- h1 {
-   font-family: lc !important;
-
- }
- ::ng-deep  .mat-calendar-body-selected{
-   background-color: #CD7E2B !important;
- }
- ::ng-deep  .mat-calendar-body-cell-content:hover{
-  background: #B7C7CE !important;
-}
-::ng-deep .mat-datepicker-content-container {
-  background-color: #1E2B31 !important;
-}
- .alert, .alert-secondary{
-   margin: 0 !important;
  }
 
 

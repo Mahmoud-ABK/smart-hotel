@@ -1,0 +1,49 @@
+<div class=" main container-fluid d-flex flex-column align-items-center">
+  <!-- <div class="row justify-content-md-center">
+    <div class="col-md-8 ">
+      <h1 class="checkintitle"></h1>
+    </div>
+    <div class="col-md-8 ">
+      <p style="text-align-last: center;"></p>
+    </div>
+  </div> -->
+
+
+
+
+  <form  (ngSubmit)="OnSubmit(step1)" class="checkin container-fluid" #step1="ngForm"
+  (keydown.enter)="handleEnterKeyPress($event)">
+    <div class="row  d-flex flex-column align-items-center">
+      <div class="col  d-flex justify-content-center">
+        <h1 class="checkintitle text-center ">Hello {{prenom}} !</h1>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <p class="text-center">you may skip this</p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-lg-12 mb-20" >
+        <label for="image" class="date-label" style="margin-bottom: 10px;">Profile Picture</label>
+        <div class="d-flex flex-column align-items-center">
+          <img *ngIf="url!=undefined" class=" previewimg" [src]="url" alt="">
+          <input type="file" accept="image/*" hidden="true" (change)="onFileSelected($event)"  class="form-control w-50" name="profilePic"
+            id="image" placeholder="1" ngModel #imgup #img="ngModel" >
+        <button style="font-family: monserrat;font-size: large;" mat-raised-button class="my-4" type="button" (click)="imgup.click()"> choose image</button>
+
+
+        </div>
+      </div>
+
+
+
+      <div class="row d-flex justify-content-end h-25" >
+        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100 h-100">
+          <button type="submit" mat-raised-button matStepperNext class=" nextbtn w-50 mx-3 mb-3"><span *ngIf="url==undefined">Skip</span>
+            <span *ngIf="url!=undefined">Next</span> </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+</div>

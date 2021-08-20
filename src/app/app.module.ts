@@ -70,6 +70,9 @@ import {NgPipesModule} from 'ngx-pipes';
 import { ArchiveComponent } from './archive/archive.component';
 import { CleaningdataComponent } from './archive/cleaningdata/cleaningdata.component';
 import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-data.component';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ImageuploadcompoComponent } from './check-in/imageuploadcompo/imageuploadcompo.component';
 
 
 
@@ -79,11 +82,14 @@ import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-
 
 
 
-const appRoutes: Routes = []
+
+
+
 
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomeComponent,
     CheckInComponent,
@@ -115,10 +121,15 @@ const appRoutes: Routes = []
     ArchiveComponent,
     CleaningdataComponent,
     FoodOrdersDataComponent,
+    ImageuploadcompoComponent,
 
   ],
   imports: [
-
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

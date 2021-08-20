@@ -24,10 +24,11 @@ body {
   height: auto !important;
 }
 mat-stepper{
-  background-color: #E3B04B !important;
+
   display: flex ;
   flex-flow: column nowrap;
   align-items: center;
+  height: 100%      ;
 }
 
 .mat-horizontal-content-container{
@@ -39,7 +40,7 @@ mat-stepper{
   ;
 }
 .mat-step-header .mat-step-icon{
-  background-color: #F1D6AB;
+  background-color: #a1b3bb ;
 }
 .mat-step-header .mat-step-icon-selected {
   background-color: #1E2B31;

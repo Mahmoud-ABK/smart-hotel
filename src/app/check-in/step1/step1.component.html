@@ -7,21 +7,22 @@
       <p style="text-align-last: center;"></p>
     </div>
   </div> -->
-  <div class="row  d-flex flex-column align-items-center">
-    <div class="col  d-flex justify-content-center">
-      <h1 class="checkintitle text-center ">main info</h1>
-    </div>
-    <div class="col d-flex justify-content-center">
-      <p class="text-center">Fill up the form with information needed to unlock your room/s.</p>
-    </div>
-  </div>
 
 
 
-  <form (ngSubmit)="OnSubmit(step1)" class="checkin container-fluid" #step1="ngForm"
+
+  <form (ngSubmit)="OnSubmit(step1)" class="checkin container-fluid container" #step1="ngForm"
     (keydown.enter)="handleEnterKeyPress($event)">
+    <div class="row  d-flex flex-column align-items-center b">
+      <div class="col  d-flex justify-content-center">
+        <h1 class="checkintitle text-center ">Welcome </h1>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <p class="text-center">Fill up the form with information needed to unlock your room/s.</p>
+      </div>
+    </div>
     <div class="form-row">
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
 
         <input type="text" class="form-control" id="firstname" #guestFName="ngModel" name="guestFirstName"
           placeholder="First Name" ngModel required>
@@ -30,10 +31,9 @@
           Invalid First Name
         </div>
         <div class="alert alert-secondary" *ngIf="step1.submitted && guestFName.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20 ">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating  ">
 
         <input type="text" class="form-control" id="lastname" #LName="ngModel" name="guestLastname"
           placeholder="Last Name" ngModel required>
@@ -42,21 +42,26 @@
           Invalid Last Name
         </div>
         <div class="alert alert-secondary" *ngIf="step1.submitted && LName.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12">
-        <label for="birthdate" class="date-label">Birthdate</label>
-        <input type="date" class="form-control" max="2007-12-31" placeholder="1980-01-01" #bdate="ngModel"
-          id="birthdate" name="guestBirthdate" ngModel required>
+      <mat-form-field class="form-group col-lg-12" appearance="fill" class="w-100 und" hideRequiredMarker
+        data-aos="fade-right" data-aos-duration="700">
+        <mat-label class="date-label" for="birthdate">Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" readonly max="2007-12-31" ngModel required #bdate="ngModel"
+          id="birthdate" name="guestBirthdate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+      <div>
+
+
         <div class="alert alert-warning" *ngIf="bdate.invalid && bdate.touched">
-          birthdate is empty
+          birthdate input is empty
         </div>
         <div class="alert alert-secondary" *ngIf="step1.submitted && bdate.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
         <input type="tel" name="guestPhoneNum" class="form-control" id="telnumber" placeholder="Phone Number" ngModel
           required #phone="ngModel">
         <label for="tel_num" class="label">Phone </label>
@@ -65,10 +70,9 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && phone.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
         <input type="number" class="form-control" id="ID_num" name="guestIDorPass" #IDorPass="ngModel" placeholder="1"
           ngModel required>
         <label for="ID_num" class="label">ID /Passport </label>
@@ -77,10 +81,9 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && IDorPass.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
 
         <input type="email" class="form-control" id="email" name="guestEmail" #email="ngModel"
           placeholder="name@example.com" ngModel email required (ngModelChange)="emailChcecker(email.value)">
@@ -93,10 +96,9 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && email.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
 
         <input minlength="6" type="password" class="form-control" id="guestpsw" name="guestPassword" #psw="ngModel"
           placeholder="1" ngModel required>
@@ -107,10 +109,9 @@
 
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && psw.invalid">
-          this field is required
         </div>
       </div>
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
         <input minlength="6" type="password" class="form-control" id="Confirmguestpsw" name="ConfirmguestPassword"
           #cpsw="ngModel" placeholder="1" ngModel required>
         <label for="Confirmguestpsw" class="label">Confirm Password</label>
@@ -119,12 +120,11 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && (cpsw.invalid || cpsw.value!=psw.value)">
-          this field is required
         </div>
       </div>
 
 
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
         <input type="number" class="form-control" id="people_num" name="NoOfPeople" min="1" placeholder="1" ngModel
           required #ppl="ngModel">
         <label for="people_num" class="label">No. of People</label>
@@ -133,11 +133,10 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && ppl.invalid">
-          this field is required
         </div>
       </div>
 
-      <div class="form-group col-lg-12 form-floating mb-20">
+      <div data-aos="fade-right" data-aos-duration="700" class="form-group col-lg-12 form-floating ">
 
         <input type="number" class="form-control" id="nights_num" name="NoOfNights" min="1" placeholder="1" ngModel
           required #nights="ngModel">
@@ -147,35 +146,21 @@
         </div>
 
         <div class="alert alert-secondary" *ngIf="step1.submitted && nights.invalid">
-          this field is required
-        </div>
-      </div>
-      <div class="form-group col-lg-12 mb-20" >
-        <label for="image" class="date-label" style="margin-bottom: 10px;">Profile Picture</label>
-        <div class="d-flex flex-column align-items-center">
-          <img *ngIf="url!=undefined" class=" previewimg" [src]="url" alt="">
-          <input type="file" accept="image/*" hidden="true" (change)="onFileSelected($event)"  class="form-control w-50" name="profilePic"
-            id="image" placeholder="1" ngModel #imgup #img="ngModel" >
-        <button style="font-family: monserrat;font-size: large;" mat-raised-button class="my-4" type="button" (click)="imgup.click()"> choose image</button>
-
-
         </div>
       </div>
 
-      <!-- <div class="alert alert-primary" *ngIf="uploaded">
-        uploaded
-      </div> -->
 
 
-      <!-- <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" class="btn1 btn-primary1 me-2" >Submit </button>
-      </div> -->
-      <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
-        <button type="submit" mat-button matStepperNext [disabled]="step1.invalid || waiting || usedEmail"
-          class="btn1 btn-primary2  me-2">Next</button>
-      </div>
+      <!-- [disabled]="step1.invalid || waiting || usedEmail" -->
+
 
     </div>
+    <div class="row d-flex justify-content-end h-25" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+      <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100 h-100">
+        <button type="submit" mat-raised-button matStepperNext class=" nextbtn w-50 mx-3 mb-3">Next</button>
+      </div>
+    </div>
+
   </form>
 
 </div>
