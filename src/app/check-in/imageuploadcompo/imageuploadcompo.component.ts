@@ -14,17 +14,25 @@ import AOS from 'aos'
 export class ImageuploadcompoComponent implements OnInit {
   profilePic: string="https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/user-profile.svg?alt=media&token=a3567d4c-824e-4916-89a7-868bb3f361de"
 url:any
+displayername($event){
+
+}
+
+// C/O https://placeholder.com/"
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
   next = false
   waiting = false
   usedEmail = false
   uploaded=false
-  nom="ben hichem"
-  prenom="mahmoud"
-  constructor(public InApp:InAppOperationsService,private dataImporter: DataImporterService, private firestorage: AngularFireStorage, public signingIn: SignInUpService) { }
-  onFileSelected(event) {
+  prenom
+  public files: any[] = [];
+  constructor(public InApp:InAppOperationsService,private dataImporter: DataImporterService, private firestorage: AngularFireStorage, public signingIn: SignInUpService) {
 
+
+   }
+  onFileSelected(pFileList: File[]) {
+    this.files = Object.keys(pFileList).map(key => pFileList[key]);
     this.waiting = true
     this.InApp.Snackbar.open('uploading','close',{ panelClass:"uploadedsnackbar"})
     /*  if (!(event.target.files.length==0)){
@@ -32,7 +40,7 @@ url:any
      console.log(this.profilePic);} */
     const id = Math.random().toString(36).substring(2);
     this.ref = this.firestorage.ref(id);
-    this.task = this.ref.put(event.target.files[0])
+    this.task = this.ref.put(this.files[0])
     this.task.then((data) => {
       data.ref.getDownloadURL().then((url) => {
         console.log(url);
@@ -52,11 +60,13 @@ url:any
 
 
   ngOnInit(): void {
+    console.log(this.dataImporter.step1GuestData.Firstname);
     AOS.init()
   }
   OnSubmit(form: NgForm) {
     this.dataImporter.step1GuestData.Pic = this.profilePic
     console.log(this.dataImporter.step1GuestData);
+    this.dataImporter.step3=true
 
 
   }

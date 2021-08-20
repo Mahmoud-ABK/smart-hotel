@@ -83,16 +83,16 @@ border: 1px solid #1E2B31;
     position: relative;
     margin: 32px 0;
 }
-.form-control{
-    display: block;
-    width:100%;
-    height: 36px;
-    border-width:0 0 3px 0;
-    border-color:#eaddca;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
 
+.form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 3px 0;
+  border-color:#CD7E2B;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
 }
 
 

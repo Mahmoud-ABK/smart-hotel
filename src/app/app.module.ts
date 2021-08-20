@@ -73,6 +73,7 @@ import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-
 import {MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ImageuploadcompoComponent } from './check-in/imageuploadcompo/imageuploadcompo.component';
+import { DDirective } from './directives/d.directive';
 
 
 
@@ -122,6 +123,7 @@ import { ImageuploadcompoComponent } from './check-in/imageuploadcompo/imageuplo
     CleaningdataComponent,
     FoodOrdersDataComponent,
     ImageuploadcompoComponent,
+    DDirective,
 
   ],
   imports: [

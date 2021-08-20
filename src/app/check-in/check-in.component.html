@@ -1,4 +1,4 @@
-<div class="navboura container-fluid" data-aos="fade-down" data-aos-delay="100" >
+<div class="navboura container-fluid" data-aos="fade-down" data-aos-delay="100">
   <nav class="navbar navbar-light ">
     <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
     <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
@@ -7,7 +7,7 @@
     </div>
   </nav>
 </div>
-<div class="bg" data-aos="fade-down" >
+<div class="bg" data-aos="fade-down">
   <mat-stepper style="background-color: transparent !important;" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
 
@@ -15,9 +15,9 @@
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-7 col-xl-7  ">
-            <!-- <app-step1></app-step1> -->
-            <!-- <app-imageuploadcompo></app-imageuploadcompo> -->
-            <app-step2></app-step2>
+<app-step1></app-step1>
+            <!--<app-step2></app-step2>
+<app-imageuploadcompo></app-imageuploadcompo> -->
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7   ">
-            <app-imageuploadcompo></app-imageuploadcompo>
+            <app-imageuploadcompo (namedisplay)="displayername($event)" ></app-imageuploadcompo>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7  ">
             <!-- <app-step3></app-step3> -->
-            <app-step3 *ngIf="step3===true" ></app-step3>
+            <app-step3 *ngIf="step4===true"></app-step3>
           </div>
         </div>
       </div>
