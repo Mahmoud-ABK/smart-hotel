@@ -151,13 +151,13 @@
 
 
 
-      <!-- [disabled]="step1.invalid || waiting || usedEmail" -->
+      <!-- -->
 
 
     </div>
     <div class="row d-flex justify-content-end h-25" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
       <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100 h-100">
-        <button type="submit" mat-raised-button matStepperNext class=" nextbtn w-50 mx-3 mb-3">Next</button>
+        <button type="submit" mat-raised-button matStepperNext [disabled]="step1.invalid || usedEmail"  class=" nextbtn w-50 mx-3 mb-3">Next</button>
       </div>
     </div>
 

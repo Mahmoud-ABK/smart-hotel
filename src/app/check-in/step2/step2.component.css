@@ -180,14 +180,14 @@ button:checked {
 }
 hr{
   height: 3px;
-  background-color: #eaddca !important;
+  background-color: #CD7E2B !important;
 }
 .confirm{
   background-color: #F1D6AB;
 }
 .avroombtn{
-  background-color: #1E2B31;
-  color: #ffffff;
+  background-color: #184454;
+  color: #ffffff !important;
   font-weight: normal;
 }
 .nextbtn:disabled{
@@ -227,6 +227,7 @@ mat-datepicker-toggle {
   border-bottom: 3px solid #CD7E2B ;
 
 }
+
 .date-label {
   font-size: 18px;
   line-height: 26px;
@@ -234,4 +235,20 @@ mat-datepicker-toggle {
   color: #1e2b31;
   transition: transform 0.2s ease-in-out;
   padding-left: 30px;
+}
+.mat-card{
+ background-color: #B7C7CE;
+}
+.mat-card * {
+  color: #101619;
+}
+.tyn{
+  color:#1E2B31 !important
+  ; font-weight: bold;
+}
+
+#fixedbutton {
+  position: sticky;
+  top: 30%;
+  right: 10%;
 }

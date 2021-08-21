@@ -74,6 +74,8 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ImageuploadcompoComponent } from './check-in/imageuploadcompo/imageuploadcompo.component';
 import { DDirective } from './directives/d.directive';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -125,8 +127,10 @@ import { DDirective } from './directives/d.directive';
     ImageuploadcompoComponent,
     DDirective,
 
+
   ],
   imports: [
+    MatDividerModule,
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
@@ -151,6 +155,7 @@ import { DDirective } from './directives/d.directive';
     MatSlideToggleModule,
     NgxBootstrapIconsModule.pick(allIcons),
     NgPipesModule,
+    MatListModule,
     NotifierModule.withConfig({
       behaviour: {
 

@@ -29,7 +29,7 @@ export class SignInUpService {
 
     data.currents().snapshotChanges().pipe(map(changes => changes.map(r => (r.payload.val())))).subscribe((res) => {
       this.currentGuests = res
-      console.log(this.currentGuests);
+      
 
     })
   }
