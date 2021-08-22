@@ -1,4 +1,4 @@
-<div class="navboura container-fluid">
+<div class="navboura container-fluid" data-aos="fade-down" data-aos-delay="100">
   <nav class="navbar navbar-light ">
     <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
     <span class="navbar-brand mb-0 h1 nav-item">Check in</span>
@@ -7,40 +7,38 @@
     </div>
   </nav>
 </div>
-<div style="background-color: #eaddca; padding-bottom: 20em;">
-  <mat-stepper style="background-color: #eaddca !important;" [linear]="isLinear" #stepper>
+<div class="bg" data-aos="fade-down">
+  <mat-stepper style="background-color: transparent !important;" [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
 
-      <ng-template matStepLabel>Step1</ng-template>
+      <!-- <ng-template matStepLabel > <span class="d-sm-none d-md-block" >Step1</span> </ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8  ">
-            <app-step1></app-step1>
-
-            <!-- <app-step3></app-step3> -->
+          <div class="col-12 col-sm-12 col-md-10 col-lg-7 col-xl-7  ">
+<app-step1></app-step1>
+            <!--<app-step2></app-step2>
+<app-imageuploadcompo></app-imageuploadcompo> -->
           </div>
         </div>
       </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
 
-      <ng-template matStepLabel>Step2</ng-template>
+      <!-- <ng-template matStepLabel>Step2</ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8  ">
-            <app-step1></app-step1>
-
-            <!-- <app-step3></app-step3> -->
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7   ">
+            <app-imageuploadcompo (namedisplay)="displayername($event)" ></app-imageuploadcompo>
           </div>
         </div>
       </div>
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup">
-      <ng-template matStepLabel>Step3</ng-template>
+      <!-- <ng-template matStepLabel>Step3</ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 ">
             <!-- <app-step2></app-step2> -->
             <app-step2 (step3display)="displayer($event)"></app-step2>
           </div>
@@ -49,12 +47,12 @@
 
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Step4</ng-template>
+      <!-- <ng-template matStepLabel>Step4</ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7  ">
             <!-- <app-step3></app-step3> -->
-            <app-step3 *ngIf="step3===true" ></app-step3>
+            <app-step3 *ngIf="step4===true"></app-step3>
           </div>
         </div>
       </div>

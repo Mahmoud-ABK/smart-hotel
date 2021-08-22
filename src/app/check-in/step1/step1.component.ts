@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit,  EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { NgForm } from '@angular/forms';
 import { GuestDataModel } from 'src/app/Models/guest-data-model';
@@ -7,6 +7,8 @@ import { Step1data } from 'src/app/Models/step1data';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 import { SignInUpService } from 'src/app/Services/sign-in-up.service';
+import AOS from 'aos'
+
 
 
 @Component({
@@ -17,6 +19,11 @@ import { SignInUpService } from 'src/app/Services/sign-in-up.service';
 })
 
 export class Step1Component implements OnInit {
+  @Output() namedisplay: EventEmitter<string> = new EventEmitter<string>()
+  name(name) {
+    this.namedisplay.emit(name)
+
+  }
   step1data: Step1data
 profilePic: string="https://firebasestorage.googleapis.com/v0/b/smarthotel-database.appspot.com/o/user-profile.svg?alt=media&token=a3567d4c-824e-4916-89a7-868bb3f361de"
 url:any
@@ -64,6 +71,7 @@ url:any
   }
   ngOnInit(): void {
     // this.InApp.Snackbar.open('test','s',{panelClass:'uploadedsnackbar'})
+    AOS.init()
 
   }
   OnSubmit(form: NgForm) {
@@ -92,6 +100,7 @@ url:any
     }
     console.log(this.step1data);
     this.dataImporter.ToStep3(this.step1data)
+   this.name(form.value.guestFirstName)
 
 
 

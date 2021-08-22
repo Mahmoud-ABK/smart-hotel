@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   persons: Array<object> = [
     {
       name: "Jamel",
-      text: `Everything was fantastic from service to quality of room to the personal touches. Massive thanks to the staff.`
+      text: `Everything was fantastic from service to quality of room to the personal touches.`
       , pic: "../../assets/testimonial1.jpg"
     },
     {

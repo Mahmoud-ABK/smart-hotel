@@ -80,7 +80,10 @@ export class Step2Component implements OnInit {
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
         this.RoomList = result;
+        console.log(this.RoomList);
+
         this.checker()
+
 
 
       })
@@ -132,12 +135,16 @@ export class Step2Component implements OnInit {
     this.AvailableRoomList.forEach(avRoom => {
       if (avRoom.RoomPrice == 90) {
         this.ordinarytype = true
+        console.log(this.ordinarytype);
       } else if (avRoom.RoomPrice == 120) {
         this.floortype = true
+        console.log(this.floortype);
       } else if (avRoom.RoomPrice == 150) {
         this.seaviewtype = true
+        console.log(this.seaviewtype );
       } else {
         this.seaviewfloortype = true
+        console.log(this.seaviewtype );
       }
     })
 

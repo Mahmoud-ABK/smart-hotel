@@ -1,0 +1,50 @@
+<div class=" main container-fluid d-flex flex-column align-items-center">
+
+
+
+
+
+  <form (ngSubmit)="OnSubmit(step1)" class="checkin container-fluid" #step1="ngForm"
+    (keydown.enter)="handleEnterKeyPress($event)">
+    <div class="row  d-flex flex-column align-items-center">
+      <div class="col  d-flex justify-content-center">
+        <h1 class="checkintitle text-center ">Hello {{prenom}} !</h1>
+      </div>
+      <div class="col d-flex justify-content-center">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-lg-12 mb-20">
+        <label for="image" class="date-label" style="margin-bottom: 10px; color: #CD7E2B;">Profile Picture</label>
+        <hr>
+        <div class="d-flex flex-column align-items-center">
+          <img class=" previewimg" [src]="profilePic" alt="">
+
+        </div>
+        <div class="dropzone" fileDragDrop (filesChangeEmiter)="onFileSelected($event)">
+          <div class="text-wrapper">
+            <div class="centered">
+              <input type="file" accept="image/*" name="file" id="file" (change)="onFileSelected($event.target.files)">
+              <button type="button" mat-raised-button class="imgupbtn"><label for="file">
+                  <i-bs name="upload" width="20" height="20"> </i-bs>
+                  Select your image
+                </label></button> or Drop it here!
+            </div>
+          </div>
+        </div>
+      </div>
+     <hr>
+
+
+      <div class="row d-flex justify-content-end h-25">
+        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100 h-100">
+          <button type="submit" mat-raised-button matStepperNext class=" nextbtn w-50 mx-3 mb-3"
+            [disabled]="waiting"><span *ngIf="url==undefined">Skip</span>
+            <span *ngIf="url!=undefined">Next</span> </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+</div>

@@ -1,14 +1,15 @@
 <div class="main container-fluid d-flex flex-column align-items-center">
-  <div class="row  d-flex flex-column align-items-center">
-    <div class="col  d-flex justify-content-center">
-      <h1 class="checkintitle text-center ">add room</h1>
-    </div>
-    <div class="col d-flex justify-content-center">
-      <p class="text-center">what are the charactrestics of the room/s?</p>
-    </div>
-  </div>
 
   <form (ngSubmit)="onSubmit()" class="checkin container">
+    <div class="row  d-flex flex-column align-items-center">
+      <div class="col  d-flex justify-content-center">
+        <h1 class="checkintitle text-center ">add rooms</h1>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <p class="text-center">what are the charactrestics of the room/s?</p>
+      </div>
+    </div>
+
 
     <div class="form-group col-lg-12 ">
       <label for="checkindate" class="date-label">Check-in Date</label>
@@ -22,6 +23,7 @@
       <input type="date" class="form-control" [(ngModel)]="checkout" [ngModelOptions]="{standalone: true}"
         id="checkoutdate" min="{{checkin}}" [value]="datein.value" #dateout="ngModel" (change)="inialize()" ngMode>
     </div>
+    
     <div *ngIf=" ( (datein.value >= dateout.value) && (dateout.touched || datein.touched ))" class="text-center ; "
     style="font-size: medium; color: brown;">
     <div class="alert alert-primary">
@@ -148,9 +150,15 @@
         </div>
         <!-- this button is used to send data out of the component all of the preivous steps are done to send these
           a function send all of the rooms (or roomIDs to the users RoomIDs part in the data base ) -->
-        <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
+        <!-- <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100">
           <button type="submit" mat-button matStepperNext class="btn2 btn-primary2"
-            [disabled]="!confirmed || selectedRooms.length==0">Next</button>
+          >Next</button>
+        </div> -->
+        <div class="row d-flex justify-content-end h-25" >
+          <div class="col-10 col-sm-10 col-md-8 col-lg-4 col-xl-4 d-flex justify-content-end w-100 h-100">
+            <button type="submit" mat-raised-button matStepperNext class=" nextbtn w-50 mx-3 mb-3"   [disabled]="!confirmed || selectedRooms.length==0">
+         Next </button>
+          </div>
         </div>
       </div>
   </form>

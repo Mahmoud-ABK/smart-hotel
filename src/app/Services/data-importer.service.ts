@@ -41,6 +41,8 @@ export class DataImporterService {
   foodrefArchive:AngularFireList<FoodOrderModel>
   currentGuests: AngularFireList<any>
   foodList: listOfFood ={breakfast:[], dinner:[], lunch:[], drinks:[], snacks:[]}
+  step2=false
+  step3=false
 
   constructor(public db: AngularFireDatabase, public current: AngularFireAuth) {
     this.database = db

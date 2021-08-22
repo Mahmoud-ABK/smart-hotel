@@ -1,5 +1,7 @@
+import AOS from 'aos'
 import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataImporterService } from '../Services/data-importer.service';
 
 @Component({
   selector: 'app-check-in',
@@ -11,15 +13,24 @@ export class CheckInComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  step4=false
+  step2=false
   step3=false
   displayer(event)
   {
-    this.step3=event
+    this.step4=event
   }
+  displayername($event){
+    
+  }
+  constructor( private _formBuilder: FormBuilder, public dataImporter:DataImporterService) {
 
-  constructor( private _formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {this.firstFormGroup = this._formBuilder.group({
+   }
+
+  ngOnInit(): void {
+    AOS.init()
+    this.firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required]
   });
   this.secondFormGroup = this._formBuilder.group({
