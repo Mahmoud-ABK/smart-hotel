@@ -21,12 +21,23 @@
           </div>
         </div>
       </div>
-
-
-
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
+
       <ng-template matStepLabel>Step2</ng-template>
+      <div class="container-fluid p-0">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8  ">
+            <app-step1></app-step1>
+
+            <!-- <app-step3></app-step3> -->
+          </div>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Step3</ng-template>
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
@@ -38,7 +49,7 @@
 
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Step3</ng-template>
+      <ng-template matStepLabel>Step4</ng-template>
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-8 ">
@@ -48,5 +59,6 @@
         </div>
       </div>
     </mat-step>
+
   </mat-stepper>
 </div>
