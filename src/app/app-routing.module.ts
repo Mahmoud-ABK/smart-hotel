@@ -9,7 +9,7 @@ import { Step3Component } from './check-in/step3/step3.component';
 import { AuthGuard } from './guards/auth.guard';
 import { KitchenauthGuard } from './guards/kitchenauth.guard';
 
-import { GuestInterfaceComponent } from './guest-interface/guest-interface.component';
+import { GuestProfileComponent } from './guest-profile/guest-profile.component';
 import { HomeComponent } from './home/home.component';
 import { KitchenPageLoginComponent } from './login-pages/kitchen-page-login/kitchen-page-login.component';
 import { LoginGuestComponent } from './login-pages/login-guest/login-guest.component';
@@ -37,7 +37,7 @@ import { CleaningdataComponent } from './archive/cleaningdata/cleaningdata.compo
 import { FoodOrdersDataComponent } from './archive/food-orders-data/food-orders-data.component';
 
 const redirectingUnauthorizedToHome = () => redirectUnauthorizedTo(['/guestlogin']);
-const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestinterface']);
+const redirectingLoggedInToGuestInterface = () => redirectLoggedInTo(['/guestprofile']);
 
 
 
@@ -57,8 +57,8 @@ const routes: Routes = [
   },
 
   {
-    path: "guestinterface",
-    component: GuestInterfaceComponent,
+    path: "guestprofile",
+    component: GuestProfileComponent,
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome }
   },

@@ -1,6 +1,6 @@
 
 .big-container{
-    background-color: #FCF6EE;
+    background-color: #FAF4EC;
     padding: 0px !important;
     height: 100%;
 }
@@ -51,7 +51,7 @@
     font-weight: bold;
     border-radius: 0% !important;
   }
-  
+
   .buttonStyle:hover{
     opacity: 1;
   }
@@ -112,7 +112,7 @@
   }
 
   @media (max-width: 767px){
-    
+
     .sec-nav-item{
     margin-top: 5px;
   }

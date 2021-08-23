@@ -1,61 +1,164 @@
-<div class="container">
+<div
+  style="padding: 2em 1em 2em 1em !important; margin-top:3% ; font-size: large; box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;"
+  class="container room-ctrl py-3 ">
+  <div class="row">
+    <h1 class="Roomnumber d-flex justify-content-center">Additional informations about Room {{id}}</h1>
+    <hr>
+  </div>
+  <!--  <div class="row">
+    <div class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <div class="titles">
+
+            <h5 class="card-title">Room type </h5>
+          </div>
+
+          <div class="container-data justify-content-between">
+            <div class="report-container">
+              <div style="font-family: 'Josefin Sans', sans-serif;" class="report-details">
+                <p></p>
+              </div>
+              <div class="report-details">price:  <span class="ps-1"> {{Roominfo.RoomPrice}}$</span> </div>
+              <div class="report-details">
+                <p class="p"></p>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+
+  <div class="row d-flex justify-content-evenly">
+    <div
+      class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center my-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="titles h-25">
+
+            <h5 class="card-title">Room type </h5>
+          </div>
+
+          <div class="container-data d-flex flex-column justify-content-evenly  h-75">
+
+
+            <div class="report-details my-3">price: <span class="ps-1"> {{Roominfo.RoomPrice}}$</span> </div>
+            <div class="report-details my-3">type :
+              <span class="ps-1"> {{typechecker(Roominfo.RoomPrice)}} </span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div
+      class="card-container col-12 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4 d-flex justify-content-center my-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="titles h-25">
+
+            <h5 class="card-title">Room status </h5>
+          </div>
+
+          <div class="container-data justify-content-between h-75">
+
+            <div class="report-details my-2">Temperatue: <span class="ps-1"> {{Roominfo.RoomTemperature}}°C</span>
+            </div>
+            <div class="report-details my-2">
+            </div>
+            <div class="report-details my-2"> humidity: <span class="ps-1"> {{Roominfo.Roomhumidity}}%</span> </div>
+            <div class="report-details my-2"> Water Temperature <span class="ps-1">
+                {{Roominfo.WaterTemperature}} °c</span>
+            </div>
+            <div class="report-details my-2">
+              lights:
+              <div class=" mt-2">
+                <ul>
+                  <li>Bedroom: {{Roominfo.RoomLighting[0]}} </li>
+                  <li>Dining Room: {{Roominfo.RoomLighting[1]}}</li>
+                  <li>Living Room: {{Roominfo.RoomLighting[2]}}</li>
+                  <li>bathroom: {{Roominfo.RoomLighting[3]}}</li>
+                </ul>
+              </div>
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Room data  -->
-  <h1 class="Roomnumber">Room {{id}}</h1>
-  <h3>price: {{Roominfo.RoomPrice}}</h3>
-  <h3>Room status</h3>
-  <h4>Temperatue: {{Roominfo.RoomTemperature}}</h4>
-  <h4>humidity: {{Roominfo.Roomhumidity}}</h4>
-  <h4>Water Temperatue {{Roominfo.WaterTemperature}}</h4>
-  <h4>lights</h4>
-  <ul>
-    <li>Bedroom: {{Roominfo.RoomLighting[0]}} </li>
-    <li>Dining Room: {{Roominfo.RoomLighting[1]}}</li>
-    <li>Living Room: {{Roominfo.RoomLighting[2]}}</li>
-    <li>bathroom: {{Roominfo.RoomLighting[3]}}</li>
-  </ul>
+
+
+
   <!-- ness li 3emlou checkin ll room hedhi -->
-  <h2>guest list</h2>
-  <div *ngIf="Roominfo.listOfGuestsNames.length===0">No informations to display</div>
-  <table *ngIf="Roominfo.listOfGuestsNames.length!==0" class="table table-bordered">
-    <thead>
-      <tr>
-        <th> </th>
-        <th>Guest </th>
-        <th>number</th>
-        <th>Email</th>
-        <th>check in </th>
-        <th>check out </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let guestdata of Roominfo.listOfGuestsNames ; let i=index">
-        <td>{{i+1}}</td>
-        <td>{{guestdata}}</td>
-        <td>{{Roominfo.listOfGuestNumbers[i]}}</td>
-        <td>{{this.Roominfo.guestHistoryID[i+1]}}</td>
-        <td>{{this.Roominfo.RoomCheckinDate[i+1]}}</td>
-        <td>{{this.Roominfo.RoomCheckoutDate[i+1]}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="d-flex justify-content-center">
+    <h1 class="title">guest list</h1>
+  </div>
+  <hr>
+
+  <div *ngIf="Roominfo.listOfGuestsNames.length===0" class="title p-4">No informations to display</div>
+  <div class="table-responsive">
+    <table *ngIf="Roominfo.listOfGuestsNames.length!==0" class="table table-bordered tblcontent">
+      <thead class="titles">
+        <tr>
+          <th> </th>
+          <th>Guest </th>
+          <th>number</th>
+          <th>Email</th>
+          <th>check in </th>
+          <th>check out </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let guestdata of Roominfo.listOfGuestsNames ; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{guestdata}}</td>
+          <td>{{Roominfo.listOfGuestNumbers[i]}}</td>
+          <td>{{this.Roominfo.guestHistoryID[i+1]}}</td>
+          <td>{{this.Roominfo.RoomCheckinDate[i+1]}}</td>
+          <td>{{this.Roominfo.RoomCheckoutDate[i+1]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <!-- history of door lock -->
-  <h2>Door lock history</h2>
-  <div *ngIf="Roominfo.doorHistoryArchive.length===1">No informations to display</div>
-  <table *ngIf="Roominfo.doorHistoryArchive.length!==1" class="table ">
-    <thead>
-      <tr>
+  <div class="d-flex justify-content-center">
+    <h1 class="title">Door lock history</h1>
 
-        <th scope="col">Action</th>
-        <th scope="col">Time</th>
+  </div>
+  <hr>
 
-      </tr>
-    </thead>
-    <tbody  >
-      <tr *ngFor="let hist of Roominfo.doorHistoryArchive | slice:1 | reverse">
-        <td>door {{hist.action}}</td>
-        <td>{{hist.time}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div *ngIf="Roominfo.doorHistoryArchive.length===1" class="title p-4" >No informations to display </div>
+  <div class="table-responsive">
+    <table *ngIf="Roominfo.doorHistoryArchive.length!==1" class="table table-bordered tblcontent ">
+      <thead class="titles">
+        <tr>
+
+          <th scope="col">Action</th>
+          <th scope="col">Time</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hist of Roominfo.doorHistoryArchive | slice:1 | reverse">
+          <td>door {{hist.action}}</td>
+          <td>{{hist.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

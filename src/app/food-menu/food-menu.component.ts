@@ -92,7 +92,7 @@ export class FoodMenuComponent implements OnInit {
 
   }
   ToInterface() {
-    this.router.navigate(['/guestinterface'])
+    this.router.navigate(['/guestprofile'])
   }
   onLogout() {
     this.loggingOut.loggingOut()

@@ -50,6 +50,7 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
+
 div.card-body{
     padding: 0;
 }
@@ -67,6 +68,7 @@ div.card-body{
    justify-content: center;
    padding: 15px;
    color: #1E2B31;
+height: max-content;
 }
 
 .data-item {

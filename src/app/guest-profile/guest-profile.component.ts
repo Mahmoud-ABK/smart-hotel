@@ -5,11 +5,11 @@ import { InAppOperationsService } from '../Services/in-app-operations.service';
 import { SignInUpService } from '../Services/sign-in-up.service';
 
 @Component({
-  selector: 'app-guest-interface',
-  templateUrl: './guest-interface.component.html',
-  styleUrls: ['./guest-interface.component.css']
+  selector: 'app-guest-profile',
+  templateUrl: './guest-profile.component.html',
+  styleUrls: ['./guest-profile.component.css']
 })
-export class GuestInterfaceComponent implements OnInit {
+export class GuestProfileComponent implements OnInit {
   currentEmail: string
   data: {
     FirstName: string;
