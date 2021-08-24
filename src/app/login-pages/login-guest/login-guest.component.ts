@@ -43,17 +43,17 @@ export class LoginGuestComponent implements OnInit {
   dates(email: string) {
 
     let ind: number
-    this.Rooms.find((a) => {
+    this.Rooms.forEach((a) => {
       if (a.guestHistoryID.includes(email)) {
         a.guestHistoryID.forEach((id, index) => {
           if (id == email) {
             ind = index
-            if (Date.parse(a.RoomCheckoutDate[ind]) > this.dateNow) {
+
               this.dateobject = {
                 checkin: a.RoomCheckinDate[ind],
                 checkout: a.RoomCheckoutDate[ind]
               }
-            }
+
 
           }
         })
@@ -81,7 +81,7 @@ export class LoginGuestComponent implements OnInit {
       this.signingIN.logginIn(form.value.email, form.value.guestpsw).then((data) => {
         console.log(data.user.email);
 
-        this.router.navigate(['/guestinterface'])
+        this.router.navigate(['/guestprofile'])
 
       }).catch((err: Error) => {
         this.invalid = true

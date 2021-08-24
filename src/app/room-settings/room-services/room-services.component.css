@@ -1,30 +1,33 @@
-:host{
+:host {
   height: 100%;
-font-family: Open Sans;
-font-size: x-large;
+  font-family: Open Sans;
+  font-size: x-large;
   padding-bottom: 20em;
-  background-color: #EAE2B6 !important;
+  background-color: #eae2b6 !important;
 }
 
-.form-check-input{
+.form-check-input {
   background-color: #f8f8f8;
-  }
-  .form-check-input:checked{
-    background-color: #E3B04B!important;
-    border: #dba331 !important;
-  }
-  input:focus {
-    outline: none !important;
-    border:1px solid #bd9035;
-    box-shadow: 0em 0em 1em #bd9035;
-   
-  }
-  input:disabled , button:disabled{
-    color: rgb(214, 213, 213) !important;
-  }
-  h4{
-    font-family: monserrat;
-    font-size: larger;
-    font-weight: bold !important;
-    color: #1E2B31 !important;
-  }
+}
+.form-check-input:checked {
+  background-color: #e3b04b !important;
+  border: #dba331 !important;
+}
+input:focus {
+  outline: none !important;
+  border: 1px solid #bd9035;
+  box-shadow: 0em 0em 1em #bd9035;
+}
+input:disabled,
+button:disabled {
+  color: rgb(161, 161, 161) !important;
+}
+h4 {
+  font-family: monserrat;
+  font-size: larger;
+  font-weight: bold !important;
+  color: #1e2b31 !important;
+}
+button:disabled{
+  background-color:  #B7C7CE !important ;
+}

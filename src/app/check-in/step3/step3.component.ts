@@ -69,8 +69,16 @@ export class Step3Component implements OnInit, OnDestroy {
     return this.sum
   }
   //sign Up
+  id:any
   checkIN(email, password) {
-    return this.SignInUp.signUp(email, password)
+    var guestdata
+    return this.SignInUp.signUp(email, password).then(
+      (data) => {
+         console.log(data.user.uid);
+         this.id=data.user.uid
+
+      }
+    )
 
 
 
@@ -99,7 +107,7 @@ export class Step3Component implements OnInit, OnDestroy {
     //checkin func
     this.checkIN(this.step1GuestData.Email, this.step1GuestData.Password).then(() => {
         //uploadta
-         this.SignInUp.GuestDataPusher(this.finalGuestData)
+         this.SignInUp.GuestDataPusher(this.finalGuestData,this.id)
     this.step2RoomsData.Roomids.forEach(element => {
       this.dataImporter.RoomUpdaterCHECKIN(element.id, this.finalGuestData.checkin, element.length)
       this.dataImporter.RoomUpdaterCHECKOUT(element.id, this.finalGuestData.checkout, element.length)
@@ -110,7 +118,7 @@ export class Step3Component implements OnInit, OnDestroy {
       console.log('pushing to Current guests done');
     })
     //logging out on signUp
-    this.SignInUp.loggingOut()
+     this.SignInUp.loggingOut()
     })
 
 

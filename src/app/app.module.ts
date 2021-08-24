@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CheckInComponent } from './check-in/check-in.component';
-import { GuestInterfaceComponent } from './guest-interface/guest-interface.component';
+import { GuestProfileComponent } from './guest-profile/guest-profile.component';
 import { RoomSettingsComponent } from './room-settings/room-settings.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { ManagerInterfaceComponent } from './manager-interface/manager-interface.component';
@@ -74,6 +74,9 @@ import {MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ImageuploadcompoComponent } from './check-in/imageuploadcompo/imageuploadcompo.component';
 import { DDirective } from './directives/d.directive';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 
@@ -94,7 +97,7 @@ import { DDirective } from './directives/d.directive';
     AppComponent,
     HomeComponent,
     CheckInComponent,
-    GuestInterfaceComponent,
+    GuestProfileComponent,
     RoomSettingsComponent,
     FoodMenuComponent,
     ManagerInterfaceComponent,
@@ -125,8 +128,11 @@ import { DDirective } from './directives/d.directive';
     ImageuploadcompoComponent,
     DDirective,
 
+
   ],
   imports: [
+    MatSidenavModule,
+    MatDividerModule,
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
@@ -151,6 +157,7 @@ import { DDirective } from './directives/d.directive';
     MatSlideToggleModule,
     NgxBootstrapIconsModule.pick(allIcons),
     NgPipesModule,
+    MatListModule,
     NotifierModule.withConfig({
       behaviour: {
 

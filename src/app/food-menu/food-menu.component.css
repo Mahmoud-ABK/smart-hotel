@@ -1,60 +1,77 @@
-:host{
+:host {
   font-family: open sans;
-background-color: #f8f8f8 !important;
-height: auto !important;
-
+  background-color: #f8f8f8 !important;
+  height: auto !important;
 }
-a:hover{
-cursor: pointer !important;
+a:hover {
+  cursor: pointer !important;
 }
-.Welcome{
+.Welcome {
   text-align: center;
- font-family: lc;
-font-style: italic;
-font-weight: bold;
-font-size: xx-large;
-color: #FDFAF6;
+  font-family: lc;
+  font-style: italic;
+  font-weight: bold;
+  font-size: xx-large;
+  color: #184454;
 }
-.titles{
-  font-family: alegreya ;
+.titles {
+  font-family: alegreya;
   font-size: 2.5em;
 }
 
-th, td , .list, .form-check{
+th,
+td,
+.list,
+.form-check {
   text-align: center;
   font-family: montserrat;
   font-size: large;
 }
 
-.styleButton{
-    margin: 3px;
-    background-color: #F8F8F8;
-    opacity: 0.8;
-    transition: 0.3s;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 0% !important;
-  }
+.styleButton {
+  margin: 3px;
+  background-color: #f8f8f8;
+  opacity: 0.8;
+  transition: 0.3s;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0% !important;
+}
 
-  .styleButton:hover{
-    opacity: 1;
-    cursor: pointer;
-  }
+.styleButton:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 
-  .buttonContent{
-    margin: 0 auto;
-    padding: 0px;
-    text-align: center;
-  }
-  .img{
-    display: block;
-    border-radius: 50%;
-    height: 75px !important;
-    width: 75px  !important;
-  }
-  .profile-info{
-    color: #F8F8F8;
-    font-size: larger;
-    font-family: montserrat;
-    line-height: normal;
-   }
+.buttonContent {
+  margin: 0 auto;
+  padding: 0px;
+  text-align: center;
+}
+.img {
+  display: block;
+  border-radius: 50%;
+  height: 75px !important;
+  width: 75px !important;
+}
+.profile-info {
+  color: #f8f8f8;
+  font-size: larger;
+  font-family: montserrat;
+  line-height: normal;
+}
+label.btn {
+  background-color: #184454;
+}
+label.btn:checked {
+  background-color: #f8f8f8;
+}
+.btn.btn-primary,
+.btn.btn-primary:checked,
+.btn.btn-primary:active,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  box-shadow: none !important;
+
+  background-color: #184454 !important;
+}

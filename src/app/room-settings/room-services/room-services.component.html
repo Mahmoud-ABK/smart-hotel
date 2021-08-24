@@ -1,4 +1,4 @@
-<div class="container mt-4" style="background-color: #FCF6EE; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+<div class="container mt-4" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container py-2 ">
 
@@ -36,8 +36,9 @@
 
 
       <div class="row d-flex flex-row justify-content-center">
-        <div class="col-4 d-flex flex-row justify-content-end"><button class=" submit-button " [disabled]="!disable || dateTimeInput.value<todaysDate"
-            mat-button disabled type="submit" style="background-color: #3d3920; color: #f8f8f8;" >Send demand</button>
+        <div class="col-10 col-sm-8 col-md-4 col-lg-2 d-flex flex-row justify-content-end"><button class="w-100 submit-button " [disabled]="dateTimeInput.value<todaysDate"
+            mat-button disabled type="submit" style="background-color: #CD7E2B; color: #f8f8f8;" >Send demand</button>
+        </div>
       </div>
     </div>
     
@@ -46,7 +47,7 @@
   </form>
 
 </div>
-<div class="container py-2 mt-3" style="background-color: #FCF6EE; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+<div class="container py-2 mt-3" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <div class="row m-2">
     <h4>Food service </h4>
     <hr class="w-50">
@@ -57,6 +58,6 @@
   </div>
   <div class="row d-flex flex-row  m-2 pt-2">
     <div class="col-12 d-flex flex-row r"><button class="button " (click)="ToFoodmenu()" mat-button type="button"
-        style="background-color: #3d3920; color: #f8f8f8;">Food menu</button></div>
+        style="background-color: #CD7E2B; color: #f8f8f8;">Food menu</button></div>
   </div>
 </div>

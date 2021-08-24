@@ -1,6 +1,7 @@
 :host{
   font-family: Open Sans;
 
+
 }
 img:hover{
 cursor: pointer !important;
@@ -9,14 +10,14 @@ cursor: pointer !important;
 background-color: whitesmoke;
 }
 .form-check-input:checked{
-  background-color: #bd9035 !important;
-  border: #bd9035;
+  background-color: #c49a46 !important;
+  border: #c49a46;
 }
 
 input:focus {
   outline: none !important;
-  border:1px solid #bd9035;
-  box-shadow: 0em 0em 1em #bd9035;
+  border:1px solid #c49a46;
+  box-shadow: 0em 0em 1em #c49a46;
 }
 h4{
   font-family: monserrat;
@@ -34,7 +35,7 @@ span{
 }
 
 :host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
-  background-color:  #bd9035;
+  background-color:  #c49a46;
   /* hedhi  aka twila ta3 slide toggle*/
 }
 
@@ -44,7 +45,7 @@ span{
 }
 
 :host ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-ripple .mat-ripple-element {
-  background-color: #bd9035;
+  background-color: #c49a46;
    /* jsp bedhabt ta3 chenhi hedhi ama dhaherli aka zay doura li 7dhe e slide toggle wa9t l click ama jsp*/
 }
 .outlinhot{

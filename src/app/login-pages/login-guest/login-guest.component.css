@@ -12,20 +12,22 @@ h1{
 .bg{
   padding-bottom: 4.5em;
   height: 100% !important;
-  background-color: #FCF6EE;
+  background-image:  linear-gradient(to left bottom, #184454, #416271, #67838f, #8fa4ae, #b7c7ce);
+
 }
+
 .form-check-input{
   background-color: whitesmoke;
   }
   .form-check-input:checked{
-    background-color: #bd9035 !important;
-    border: #bd9035;
+    background-color: #CD7E2B !important;
+    border: #CD7E2B;
   }
 
   input:focus {
     outline: none !important;
-    border:1px solid #bd9035;
-    box-shadow: 0em 0em 1em #bd9035;
+    border:1px solid #CD7E2B;
+    box-shadow: 0em 0em 1em #CD7E2B;
   }
   button{
     background-color:  #1E2B31;
@@ -42,6 +44,6 @@ h1{
 
   }
   button:hover{
-    background-color: transparent;
-    color:  #1E2B31;
+    background-color: #b7c7ce !important;
+    color:  #CD7E2B;
   }

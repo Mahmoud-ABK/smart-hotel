@@ -4,6 +4,8 @@ import { formatDate } from '@angular/common';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { RoomModel } from 'src/app/Models/room-model';
 import { map } from 'rxjs/operators';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-step2',
@@ -16,41 +18,6 @@ export class Step2Component implements OnInit {
     this.step3display.emit(true)
 
   }
-  /*RoomsTest: Array<{ Roomid: number, price: number, checkinRoom: Array<string>, checkoutRoom: Array<any> }> = [
-     {
-       Roomid: 1,
-       price: 90,
-       checkinRoom: [],
-       checkoutRoom: [],
-     },
-     {
-       Roomid: 2,
-       price: 120,
-       checkinRoom: ["2021-07-10"],
-       checkoutRoom: ["2021-07-12"],
-
-     },
-     {
-       Roomid: 3,
-       price: 150,
-       checkinRoom: ["2021-07-13", "2021-07-17"],
-       checkoutRoom: ["2021-07-16", "2021-07-19"],
-     },
-     {
-       Roomid: 4,
-       price: 180,
-       checkinRoom: ["2021-08-04", "2021-08-25", "2021-10-18"],
-       checkoutRoom: ["2021-08-22", "2021-09-18", "2021-12-18"],
-     },
-     {
-       Roomid: 5,
-       price: 120,
-       checkinRoom: ["2021-07-10"],
-       checkoutRoom: ["2021-07-12"],
-
-     },
-   ] */
-
 
   RoomList: RoomModel[] = []
   AvailableRoomList: Array<RoomModel> = []
@@ -73,9 +40,12 @@ export class Step2Component implements OnInit {
     id: number,
     length: number
   }> = []
+modalcloser(){
+  this.confirmed=true
+  this.modalService.dismissAll()
+}
 
-
-  constructor(private dataImporter: DataImporterService) {
+  constructor(private dataImporter: DataImporterService , public modalService: NgbModal) {
     this.dataImporter.RoomImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
@@ -90,14 +60,13 @@ export class Step2Component implements OnInit {
 
 
 
+
   }
+  modalopener(content){
+    this.modalService.open(content, { centered: true , size: 'lg' ,  scrollable: true  })
 
+  }
   ngOnInit(): void {
-
-
-
-
-
 
   }
 
@@ -141,10 +110,10 @@ export class Step2Component implements OnInit {
         console.log(this.floortype);
       } else if (avRoom.RoomPrice == 150) {
         this.seaviewtype = true
-        console.log(this.seaviewtype );
+        console.log(this.seaviewtype);
       } else {
         this.seaviewfloortype = true
-        console.log(this.seaviewtype );
+        console.log(this.seaviewtype);
       }
     })
 
@@ -160,25 +129,39 @@ export class Step2Component implements OnInit {
   }
 
   selector(room: RoomModel) {
-    this.selectedRooms.push(room)
-    // console.log(this.selectedRooms);
+    if (!(this.selectedRooms.includes(room))) {
+      this.selectedRooms.push(room)
+      console.log(this.selectedRooms);
+    } else {
+      this.selectedRooms.forEach((selected, index) => {
+        if (selected === room) {
+          this.selectedRooms.splice(index, 1);
+        }
 
+      });
+      console.log(this.selectedRooms);
+
+
+    }
+
+
+    // console.log(this.selectedRooms);
 
   }
   deleter(room: RoomModel) {
     this.selectedRooms.forEach((selected, index) => {
       if (selected === room) {
         this.selectedRooms.splice(index, 1);
-
       }
 
     });
-    // console.log(this.selectedRooms);
-    this.roomIDS.forEach(id => {
+    if (this.selectedRooms.length==0) {
+      this.modalService.dismissAll()
 
+    }
+    
+    console.log(this.selectedRooms);
 
-
-    });
   }
   inialize() {
     this.selectedRooms = [];
@@ -211,6 +194,24 @@ export class Step2Component implements OnInit {
 
     })
     this.step3()
+  }
+  type(price: number) {
+    switch (price) {
+      case 90:
+        return ' oridnary '
+        break;
+      case 120:
+        return ' ground floor '
+        break;
+      case 150:
+        return ' sea view'
+        break;
+      case 180:
+        return ' ground floor with sea view'
+        break;
+
+    }
+
   }
 
 }

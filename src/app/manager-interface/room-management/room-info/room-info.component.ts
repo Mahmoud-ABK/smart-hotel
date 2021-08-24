@@ -39,6 +39,8 @@ export class RoomInfoComponent implements OnInit {
             this.Roominfo.doorOpen = result.doorOpen
             this.Roominfo.doorHistoryArchive = this.ToArray(result.doorHistoryArchive)
             this.Roominfo.WaterTemperature = result.WaterTemperature
+            console.log(result.WaterTemperature);
+
             //Guestrelated
             this.Roominfo.listOfGuestsNames = Namenum[0]
             this.Roominfo.listOfGuestNumbers = Namenum[1]
@@ -90,6 +92,23 @@ export class RoomInfoComponent implements OnInit {
       } else { result.push('Off') }
     })
     return result
+  }
+  typechecker(price){
+    switch (price) {
+      case 90:
+        return ' oridnary '
+        break;
+      case 120:
+        return ' ground floor '
+        break;
+      case 150:
+        return ' sea view'
+        break;
+      case 180:
+        return ' ground floor with sea view'
+        break;
+
+    }
   }
 
 }
