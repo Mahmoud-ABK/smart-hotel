@@ -29,7 +29,7 @@ img{
   height: 100% !important;
 }
 .big-container{
-  background-color: #FCF6EE;
+  background-color: #B7C7CE;
   padding: 0px !important;
   height: 100% !important;
 }
@@ -114,11 +114,12 @@ div.card-body{
   padding: 0;
 }
 
-.titles {
-  background-color: #d4b78d;
+.titles{
+  background-color: #184454 ;
   padding: 20px;
-  color: #f8f8f8;
+
 }
+.titles *{ color: #f8f8f8 !important;}
 
 
 #reporter-data{

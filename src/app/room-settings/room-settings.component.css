@@ -32,7 +32,7 @@ img{
 .room-ctrl
 {
   padding-bottom: 3em;
-  background-color: #FCF6EE !important;
+  background-color: #B7C7CE !important;
 }
 .profile-name ,.profile-info{
  color: #F8F8F8;
@@ -42,7 +42,7 @@ img{
 }
 
 .active{
-  background-color: #eaddca !important;
+  background-color:  #B7C7CE!important;
   color: #1E2B31 !important;
   border-color: #eaddca;
 }
