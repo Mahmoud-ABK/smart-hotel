@@ -29,15 +29,15 @@ export class SignInUpService {
 
     data.currents().snapshotChanges().pipe(map(changes => changes.map(r => (r.payload.val())))).subscribe((res) => {
       this.currentGuests = res
-      
+
 
     })
   }
   signUp(email: string, password: any) {
     return this.auth.createUserWithEmailAndPassword(email, password)
   }
-  GuestDataPusher(GuestData: GuestDataModel): any {
-    return this.db.database.ref().child('GuestList').push(GuestData)
+  GuestDataPusher(GuestData: GuestDataModel,id:any): any {
+    return this.db.database.ref().child('GuestList').update({[id]:GuestData})
   }
   pusherToCurrentGuests(email) {
     return this.db.object('/CurrentGuests').update({ [this.currentGuests.length]: email })
