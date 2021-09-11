@@ -24,6 +24,7 @@ export class Step2Component implements OnInit {
   RoomlistDisplay: boolean = false
   add = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en')) + (1000 * 60 * 60 * 24)
   chImin = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  // ch1= date;
   chOmin = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');

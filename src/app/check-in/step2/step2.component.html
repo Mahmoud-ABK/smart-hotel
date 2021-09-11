@@ -62,7 +62,7 @@
                       <mat-list-item> <span class="tyn pe-1">Type: </span> {{type(Aroom.RoomPrice)}} room
                       </mat-list-item>
                       <mat-list-item> <span class="tyn pe-1">N° of people :</span> {{Aroom.RoomPrice===180?'4 persons' :
-                        '3 persons'}} </mat-list-item>
+                        Aroom.RoomPrice===90? '2 persons': '3 people'}} </mat-list-item>
                     </mat-list>
                   </mat-card-content>
                   <mat-card-actions>
