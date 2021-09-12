@@ -1,4 +1,4 @@
-<div class="container mt-4" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+<div class="container mt-4" style="padding: 30px 0;background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container py-2 ">
 
@@ -36,7 +36,7 @@
 
 
 
-      <div class="row d-flex flex-row justify-content-center">
+      <div class="row d-flex flex-row justify-content-start" style="padding: 0 30px">
         <div class="col-10 col-sm-8 col-md-4 col-lg-2 d-flex flex-row justify-content-end"><button
             class="w-100 submit-button " [disabled]="dateTimeInput.value<todaysDate" mat-button disabled type="submit"
             style="background-color: #CD7E2B; color: #f8f8f8;">Send demand</button>
@@ -49,7 +49,7 @@
 
 </div>
 
-<div class="container py-2 mt-3" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+<div class="container py-2 mt-3" style="padding: 30px !important;background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <div class="row m-2">
     <h4>Food service </h4>
     <hr class="w-50">

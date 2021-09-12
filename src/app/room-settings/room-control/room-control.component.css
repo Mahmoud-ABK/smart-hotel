@@ -63,3 +63,7 @@ span{
   border-color: blue;
 
 }
+
+button{
+  border-radius: 4px !important;
+}
