@@ -63,7 +63,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
+ text-transform: capitalize;
   padding-top: 30px;
 }
 .form-row .form-group {

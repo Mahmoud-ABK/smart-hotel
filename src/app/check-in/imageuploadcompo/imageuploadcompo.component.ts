@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { NgForm } from '@angular/forms';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
@@ -17,6 +17,11 @@ url:any
 displayername($event){
 
 }
+@Output() step2display: EventEmitter<boolean> = new EventEmitter<boolean>()
+step2() {
+  this.step2display.emit(true)
+
+}
 
 // C/O https://placeholder.com/"
   ref: AngularFireStorageReference;
@@ -28,7 +33,7 @@ displayername($event){
   prenom
   public files: any[] = [];
   constructor(public InApp:InAppOperationsService,private dataImporter: DataImporterService, private firestorage: AngularFireStorage, public signingIn: SignInUpService) {
-
+this.prenom=dataImporter.step1GuestData.Firstname
 
    }
   onFileSelected(pFileList: File[]) {
