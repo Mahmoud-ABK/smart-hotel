@@ -22,11 +22,11 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     c: true,
 
   }
-  lights: [Boolean, Boolean, Boolean, Boolean] = [
-    false,
-    false,
-    false,
-    false,
+  lights: [string,string, string, string] = [
+    "false",
+    "false",
+    "false",
+    "false",
   ]
   id: number
   constructor(public inApp: InAppOperationsService, private _snackBar: MatSnackBar,) {
@@ -113,7 +113,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     }
   }
   onornot() {
-    if (this.lights.includes(false)) {
+    if (this.lights.includes("false")) {
       this.OnOrOff = 'on'
 
     } else {
@@ -125,14 +125,14 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     console.log(event);
 
     if (!event) {
-      if (this.lights = [true, true, true, true]) {
+      if (this.lights = ["true","true" ,"true","true"]) {
 
-        this.lights = [false, false, false, false]
+        this.lights = ["false", "false","false","false"]
         console.log(this.lights);
 
       } else {
 
-        this.lights = [true, true, true, true]
+        this.lights = ["true","true","true","true"]
 
       }
 
@@ -141,7 +141,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
 
     } else {
 
-      this.lights = [true, true, true, true]
+      this.lights = ["true","true","true","true"]
       console.log(this.lights);
 
 

@@ -86,7 +86,7 @@ export class InAppOperationsService {
       Roomhumidity: h
     })
   }
-  updatingRoomLighting(key: any, tem: number, h: number, light: boolean[], w: number) {
+  updatingRoomLighting(key: any, tem: number, h: number, light: string[], w: number) {
     return this.db.object('/Rooms/' + String(key)).update({
       RoomLighting: light,
     })
