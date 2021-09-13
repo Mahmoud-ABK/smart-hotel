@@ -28,6 +28,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     "false",
     "false",
   ]
+
   id: number
   constructor(public inApp: InAppOperationsService, private _snackBar: MatSnackBar,) {
 

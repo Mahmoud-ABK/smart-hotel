@@ -457,7 +457,13 @@ h3 {
 
   .welcome-message{
     display: block !important;
+    margin: 48px 10px;
   }
+
+  h1.mt-5.aos-init.aos-animate{
+    margin: 1px !important;
+  }
+
 }
 
 @media (max-width: 957px){

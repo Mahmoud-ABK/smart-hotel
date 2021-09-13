@@ -110,7 +110,7 @@
       <div class="col-5 col-lg-5" style="font-weight: bolder;">Turn {{OnOrOff}} all</div>
       <div class="col">
         <div class="form-check form-switch">
-          <mat-slide-toggle [checked]="lights[0] && lights[1] && lights[2] && lights[3]"
+          <mat-slide-toggle [checked]="lights[0]=='true' && lights[1]=='true' && lights[2]=='true' && lights[3]=='true'" 
             (change)='turner($event.checked)' class="" type="checkbox"></mat-slide-toggle>
         </div>
       </div>
