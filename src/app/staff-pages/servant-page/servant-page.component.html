@@ -5,7 +5,7 @@
             <div><img src="./assets/smarthotellogo.svg" style="width: 110px; height: auto;"></div>
             <span class="navbar-brand mb-0 h1 nav-item">Servant Page</span>
             <div class="nav-item btn-group" role="group" aria-label="Basic example">
-                <button  (click)="logout()" type="button" class="btn">Log out</button>
+                <button  (click)="logout()" type="button" class="btn logout">Log out</button>
             </div>
         </nav>
     </div>
@@ -13,7 +13,7 @@
 
     <div class="row d-flex justify-content-center" style="min-height: 100vh;">
 
-        <div *ngFor="let service of services ;  let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div *ngFor="let service of services ;  let i=index" class="d-flex justify-content-center m-2 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div class="card">
                 <div class="card-body">
                     <div class="titles">
@@ -28,7 +28,7 @@
                             <p><span id="zina">Proposed Time:</span> {{service.time}}</p>
                         </div>
                         <div class="data-item d-inline-flex justify-content-end w-100">
-                            <button type="button" class="btn delete-button" (click)="remove(service)">Remove</button>
+                            <button type="button" class="btn deletebutton" (click)="remove(service)">Remove</button>
                         </div>
                     </div>
                 </div>

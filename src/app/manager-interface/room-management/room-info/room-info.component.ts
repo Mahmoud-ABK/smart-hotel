@@ -83,10 +83,10 @@ export class RoomInfoComponent implements OnInit {
 
 
   }
-  RoomLightening(lightStat: [Boolean, Boolean, Boolean, Boolean]): string[] {
+  RoomLightening(lightStat: boolean[]): string[] {
     const result: string[] = []
     lightStat.forEach(bool => {
-      if (bool) {
+      if (bool=true) {
         result.push('On')
 
       } else { result.push('Off') }

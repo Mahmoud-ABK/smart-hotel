@@ -89,7 +89,6 @@ const routes: Routes = [
     path: "servantpage",
     component: ServantPageComponent,
     canActivate: [ServantauthGuard]
-
   },
   {
     path: "kitchenpage",

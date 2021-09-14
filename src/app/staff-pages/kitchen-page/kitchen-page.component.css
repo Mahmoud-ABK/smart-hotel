@@ -25,6 +25,16 @@
     font-weight: bold;
     font-size: 18px;
 }
+.logout{
+    opacity: 0.7;
+    transition: 0.3s;
+    text-align: center;
+    border-radius: 0% !important;
+}
+.logout:hover{
+    opacity: 1;
+}
+
 
 .logout:hover{
     opacity: 0.8;
@@ -46,13 +56,14 @@
 .card-container{
     padding: 50px 0;
     flex-direction: row;
-    min-height: 100vh;
+    
     border: none;
 }
 
 .titles {
     background-color: #d4b78d;
     padding: 20px;
+    text-align: center;
 }
 
 h5{
@@ -71,6 +82,7 @@ h6{
     background-color: #f8f8f8;
     margin: 20px ;
     max-width: 350px;
+    max-height: 500px;
     padding: 0;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
@@ -80,16 +92,12 @@ h6{
     margin-top: 0 !important;
 }
 
-.finish-button {
-    bottom:0;
-    right:0;
-    padding: 10px;
-}
 
 .delete-button {
     background-color: #1E2B31;
     color: #f8f8f8;
     transition: 0.2s;
+    margin:20px
 }
 
 .delete-button:hover {
@@ -99,4 +107,7 @@ h6{
     font-size: 1em;
     font-weight:700;
     
+}
+#okhtzina{
+    color: #d4b78d;
 }

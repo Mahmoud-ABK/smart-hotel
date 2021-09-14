@@ -14,14 +14,14 @@
     <div class="form-group col-lg-12 ">
       <label for="checkindate" class="date-label">Check-in Date</label>
       <input type="date" class="form-control" [(ngModel)]="checkin" (change)="inialize()"
-        [ngModelOptions]="{standalone: true}" id="checkindate" min="{{chImin}}" #datein="ngModel" ngMode>
+        [ngModelOptions]="{standalone: true}" id="checkindate" min="{{chImin}}" #datein="ngModel" ngModel>
 
-    </div>
+    </div>*
 
     <div class="form-group col-lg-12">
       <label for="checkoutdate" class="date-label">Check-out Date</label>
       <input type="date" class="form-control" [(ngModel)]="checkout" [ngModelOptions]="{standalone: true}"
-        id="checkoutdate" min="{{checkin}}" [value]="datein.value" #dateout="ngModel" (change)="inialize()" ngMode>
+        id="checkoutdate" min="{{chOmin}}"  #dateout="ngModel" (change)="inialize()" ngModel>
     </div>
 
     <div *ngIf=" ( (datein.value >= dateout.value) && (dateout.touched || datein.touched ))" class="text-center ; "

@@ -23,10 +23,9 @@ button:disabled {
   color: rgb(161, 161, 161) !important;
 }
 h4 {
-  font-family: monserrat;
-  font-size: larger;
-  font-weight: bold !important;
-  color: #1e2b31 !important;
+    font-family: monserrat;
+    font-size: 24px;
+    font-weight: 900;
 }
 button:disabled{
   background-color:  #B7C7CE !important ;

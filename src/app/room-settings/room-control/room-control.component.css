@@ -48,18 +48,22 @@ span{
   background-color: #c49a46;
    /* jsp bedhabt ta3 chenhi hedhi ama dhaherli aka zay doura li 7dhe e slide toggle wa9t l click ama jsp*/
 }
-.outlinhot{
+::ng-deep .outlinhot{
   margin: 0;
   color: #dc3545;
   border-color: #dc3545;
 }
-.outlinmedium{
+::ng-deep .outlinmedium{
   color: green;
   border-color: green;
 
 }
-.outlinecold
+::ng-deep .outlinecold
 {color: blue;
   border-color: blue;
 
+}
+
+button{
+  border-radius: 4px !important;
 }

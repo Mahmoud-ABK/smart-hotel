@@ -39,9 +39,9 @@
         </div>
 
       </div>
-      <div class="row d-flex flex-row justify-content-end py-3">
-        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
-          <button mat-button class="subtn button w-100 " type="button"
+      <div class="row d-flex flex-row justify-content-start py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-start">
+          <button mat-button class="subtn button w-50 " type="button"
             (click)="Updater('RoomTemperature',undefinedtem(tempval.value),tempval.disabled,26)"
             style="color: #f8f8f8; background-color: #bd9035;">
             Save
@@ -86,9 +86,9 @@
             [disabled]="disable.b" required #humval="ngModel" />
         </div>
       </div>
-      <div class="row d-flex flex-row justify-content-end py-3">
-        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
-          <button mat-button class="subtn button w-100 " type="button"
+      <div class="row d-flex flex-row justify-content-start py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-start">
+          <button mat-button class="subtn button w-50 " type="button"
             (click)="Updater('Roomhumidity',undefinedhum(humval.value),humval.disabled,30)"
             style="color: #f8f8f8; background-color: #bd9035;">
             Save
@@ -107,15 +107,15 @@
       <hr class="w-75">
     </div>
     <div class="row m-3 ">
-      <div class="col-5 col-lg-5">Turn {{OnOrOff}} all</div>
+      <div class="col-5 col-lg-5" style="font-weight: bolder;">Turn {{OnOrOff}} all</div>
       <div class="col">
         <div class="form-check form-switch">
-          <mat-slide-toggle [checked]="lights[0] && lights[1] && lights[2] && lights[3]"
+          <mat-slide-toggle [checked]=' lights[0] && lights[1]  && lights[2]  && lights[3] '
             (change)='turner($event.checked)' class="" type="checkbox"></mat-slide-toggle>
         </div>
       </div>
     </div>
-    <div class="row m-3 ps-4">
+    <div class="row m-3">
       <div class="col-5 col-lg-5">Bedroom</div>
       <div class="col">
         <div class="form-check form-switch">
@@ -124,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div class="row m-3 ps-4">
+    <div class="row m-3">
       <div class="col-5 col-lg-5">Hall</div>
       <div class="col">
         <div class="form-check form-switch">
@@ -133,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="row m-3 ps-4">
+    <div class="row m-3">
       <div class="col-5 col-lg-5">living room</div>
       <div class="col">
         <div class="form-check form-switch">
@@ -142,7 +142,7 @@
         </div>
       </div>
     </div>
-    <div class="row m-3 ps-4">
+    <div class="row m-3">
       <div class="col-5 col-lg-5">bathroom</div>
       <div class="col">
         <div class="form-check form-switch">
@@ -150,9 +150,9 @@
             id="lightswitch4" (change)="onornot()"></mat-slide-toggle>
         </div>
       </div>
-      <div class="row d-flex flex-row justify-content-end py-3">
-        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
-          <button mat-button class="subtn button w-100 " type="button" (click)="Updater('RoomLighting',lights,false,undefined)"
+      <div class="row d-flex flex-row justify-content-start py-3">
+        <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-start">
+          <button mat-button class="subtn button w-50 " type="button" (click)="Updater('RoomLighting', lights,false,undefined)"
             style="color: #f8f8f8; background-color: #bd9035;">
             Save
           </button>
@@ -197,9 +197,9 @@
             [disabled]="disable.c" #watertempval="ngModel" />
         </div>
       </div>
-      <div class="row d-flex flex-row justify-content-end py-3">
+      <div class="row d-flex flex-row justify-content-start py-3">
         <div class="col-11 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-start">
-          <button mat-button class="subtn button w-100 " type="button"
+          <button mat-button class="subtn button w-50 " type="button"
             (click)="Updater('WaterTemperature',undefinedwatertemp(watertempval.value),watertempval.disabled,37)"
             style="color: #f8f8f8; background-color: #bd9035;">
             Save
@@ -207,9 +207,9 @@
         </div>
       </div>
     </div>
-    <div class="row d-flex flex-row justify-content-center">
+    <div class="row d-flex flex-row justify-content-end">
       <div class="col-12 col-sm-10 col-md-5 col-lg-3  d-flex flex-row justify-content-end">
-        <button mat-button class="subtn button w-100 " type="submit" style="color: #f8f8f8; background-color: #bd9035;">
+        <button mat-button class="subtn button w-75 " type="submit" style="color: #f8f8f8; background-color: #bd9035;">
           Save all
         </button>
       </div>

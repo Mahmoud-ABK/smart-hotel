@@ -1,12 +1,14 @@
-<div class="container mt-4" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+<div class="container mt-4" style="padding: 30px 0;background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container py-2 ">
+
       <div class="row m-2">
         <h4>Room cleaning service</h4>
-
         <hr class="w-50">
-
       </div>
+
+
+
       <div class="row m-3">
         <!-- <div class="col-lg-5">- </div> -->
         <!-- <div class="col">
@@ -16,27 +18,38 @@
           </div>
         </div> -->
       </div>
+
+
       <div class="row m-3">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-8 py-1" style="line-height: normal;">Do you want your room to be cleaned? When?</div>
+
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 py-1" style="line-height: normal;">Do you want your room to be
+          cleaned? When?</div>
         <div class="col-12 col-sm-10 col-md-6 col-lg-3 col-xl-3 d-flex flex-row py-1">
 
           <input ngModel id="cleaningDateTime" name="cleaningDateTime" class="form-control" type="datetime-local"
-            placeholder="date and time" [min]="todaysDate"  #dateTimeInput="ngModel">
+            placeholder="date and time" [min]="todaysDate" #dateTimeInput="ngModel">
 
 
         </div>
       </div>
-      <div class="row d-flex flex-row justify-content-center">
-        <div class="col-10 col-sm-8 col-md-4 col-lg-2 d-flex flex-row justify-content-end"><button class="w-100 submit-button " [disabled]="dateTimeInput.value<todaysDate"
-            mat-button disabled type="submit" style="background-color: #CD7E2B; color: #f8f8f8;" >Send demand</button>
+
+
+
+      <div class="row d-flex flex-row justify-content-start" style="padding: 0 30px">
+        <div class="col-10 col-sm-8 col-md-4 col-lg-2 d-flex flex-row justify-content-end"><button
+            class="w-100 submit-button " [disabled]="dateTimeInput.value<todaysDate" mat-button disabled type="submit"
+            style="background-color: #CD7E2B; color: #f8f8f8;">Send demand</button>
         </div>
       </div>
+
+
     </div>
-
   </form>
 
 </div>
-<div class="container py-2 mt-3" style="background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+
+<div class="container py-2 mt-3" style="padding: 30px !important;background-color: white; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
   <div class="row m-2">
     <h4>Food service </h4>
     <hr class="w-50">

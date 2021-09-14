@@ -23,6 +23,7 @@ import { map } from 'rxjs/operators';
 export class SignInUpService {
   database: AngularFireList<any>
   currentGuests: string[]
+  stepper=[false,false,false]
 
   constructor(public auth: AngularFireAuth, public db: AngularFireDatabase, public router: Router, public InApp: InAppOperationsService, public data: DataImporterService) {
     /* db.database.ref('/').child('GuestList').child() */

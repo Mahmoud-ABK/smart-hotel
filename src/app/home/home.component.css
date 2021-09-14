@@ -87,13 +87,13 @@
   padding: 0.25em 1em 1em 1em;
 }
 
+
 .booking-tab-title, .booking-tab-button{
   color: #1E2B31;
   font-weight: bold;
   font-size: 30px;
   font-family: alegreya;
   vertical-align: center !important;
-  transition: 1000ms;
 }
 
 label{
@@ -113,11 +113,6 @@ input:hover, input:focus {
   box-shadow: none;
   border: none;
   border-bottom: #262626 2.5px solid;
-}
-
-.booking-tab-button:hover, .booking-tab-button:focus{
-  background-color:  #fcf6eea4;
-  /* -webkit-transition:  */
 }
 
 .submit-button, .reservation-button{
@@ -456,9 +451,19 @@ h3 {
 }
 
 @media (max-width: 1108px){
-  .booking-tab{
-    display: none;
+  form{
+    display: none !important;
   }
+
+  .welcome-message{
+    display: block !important;
+    margin: 48px 10px;
+  }
+
+  h1.mt-5.aos-init.aos-animate{
+    margin: 1px !important;
+  }
+
 }
 
 @media (max-width: 957px){
@@ -482,3 +487,6 @@ h3 {
   top: 0;
 }
 .gm-style > div:not(:first-child) { display: none; }
+::ng-deep .mat-focus-indicator.navbar-toggler.mat-mini-fab.mat-button-base.mat-primary{
+  background-color: #1E2B31;
+}

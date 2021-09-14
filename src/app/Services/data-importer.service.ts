@@ -21,7 +21,7 @@ interface listOfFood {
   providedIn: 'root'
 })
 export class DataImporterService {
-  step1GuestData: Step1data
+  step1GuestData: Step1data 
   step2RoomData: {
     Roomids: Array<{
       id: number,

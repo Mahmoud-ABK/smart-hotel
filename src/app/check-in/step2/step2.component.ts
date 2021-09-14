@@ -4,7 +4,7 @@ import { formatDate } from '@angular/common';
 import { DataImporterService } from 'src/app/Services/data-importer.service';
 import { RoomModel } from 'src/app/Models/room-model';
 import { map } from 'rxjs/operators';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -18,16 +18,15 @@ export class Step2Component implements OnInit {
     this.step3display.emit(true)
 
   }
-
+  newres: any = new Date()
   RoomList: RoomModel[] = []
   AvailableRoomList: Array<RoomModel> = []
   RoomlistDisplay: boolean = false
-  add = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en')) + (1000 * 60 * 60 * 24)
+
   chImin = formatDate(new Date(), 'yyyy-MM-dd', 'en');
-  // ch1= date;
-  chOmin = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  chOmin = this.addtodate(1)
   checkin: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
-  checkout: any = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+  checkout: any =  this.addtodate(this.dataImporter.step1GuestData.nights);
 
   selectedRooms: RoomModel[] = [];
   confirmed: boolean = false
@@ -41,12 +40,37 @@ export class Step2Component implements OnInit {
     id: number,
     length: number
   }> = []
-modalcloser(){
-  this.confirmed=true
-  this.modalService.dismissAll()
-}
+  date
+  modalcloser() {
+    this.confirmed = true
+    this.modalService.dismissAll()
+  }
+  addtodate(days: number) {
+    let add = Date.parse(formatDate(new Date(), 'yyyy-MM-dd', 'en')) + (1000 * 60 * 60 * 24 * days)
 
-  constructor(private dataImporter: DataImporterService , public modalService: NgbModal) {
+    return formatDate(add, 'yyyy-MM-dd', 'en');
+  }
+
+
+  constructor(private dataImporter: DataImporterService, public modalService: NgbModal) {
+
+
+    this.date = this.dataImporter.step1GuestData.nights
+
+    console.log(typeof this.checkin);
+    let newDate = new Date(this.checkin);
+    newDate.setDate(newDate.getDate() + this.date);
+   console.log(this.addtodate(this.dataImporter.step1GuestData.nights));
+
+
+
+
+
+
+    // this.newres.setDate((new Date(this.checkout)).getDate() + );
+    // this.newres  = this.newres.getTime()/1000;
+    // console.log(this.newres);
+
     this.dataImporter.RoomImporter().snapshotChanges()
       .pipe(map(changes => changes.map(r => ({ roomid: r.payload.key, ...r.payload.val() })))).subscribe(result => {
 
@@ -63,13 +87,22 @@ modalcloser(){
 
 
   }
-  modalopener(content){
-    this.modalService.open(content, { centered: true , size: 'lg' ,  scrollable: true  })
+  modalopener(content) {
+    this.modalService.open(content, { centered: true, size: 'lg', scrollable: true })
 
   }
   ngOnInit(): void {
 
+
+
+
   }
+
+  addDays(date: Date, days: number): Date {
+
+    return date;
+  }
+
 
   checker() {
     this.RoomlistDisplay = true
@@ -156,11 +189,11 @@ modalcloser(){
       }
 
     });
-    if (this.selectedRooms.length==0) {
+    if (this.selectedRooms.length == 0) {
       this.modalService.dismissAll()
 
     }
-    
+
     console.log(this.selectedRooms);
 
   }

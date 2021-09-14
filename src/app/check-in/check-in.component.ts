@@ -16,12 +16,22 @@ export class CheckInComponent implements OnInit {
   step4=false
   step2=false
   step3=false
+  imgup=false
+
   displayer(event)
   {
     this.step4=event
   }
+  displayer2(event)
+  {
+    this.step2=event
+  }
+   displayerimgup(event)
+  {
+    this.imgup=event
+  }
   displayername($event){
-    
+
   }
   constructor( private _formBuilder: FormBuilder, public dataImporter:DataImporterService) {
 

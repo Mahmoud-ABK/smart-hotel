@@ -15,7 +15,7 @@
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-sm-12 col-md-10 col-lg-7 col-xl-7  ">
-            <app-step1></app-step1>
+            <app-step1 (stepimgdisplay)="displayerimgup($event)"></app-step1>
             <!-- <app-step2></app-step2> -->
 <!--
               <app-imageuploadcompo></app-imageuploadcompo> -->
@@ -28,8 +28,8 @@
       <!-- <ng-template matStepLabel>Step2</ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7   ">
-            <app-imageuploadcompo (namedisplay)="displayername($event)"></app-imageuploadcompo>
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7   " *ngIf="imgup">
+            <app-imageuploadcompo (step2display)="displayer2($event)"></app-imageuploadcompo>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
       <!-- <ng-template matStepLabel>Step3</ng-template> -->
       <div class="container-fluid p-0">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 ">
+          <div *ngIf="step2" class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-7 ">
             <!-- <app-step2></app-step2> -->
             <app-step2 (step3display)="displayer($event)"></app-step2>
           </div>

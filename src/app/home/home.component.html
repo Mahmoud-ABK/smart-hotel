@@ -3,7 +3,8 @@
   <!-- FIRST SECTION -->
   <div id="gallery" class="first-sec section">
     <!-- NAVBAR -->
-    <nav class="d-flex align-items-center navbar navbar-expand-lg navbar-light navabrar" data-aos="fade-down"  data-aos-duration="1000">
+    <nav class="d-flex align-items-center navbar navbar-expand-lg navbar-light navabrar" data-aos="fade-down"
+      data-aos-duration="1000">
 
       <div class="logo">
         <a class="nav-link navbar-brand" href="#">
@@ -11,10 +12,17 @@
         </a>
       </div>
       <!-- TOGGLE ICON -->
-      <button mat-button-icon class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarContent"
+      <!-- <button  class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarContent"
         [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <span class="navbar-toggler-icon"> &#8203;</span>
+      </button> -->
+      <div class="example-button-container">
+        <button mat-mini-fab color="primary" class="navbar-toggler" type="button" data-toggle="collapse"
+          aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation"
+          (click)="collapsed = !collapsed"> 
+         <img src="../../assets/menubtn.svg" alt="">
+        </button>
+      </div>
       <!-- NAV ITEMS -->
       <div class="collapse navbar-collapse navboura" id="navbarSupportedContent" [class.collapse]="collapsed"
         id="navbarContent">
@@ -74,21 +82,25 @@
     </nav>
 
     <!-- MINI FORM -->
-    <div class="booking-tab" data-aos="fade-up"  data-aos-duration="1000"  >
+    <div class="booking-tab" data-aos="fade-up" data-aos-duration="1000">
 
-      <h1 style="font-family: lc;font-size: xx-large; font-weight: bolder;" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" class="mt-5">Welcome To our Website</h1>
+      <div class="welcome-message">
+        <h1 style=" font-family: lc;font-size: xx-large; 
+              font-weight: bolder; text-align: center;" class="mt-5">Welcome To our Website</h1>
+      </div>
 
-      <form class="d-flex flex-row " (ngSubmit)="onSubmit(f)" #f="ngForm" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" >
+      <form class="d-flex flex-row align-items-center " (ngSubmit)="onSubmit(f)" #f="ngForm" data-aos="fade-up"
+        data-aos-delay="200" data-aos-duration="1000">
 
         <!-- <div class="booking-tab-item booking-tab-title align-middler">
           <p class="align-middle">Reservation</p>
         </div> -->
 
         <div class="booking-tab-item booking-tab-title d-flex align-item-center justify-content-center">
-          <button role="button" class="reservation-button">Reservation</button>
+          <button role="button" class="reservation-button" style="color: #1E2B31 !important;">Reservation</button>
         </div>
 
-        <div class="inputs-container booking-tab-item">
+        <div class="inputs-container booking-tab-item d-flex align-items-center">
 
           <div class="input-item form-group ">
             <label for="checkindate" class="date-label">Check-in Date</label>
@@ -112,7 +124,7 @@
             Book Now!
           </a> -->
           <button mat-button style="font-size:xx-large;" type="submit" routerLink="checkin"
-            class="booking-tab-item booking-tab-button submit-button">Book Now</button>
+            class="booking-tab-item submit-button">Book Now</button>
         </div>
 
       </form>
@@ -127,7 +139,7 @@
     <div class="container d-flex flex-column align-items-center mt-2">
 
       <div class="row d-flex justify-content-center ">
-        <div class="card-contain col-lg-5 col-md-12 mb-4 " data-aos="fade-up" data-aos-duration="1000">
+        <div class="card-contain col-lg-5 col-md-12 mb-4 " data-aos="fade-down" data-aos-duration="1000">
           <div class="services-card card c card-block">
             <h1 style="font-size: x-large !important; font-family: alegreya;" class="card-title mt-3 mb-3">Our Services
             </h1>
@@ -147,7 +159,7 @@
           </div>
         </div> -->
 
-        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-down-right" data-aos-duration="1000">
+        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="card card-block">
             <img id="card-img" src="../../assets/room-control.jpg" alt="Photo of sunset">
             <h5 class="card-title mt-3 mb-3">smart room control</h5>
@@ -156,7 +168,7 @@
           </div>
         </div>
 
-        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-down-left" data-aos-duration="1000">
+        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="card card-block">
             <img id="card-img" src="../../assets/room-cleaning.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Personalized Room Service</h5>
@@ -167,7 +179,7 @@
           </div>
         </div>
 
-        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up-right" data-aos-duration="1000">
+        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="card card-block">
             <img id="card-img" src="../../assets/room-service.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Modern Food Service</h5>
@@ -175,7 +187,7 @@
           </div>
         </div>
 
-        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="card-contain col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
           <div class="card card-block">
             <img id="card-img" src="../../assets/room-security.jpg" alt="Photo of sunset">
             <h5 class="card-title  mt-3 mb-3">Enhanced privacy and security</h5>
@@ -203,9 +215,7 @@
     <div class="container d-flex justify-content-center p-5 flex-column">
       <div class="row d-flex justify-content-center ">
 
-        <div class="col-lg-4 col-md-10 mb-4" data-aos="fade-right"
-        data-aos-offset="200"
-        data-aos-easing="ease-in-sine">
+        <div class="col-lg-4 col-md-10 mb-4" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
           <div class="cardOne h-100">
             <div class="card-body">
 
@@ -226,11 +236,9 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-10 mb-4" >
-          <div class="card1 h-100" data-aos="fade-right"
-          data-aos-offset="200"
-          data-aos-delay="200"
-          data-aos-easing="ease-in-sine">
+        <div class="col-lg-4 col-md-10 mb-4">
+          <div class="card1 h-100" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200"
+            data-aos-easing="ease-in-sine">
             <div class="card-body">
 
               <h5 class="card-title">Ground Floor room</h5>
@@ -248,10 +256,8 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-10 mb-4" data-aos="fade-right"
-        data-aos-offset="200"
-        data-aos-delay="400"
-        data-aos-easing="ease-in-sine">
+        <div class="col-lg-4 col-md-10 mb-4" data-aos="fade-right" data-aos-offset="200" data-aos-delay="400"
+          data-aos-easing="ease-in-sine">
           <div class="card2 h-100">
             <div class="card-body">
 
@@ -305,19 +311,15 @@
     <div class="map-container">
 
       <div class="map-intro">
-        <h1 data-aos="fade-right" data-aos-offset="100" data-aos-duration="1000"
-        data-aos-easing="ease-in-sine" >Location ?</h1>
-        <h2 data-aos="fade-right"
-        data-aos-offset="100"
-        data-aos-delay="100"
-        data-aos-easing="ease-in-sine">located on the edge of the forest, 500 m from the center of Montana offers all modern comforts.
+        <h1 data-aos="fade-right" data-aos-offset="100" data-aos-duration="1000" data-aos-easing="ease-in-sine">Location
+          ?</h1>
+        <h2 data-aos="fade-right" data-aos-offset="100" data-aos-delay="100" data-aos-easing="ease-in-sine">located on
+          the edge of the forest, 500 m from the center of Montana offers all modern comforts.
           Cross-country ski slopes, a soccer field and paintball field are all within 100 m from the hotel.
           Couples in particular like the location – they rated it 8.3 for a two-person trip </h2>
       </div>
-      <div class="map d-flex justify-content-center" data-aos="fade-left" data-aos-duration="1000"
-      data-aos-offset="100"
-      data-aos-delay="200"
-      data-aos-easing="ease-in-sine">
+      <div class="map d-flex justify-content-center" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="100"
+        data-aos-delay="200" data-aos-easing="ease-in-sine">
         <div id="map">
           <div class="mapouter">
             <div class="gmap_canvas">
@@ -372,12 +374,13 @@
 
   <!-- FOOTER -->
 
-  <div class="foot w-100 container-fluid m-0 pb-0 mb-0 justify-content-center text-light " >
-    <footer id="about" >
+  <div class="foot w-100 container-fluid m-0 pb-0 mb-0 justify-content-center text-light ">
+    <footer id="about">
       <div class="row my-5 justify-content-center py-5">
         <div class="col-11">
           <div class="row ">
-            <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a" data-aos="fade-right"
+              data-aos-duration="1000">
               <img style="height: 75px; width: auto; margin: 20px;" src="./assets/smarthotellogo.svg">
             </div>
             <div class="col-xl-2 col-md-4 col-sm-4 col-12" data-aos="fade-left" data-aos-duration="1000">
@@ -389,14 +392,16 @@
                 <li class="footer-style">Portfolio</li>
               </ul>
             </div>
-            <div class="col-xl-2 col-md-4 col-sm-4 col-12" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+            <div class="col-xl-2 col-md-4 col-sm-4 col-12" data-aos="fade-left" data-aos-delay="100"
+              data-aos-duration="1000">
               <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b class="footer-style">ADDRESS</b></h6>
               <p class="footer-style mb-1" style="text-transform: uppercase;">22 Rue de l'artisanat</p>
               <p class="footer-style">ARIANA 2025, TUNISIA</p>
             </div>
           </div>
           <div class="row ">
-            <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end" data-aos-duration="1000" data-aos="fade-right" data-aos-delay="100">
+            <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end"
+              data-aos-duration="1000" data-aos="fade-right" data-aos-delay="100">
               <p class="social text-muted mb-0 pb-0 bold-text">
                 <span class="mx-2">
                   <img class="sm" src="../../assets/facebook-logo.svg">
@@ -416,7 +421,8 @@
                 SmartHotel All Rights Reserved.
               </small>
             </div>
-            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end " data-aos-duration="1000" data-aos="fade-left" data-aos-delay="100">
+            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end " data-aos-duration="1000"
+              data-aos="fade-left" data-aos-delay="100">
               <h6 class="footer-style mt-55 mt-2 text-muted bold-text">
                 <b>ANIRUDH SINGLA</b>
               </h6>
@@ -427,7 +433,8 @@
                 anirudh.smarthotel@gmail.com
               </small>
             </div>
-            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 " data-aos-duration="1000" data-aos="fade-left" data-aos-delay="100">
+            <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 " data-aos-duration="1000"
+              data-aos="fade-left" data-aos-delay="100">
               <h6 class="text-muted bold-text">
                 <b class="footer-style">RISHABH SHEKHAR</b>
               </h6>

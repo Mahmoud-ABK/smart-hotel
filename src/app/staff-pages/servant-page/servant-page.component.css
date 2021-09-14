@@ -19,23 +19,33 @@
     background-color:#1E2B31;
     margin: 0px !important;
 }
-
-.btn{
+.logout{
     margin: 2px;
-    border-radius: 0%;
     color: #1E2B31;
     background-color: #f8f8f8;
     font-weight: bold;
     font-size: 18px;
+    opacity: 0.7;
+    transition: 0.3s;
+    text-align: center;
+    border-radius: 0% !important;
 }
-.delete-button {
+.logout:hover{
+    opacity: 1;
+  }
+
+.deletebutton {
     background-color: #1E2B31;
     color: #f8f8f8;
     transition: 0.2s;
     font-size: 14px;
+    margin: 2px;
+    border-radius: 0%;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.delete-button:hover {
+.deletebutton:hover {
     background-color: #1e2b31a8;
 }
 /* .card::before, .card::after {

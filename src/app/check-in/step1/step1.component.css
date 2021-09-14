@@ -250,6 +250,10 @@ button:disabled {
 
   border-bottom: 3px solid #CD7E2B ;
 
+
+}
+.und:hover , .und:hover *{
+  cursor: pointer !important;
 }
 .nextbtn:disabled{
   color: #B7C7CE !important;

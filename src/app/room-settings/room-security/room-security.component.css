@@ -29,3 +29,11 @@ td,th{
 bgOpen{
   background-color: #f8f8f8;
 }
+button{ background-color:inherit !important;
+color: black !important;}
+.navbar-toggler:active ,.navbar-toggler-icon:focus{
+  outline: 0;
+  transform: rotate(720deg);
+  transition: 0.8s ;
+  opacity: 0;
+}
