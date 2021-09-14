@@ -5,7 +5,7 @@
     <hr>
   </div>
   <div class="row py-4 d-flex justify-content-center">
-    <div class="col-8 col-sm-6 col-md-3 col-lg-2  d-flex justify-content-center hover"
+    <div class="col-8 col-sm-6 col-md-3 col-lg-2  d-flex justify-content-center hover navbar-toggler"  id="abc"
       (click)="bigFun(doorOpen,doorstatus)">
       <img *ngIf="doorOpen" src="./../../../assets/padlock.svg" alt="" class="w-100 h-100">
       <img *ngIf="!doorOpen" src="./../../../assets/unlocked.svg" alt="" class="w-100 h-100">
@@ -43,7 +43,7 @@
           </tr>
         </tbody>
       </table>
-      <button mat-button (click)="Clearer()">Clear Status history</button>
+      <button mat-raised-button (click)="Clearer()">Clear Status history</button>
     </div>
   </ng-template>
 

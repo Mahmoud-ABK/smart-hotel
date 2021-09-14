@@ -6,6 +6,8 @@ import { RoomModel } from 'src/app/Models/room-model';
 import { InAppOperationsService } from 'src/app/Services/in-app-operations.service';
 import { allIcons } from 'ngx-bootstrap-icons';
 
+
+
 @Component({
   selector: 'app-room-control',
   templateUrl: './room-control.component.html',
@@ -22,11 +24,11 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     c: true,
 
   }
-  lights: [string,string, string, string] = [
-    "false",
-    "false",
-    "false",
-    "false",
+  lights: boolean[] = [
+    false,
+    false,
+    false,
+    false
   ]
 
   id: number
@@ -51,7 +53,12 @@ export class RoomControlComponent implements OnInit, OnDestroy {
 
       })
   }
+  stringify(a){
 
+    return  ("'"+a+"'")
+
+
+  }
   ngOnInit(): void {
   }
   openSnackBar(message: string) {
@@ -100,7 +107,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     }
   }
   undefinedhum(formcontrol: any) {
-    if (formcontrol == undefined || formcontrol == '' || formcontrol > 60 || formcontrol < 20) {
+    if (formcontrol == undefined || formcontrol == '' || formcontrol > 100 || formcontrol < 20) {
       return 30
     } else {
       return formcontrol
@@ -114,7 +121,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     }
   }
   onornot() {
-    if (this.lights.includes("false")) {
+    if (this.lights.includes(false)) {
       this.OnOrOff = 'on'
 
     } else {
@@ -126,14 +133,14 @@ export class RoomControlComponent implements OnInit, OnDestroy {
     console.log(event);
 
     if (!event) {
-      if (this.lights = ["true","true" ,"true","true"]) {
+      if (this.lights = [true,true ,true,true]) {
 
-        this.lights = ["false", "false","false","false"]
+        this.lights = [false, false,false,false]
         console.log(this.lights);
 
       } else {
 
-        this.lights = ["true","true","true","true"]
+        this.lights =[true,true ,true,true]
 
       }
 
@@ -142,7 +149,7 @@ export class RoomControlComponent implements OnInit, OnDestroy {
 
     } else {
 
-      this.lights = ["true","true","true","true"]
+      this.lights = [true,true ,true,true]
       console.log(this.lights);
 
 
