@@ -1,6 +1,9 @@
 # SmartHotel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4. Updated to 18.0
+# if you pull this project
+care to have node 22 atleast and angular cli 18.0 version
+don't forget the npm install
 
 ## Development server
 
