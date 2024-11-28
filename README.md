@@ -1,4 +1,12 @@
 # SmartHotel
+to run this project u need to 
+install an old cli 
+for example 12.1.1
+install node version v16.20 
+using this command in linux
+$ npm install -g n
+$ n 6.10.3
+run ng serve
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
