@@ -46,20 +46,20 @@ const routes: Routes = [
   {
     path: "guestlogin",
     component: LoginGuestComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingLoggedInToGuestInterface },
   },
   {
     path: "checkin",
     component: CheckInComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingLoggedInToGuestInterface },
   },
 
   {
     path: "guestprofile",
     component: GuestProfileComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome }
   },
 
@@ -88,17 +88,17 @@ const routes: Routes = [
   {
     path: "servantpage",
     component: ServantPageComponent,
-    canActivate: [ServantauthGuard]
+    // canActivate: [ServantauthGuard]
   },
   {
     path: "kitchenpage",
     component: KitchenPageComponent,
-    canActivate: [KitchenauthGuard]
+    // canActivate: [KitchenauthGuard]
   },
   {
     path: "managerinterface",
     component: ManagerInterfaceComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
 
       {
@@ -135,7 +135,7 @@ const routes: Routes = [
   {
     path: "roomsettings",
     component: RoomSettingsComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome },
     children: [
       {
@@ -159,13 +159,13 @@ const routes: Routes = [
   {
     path: "foodmenu",
     component: FoodMenuComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome },
   },
   {
     path:"checkingout",
     component:CheckingOutComponent,
-    canActivate: [AngularFireAuthGuard],
+    // canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectingUnauthorizedToHome }
   }
 

@@ -1,28 +1,78 @@
-# SmartHotel
+# 🏨 SMARTHotel Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+## 🌍 About IOT4Tunisia
 
-## Development server
+**SmartHotel** is part of **IOT4Tunisia**, a year-long bootcamp running from **September 2020 to September 2021**, organized by [MentorNations](https://www.linkedin.com/company/mentornationstn) and sponsored by the **U.S. Embassy in Tunisia**. This initiative aimed to foster innovation through IoT and smart technologies by mentoring aspiring developers and engineers across Tunisia.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This web application is one component of a broader **IoT & Web** project designed for smart hotel experiences.
 
-## Code scaffolding
+## 👥 Developed By
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Mahmoud Ben Abdelkader - [Github link](https://github.com/Mahmoud-ABK/)
+- Mariem Zaghouani - [Github link](https://github.com/MariamZaghouani)
+- Zaki Yousfi - [Github link](https://github.com/zakiyousfi)
+- Hazar Hammouda - [Github link](https://github.com/HAZAR00)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 🧰 Technologies Used
 
-## Running unit tests
+- **Angular** v12.1.1  
+- **Angular CLI** v12.1.1  
+- **Firebase SDK** v8.7.1 (via `@angular/fire` v6.1.5)  
+- **Angular Material** v12.1.1  
+- **Bootstrap** v5.0.2
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## ⚠️ Compatibility Notice
 
-## Running end-to-end tests
+> 🛠 This application was developed in **2021** using:
+> - **Angular CLI v12**
+> - **Node.js v14**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To ensure proper functionality, please use the matching versions during development or testing.
 
-## Further help
+> ☁️ **Note:** The original cloud services (including Firebase backend) are currently **offline**. Authentication, data storage, and dynamic features depending on the backend will not function unless reconfigured with a valid Firebase project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# smart-hotel" 
+
+Make sure to install the appropriate versions when running the project to avoid compatibility issues.
+
+---
+
+## 🌐 Web Application Overview
+
+**SmartHotel** is an intelligent hotel management web app that caters to three main user roles: **Guests**, **Staff**, and **Managers**. The system provides different interfaces, workflows, and login flows for each type of user.
+
+### 🔑 Key Features
+
+- **Guest Features**:
+  - Online check-in and room customization
+  - Access to personal guest profile and stay overview
+  - Room service and food menu ordering
+
+- **Manager Features**:
+  - Admin dashboard with room management tools
+  - Room reports and analytics
+  - Room and service history archive
+
+- **Staff Features**:
+  - Kitchen and servant dashboards
+  - Access to respective interfaces with secure login
+  - Daily tasks and service management
+
+- **Shared Features**:
+  - Role-based login portal (roundabout login)
+  - Password reset functionality
+  - Responsive UI for both mobile and desktop
+  - Integrated Firebase Authentication
+
+---
+
+## 📸 Photo Gallery
+
+| Full View                             | Responsive View                              |
+|--------------------------------------|----------------------------------------------|
+| ![Home](screenshots/home.png)        | ![Home (Responsive)](screenshots/reshome.png)        |
+| ![Home 2](screenshots/home2.png)     | ![Home 2 (Responsive)](screenshots/reshome2.png)     |
+| ![Check-in](screenshots/checkin.png) | ![Check-in (Responsive)](screenshots/rescheckin.png) |
+| ![Login](screenshots/login.png)      | ![Login (Responsive)](screenshots/reslogin.png)      |
+| ![Manager Login](screenshots/managerlogin.png) | ![Manager Login (Responsive)](screenshots/resmanagerlogin.png) |
+| ![Hub](screenshots/hub.png)          | ![Hub (Responsive)](screenshots/reshub.png)          |
